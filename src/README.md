@@ -40,6 +40,6 @@ But, there's no substitute for hands-on experience, and that's where _IOTA for F
 
 _IOTA for Flutter_ provides a tutorial-style documentation that walks you through the process of integrating IOTA and Shimmer step-by-step. So don't be afraid to jump in and give it a shot! Who knows, you might just surprise yourself with what you can accomplish.
 
-> [For more information about IOTA click this link](https://iota.org)
+> [👉 More information about IOTA](https://iota.org)
 
-> [For more information about Shimmer click this link](https://shimmer.network)
+> [👉 More information about Shimmer](https://shimmer.network)
