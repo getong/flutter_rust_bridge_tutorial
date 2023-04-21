@@ -3,8 +3,11 @@ authors = ["Kai Müller"]
 language = "en"
 multilingual = false
 src = "src"
-title = "IOTA for Flutter"
+title = ""
 
 [build]
 build-dir = "docs"
 create-missing = false
+
+[output.html]
+additional-css = ["theme/custom.css"]

@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@500&family=Source+Sans+Pro&display=swap');
+
+:root {
+    --primary: #db4d52;
+    --pblue: #053C5E;
+    --pgreen: #3F826D;
+    --pyellow: #FDCA40;
+}
+
+/*html, body {
+    font-family: 'STIX Two Text', serif; 
+    font-family: 'Source Sans Pro', sans-serif; 
+}*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'STIX Two Text', serif;
+    line-height: 1.5em;
+    margin-bottom: 0em;
+    margin-top: 0em;
+}
+
+h1 {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	font-weight: normal;
+	font-size:3em;
+	text-align: center;
+}
+
+
+h2 {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	font-size:2.2em;
+	font-weight: normal;
+	/* text-align: center; */
+}
+
+h3 {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	font-weight: normal;
+	font-size:1.6em;
+}
+
+h4 { 
+    margin: 0; /*.2rem 0;*/
+	font-size:1.2em;
+    opacity: 0.5;
+    text-align: center;
+}
+
+/*h4 a:after{
+	border-bottom: 1px solid;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}*/
+
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+    border-color: #b4b4b4;
+}
+
+.hljs {
+    border: 1px solid #0000001a;
+    border-radius: 0.25rem;
+}
+
+.katex {
+    font-size: unset !important;
+}
+
+.katex-display {
+    font-size: 1.21em;
+}
+
+/* 
+===============
+    Boxes 
+===============
+*/
+
+mbox {
+    display: block;
+    padding: 12px;
+    margin: 2em 2.6em;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0px 3px var(--primary);
+}
+
+mbox.green {
+    box-shadow: 0px 0px 0px 3px var(--pgreen);
+}
+mbox.blue {
+    box-shadow: 0px 0px 0px 3px var(--pblue);
+}
+mbox.yellow {
+    box-shadow: 0px 0px 0px 3px var(--pyellow);
+}
+
+mbox h1, mbox h2, mbox h3, mbox h4, mbox h5, mbox h6  {
+    all: unset;
+    font-size: 17px;
+    display: block;
+    font-weight: bold;
+}
+mbox h1 a::after {
+    all: unset;
+}
+mbox h2 {
+    position: absolute;
+    transform: translate(10%, -105%);
+    background-color: var(--primary);
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+mbox h3 {
+    position: relative;
+    transform: translate(0%, -3px);
+    margin: -12px;
+    background-color: var(--primary);
+    padding: 2px 12px;
+    margin-bottom: 12px;
+}
+
+mbox.green h2, mbox.green h3 {
+    background-color: var(--pgreen);
+}
+mbox.blue h2, mbox.blue h3 {
+    background-color: var(--pblue);
+}
+mbox.yellow h2, mbox.yellow h3 {
+    background-color: var(--pyellow);
+}
+mbox h2 .header, mbox h3 .header {
+    color: white !important;
+}
+mbox.green h2 .header, mbox.green h3 .header {
+    color: white !important;
+}
+mbox.blue h2 .header, mbox.blue h3 .header {
+    color: white !important;
+}
+mbox.yellow h2 .header,mbox.yellow h3 .header {
+    color: white !important;
+}
+
+mbox .header {
+    color: var(--primary) !important;
+}
+mbox.green .header {
+    color: var(--pgreen) !important;
+}
+mbox.blue .header {
+    color: var(--pblue) !important;
+}
+mbox.yellow .header {
+    color: var(--pyellow) !important;
+}
+
+/* 
+==================
+    Quote
+==================
+*/
+
+blockquote {
+    position: relative;
+    margin: 1rem 0 1rem 2rem;
+    color: #747474;
+    background-color: unset;
+    border: unset;
+    padding: unset;
+}
+
+blockquote.primary, blockquote.blue, blockquote.green, blockquote.yellow {
+    color: unset;
+} 
+
+blockquote::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    height: 100%;
+    width: .25rem;
+    background: var(--primary);
+}
+
+blockquote.blue::before {
+    background: var(--pblue);
+}
+blockquote.green::before {
+    background: var(--pgreen);
+}
+blockquote.yellow::before {
+    background: var(--pyellow);
+}
+
+blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, blockquote h6 {
+    all: unset;
+    font-size: 17px;
+    font-weight: bold;
+}
+blockquote h1 a::after {
+    all: unset;
+}
+blockquote .header {
+    color: var(--primary) !important;
+}
+blockquote.green .header {
+    color: var(--pgreen) !important;
+}
+blockquote.blue .header {
+    color: var(--pblue) !important;
+}
+blockquote.yellow .header {
+    color: var(--pyellow) !important;
+}
