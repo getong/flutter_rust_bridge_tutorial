@@ -1,0 +1,598 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>IOTA for Flutter</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">WELCOME</li><li class="spacer"></li><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> 👋 About: IOTA for Flutter</a></li><li class="chapter-item expanded "><a href="welcome/what-youll-get.html"><strong aria-hidden="true">2.</strong> 💻 What you'll get</a></li><li class="chapter-item expanded "><a href="welcome/when-you-are-js-developer/index.html"><strong aria-hidden="true">3.</strong> ☕ When you are JS developer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="welcome/when-you-are-js-developer/dart-vs.-javascript.html"><strong aria-hidden="true">3.1.</strong> Dart vs. JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="welcome/which-resources-you-need.html"><strong aria-hidden="true">4.</strong> ✨ Which resources you need</a></li><li class="chapter-item expanded "><a href="welcome/how-to-get-the-most-out-of-this-tutorial.html"><strong aria-hidden="true">5.</strong> 🧐 How to get the most out of this tutorial</a></li><li class="chapter-item expanded "><a href="welcome/what-does-this-tutorial-not-contain.html"><strong aria-hidden="true">6.</strong> ⚠ What does this tutorial NOT contain?</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Overview</li><li class="spacer"></li><li class="chapter-item expanded "><a href="overview/how-everything-works-together.html"><strong aria-hidden="true">7.</strong> 💡 How everything works together</a></li><li class="chapter-item expanded "><a href="overview/cross-compiling.html"><strong aria-hidden="true">8.</strong> 🏭 Cross-Compiling</a></li><li class="chapter-item expanded "><a href="overview/flutter-rust-bridge/index.html"><strong aria-hidden="true">9.</strong> 🌁 Flutter Rust Bridge</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="overview/flutter-rust-bridge/about.html"><strong aria-hidden="true">9.1.</strong> About</a></li><li class="chapter-item expanded "><a href="overview/flutter-rust-bridge/features.html"><strong aria-hidden="true">9.2.</strong> Features</a></li></ol></li><li class="chapter-item expanded "><a href="overview/iota-libraries.html"><strong aria-hidden="true">10.</strong> 📚 IOTA libraries</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Fundamentals</li><li class="spacer"></li><li class="chapter-item expanded "><a href="fundamentals/xcode/index.html"><strong aria-hidden="true">11.</strong> Xcode</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="fundamentals/xcode/set-up.html"><strong aria-hidden="true">11.1.</strong> Set up</a></li><li class="chapter-item expanded "><a href="fundamentals/xcode/essentials.html"><strong aria-hidden="true">11.2.</strong> Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="fundamentals/android-studio/index.html"><strong aria-hidden="true">12.</strong> Android Studio</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="fundamentals/android-studio/set-up.html"><strong aria-hidden="true">12.1.</strong> Set up</a></li><li class="chapter-item expanded "><a href="fundamentals/android-studio/essentials.html"><strong aria-hidden="true">12.2.</strong> Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="fundamentals/flutter/index.html"><strong aria-hidden="true">13.</strong> Flutter</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="fundamentals/flutter/set-up.html"><strong aria-hidden="true">13.1.</strong> Set up</a></li><li class="chapter-item expanded "><a href="fundamentals/flutter/essentials.html"><strong aria-hidden="true">13.2.</strong> Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="fundamentals/rust/index.html"><strong aria-hidden="true">14.</strong> Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="fundamentals/rust/set-up.html"><strong aria-hidden="true">14.1.</strong> Set up</a></li><li class="chapter-item expanded "><a href="fundamentals/rust/essentials.html"><strong aria-hidden="true">14.2.</strong> Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="fundamentals/ide-visual-studio-code/index.html"><strong aria-hidden="true">15.</strong> IDE: Visual Studio Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="fundamentals/ide-visual-studio-code/set-up.html"><strong aria-hidden="true">15.1.</strong> Set up</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Building without IOTA</li><li class="spacer"></li><li class="chapter-item expanded "><a href="building-without-iota/flutter-only.html"><strong aria-hidden="true">16.</strong> Flutter only</a></li><li class="chapter-item expanded "><a href="building-without-iota/flutter-and-rust/index.html"><strong aria-hidden="true">17.</strong> Flutter and Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="building-without-iota/flutter-and-rust/frb-example-app.html"><strong aria-hidden="true">17.1.</strong> FRB Example App</a></li><li class="chapter-item expanded "><a href="building-without-iota/flutter-and-rust/logging-example-app.html"><strong aria-hidden="true">17.2.</strong> Logging Example App</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">IOTA for Flutter</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="-about-iota-for-flutter"><a class="header" href="#-about-iota-for-flutter">👋 About: IOTA for Flutter</a></h1>
+<hr />
+<p>A tutorial to build modern apps using the technology of IOTA</p>
+<hr />
+<h2 id="hey-there"><a class="header" href="#hey-there">Hey there!!</a></h2>
+<p>Ready to add some sparkle to your app development? Stay here, where we not only support the IOTA Mainnet but also the Shimmer Network! With this flexible approach, developers can easily choose whether to integrate the Chrysalis or the Stardust version into their projects (and let's be honest, who doesn't love a little shimmer in their code)? So why wait? Say hello to Flutter and Rust and join me on this exciting journey and let us make your apps shine!</p>
+<blockquote>
+<p>In fact, the presented workflow supports both the <em>Shimmer Network</em> (protocol version &quot;Stardust&quot;) and the <em>IOTA Mainnet</em> (protocol version &quot;Chrysalis&quot;). It depends on which library versions you as developer include in your project.</p>
+<p>I assume developers are more interested in adopting the Stardust version, so I use the Shimmer (Testnet) and related libraries in my examples. </p>
+</blockquote>
+<h2 id="background"><a class="header" href="#background">Background</a></h2>
+<p>Originally I was searching for a workflow to build real-world products in the form of mobile and desktop applications backed by the Distributed Ledger Technology of IOTA. My goal was and is to facilitate the adoption of IOTA.</p>
+<blockquote>
+<p>Just to clarify, every time I mention <em>IOTA</em>, I'm also referring to <em>Shimmer</em>. </p>
+</blockquote>
+<p>I wanted to create a flexible solution that would allow developers to use a reduced technology stack for their projects. With <em>IOTA for Flutter</em>, I believe we've achieved that goal, and I'm excited to share it with the world. And believe me: Coming from Java and JavaScript frameworks I was not at all familiar with Flutter and Rust in the beginning.</p>
+<p>I remember those days - the endless hours of debugging, the frustration of hitting the same roadblocks over and over again. But after four long months of trial and error, I finally found the solution with <em>IOTA for Flutter</em>. </p>
+<p>This documentation is a condensed tutorial that summarizes everything I learned during that grueling proof-of-concept process. And now, I want to share that knowledge with you. Think of my tutorial as your personal guide to app development for IOTA - a way to save you time and headaches, so you can focus on what really matters.</p>
+<p>Now, before you get too excited, I should warn you that app development is still app development, and there's always a chance that things might not work out the way you planned. Trust me, I've been there. But hey, that's half the fun, right? The thrill of the chase, the excitement of finally figuring out that pesky bug - it's all part of the process. Just don't blame me if you find yourself cursing my name at three in the morning when something doesn't work quite right. But hey, if it was easy, everyone would be doing it, right? So let's roll up our sleeves and get to work!</p>
+<p><em>IOTA for Flutter</em> is a sponsored project by the Tangle Community Treasury. The funding allows me to organize my collected notes and prepare them for you. At this point, a big thank you to everyone involved!</p>
+<h2 id="you-know-flutter-but-not-iota"><a class="header" href="#you-know-flutter-but-not-iota">You know Flutter but not IOTA?</a></h2>
+<p>If you're a Flutter developer who's not familiar with IOTA or Shimmer, don't worry!</p>
+<p>Of course, it's a good idea to take a look at the official websites for IOTA and Shimmer, see below. There, you'll find plenty of resources and information to help you get up to speed on the basics of Distributed Ledger Technology and what it is used for.</p>
+<p>But, there's no substitute for hands-on experience, and that's where <em>IOTA for Flutter</em> comes in. While the official websites for IOTA and Shimmer provide a great starting point, the best way to truly understand how to use these technologies in your Flutter projects is to give it a try yourself. </p>
+<p><em>IOTA for Flutter</em> provides a tutorial-style documentation that walks you through the process of integrating IOTA and Shimmer step-by-step. So don't be afraid to jump in and give it a shot! Who knows, you might just surprise yourself with what you can accomplish.</p>
+<blockquote>
+<p><a href="https://iota.org">For more information about IOTA click this link</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://shimmer.network">For more information about Shimmer click this link</a></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-what-youll-get"><a class="header" href="#-what-youll-get">💻 What you'll get</a></h1>
+<hr />
+<p>Explore the world of Distributed Ledger Technology with a hands-on guide using this Github page, companion repositories, and YouTube videos</p>
+<hr />
+<h2 id="seamless-user-interfaces-for-human-interaction"><a class="header" href="#seamless-user-interfaces-for-human-interaction">Seamless User Interfaces for human interaction</a></h2>
+<figure style="margin:0;"><img src="welcome/../assets/actors.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>This tutorial is about building User Interfaces for human interaction (highlighted in red)</p></figcaption></figure>
+<p>The focus of this project is to provide a user interface or interaction capability with IOTA for humans. While IOT devices, machines or smart contracts can also interact with IOTA, the primary goal here is to create a seamless experience for people to connect and engage with IOTA's Layer 1 network.</p>
+<p>The main goal is achieved by building mobile and desktop apps. The focus is on the target platforms that Flutter supports, with the caveat that the proof-of-concept has only been tested on iOS, Android, and macOS. </p>
+<p>Rust plays a crucial role in <em>IOTA for Flutter</em>, too. All of IOTA's libraries are written in Rust and are referred to as the Single Source of Truth. I will explain how these Rust libraries are used as a dependency in a custom library which is cross-compiled and integrated into Flutter.</p>
+<h2 id="tutorial-structure-overview-fundamentals-and-practical-chapters"><a class="header" href="#tutorial-structure-overview-fundamentals-and-practical-chapters">Tutorial Structure: Overview, Fundamentals, and Practical Chapters</a></h2>
+<p>The <em>IOTA for Flutter</em> tutorial is divided into several sections, including an overview for getting the key concept, a fundamentals section for preparing what you need, and several practical chapters that focus on building real-world products. </p>
+<p>To make it easier to follow along with the written text, each practical chapter has a corresponding repository on GitHub. I also provide some videos to demonstrate the resulting app, the workflow and guide users through important steps, so you can watch over my shoulder as I work through the examples. </p>
+<blockquote>
+<p><strong>The Three Pillars of the Tutorial</strong>: Github Page, Repositories and Videos</p>
+</blockquote>
+<p>The practical chapters are structured as follows: first, we start with an introductory chapter to build an app with Flutter and Rust without IOTA. This will introduce the Flutter-Rust-Bridge, the glueing part that brings Flutter and Rust together. Then, we dive into building a simple IOTA-powered app, followed by a comprehensive &quot;Shimmer playground&quot; app to demonstrate all Rust libraries in one app. </p>
+<p>As a bonus, I provide the code for the MQTT Chat App. In this chapter, I assume that you have gained enough knowledge and experience from the previous practical chapters.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-when-you-are-js-developer"><a class="header" href="#-when-you-are-js-developer">☕ When you are JS developer</a></h1>
+<hr />
+<p>Flutter vs. JS Frameworks</p>
+<hr />
+<p>Hold on to your keyboards because it's time for a chapter that will be more exciting than a cat chasing a laser pointer. We're about to explore how familiar Flutter looks when you compare it to JavaScript frameworks and what other reasons there are top use it - and let me tell you, it's going to be so much fun you might want to put on a party hat.</p>
+<p>Well, I know some of you might be thinking, “Wait a minute, I'm a JavaScript developer, why should I care about Flutter?” Well, let me ask you, have you ever heard the phrase “Diversity is the spice of life &quot; heard? Yes, that also applies here. By expanding your skills and learning more about Flutter, you might discover a whole new world of possibilities and solutions to your coding challenges.</p>
+<p>So get ready to rock and roll, code warriors, because it's time to expand your programming horizons and discover why Flutter should play a part in your life.</p>
+<blockquote>
+<p>When I first started learning Flutter, I had zero prior knowledge. To give myself a boost of motivation, I turned to videos to get a better understanding of what Flutter is all about. Watching videos not only helped me to get started with Flutter, but also gave me the confidence to continue learning and building my own apps.</p>
+<p>I personally like the YouTube Channel of Mitch Koko who creates stunning user interfaces: <a href="https://www.youtube.com/@createdbykoko">https://www.youtube.com/@createdbykoko</a></p>
+</blockquote>
+<h2 id="everything-as-code"><a class="header" href="#everything-as-code">Everything as code!?</a></h2>
+<p>In Flutter, a component is a self-contained, reusable piece of a user interface. It is a widget that can be used in a Flutter app to create a specific visual and/or interactive element, such as a button, text field, or image. A component in Flutter can be composed of other components, making it possible to create complex UIs by assembling smaller, reusable parts.</p>
+<p>Doesn't that sound familiar !? </p>
+<p>Let's compare a single Flutter widget with a Vue.js component.</p>
+<pre><code>import 'package:flutter/material.dart';
+
+class MyButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        print('Button clicked');
+      },
+      child: Text(
+        'Klick mich!',
+        style: TextStyle(color: Colors.white),
+      ),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all&lt;Color&gt;(Colors.green),
+        shape: MaterialStateProperty.all&lt;RoundedRectangleBorder&gt;(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+<p>In Vue.js it looks like:</p>
+<pre><code>&lt;template&gt;
+  &lt;button @click=&quot;handleClick&quot; class=&quot;my-button&quot;&gt;Klick mich!&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  methods: {
+    handleClick() {
+      console.log('Button clicked');
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+.my-button {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+&lt;/style&gt;
+</code></pre>
+<p>Yes, yes, yes, I hear some of you saying that everything as code isn't nice. </p>
+<p><strong>So where is the benefit?</strong></p>
+<p>Flutter's approach of writing everything as code provides a more streamlined and cohesive development experience compared to the traditional separation of HTML, CSS, and JS. With Flutter, you can create custom user interfaces and animations with greater ease and control, and the resulting apps are faster and smaller. Plus, no more switching between different languages and files like a mad scientist!</p>
+<p>A very important difference to JavaScript Frameworks is: Flutter compiles the Dart code to native machine code. Theoretically you have the control over every pixel on the screen. BTW, this also differs from React Native where written code is compiled only to the native UI components.</p>
+<h2 id="fun-factor"><a class="header" href="#fun-factor">Fun factor</a></h2>
+<p>Google and others (like Mitch Koko I mentioned above) provide tools and tons of material that make working with Flutter fun, for example:</p>
+<ul>
+<li>Flutter-Extensions for VS Code</li>
+<li>
+<blockquote>
+<p><a href="https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Short videos about the weekly widgets or packages</a></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><a href="https://docs.flutter.dev/get-started/codelab">A Codelab to write your first app</a></p>
+</blockquote>
+</li>
+</ul>
+<p>Flutter is like a treasure trove of creative possibilities, just waiting for you to unlock its secrets. With Flutter, you can build stunning user interfaces, craft intricate animations and interactions, and even dip your toes into the wild and wacky world of game development. You'll discover lots of sources of inspiration that will leave you buzzing with excitement. </p>
+<p>Later on, you will realize how interacting with Rust libraries empowers you to develop potent products - precisely what you are aiming for.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dart-vs-javascript"><a class="header" href="#dart-vs-javascript">Dart vs. JavaScript</a></h1>
+<hr />
+<p>Just a few examples to show you will feel familiar - but with new things to know</p>
+<hr />
+<p>Of course, this is a completely incomplete list 🤪, but it is intended to show that there are many similarities between Dart and JavaScript, making it easier to switch between the two languages or even learn both simultaneously. There are other rules too, but you can easily learn them.</p>
+<h3 id="variable-declaration"><a class="header" href="#variable-declaration">Variable declaration</a></h3>
+<p>Like in JavaScript, in Dart <code>var</code> is short for variable. It is used to declare a variable whose type is <em>statically inferred</em>:</p>
+<pre><code class="language-dart">var mystr = &quot;shimmer&quot;;
+</code></pre>
+<p>In the example above, we declare a variable of type <code>String</code>. One of the convenient features of Dart is that it's able to infer the type of a variable based on the value that's assigned to it. Here, it's quite evident that it's a String type.</p>
+<p>But unlike JavaScript, you CANNOT change the type of the variable afterwards!</p>
+<pre><code class="language-dart">var mystr = &quot;shimmer&quot;;
+mystr = 10; // THIS ASSIGNMENT DOESN'T WORK!
+</code></pre>
+<p>When we attempt to change the type of a variable in Dart, the compiler will generate an error. This is because Dart is a statically typed language, which means that the data type of a variable is determined at compile-time and cannot be changed during runtime.</p>
+<p>Another way to declare variables is the explicit type declaration:</p>
+<pre><code class="language-dart">String mystr = &quot;shimmer&quot;;
+</code></pre>
+<p>In Dart, it's generally considered good practice to explicitly declare the data type of a property when defining a class. This helps to ensure that the code is more easily understood and maintainable, especially when working on larger projects with multiple developers.</p>
+<p>For variables within smaller scopes, such as a method, the &quot;var&quot; keyword can be used instead of explicitly declaring the data type. This is because the scope is smaller and it's often easier to infer the type of the variable based on the context of the code.</p>
+<pre><code class="language-dart">class MyCat {
+   String cat = &quot;Bob&quot;;
+
+   void someMethod() {
+     var anotherVariable = &quot;Tom&quot;;
+   }
+}
+</code></pre>
+<h3 id="defining-a-function"><a class="header" href="#defining-a-function">Defining a function</a></h3>
+<h4 id="javascript"><a class="header" href="#javascript">JavaScript</a></h4>
+<pre><code class="language-javascript">function addNumbers(a, b) {
+  return a + b;
+}
+</code></pre>
+<h4 id="dart"><a class="header" href="#dart">Dart</a></h4>
+<pre><code class="language-dart">int addNumbers(int a, int b) {
+  return a + b;
+}
+</code></pre>
+<h3 id="working-with-arrays"><a class="header" href="#working-with-arrays">Working with arrays</a></h3>
+<h4 id="javascript-1"><a class="header" href="#javascript-1">JavaScript</a></h4>
+<pre><code class="language-javascript">var fruits = [&quot;apple&quot;, &quot;strawberry&quot;, &quot;cherry&quot;];
+fruits.push(&quot;kiwi&quot;);
+</code></pre>
+<h4 id="dart-1"><a class="header" href="#dart-1">Dart</a></h4>
+<pre><code class="language-dart">List&lt;String&gt; fruits = ['apple', 'strawberry', 'cherry'];
+fruits.add('kiwi');
+</code></pre>
+<h3 id="using-dot-notation-to-access-object-properties-and-methods"><a class="header" href="#using-dot-notation-to-access-object-properties-and-methods">Using dot notation to access object properties and methods</a></h3>
+<h4 id="javascript-2"><a class="header" href="#javascript-2">JavaScript</a></h4>
+<pre><code class="language-javascript">class Person {
+  constructor() {
+    this.name = &quot;&quot;;
+    this.age = 0;
+  }
+
+  greet() {
+    console.log(
+      `Hello, my name is ${this.name} and I'm ${this.age} years old.`
+    );
+  }
+}
+
+var person = new Person();
+person.name = &quot;Joe&quot;;
+person.age = 44;
+person.greet();
+</code></pre>
+<h4 id="dart-2"><a class="header" href="#dart-2">Dart</a></h4>
+<pre><code class="language-dart">class Person {
+  String name;
+  int age;
+
+  void greet() {
+    print(&quot;Hello, my name is $name and I'm $age years old.&quot;);
+  }
+}
+
+var person = Person();
+person.name = &quot;Joe&quot;;
+person.age = 44;
+person.greet();
+</code></pre>
+<h3 id="usage-of-string-interpolation"><a class="header" href="#usage-of-string-interpolation">Usage of string interpolation</a></h3>
+<h4 id="javascript-3"><a class="header" href="#javascript-3">JavaScript</a></h4>
+<pre><code class="language-javascript">var name = &quot;Joe&quot;;
+console.log(`Hello, my name is ${name}`);
+</code></pre>
+<h4 id="dart-3"><a class="header" href="#dart-3">Dart</a></h4>
+<pre><code class="language-dart">var name = &quot;Joe&quot;;
+print(&quot;Hello, my name is $name&quot;);
+</code></pre>
+<h3 id="usage-of-operators"><a class="header" href="#usage-of-operators">Usage of operators</a></h3>
+<h4 id="javascript-4"><a class="header" href="#javascript-4">JavaScript</a></h4>
+<pre><code class="language-javascript">var x = 10;
+var y = 5;
+var z = x + y;
+</code></pre>
+<h4 id="dart-4"><a class="header" href="#dart-4">Dart</a></h4>
+<pre><code class="language-dart">var x = 10;
+var y = 5;
+var z = x + y;
+</code></pre>
+<h3 id="usage-of-if-statements"><a class="header" href="#usage-of-if-statements">Usage of <code>if</code> statements</a></h3>
+<h4 id="javascript-5"><a class="header" href="#javascript-5">JavaScript</a></h4>
+<pre><code class="language-javascript">var age = 25;
+if (age &gt;= 18) {
+  console.log(&quot;You are an adult&quot;);
+} else {
+  console.log(&quot;You are a minor&quot;);
+}
+</code></pre>
+<h4 id="dart-5"><a class="header" href="#dart-5">Dart</a></h4>
+<pre><code class="language-dart">var age = 25;
+if (age &gt;= 18) {
+  print(&quot;You are an adult&quot;);
+} else {
+  print(&quot;You are a minor&quot;);
+}
+</code></pre>
+<h3 id="usage-of-switch-statements"><a class="header" href="#usage-of-switch-statements">Usage of <code>switch</code> statements</a></h3>
+<h4 id="javascript-6"><a class="header" href="#javascript-6">JavaScript</a></h4>
+<pre><code class="language-javascript">var fruit = &quot;apple&quot;;
+switch (fruit) {
+  case &quot;banana&quot;:
+    console.log(&quot;This is a banana&quot;);
+    break;
+  case &quot;apple&quot;:
+    console.log(&quot;This is an apple&quot;);
+    break;
+  default:
+    console.log(&quot;This is not a fruit&quot;);
+}
+</code></pre>
+<h4 id="dart-6"><a class="header" href="#dart-6">Dart</a></h4>
+<pre><code class="language-dart">var fruit = &quot;apple&quot;;
+switch (fruit) {
+  case &quot;banana&quot;:
+    print(&quot;This is a banana&quot;);
+    break;
+  case &quot;apple&quot;:
+    print(&quot;This is an apple&quot;);
+    break;
+  default:
+    print(&quot;This is not a fruit&quot;);
+}
+</code></pre>
+<h3 id="usage-of-try-catch-blocks"><a class="header" href="#usage-of-try-catch-blocks">Usage of <code>try-catch</code> blocks</a></h3>
+<h4 id="javascript-7"><a class="header" href="#javascript-7">JavaScript</a></h4>
+<pre><code class="language-javascript">try {
+  // code that may throw an error
+} catch (error) {
+  console.log(`Error: ${error.message}`);
+}
+</code></pre>
+<h4 id="dart-7"><a class="header" href="#dart-7">Dart</a></h4>
+<pre><code class="language-dart">try {
+  // code that may throw an error
+} catch (error) {
+  print(&quot;Error: ${error.toString()}&quot;);
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-which-resources-you-need"><a class="header" href="#-which-resources-you-need">✨ Which resources you need</a></h1>
+<p>Of course, you must meet all the requirements listed for each tool of the technology stack used.</p>
+<p>Furthermore, you'll need </p>
+<ul>
+<li>
+<p>LOTS OF FREE GB! It turns out that the cross-compiling process to build the libraries takes an enormous amount of disk space PER target. </p>
+</li>
+<li>
+<p>If you want to develop for Windows or Linux, you need a PC with Windows resp. Linux operating system or a virtual machine with Windows/Linux. I haven't tried that, see also: 
+<a href="welcome/what-does-this-tutorial-not-contain.html">What does this tutorial NOT contain</a></p>
+</li>
+<li>
+<p>Finally, one of the most important resources is: <strong>YOU</strong><br />
+You need to be patient, you may experience some hair-pulling moments when things grind to a halt, but when it finally all comes together, it's like hitting a bullseye on a dartboard - satisfying as heck!</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-how-to-get-the-most-out-of-this-tutorial"><a class="header" href="#-how-to-get-the-most-out-of-this-tutorial">🧐 How to get the most out of this tutorial</a></h1>
+<p>Chapter by chapter I will explain you the steps to connect Flutter and Rust to IOTA. I therefore recommend that you also read chapter by chapter and follow the steps.</p>
+<p>Second, I advise you to set up a project from scratch. I know it can be tempting to just download the code from the repository and run it, but there's a good chance you'll run into problems.</p>
+<p>Due to the different versions of Rust and Flutter you may have, it's safest to follow the step-by-step instructions and selectively include specific files in your own project.</p>
+<p>Another reason is that not only will you learn more about the intricacies of setup, but you'll also be better equipped to troubleshoot any problems that arise.</p>
+<p>I want you to be successful and not frustrated.</p>
+<p>Finally, when you include the code snippets, feel free to try refactoring them if you don't like the coding style. Keep in mind that I'm not producing the cleanest, best code, I just want to get things working. Everything else is nice to have.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-what-does-this-tutorial-not-contain"><a class="header" href="#-what-does-this-tutorial-not-contain">⚠ What does this tutorial NOT contain?</a></h1>
+<hr />
+<p>A disclaimer before the main event starts</p>
+<hr />
+<p>Welcome to the section where we clear up any misunderstandings before you dive in! Think of it as the disclaimer before the main event, like when they tell you not to try the stunts you see in action movies at home.</p>
+<p>So, what can you expect from this tutorial? We'll cover how to connect Flutter and Rust to IOTA, but let's make it crystal clear what's not on the menu. </p>
+<p>First, we won't go into detailed explanations of IOTA - we'll leave the philosophical musings to the experts.</p>
+<p>Also, this tutorial assumes you've already got Xcode, Android Studio, Flutter, and Rust up and running, so we won't bore you with deep installation instructions. Yes, there are sections called &quot;Set up&quot;, but please understand that I can't deeply dive in but only can give you the right links and useful hints.</p>
+<p>And sorry, no teaching of Dart or Rust - I'll assume that it's on your bucket list and you know what you're doing!</p>
+<p>Finally, I won't be exploring the proof-of-concept for Linux, Windows, browsers, or browser extensions - this ain't no Cirque du Soleil show. I am using a Mac and so my personal means are limited.</p>
+<p>And don't expect any deployment or production readiness insights - we'll let you handle the red carpet rollout yourself.</p>
+<p><strong>So, now that we've cleared the air, let's get started. Grab your coffee, fire up your IDE and let's dive into the world of Flutter, Rust and IOTA!</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-how-everything-works-together"><a class="header" href="#-how-everything-works-together">💡 How everything works together</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="description-targets"><a class="header" href="#description-targets">description: Targets</a></h2>
+<h1 id="-cross-compiling"><a class="header" href="#-cross-compiling">🏭 Cross-Compiling</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="description-how-rust-comes-into-the-game"><a class="header" href="#description-how-rust-comes-into-the-game">description: How Rust comes into the game</a></h2>
+<h1 id="-flutter-rust-bridge"><a class="header" href="#-flutter-rust-bridge">🌁 Flutter Rust Bridge</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="description-sources"><a class="header" href="#description-sources">description: Sources</a></h2>
+<h1 id="about"><a class="header" href="#about">About</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="description-dart---rust-mappings"><a class="header" href="#description-dart---rust-mappings">description: Dart - Rust Mappings</a></h2>
+<h1 id="features"><a class="header" href="#features">Features</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="description-stardust--library-versions-and-how-to-mix"><a class="header" href="#description-stardust--library-versions-and-how-to-mix">description: Stardust / Library versions and how to mix</a></h2>
+<h1 id="-iota-libraries"><a class="header" href="#-iota-libraries">📚 IOTA libraries</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="xcode"><a class="header" href="#xcode">Xcode</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="description-woher--versionen"><a class="header" href="#description-woher--versionen">description: Woher / versionen</a></h2>
+<h1 id="set-up"><a class="header" href="#set-up">Set up</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="description-libraries-reinziehen-Übersicht-log-files"><a class="header" href="#description-libraries-reinziehen-Übersicht-log-files">description: Libraries reinziehen, Übersicht, Log files,</a></h2>
+<h1 id="essentials"><a class="header" href="#essentials">Essentials</a></h1>
+<p>Walk through XCode</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="android-studio"><a class="header" href="#android-studio">Android Studio</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="description-woher--versionen-1"><a class="header" href="#description-woher--versionen-1">description: Woher / versionen</a></h2>
+<h1 id="set-up-1"><a class="header" href="#set-up-1">Set up</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="essentials-1"><a class="header" href="#essentials-1">Essentials</a></h1>
+<p>SDKs, Virtual devices</p>
+<p>File system of Virtual Devices</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="flutter"><a class="header" href="#flutter">Flutter</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="description-woher--versionen-2"><a class="header" href="#description-woher--versionen-2">description: Woher / versionen</a></h2>
+<h1 id="set-up-2"><a class="header" href="#set-up-2">Set up</a></h1>
+<p>{% embed url=&quot;https://docs.flutter.dev/get-started/install&quot; %}</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="essentials-2"><a class="header" href="#essentials-2">Essentials</a></h1>
+<p>wo wird Flutter abgelegt?</p>
+<p>Project structure</p>
+<p>Flutter doctor / Updates</p>
+<p>Starten über IDE</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rust"><a class="header" href="#rust">Rust</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="description-woher--versionen-3"><a class="header" href="#description-woher--versionen-3">description: Woher / versionen</a></h2>
+<h1 id="set-up-3"><a class="header" href="#set-up-3">Set up</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="essentials-3"><a class="header" href="#essentials-3">Essentials</a></h1>
+<p>Cargo.lock -&gt; Herausfinden von Versionen, crates.io - Wie man Referenzen in github löst</p>
+<p>Updates mit rustc update, rustup show</p>
+<p>Toolchains</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ide-visual-studio-code"><a class="header" href="#ide-visual-studio-code">IDE: Visual Studio Code</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><hr />
+<h2 id="description-woher--versionen-4"><a class="header" href="#description-woher--versionen-4">description: Woher / versionen</a></h2>
+<h1 id="set-up-4"><a class="header" href="#set-up-4">Set up</a></h1>
+<p>Extensions</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="flutter-only"><a class="header" href="#flutter-only">Flutter only</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="flutter-and-rust"><a class="header" href="#flutter-and-rust">Flutter and Rust</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="frb-example-app"><a class="header" href="#frb-example-app">FRB Example App</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="logging-example-app"><a class="header" href="#logging-example-app">Logging Example App</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+[book]
+authors = ["Kai Müller"]
+language = "en"
+multilingual = false
+src = "src"
+title = "IOTA for Flutter"
+
+[build]
+build-dir = "docs"
+create-missing = false
