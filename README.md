@@ -6,6 +6,11 @@ A tutorial to build modern apps using the technology of IOTA
 
 ---
 
+Go ahead -> [Start reading the Tutorial](https://iota-for-flutter.github.io/tutorial)
+
+---
+
+
 ## Hey there!&#x20;
 
 Ready to add some sparkle to your app development? Stay here, where we not only support the IOTA Mainnet but also the Shimmer Network! With this flexible approach, developers can easily choose whether to integrate the Chrysalis or the Stardust version into their projects (and let's be honest, who doesn't love a little shimmer in their code)? So why wait? Say hello to Flutter and Rust and join me on this exciting journey and let us make your apps shine!
