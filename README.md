@@ -2,11 +2,11 @@
 # 👋 About: IOTA for Flutter
 
 
-A tutorial to build modern apps using the technology of IOTA
+A Tutorial to build modern apps using the technology of IOTA
 
 ---
 
-Go ahead -> [Start reading the Tutorial](https://iota-for-flutter.github.io/tutorial)
+Go ahead -> [Open the Github Page and start reading the complete Tutorial](https://iota-for-flutter.github.io/tutorial)
 
 ---
 
