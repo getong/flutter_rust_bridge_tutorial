@@ -8,19 +8,19 @@ description: A tutorial to build modern apps using the technology of IOTA
 
 Ready to add some sparkle to your app development? Stay here, where we not only support the IOTA Mainnet but also the Shimmer Network! With this flexible approach, developers can easily choose whether to integrate the Chrysalis or the Stardust version into their projects (and let's be honest, who doesn't love a little shimmer in their code)? So why wait? Say hello to Flutter and Rust and join me on this exciting journey and let us make your apps shine!
 
-{% hint style="info" %}
-In fact, the presented workflow supports both the _Shimmer Network_ (protocol version "Stardust") and the _IOTA Mainnet_ (protocol version "Chrysalis"). It depends on which library versions you as developer include in your project.&#x20;
 
-I assume developers are more interested in adopting the Stardust version, so I use the Shimmer (Testnet) and related libraries in my examples.&#x20;
-{% endhint %}
+> In fact, the presented workflow supports both the _Shimmer Network_ (protocol version "Stardust") and the _IOTA Mainnet_ (protocol version "Chrysalis"). It depends on which library versions you as developer include in your project.&#x20;
+>
+> I assume developers are more interested in adopting the Stardust version, so I use the Shimmer (Testnet) and related libraries in my examples.&#x20;
+
 
 ## Background
 
 Originally I was searching for a workflow to build real-world products in the form of mobile and desktop applications backed by the Distributed Ledger Technology of IOTA. My goal was and is to facilitate the adoption of IOTA.
 
-{% hint style="info" %}
-Just to clarify, every time I mention _IOTA_, I'm also referring to _Shimmer_.&#x20;
-{% endhint %}
+
+> Just to clarify, every time I mention _IOTA_, I'm also referring to _Shimmer_.&#x20;
+
 
 I wanted to create a flexible solution that would allow developers to use a reduced technology stack for their projects. With _IOTA for Flutter_, I believe we've achieved that goal, and I'm excited to share it with the world. And believe me: Coming from Java and JavaScript frameworks I was not at all familiar with Flutter and Rust in the beginning.
 
@@ -42,10 +42,6 @@ But, there's no substitute for hands-on experience, and that's where _IOTA for F
 
 _IOTA for Flutter_ provides a tutorial-style documentation that walks you through the process of integrating IOTA and Shimmer step-by-step. So don't be afraid to jump in and give it a shot! Who knows, you might just surprise yourself with what you can accomplish.
 
-{% embed url="https://iota.org" %}
-More information on IOTA's website
-{% endembed %}
+> [More information about IOTA](https://iota.org)
+> [More information about Shimmer](https://shimmer.network)
 
-{% embed url="https://shimmer.network" %}
-More information on Shimmer's website
-{% endembed %}
