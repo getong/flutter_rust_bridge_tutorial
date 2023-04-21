@@ -1,8 +1,11 @@
----
-description: A tutorial to build modern apps using the technology of IOTA
----
 
 # 👋 About: IOTA for Flutter
+
+---
+
+A tutorial to build modern apps using the technology of IOTA
+
+---
 
 ## Hey there!&#x20;
 
