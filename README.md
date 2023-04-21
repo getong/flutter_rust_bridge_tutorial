@@ -1,7 +1,6 @@
 
 # 👋 About: IOTA for Flutter
 
----
 
 A tutorial to build modern apps using the technology of IOTA
 
@@ -46,5 +45,6 @@ But, there's no substitute for hands-on experience, and that's where _IOTA for F
 _IOTA for Flutter_ provides a tutorial-style documentation that walks you through the process of integrating IOTA and Shimmer step-by-step. So don't be afraid to jump in and give it a shot! Who knows, you might just surprise yourself with what you can accomplish.
 
 > [More information about IOTA](https://iota.org)
+
 > [More information about Shimmer](https://shimmer.network)
 
