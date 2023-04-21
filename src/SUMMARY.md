@@ -1,8 +1,6 @@
 # Table of contents
 
----
-
-# WELCOME
+# Welcome
 
 ---
 
@@ -12,7 +10,7 @@
   - [Dart vs. JavaScript](welcome/when-you-are-js-developer/dart-vs.-javascript.md)
 - [✨ Which resources you need](welcome/which-resources-you-need.md)
 - [🧐 How to get the most out of this tutorial](welcome/how-to-get-the-most-out-of-this-tutorial.md)
-- [⚠ What does this tutorial NOT contain?](welcome/what-does-this-tutorial-not-contain.md)
+- [⚠️ What does this tutorial NOT contain?](welcome/what-does-this-tutorial-not-contain.md)
 
 ---
 

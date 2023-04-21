@@ -82,6 +82,15 @@ hr {
     font-size: 1.21em;
 }
 
+.chapter {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.chapter li.part-title {
+    font-size: 1.25em;
+}
+
 /* 
 ===============
     Boxes 
