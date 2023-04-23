@@ -20,4 +20,4 @@ Finally, I won't be exploring the proof-of-concept for Linux, Windows, browsers,
 
 And don't expect any deployment or production readiness insights - we'll let you handle the red carpet rollout yourself.
 
-**So, now that we've cleared the air, let's get started. Grab your coffee, fire up your IDE and let's dive into the world of Flutter, Rust and IOTA!**
+> # So, now that we've cleared the air, let's get started. Grab your coffee, fire up your IDE and let's dive into the world of Flutter, Rust and IOTA!
