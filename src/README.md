@@ -2,7 +2,7 @@
 
 ---
 
-A tutorial to build modern apps using the technology of IOTA
+A Tutorial to build modern apps using IOTA, the next generation Distributed Ledger Technology
 
 ---
 
@@ -34,7 +34,11 @@ _IOTA for Flutter_ is a sponsored project by the Tangle Community Treasury. The 
 
 If you're a Flutter developer who's not familiar with IOTA or Shimmer, don't worry!
 
-Of course, it's a good idea to take a look at the official websites for IOTA and Shimmer, see below. There, you'll find plenty of resources and information to help you get up to speed on the basics of Distributed Ledger Technology and what it is used for.
+By exploring IOTA, a Distributed Ledger Technology (DLT), you can expand your knowledge and explore the exciting possibilities of new use cases beyond the limitations of Web 2.0. This technology has the potential to revolutionize various industries, such as supply chain management, smart city infrastructure, and digital identity verification.
+
+IOTA is unique in that it is a permissionless, decentralized system designed to enable secure and feeless exchange of value and data transfer between connected actors. Unlike traditional blockchain-based systems, IOTA does not rely on miners to validate transactions. Instead, each transaction verifies two previous transactions, creating a web-like network of transactions called the TANGLE. This makes IOTA's DLT highly scalable and able to handle large amounts of transactions with zero fees.
+
+Of course, it's a good idea to take a look at the official websites for IOTA and Shimmer (which is the staging network of IOTA), see below. There, you'll find plenty of resources and information to help you get up some more information about it and what it is used for.
 
 But, there's no substitute for hands-on experience, and that's where _IOTA for Flutter_ comes in. While the official websites for IOTA and Shimmer provide a great starting point, the best way to truly understand how to use these technologies in your Flutter projects is to give it a try yourself.&#x20;
 
