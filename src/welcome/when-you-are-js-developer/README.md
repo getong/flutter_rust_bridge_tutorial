@@ -30,13 +30,13 @@ Flutter is like a treasure trove of creative possibilities, just waiting for you
 
 Later on, you will realize how interacting with Rust libraries empowers you to develop potent products - precisely what you are aiming for.
 
-## But - everything as code!?
+## Everything as code!?
 
 In Flutter, a component is a self-contained, reusable piece of a user interface. It is a widget that can be used in a Flutter app to create a specific visual and/or interactive element, such as a button, text field, or image. A component in Flutter can be composed of other components, making it possible to create complex UIs by assembling smaller, reusable parts.
 
-Doesn't that sound familiar !?&#x20;
+Doesn't that sound familiar to you!?&#x20;
 
-Let's compare a single Flutter widget with a Vue.js component.
+Let's compare a single Flutter widget with a Vue.js component. In Flutter you write the whole component as Dart code:
 
 ```
 import 'package:flutter/material.dart';

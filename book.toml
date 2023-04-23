@@ -11,3 +11,4 @@ create-missing = false
 
 [output.html]
 additional-css = ["theme/custom.css"]
+no-section-label = true

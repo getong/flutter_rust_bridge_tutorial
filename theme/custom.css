@@ -6,6 +6,8 @@
     --pblue: #053C5E;
     --pgreen: #3F826D;
     --pyellow: #FDCA40;
+    --sidebar-width: 400px;
+    --content-max-width: 850px;
 }
 
 /*html, body {

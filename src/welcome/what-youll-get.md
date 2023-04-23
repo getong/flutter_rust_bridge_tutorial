@@ -14,7 +14,7 @@ The focus of this project is to provide a user interface or interaction capabili
 
 The main goal is achieved by building mobile and desktop apps. The focus is on the target platforms that Flutter supports, with the caveat that the proof-of-concept has only been tested on iOS, Android, and macOS.&#x20;
 
-Rust plays a crucial role in _IOTA for Flutter_, too. All of IOTA's libraries are written in Rust and are referred to as the Single Source of Truth. I will explain how these Rust libraries are used as a dependency in a custom library which is cross-compiled and integrated into Flutter.
+Rust plays a crucial role in _IOTA for Flutter_, too. All of IOTA's libraries are written in Rust and are referred to as the **Single Source of Truth**. I will explain how these Rust libraries are used as a dependency in a custom library which is cross-compiled and integrated into Flutter.
 
 ## Tutorial Structure: Overview, Fundamentals, and Practical Chapters
 
