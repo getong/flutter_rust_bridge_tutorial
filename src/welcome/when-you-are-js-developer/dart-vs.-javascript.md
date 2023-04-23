@@ -6,7 +6,13 @@ Just a few examples to show you will feel familiar - but with new things to know
 
 ---
 
-Of course, this is a completely incomplete list 🤪, but it is intended to show that there are many similarities between Dart and JavaScript, making it easier to switch between the two languages or even learn both simultaneously. There are other rules too, but you can easily learn them.
+Below, you'll find a completely incomplete list 🤪, but it is intended to show that there are many similarities between Dart and JavaScript, making it easier to switch between the two languages or even learn both simultaneously. There are other rules too, but you can easily learn them.
+
+Some more comprehensive information you can find in the official docs. Here are two links:
+
+<a href="https://docs.flutter.dev/get-started/flutter-for/web-devs" target="_blank">👉 &nbsp; Flutter for web developers</a>
+
+<a href="https://dart.dev/guides/language/coming-from/js-to-dart" target="_blank">👉 &nbsp; Learning Dart as a JavaScript developer</a>
 
 ### Variable declaration
 

@@ -14,7 +14,9 @@ So get ready to rock and roll, code warriors, because it's time to expand your p
 
 > When I first started learning Flutter, I had zero prior knowledge. To give myself a boost of motivation, I turned to videos to get a better understanding of what Flutter is all about. Watching videos not only helped me to get started with Flutter, but also gave me the confidence to continue learning and building my own apps.
 >
-> I personally like the YouTube Channel of Mitch Koko who creates stunning user interfaces: [https://www.youtube.com/@createdbykoko](https://www.youtube.com/@createdbykoko)
+> I personally like the YouTube Channel of _Mitch Koko_ who creates stunning user interfaces:
+>
+> <a href="https://www.youtube.com/@createdbykoko" target="_blank">👉 &nbsp; 📱I create apps & tutorials about creating apps👨🏽‍💻</a>
 
 ## Everything as code!?
 
