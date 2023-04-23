@@ -147,7 +147,7 @@
                     <main>
                         <h1 id="dart-vs-javascript"><a class="header" href="#dart-vs-javascript">Dart vs. JavaScript</a></h1>
 <hr />
-<p>Just a few examples to show you will feel familiar - but with new things to know</p>
+<p>Just a few examples to show you will feel familiar - but you need to learn new rules, too</p>
 <hr />
 <p>Below, you'll find a completely incomplete list 🤪, but it is intended to show that there are many similarities between Dart and JavaScript, making it easier to switch between the two languages or even learn both simultaneously. There are other rules too, but you can easily learn them.</p>
 <p>Some more comprehensive information you can find in the official docs. Here are two links:</p>
@@ -177,27 +177,27 @@ mystr = 10; // THIS ASSIGNMENT DOESN'T WORK!
 }
 </code></pre>
 <h3 id="defining-a-function"><a class="header" href="#defining-a-function">Defining a function</a></h3>
-<h4 id="javascript"><a class="header" href="#javascript">JavaScript</a></h4>
+<h5 id="javascript"><a class="header" href="#javascript">JavaScript</a></h5>
 <pre><code class="language-javascript">function addNumbers(a, b) {
   return a + b;
 }
 </code></pre>
-<h4 id="dart"><a class="header" href="#dart">Dart</a></h4>
+<h5 id="dart"><a class="header" href="#dart">Dart</a></h5>
 <pre><code class="language-dart">int addNumbers(int a, int b) {
   return a + b;
 }
 </code></pre>
 <h3 id="working-with-arrays"><a class="header" href="#working-with-arrays">Working with arrays</a></h3>
-<h4 id="javascript-1"><a class="header" href="#javascript-1">JavaScript</a></h4>
+<h5 id="javascript-1"><a class="header" href="#javascript-1">JavaScript</a></h5>
 <pre><code class="language-javascript">var fruits = [&quot;apple&quot;, &quot;strawberry&quot;, &quot;cherry&quot;];
 fruits.push(&quot;kiwi&quot;);
 </code></pre>
-<h4 id="dart-1"><a class="header" href="#dart-1">Dart</a></h4>
+<h5 id="dart-1"><a class="header" href="#dart-1">Dart</a></h5>
 <pre><code class="language-dart">List&lt;String&gt; fruits = ['apple', 'strawberry', 'cherry'];
 fruits.add('kiwi');
 </code></pre>
 <h3 id="using-dot-notation-to-access-object-properties-and-methods"><a class="header" href="#using-dot-notation-to-access-object-properties-and-methods">Using dot notation to access object properties and methods</a></h3>
-<h4 id="javascript-2"><a class="header" href="#javascript-2">JavaScript</a></h4>
+<h5 id="javascript-2"><a class="header" href="#javascript-2">JavaScript</a></h5>
 <pre><code class="language-javascript">class Person {
   constructor() {
     this.name = &quot;&quot;;
@@ -216,7 +216,7 @@ person.name = &quot;Joe&quot;;
 person.age = 44;
 person.greet();
 </code></pre>
-<h4 id="dart-2"><a class="header" href="#dart-2">Dart</a></h4>
+<h5 id="dart-2"><a class="header" href="#dart-2">Dart</a></h5>
 <pre><code class="language-dart">class Person {
   String name;
   int age;
@@ -232,27 +232,27 @@ person.age = 44;
 person.greet();
 </code></pre>
 <h3 id="usage-of-string-interpolation"><a class="header" href="#usage-of-string-interpolation">Usage of string interpolation</a></h3>
-<h4 id="javascript-3"><a class="header" href="#javascript-3">JavaScript</a></h4>
+<h5 id="javascript-3"><a class="header" href="#javascript-3">JavaScript</a></h5>
 <pre><code class="language-javascript">var name = &quot;Joe&quot;;
 console.log(`Hello, my name is ${name}`);
 </code></pre>
-<h4 id="dart-3"><a class="header" href="#dart-3">Dart</a></h4>
+<h5 id="dart-3"><a class="header" href="#dart-3">Dart</a></h5>
 <pre><code class="language-dart">var name = &quot;Joe&quot;;
 print(&quot;Hello, my name is $name&quot;);
 </code></pre>
 <h3 id="usage-of-operators"><a class="header" href="#usage-of-operators">Usage of operators</a></h3>
-<h4 id="javascript-4"><a class="header" href="#javascript-4">JavaScript</a></h4>
+<h5 id="javascript-4"><a class="header" href="#javascript-4">JavaScript</a></h5>
 <pre><code class="language-javascript">var x = 10;
 var y = 5;
 var z = x + y;
 </code></pre>
-<h4 id="dart-4"><a class="header" href="#dart-4">Dart</a></h4>
+<h5 id="dart-4"><a class="header" href="#dart-4">Dart</a></h5>
 <pre><code class="language-dart">var x = 10;
 var y = 5;
 var z = x + y;
 </code></pre>
 <h3 id="usage-of-if-statements"><a class="header" href="#usage-of-if-statements">Usage of <code>if</code> statements</a></h3>
-<h4 id="javascript-5"><a class="header" href="#javascript-5">JavaScript</a></h4>
+<h5 id="javascript-5"><a class="header" href="#javascript-5">JavaScript</a></h5>
 <pre><code class="language-javascript">var age = 25;
 if (age &gt;= 18) {
   console.log(&quot;You are an adult&quot;);
@@ -260,7 +260,7 @@ if (age &gt;= 18) {
   console.log(&quot;You are a minor&quot;);
 }
 </code></pre>
-<h4 id="dart-5"><a class="header" href="#dart-5">Dart</a></h4>
+<h5 id="dart-5"><a class="header" href="#dart-5">Dart</a></h5>
 <pre><code class="language-dart">var age = 25;
 if (age &gt;= 18) {
   print(&quot;You are an adult&quot;);
@@ -269,7 +269,7 @@ if (age &gt;= 18) {
 }
 </code></pre>
 <h3 id="usage-of-switch-statements"><a class="header" href="#usage-of-switch-statements">Usage of <code>switch</code> statements</a></h3>
-<h4 id="javascript-6"><a class="header" href="#javascript-6">JavaScript</a></h4>
+<h5 id="javascript-6"><a class="header" href="#javascript-6">JavaScript</a></h5>
 <pre><code class="language-javascript">var fruit = &quot;apple&quot;;
 switch (fruit) {
   case &quot;banana&quot;:
@@ -282,7 +282,7 @@ switch (fruit) {
     console.log(&quot;This is not a fruit&quot;);
 }
 </code></pre>
-<h4 id="dart-6"><a class="header" href="#dart-6">Dart</a></h4>
+<h5 id="dart-6"><a class="header" href="#dart-6">Dart</a></h5>
 <pre><code class="language-dart">var fruit = &quot;apple&quot;;
 switch (fruit) {
   case &quot;banana&quot;:
@@ -296,14 +296,14 @@ switch (fruit) {
 }
 </code></pre>
 <h3 id="usage-of-try-catch-blocks"><a class="header" href="#usage-of-try-catch-blocks">Usage of <code>try-catch</code> blocks</a></h3>
-<h4 id="javascript-7"><a class="header" href="#javascript-7">JavaScript</a></h4>
+<h5 id="javascript-7"><a class="header" href="#javascript-7">JavaScript</a></h5>
 <pre><code class="language-javascript">try {
   // code that may throw an error
 } catch (error) {
   console.log(`Error: ${error.message}`);
 }
 </code></pre>
-<h4 id="dart-7"><a class="header" href="#dart-7">Dart</a></h4>
+<h5 id="dart-7"><a class="header" href="#dart-7">Dart</a></h5>
 <pre><code class="language-dart">try {
   // code that may throw an error
 } catch (error) {

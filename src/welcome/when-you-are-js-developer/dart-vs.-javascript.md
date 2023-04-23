@@ -2,7 +2,7 @@
 
 ---
 
-Just a few examples to show you will feel familiar - but with new things to know
+Just a few examples to show you will feel familiar - but you need to learn new rules, too
 
 ---
 
@@ -55,7 +55,7 @@ class MyCat {
 
 ### Defining a function
 
-#### JavaScript
+##### JavaScript
 
 ```javascript
 function addNumbers(a, b) {
@@ -63,7 +63,7 @@ function addNumbers(a, b) {
 }
 ```
 
-#### Dart
+##### Dart
 
 ```dart
 int addNumbers(int a, int b) {
@@ -73,14 +73,14 @@ int addNumbers(int a, int b) {
 
 ### Working with arrays
 
-#### JavaScript
+##### JavaScript
 
 ```javascript
 var fruits = ["apple", "strawberry", "cherry"];
 fruits.push("kiwi");
 ```
 
-#### Dart
+##### Dart
 
 ```dart
 List<String> fruits = ['apple', 'strawberry', 'cherry'];
@@ -89,7 +89,7 @@ fruits.add('kiwi');
 
 ### Using dot notation to access object properties and methods
 
-#### JavaScript
+##### JavaScript
 
 ```javascript
 class Person {
@@ -111,7 +111,7 @@ person.age = 44;
 person.greet();
 ```
 
-#### Dart
+##### Dart
 
 ```dart
 class Person {
@@ -131,14 +131,14 @@ person.greet();
 
 ### Usage of string interpolation
 
-#### JavaScript
+##### JavaScript
 
 ```javascript
 var name = "Joe";
 console.log(`Hello, my name is ${name}`);
 ```
 
-#### Dart
+##### Dart
 
 ```dart
 var name = "Joe";
@@ -147,7 +147,7 @@ print("Hello, my name is $name");
 
 ### Usage of operators
 
-#### JavaScript
+##### JavaScript
 
 ```javascript
 var x = 10;
@@ -155,7 +155,7 @@ var y = 5;
 var z = x + y;
 ```
 
-#### Dart
+##### Dart
 
 ```dart
 var x = 10;
@@ -165,7 +165,7 @@ var z = x + y;
 
 ### Usage of `if` statements
 
-#### JavaScript
+##### JavaScript
 
 ```javascript
 var age = 25;
@@ -176,7 +176,7 @@ if (age >= 18) {
 }
 ```
 
-#### Dart
+##### Dart
 
 ```dart
 var age = 25;
@@ -189,7 +189,7 @@ if (age >= 18) {
 
 ### Usage of `switch` statements
 
-#### JavaScript
+##### JavaScript
 
 ```javascript
 var fruit = "apple";
@@ -205,7 +205,7 @@ switch (fruit) {
 }
 ```
 
-#### Dart
+##### Dart
 
 ```dart
 var fruit = "apple";
@@ -223,7 +223,7 @@ switch (fruit) {
 
 ### Usage of `try-catch` blocks
 
-#### JavaScript
+##### JavaScript
 
 ```javascript
 try {
@@ -233,7 +233,7 @@ try {
 }
 ```
 
-#### Dart
+##### Dart
 
 ```dart
 try {
