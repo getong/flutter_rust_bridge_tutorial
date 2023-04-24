@@ -71,6 +71,10 @@ hr {
     border-color: #b4b4b4;
 }
 
+.content p {
+    margin-block-end: 1.1em;
+}
+
 .hljs {
     border: 1px solid #0000001a;
     border-radius: 0.25rem;

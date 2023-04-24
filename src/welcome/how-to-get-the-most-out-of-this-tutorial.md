@@ -1,6 +1,12 @@
 # 🧐 How to get the most out of this tutorial
 
-Chapter by chapter I will explain you the steps to connect Flutter and Rust to IOTA. I therefore recommend that you also read chapter by chapter and follow the steps.
+---
+
+Recommendations for a successful integration
+
+---
+
+Chapter by chapter I will explain you the steps to connect Flutter and Rust to IOTA. I therefore recommend that you also read section by section and follow the steps.
 
 Second, I advise you to set up a project from scratch. I know it can be tempting to just download the code from the repository and run it, but there's a good chance you'll run into problems.
 

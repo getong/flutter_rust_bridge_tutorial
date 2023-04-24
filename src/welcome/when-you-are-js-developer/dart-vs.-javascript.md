@@ -2,7 +2,7 @@
 
 ---
 
-Just a few examples to show you will feel familiar - but you need to learn new rules, too
+Just a few examples to show you'll feel familiar - but you'll also have to learn new rules
 
 ---
 

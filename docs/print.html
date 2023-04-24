@@ -168,7 +168,7 @@
 <p><em>IOTA for Flutter</em> is a sponsored project by the Tangle Community Treasury. The funding allows me to organize my collected notes and prepare them for you. At this point, a big thank you to everyone involved!</p>
 <h2 id="you-know-flutter-but-not-iota"><a class="header" href="#you-know-flutter-but-not-iota">You know Flutter but not IOTA?</a></h2>
 <p>By exploring IOTA, a Distributed Ledger Technology (DLT), you can expand your knowledge and explore the exciting possibilities of new use cases beyond the limitations of Web 2.0. This technology has the potential to revolutionize various industries, such as supply chain management, smart city infrastructure, and digital identity verification.</p>
-<p>IOTA is unique in that it is a permissionless, decentralized system designed to enable secure and feeless exchange of value and data transfer between connected actors. Unlike traditional blockchain-based systems, IOTA does not rely on miners to validate transactions. Instead, each transaction verifies two previous transactions, creating a web-like network of transactions called the TANGLE. This makes IOTA's DLT highly scalable and able to handle large amounts of transactions with zero fees.</p>
+<p>IOTA is unique in that it is a permissionless, decentralized system designed to enable secure and feeless exchange of value and data transfer between connected actors. Unlike traditional blockchain-based systems, IOTA does not rely on miners to validate transactions. Instead, each transaction verifies two previous transactions, creating a web-like network of transactions called the <em>Tangle</em>. This makes IOTA's DLT highly scalable and able to handle large amounts of transactions with zero fees.</p>
 <p>Of course, it's a good idea to take a look at the official websites for IOTA and Shimmer (which is the staging network of IOTA), see below. There, you'll find plenty of resources and information to help you get up some more information about it and what it is used for.</p>
 <blockquote>
 <p>If you're a Flutter developer who's not familiar with IOTA or Shimmer, don't worry!</p>
@@ -279,7 +279,7 @@ export default {
 <p>A very important difference to JavaScript Frameworks is: Flutter compiles the Dart code to native machine code. Theoretically you have the control over every pixel on the screen. BTW, this also differs from React Native where written code is compiled only to the native UI components.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="dart-vs-javascript"><a class="header" href="#dart-vs-javascript">Dart vs. JavaScript</a></h1>
 <hr />
-<p>Just a few examples to show you will feel familiar - but you need to learn new rules, too</p>
+<p>Just a few examples to show you'll feel familiar - but you'll also have to learn new rules</p>
 <hr />
 <p>Below, you'll find a completely incomplete list 🤪, but it is intended to show that there are many similarities between Dart and JavaScript, making it easier to switch between the two languages or even learn both simultaneously. There are other rules too, but you can easily learn them.</p>
 <p>Some more comprehensive information you can find in the official docs. Here are two links:</p>
@@ -443,23 +443,31 @@ switch (fruit) {
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="-which-resources-you-need"><a class="header" href="#-which-resources-you-need">✨ Which resources you need</a></h1>
-<p>Of course, you must meet all the requirements listed for each tool of the technology stack used.</p>
-<p>Furthermore, you'll need </p>
-<ul>
-<li>
-<p>LOTS OF FREE GB! XCode, Android Studio, the SDKs and Virtual Devices, all that stuff needs GBs on your disc. Welcome to app development! Additionally it turns out that the cross-compiling process to build the libraries takes an enormous amount of disk space PER target, too. </p>
-</li>
-<li>
-<p>If you want to develop for Windows or Linux, you need a PC with Windows resp. Linux operating system or a virtual machine with Windows/Linux. I haven't tried that, see also: 
+<hr />
+<p>Meeting listed requirements of the used tools is a must, with some additional needs</p>
+<hr />
+<h2 id="lots-of-free-gb"><a class="header" href="#lots-of-free-gb">Lots of free GB</a></h2>
+<p>XCode, Android Studio, the SDKs and Virtual Devices, all that stuff needs GBs on your disc. Welcome to app development! Additionally it turns out that the cross-compiling process to build the libraries takes an enormous amount of disk space PER target, too.</p>
+<h3 id="xcode"><a class="header" href="#xcode">XCode</a></h3>
+<p>As you continue to use Xcode, the available storage on your hard drive gradually decreases. This is because numerous files are generated automatically during project builds, with a significant amount of them being stored in the DerivedData folder. This folder alone can occupy anywhere from a few hundred MB to several GB of space.</p>
+<figure style="margin:0;"><img src="welcome/../assets/derived_data.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Disc space used by derived data</p></figcaption></figure>
+<p>Fortunately, you can easily remove files from this folder without any adverse effects. By doing so, you can recover valuable space on your Mac, making it more efficient to work with Xcode.</p>
+<p><a href="https://www.kindacode.com/article/ways-to-delete-derived-data-in-xcode/" target="_blank">👉   2 Ways to Delete Derived Data in Xcode</a></p>
+<h3 id="building-apps"><a class="header" href="#building-apps">Building apps</a></h3>
+<p>If you build more apps and cross-compile more targets, the disk space usage increases. However, you can safely remove these subfolders. The only difference it makes is in terms of time - the first build will take longer if the target folder has been deleted.</p>
+<figure style="margin:0;"><img src="welcome/../assets/playground_build.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Disc space used by build targets of example app "Playground"</p></figcaption></figure>
+<h2 id="required-devices-for-testing-and-running"><a class="header" href="#required-devices-for-testing-and-running">Required Devices for Testing and Running</a></h2>
+<p>Although you can develop code for all platforms on a single machine, you can only execute and test iOS and macOS applications on macOS devices, Windows applications on Windows devices, and Linux applications on Linux devices.</p>
+<p>I haven't tried Windows and Linux Cross-Platform Development, see also: 
 <a href="welcome/what-does-this-tutorial-not-contain.html">What does this tutorial NOT contain</a></p>
-</li>
-<li>
-<p>Finally, one of the most important resources is: <strong>YOU</strong><br />
-You need to be patient, you may experience some hair-pulling moments when things grind to a halt, but when it finally all comes together, it's like hitting a bullseye on a dartboard - satisfying as heck!</p>
-</li>
-</ul>
+<h2 id="the-key-resource"><a class="header" href="#the-key-resource">The Key Resource</a></h2>
+<p>Finally, the most important resources is: <strong>YOU</strong></p>
+<p>You need to be patient, you may experience some hair-pulling moments when things grind to a halt, but when it finally all comes together, it's like hitting a bullseye on a dartboard - satisfying as heck!</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="-how-to-get-the-most-out-of-this-tutorial"><a class="header" href="#-how-to-get-the-most-out-of-this-tutorial">🧐 How to get the most out of this tutorial</a></h1>
-<p>Chapter by chapter I will explain you the steps to connect Flutter and Rust to IOTA. I therefore recommend that you also read chapter by chapter and follow the steps.</p>
+<hr />
+<p>Recommendations for a successful integration</p>
+<hr />
+<p>Chapter by chapter I will explain you the steps to connect Flutter and Rust to IOTA. I therefore recommend that you also read section by section and follow the steps.</p>
 <p>Second, I advise you to set up a project from scratch. I know it can be tempting to just download the code from the repository and run it, but there's a good chance you'll run into problems.</p>
 <p>Due to the different versions of Rust and Flutter you may have, it's safest to follow the step-by-step instructions and selectively include specific files in your own project.</p>
 <p>Another reason is that not only will you learn more about the intricacies of setup, but you'll also be better equipped to troubleshoot any problems that arise.</p>
@@ -509,7 +517,7 @@ You need to be patient, you may experience some hair-pulling moments when things
 <p>Project structure</p>
 <p>Flutter doctor / Updates</p>
 <p>Starten über IDE</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="xcode"><a class="header" href="#xcode">Xcode</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="xcode-1"><a class="header" href="#xcode-1">Xcode</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><hr />
 <h2 id="description-woher--versionen-1"><a class="header" href="#description-woher--versionen-1">description: Woher / versionen</a></h2>
 <h1 id="set-up-1"><a class="header" href="#set-up-1">Set up</a></h1>

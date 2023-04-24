@@ -34,7 +34,7 @@ _IOTA for Flutter_ is a sponsored project by the Tangle Community Treasury. The 
 
 By exploring IOTA, a Distributed Ledger Technology (DLT), you can expand your knowledge and explore the exciting possibilities of new use cases beyond the limitations of Web 2.0. This technology has the potential to revolutionize various industries, such as supply chain management, smart city infrastructure, and digital identity verification.
 
-IOTA is unique in that it is a permissionless, decentralized system designed to enable secure and feeless exchange of value and data transfer between connected actors. Unlike traditional blockchain-based systems, IOTA does not rely on miners to validate transactions. Instead, each transaction verifies two previous transactions, creating a web-like network of transactions called the TANGLE. This makes IOTA's DLT highly scalable and able to handle large amounts of transactions with zero fees.
+IOTA is unique in that it is a permissionless, decentralized system designed to enable secure and feeless exchange of value and data transfer between connected actors. Unlike traditional blockchain-based systems, IOTA does not rely on miners to validate transactions. Instead, each transaction verifies two previous transactions, creating a web-like network of transactions called the _Tangle_. This makes IOTA's DLT highly scalable and able to handle large amounts of transactions with zero fees.
 
 Of course, it's a good idea to take a look at the official websites for IOTA and Shimmer (which is the staging network of IOTA), see below. There, you'll find plenty of resources and information to help you get up some more information about it and what it is used for.
 
