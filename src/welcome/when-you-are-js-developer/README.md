@@ -26,6 +26,10 @@ Google and others provide tools and tons of material that make working with Flut
 
    <a href="https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG" target="_blank">👉 &nbsp; Short videos about the weekly widgets or packages</a>
 
+3. Packages - widgets for all purposes:
+
+   <a href="https://pub.dev/" target="_blank">👉 &nbsp; The official package repository for Dart and Flutter apps</a>
+
 Flutter is like a treasure trove of creative possibilities, just waiting for you to unlock its secrets. With Flutter, you can build stunning user interfaces, craft intricate animations and interactions, and even dip your toes into the wild and wacky world of game development. You'll discover lots of sources of inspiration that will leave you buzzing with excitement.&#x20;
 
 Later on, you will realize how interacting with Rust libraries empowers you to develop potent products - precisely what you are aiming for.
