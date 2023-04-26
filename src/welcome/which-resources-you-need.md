@@ -12,13 +12,11 @@ XCode, Android Studio, the SDKs and Virtual Devices, all that stuff needs GBs on
 
 ### XCode
 
-As you continue to use Xcode, the available storage on your hard drive gradually decreases. This is because numerous files are generated automatically during project builds, with a significant amount of them being stored in the DerivedData folder. This folder alone can occupy anywhere from a few hundred MB to several GB of space.
+As you continue to use Xcode, the available storage on your hard drive gradually decreases. This is because numerous files are generated automatically during project builds, with a significant amount of them being stored in the Derived Data folder. This folder alone can occupy anywhere from a few hundred MB to several GB of space.
 
 <figure style="margin:0;"><img src="../assets/derived_data.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Disc space used by derived data</p></figcaption></figure>
 
 Fortunately, you can easily remove files from this folder without any adverse effects. By doing so, you can recover valuable space on your Mac, making it more efficient to work with Xcode.
-
-<a href="https://www.kindacode.com/article/ways-to-delete-derived-data-in-xcode/" target="_blank">👉 &nbsp; 2 Ways to Delete Derived Data in Xcode</a>
 
 ### Building apps
 

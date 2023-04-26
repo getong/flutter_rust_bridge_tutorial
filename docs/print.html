@@ -449,10 +449,9 @@ switch (fruit) {
 <h2 id="lots-of-free-gb"><a class="header" href="#lots-of-free-gb">Lots of free GB</a></h2>
 <p>XCode, Android Studio, the SDKs and Virtual Devices, all that stuff needs GBs on your disc. Welcome to app development! Additionally it turns out that the cross-compiling process to build the libraries takes an enormous amount of disk space PER target, too.</p>
 <h3 id="xcode"><a class="header" href="#xcode">XCode</a></h3>
-<p>As you continue to use Xcode, the available storage on your hard drive gradually decreases. This is because numerous files are generated automatically during project builds, with a significant amount of them being stored in the DerivedData folder. This folder alone can occupy anywhere from a few hundred MB to several GB of space.</p>
+<p>As you continue to use Xcode, the available storage on your hard drive gradually decreases. This is because numerous files are generated automatically during project builds, with a significant amount of them being stored in the Derived Data folder. This folder alone can occupy anywhere from a few hundred MB to several GB of space.</p>
 <figure style="margin:0;"><img src="welcome/../assets/derived_data.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Disc space used by derived data</p></figcaption></figure>
 <p>Fortunately, you can easily remove files from this folder without any adverse effects. By doing so, you can recover valuable space on your Mac, making it more efficient to work with Xcode.</p>
-<p><a href="https://www.kindacode.com/article/ways-to-delete-derived-data-in-xcode/" target="_blank">👉   2 Ways to Delete Derived Data in Xcode</a></p>
 <h3 id="building-apps"><a class="header" href="#building-apps">Building apps</a></h3>
 <p>If you build more apps and cross-compile more targets, the disk space usage increases. However, you can safely remove these subfolders. The only difference it makes is in terms of time - the first build will take longer if the target folder has been deleted.</p>
 <figure style="margin:0;"><img src="welcome/../assets/playground_build.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Disc space used by build targets of example app "Playground"</p></figcaption></figure>
@@ -488,6 +487,10 @@ switch (fruit) {
 <h1 id="so-now-that-weve-cleared-the-air-lets-get-started-grab-your-coffee-fire-up-your-ide-and-lets-dive-into-the-world-of-flutter-rust-and-iota"><a class="header" href="#so-now-that-weve-cleared-the-air-lets-get-started-grab-your-coffee-fire-up-your-ide-and-lets-dive-into-the-world-of-flutter-rust-and-iota">So, now that we've cleared the air, let's get started. Grab your coffee, fire up your IDE and let's dive into the world of Flutter, Rust and IOTA!</a></h1>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="-how-everything-works-together"><a class="header" href="#-how-everything-works-together">💡 How everything works together</a></h1>
+<hr />
+<p>The Big Picture</p>
+<hr />
+<p>In this next section, I'll provide an overview of the workflow involved in integrating Flutter, Rust, and IOTA. This will give you a better understanding of what a developer needs to do in order to successfully connect these technologies and create an app using the Flutter-Rust-Bridge.</p>
 <div style="break-before: page; page-break-before: always;"></div><hr />
 <h2 id="description-targets"><a class="header" href="#description-targets">description: Targets</a></h2>
 <h1 id="-cross-compiling"><a class="header" href="#-cross-compiling">🏭 Cross-Compiling</a></h1>
