@@ -103,6 +103,11 @@ hr {
 ===============
 */
 
+.video {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
 mbox {
     display: block;
     padding: 12px;
