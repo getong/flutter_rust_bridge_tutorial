@@ -18,7 +18,8 @@
 
 ---
 
-- [💡 How everything works together](overview/how-everything-works-together.md)
+- [💡 How everything works together](overview/how-everything-works-together/README.md)
+  - [Workflow](overview/how-everything-works-together/workflow.md)
 - [🏭 Cross-Compiling](overview/cross-compiling.md)
 - [🌁 Flutter Rust Bridge](overview/flutter-rust-bridge/README.md)
   - [About](overview/flutter-rust-bridge/about.md)
