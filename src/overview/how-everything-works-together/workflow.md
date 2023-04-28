@@ -359,11 +359,17 @@ by:
 
 > **Important**: Before starting the application, make sure that your Virtual Android Device is running.
 
-Open the App with the command
+Open the App with the command:
 
 ```
 flutter run
 ```
+
+To inform Flutter about the target platform for which it should build with _flutter run_, the corresponding platform is initiated beforehand.
+
+During the build process, the Rust code is cross-compiled into a library specific to the target platform (here: arm64-v8a). This compiled library is then automatically copied into the Android project folder.
+
+Then the app is launched.
 
 ## Summary
 

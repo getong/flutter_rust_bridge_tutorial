@@ -788,9 +788,12 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <blockquote>
 <p><strong>Important</strong>: Before starting the application, make sure that your Virtual Android Device is running.</p>
 </blockquote>
-<p>Open the App with the command</p>
+<p>Open the App with the command:</p>
 <pre><code>flutter run
 </code></pre>
+<p>To inform Flutter about the target platform for which it should build with <em>flutter run</em>, the corresponding platform is initiated beforehand.</p>
+<p>During the build process, the Rust code is cross-compiled into a library specific to the target platform (here: arm64-v8a). This compiled library is then automatically copied into the Android project folder.</p>
+<p>Then the app is launched.</p>
 <h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
 <p>Here is a brief summary about all steps, in one picture:</p>
 <figure style="margin:0;"><img src="overview/how-everything-works-together/../../assets/overview/Overview.011.png" alt="Summary of Workflow"><figcaption style="font-size: 0.8em;text-align:center;"><p>All steps of the workflow</p></figcaption></figure>
