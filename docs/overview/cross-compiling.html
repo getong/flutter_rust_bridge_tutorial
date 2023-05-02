@@ -145,9 +145,97 @@
 
                 <div id="content" class="content">
                     <main>
-                        <hr />
-<h2 id="description-targets"><a class="header" href="#description-targets">description: Targets</a></h2>
-<h1 id="-cross-compiling"><a class="header" href="#-cross-compiling">🏭 Cross-Compiling</a></h1>
+                        <h1 id="-cross-compiling"><a class="header" href="#-cross-compiling">🏭 Cross-Compiling</a></h1>
+<hr />
+<p>Exploring the required Targets.</p>
+<hr />
+<p>The Rust compiler functions as a cross-compiler by default. It allows us to translate our Rust code into the target platform and package it as a library. However, to enable this functionality, we need to ensure that all the required targets are installed on the host computer. In this chapter, we will delve into the relevant targets for <em>IOTA for Flutter</em>.</p>
+<p><a href="https://doc.rust-lang.org/rustc/targets/index.html" target="_blank">👉   Rust Targets</a></p>
+<h2 id="about-targets"><a class="header" href="#about-targets">About Targets</a></h2>
+<p>In the context of software development, a &quot;target&quot; typically refers to the platform or environment for which software is being developed or compiled. The Components of a target specification can vary depending on the context and tooling being used.</p>
+<ol>
+<li>
+<p><strong>Architecture</strong>: The target architecture specifies the instruction set and hardware architecture for which the software is being compiled or built. Examples include x86, x86_64, ARMv7, ARMv8, etc.</p>
+</li>
+<li>
+<p><strong>Vendor</strong>: The vendor component indicates the company or organization associated with the target platform. It helps identify the specific platform or ecosystem for which the software is intended. Examples include apple, android, linux, windows, etc.</p>
+</li>
+<li>
+<p><strong>Operating System</strong>: The operating system component represents the software layer that manages system resources and provides services to applications. It defines the environment in which the software will run. Examples include darwin (macOS, iOS), linux, windows, android, etc.</p>
+</li>
+<li>
+<p><strong>ABI (Application Binary Interface)</strong>: The ABI component defines the interface between the compiled application code and the operating system and hardware. It defines how functions are called, how parameters and return values are passed, how memory is allocated, and other low-level details of interaction between software and the underlying system.</p>
+</li>
+</ol>
+<h3 id=""><a class="header" href="#"> </a></h3>
+<h3 id="targets-needed-for-macos-and-ios-development"><a class="header" href="#targets-needed-for-macos-and-ios-development">Targets needed for macOS and iOS Development</a></h3>
+<p>The Target Structure typically consists of the following Components:</p>
+<pre><code>&lt;Architecture&gt;-&lt;Vendor&gt;-&lt;Operating System&gt;
+</code></pre>
+<table style="display: flex; justify-content: left;">
+<tr><th style="text-align:left;padding:5px 20px;">Target</th><th style="text-align:left;padding:5px 20px;">Meaning</th></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">aarch64-apple-darwin</td>
+<td>Targeting Apple devices running macOS with ARM 64-bit architecture (Apple Silicon).</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">x86_64-apple-darwin</td>
+<td>Targeting Apple devices running macOS with Intel 64-bit x86 architecture .</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;"></td>
+<td></td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">aarch64-apple-ios</td>
+<td>Targeting iOS devices with ARM 64-bit architecture, as used since the iPhone 5S and later, the iPad Air, Air 2 and Pro, with the A7 and later chips.</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">armv7s-apple-ios</td>
+<td>Targeting iOS devices with 32-bit ARMv7s architecture ("old"), used in A6 and A6X chips on iPhone 5, iPhone 5C and iPad 4.</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">armv7-apple-ios</td>
+<td>Targeting iOS devices with 32-bit ARMv7 architecture, used in A5 chip ("old").</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;"></td>
+<td></td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">aarch64-apple-ios-sim</td>
+<td>Targeting iOS Simulator for Xcode 12 and later on hosts with ARM 64-bit architecture.</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">x86_64-apple-ios-sim</td>
+<td>Targeting iOS Simulator for Xcode 12 and later on hosts with 64-bit x86 architecture.</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">i386-apple-ios</td>
+<td>Targeting iOS Simulator on hosts with 32-bit x86 architecture ("old").</td></tr>
+</table>
+<h3 id="-1"><a class="header" href="#-1"> </a></h3>
+<h3 id="targets-needed-for-android-development"><a class="header" href="#targets-needed-for-android-development">Targets needed for Android Development</a></h3>
+<p>In the context of <em>IOTA for Flutter</em> the Android Native Development Kit (NDK) must be installed. It is used to provide the necessary tools and APIs to interface with the cross-compiled library. The Target Structure then follows the format:</p>
+<pre><code>&lt;Architecture&gt;-&lt;Operating_system&gt;-&lt;ABI*&gt;
+</code></pre>
+<p>ABI* : As part of the Target, the ABI component is different to the correct ABI naming, due to historical reasons or to maintain compatibility. The correct ABI naming is listed in the second column.</p>
+<table style="display: flex; justify-content: left;">
+<tr><th style="text-align:left;padding:5px 20px;">Target</th><th style="text-align:left;padding:5px 20px;">ABI</th><th style="text-align:left;padding:5px 20px;">Meaning</th></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">aarch64-linux-android</td><td style="white-space:nowrap;vertical-align:top;">arm64-v8a</td>
+<td>Targeting Android devices on ARM 64-bit architecture (most modern ARM-based Android devices).</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">armv7-linux-androideabi</td><td style="white-space:nowrap;vertical-align:top;">armeabi-v7a</td>
+<td>Targeting Android devices on ARMv7 architecture (older ARM-based Android devices).</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">x86_64-linux-android</td><td style="white-space:nowrap;vertical-align:top;">x86_64</td>
+<td>Targeting Android devices on 64-bit x86 architecture (Android emulators, modern x86-based devices).</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">i686-linux-android</td style="white-space:nowrap;vertical-align:top;"><td>x86</td>
+<td>Targeting Android devices on 32-bit x86 architecture (Android emulators, older x86-based devices).</td></tr>
+</table>
+<h3 id="-2"><a class="header" href="#-2"> </a></h3>
+<h2 id="which-targets-are-installed-on-my-system"><a class="header" href="#which-targets-are-installed-on-my-system">Which targets are installed on my system?</a></h2>
+<p>To find out which targets are installed on your system, run the following command:</p>
+<p><code>rustc --print target-list</code></p>
+<h3 id="-3"><a class="header" href="#-3"> </a></h3>
+<h2 id="how-to-add-missing-targets"><a class="header" href="#how-to-add-missing-targets">How to add missing targets</a></h2>
+<p>When you first install a toolchain, rustup installs only the standard library for your host platform - that is, the architecture and operating system you are presently running. To compile to other platforms you must install other target platforms. This is done with the command:</p>
+<p><code>rustup target add &lt;target&gt;</code></p>
+<p>For example:</p>
+<p><code>rustup target add armv7-linux-androideabi</code></p>
+<p><a href="https://rust-lang.github.io/rustup/cross-compilation.html" target="_blank">👉   The Rustup Book - Cross-compilation</a></p>
+<h3 id="-4"><a class="header" href="#-4"> </a></h3>
+<h2 id="how-to-manually-cross-compile-to-a-target-of-your-choice"><a class="header" href="#how-to-manually-cross-compile-to-a-target-of-your-choice">How to manually cross-compile to a target of your choice</a></h2>
+<p>Sometimes, you might need to cross-compile your Rust code to a specific target separately from the Flutter build process. To ensure that everything runs smoothly, make sure you are in the <em>rust</em> folder (on the same level as <em>Cargo.toml</em>).</p>
+<h3 id="manually-cross-compile-for-macos-or-ios"><a class="header" href="#manually-cross-compile-for-macos-or-ios">Manually cross-compile for macOS or iOS</a></h3>
+<p>On macOS and/or iOS you can start the process by executing this command in the Terminal:</p>
+<p><code>cargo build --target &lt;target&gt;</code></p>
+<p>For example:</p>
+<p><code>cargo build --target aarch64-apple-ios</code></p>
+<h3 id="manually-cross-compile-for-android"><a class="header" href="#manually-cross-compile-for-android">Manually cross-compile for Android</a></h3>
+<p>On Android you can start the process by executing this command in the Terminal:</p>
+<p><code>cargo ndk -t &lt;abi&gt; build</code></p>
+<p>For example:</p>
+<p><code>cargo ndk -t arm64-v8a build</code></p>
 
                     </main>
 

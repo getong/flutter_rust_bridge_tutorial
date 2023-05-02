@@ -341,7 +341,7 @@ serde_json = { version = &quot;1.0.89&quot;, default-features = false }
 anyhow = &quot;1.0.66&quot;
 tokio = { version = &quot;1.21.2&quot;, default-features = false, features = [&quot;macros&quot;] }
 </code></pre>
-<p>Create the file <em>api.rs</em>. <strong>The file <em>api.rs</em> is YOUR RUST WORKING FILE</strong>. The Flutter-Rust-Bridge code generator will identify all public functions within the <code>_api.rs</code> file and generate the corresponding Dart Interface from these methods. This means that all public functions available in the Rust code will be exposed and accessible for utilization within the Flutter app.</p>
+<p>Create the file <em>api.rs</em>. <strong>The file <em>api.rs</em> is YOUR RUST WORKING FILE</strong>. The Flutter-Rust-Bridge code generator will identify all public functions within the <code>api.rs</code> file and generate the corresponding Dart Interface from these methods. This means that all public functions available in the Rust code will be exposed and accessible for utilization within the Flutter app.</p>
 <p>By automatically generating the Dart Interface, the Flutter-Rust-Bridge simplifies the process of bridging the communication between the Flutter frontend and the Rust backend, enabling seamless interaction and integration between the two languages.</p>
 <p>Add this content to <em>api.rs</em>:</p>
 <pre><code>use iota_client::Client;

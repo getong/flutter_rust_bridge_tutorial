@@ -247,7 +247,7 @@ anyhow = "1.0.66"
 tokio = { version = "1.21.2", default-features = false, features = ["macros"] }
 ```
 
-Create the file _api.rs_. **The file _api.rs_ is YOUR RUST WORKING FILE**. The Flutter-Rust-Bridge code generator will identify all public functions within the `_api.rs` file and generate the corresponding Dart Interface from these methods. This means that all public functions available in the Rust code will be exposed and accessible for utilization within the Flutter app.
+Create the file _api.rs_. **The file _api.rs_ is YOUR RUST WORKING FILE**. The Flutter-Rust-Bridge code generator will identify all public functions within the `api.rs` file and generate the corresponding Dart Interface from these methods. This means that all public functions available in the Rust code will be exposed and accessible for utilization within the Flutter app.
 
 By automatically generating the Dart Interface, the Flutter-Rust-Bridge simplifies the process of bridging the communication between the Flutter frontend and the Rust backend, enabling seamless interaction and integration between the two languages.
 
