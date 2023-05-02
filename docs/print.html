@@ -819,7 +819,7 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <p><strong>ABI (Application Binary Interface)</strong>: The ABI component defines the interface between the compiled application code and the operating system and hardware. It defines how functions are called, how parameters and return values are passed, how memory is allocated, and other low-level details of interaction between software and the underlying system.</p>
 </li>
 </ol>
-<h3 id="-5"><a class="header" href="#-5"> </a></h3>
+<h3 id="-5"><a class="header" href="#-5"></a></h3>
 <h3 id="targets-needed-for-macos-and-ios-development"><a class="header" href="#targets-needed-for-macos-and-ios-development">Targets needed for macOS and iOS Development</a></h3>
 <p>The Target Structure typically consists of the following Components:</p>
 <pre><code>&lt;Architecture&gt;-&lt;Vendor&gt;-&lt;Operating System&gt;
@@ -847,7 +847,7 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <tr><td style="white-space:nowrap;vertical-align:top;">i386-apple-ios</td>
 <td>Targeting iOS Simulator on hosts with 32-bit x86 architecture ("old").</td></tr>
 </table>
-<h3 id="-6"><a class="header" href="#-6"> </a></h3>
+<h3 id="-6"><a class="header" href="#-6"></a></h3>
 <h3 id="targets-needed-for-android-development"><a class="header" href="#targets-needed-for-android-development">Targets needed for Android Development</a></h3>
 <p>In the context of <em>IOTA for Flutter</em> the Android Native Development Kit (NDK) must be installed. It is used to provide the necessary tools and APIs to interface with the cross-compiled library. The Target Structure then follows the format:</p>
 <pre><code>&lt;Architecture&gt;-&lt;Operating_system&gt;-&lt;ABI*&gt;
@@ -864,18 +864,17 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <tr><td style="white-space:nowrap;vertical-align:top;">i686-linux-android</td style="white-space:nowrap;vertical-align:top;"><td>x86</td>
 <td>Targeting Android devices on 32-bit x86 architecture (Android emulators, older x86-based devices).</td></tr>
 </table>
-<h3 id="-7"><a class="header" href="#-7"> </a></h3>
+<h3 id="-7"><a class="header" href="#-7"></a></h3>
 <h2 id="which-targets-are-installed-on-my-system"><a class="header" href="#which-targets-are-installed-on-my-system">Which targets are installed on my system?</a></h2>
 <p>To find out which targets are installed on your system, run the following command:</p>
 <p><code>rustc --print target-list</code></p>
-<h3 id="-8"><a class="header" href="#-8"> </a></h3>
 <h2 id="how-to-add-missing-targets"><a class="header" href="#how-to-add-missing-targets">How to add missing targets</a></h2>
 <p>When you first install a toolchain, rustup installs only the standard library for your host platform - that is, the architecture and operating system you are presently running. To compile to other platforms you must install other target platforms. This is done with the command:</p>
 <p><code>rustup target add &lt;target&gt;</code></p>
 <p>For example:</p>
 <p><code>rustup target add armv7-linux-androideabi</code></p>
 <p><a href="https://rust-lang.github.io/rustup/cross-compilation.html" target="_blank">👉   The Rustup Book - Cross-compilation</a></p>
-<h3 id="-9"><a class="header" href="#-9"> </a></h3>
+<h3 id="-8"><a class="header" href="#-8"></a></h3>
 <h2 id="how-to-manually-cross-compile-to-a-target-of-your-choice"><a class="header" href="#how-to-manually-cross-compile-to-a-target-of-your-choice">How to manually cross-compile to a target of your choice</a></h2>
 <p>Sometimes, you might need to cross-compile your Rust code to a specific target separately from the Flutter build process. To ensure that everything runs smoothly, make sure you are in the <em>rust</em> folder (on the same level as <em>Cargo.toml</em>).</p>
 <h3 id="manually-cross-compile-for-macos-or-ios"><a class="header" href="#manually-cross-compile-for-macos-or-ios">Manually cross-compile for macOS or iOS</a></h3>

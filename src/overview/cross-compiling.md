@@ -22,7 +22,7 @@ In the context of software development, a "target" typically refers to the platf
 
 4. **ABI (Application Binary Interface)**: The ABI component defines the interface between the compiled application code and the operating system and hardware. It defines how functions are called, how parameters and return values are passed, how memory is allocated, and other low-level details of interaction between software and the underlying system.
 
-### &nbsp;
+###
 
 ### Targets needed for macOS and iOS Development
 
@@ -54,7 +54,7 @@ The Target Structure typically consists of the following Components:
 <td>Targeting iOS Simulator on hosts with 32-bit x86 architecture ("old").</td></tr>
 </table>
 
-### &nbsp;
+###
 
 ### Targets needed for Android Development
 
@@ -76,15 +76,13 @@ ABI\* : As part of the Target, the ABI component is different to the correct ABI
 <td>Targeting Android devices on 32-bit x86 architecture (Android emulators, older x86-based devices).</td></tr>
 </table>
 
-### &nbsp;
+###
 
 ## Which targets are installed on my system?
 
 To find out which targets are installed on your system, run the following command:
 
 `rustc --print target-list`
-
-### &nbsp;
 
 ## How to add missing targets
 
@@ -98,7 +96,7 @@ For example:
 
 <a href="https://rust-lang.github.io/rustup/cross-compilation.html" target="_blank">👉 &nbsp; The Rustup Book - Cross-compilation</a>
 
-### &nbsp;
+###
 
 ## How to manually cross-compile to a target of your choice
 
