@@ -54,6 +54,8 @@ The Target Structure typically consists of the following Components:
 <td>Targeting iOS Simulator on hosts with 32-bit x86 architecture ("old").</td></tr>
 </table>
 
+> **Example**: My workstation computer is a MacBook Air with an M1 chip. Therefore, the following targets are essential for me when developing for macOS and iOS: _aarch64-apple-darwin_ (for macOS), _aarch64-apple-ios-sim_ (simulator for the M1 host environment), and _aarch64-apple-ios_ (for iOS).
+
 ###
 
 ### Targets needed for Android Development
@@ -75,6 +77,8 @@ ABI\* : As part of the Target, the ABI component is different to the correct ABI
 <tr><td style="white-space:nowrap;vertical-align:top;">i686-linux-android</td style="white-space:nowrap;vertical-align:top;"><td>x86</td>
 <td>Targeting Android devices on 32-bit x86 architecture (Android emulators, older x86-based devices).</td></tr>
 </table>
+
+> **Example**: My only current Android Virtual Device is a Pixel 3a phone with arm64-v8a system image. Therefore the only interesting target for development is _aarch64-linux-android_.
 
 ###
 

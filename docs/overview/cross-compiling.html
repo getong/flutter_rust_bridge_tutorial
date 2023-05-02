@@ -195,6 +195,9 @@
 <tr><td style="white-space:nowrap;vertical-align:top;">i386-apple-ios</td>
 <td>Targeting iOS Simulator on hosts with 32-bit x86 architecture ("old").</td></tr>
 </table>
+<blockquote>
+<p><strong>Example</strong>: My workstation computer is a MacBook Air with an M1 chip. Therefore, the following targets are essential for me when developing for macOS and iOS: <em>aarch64-apple-darwin</em> (for macOS), <em>aarch64-apple-ios-sim</em> (simulator for the M1 host environment), and <em>aarch64-apple-ios</em> (for iOS).</p>
+</blockquote>
 <h3 id="-1"><a class="header" href="#-1"></a></h3>
 <h3 id="targets-needed-for-android-development"><a class="header" href="#targets-needed-for-android-development">Targets needed for Android Development</a></h3>
 <p>In the context of <em>IOTA for Flutter</em> the Android Native Development Kit (NDK) must be installed. It is used to provide the necessary tools and APIs to interface with the cross-compiled library. The Target Structure then follows the format:</p>
@@ -212,6 +215,9 @@
 <tr><td style="white-space:nowrap;vertical-align:top;">i686-linux-android</td style="white-space:nowrap;vertical-align:top;"><td>x86</td>
 <td>Targeting Android devices on 32-bit x86 architecture (Android emulators, older x86-based devices).</td></tr>
 </table>
+<blockquote>
+<p><strong>Example</strong>: My only current Android Virtual Device is a Pixel 3a phone with arm64-v8a system image. Therefore the only interesting target for development is <em>aarch64-linux-android</em>.</p>
+</blockquote>
 <h3 id="-2"><a class="header" href="#-2"></a></h3>
 <h2 id="which-targets-are-installed-on-my-system"><a class="header" href="#which-targets-are-installed-on-my-system">Which targets are installed on my system?</a></h2>
 <p>To find out which targets are installed on your system, run the following command:</p>
