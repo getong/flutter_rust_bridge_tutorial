@@ -23,7 +23,7 @@
 - [🏭 Cross-Compiling](overview/cross-compiling.md)
 - [🌁 Flutter Rust Bridge](overview/flutter-rust-bridge/README.md)
   - [About](overview/flutter-rust-bridge/about.md)
-  - [Features](overview/flutter-rust-bridge/features.md)
+  - [Language translations](overview/flutter-rust-bridge/features.md)
 - [📚 IOTA libraries](overview/iota-libraries.md)
 
 ---
