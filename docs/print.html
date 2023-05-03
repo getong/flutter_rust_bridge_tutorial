@@ -904,6 +904,38 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <blockquote>
 <p>It is important to highlight that, currently, the missing component in this equation is IOTA. However, this tutorial will delve into its integration in the later sections.</p>
 </blockquote>
+<h2 id="code-generator"><a class="header" href="#code-generator">Code Generator</a></h2>
+<p>The Code Generator is a Rust executable that processes Rust code and produces two outputs: a generated module <code>bridge_generated.rs</code> on the Rust side and a Dart file <code>bridge_generated.dart</code> with definitions and implementations on the Dart side. The two files act as a bridge between the two programming languages.</p>
+<blockquote>
+<p>The Code Generator offers a range of options that you can access by using this terminal command:</p>
+<p><code>flutter_rust_bridge_codegen --help</code></p>
+</blockquote>
+<p>This command provides you with a list of available options and their respective descriptions, allowing you to customize the code generation process according to your specific needs.</p>
+<p>In the <a href="overview/flutter-rust-bridge/../how-everything-works-together/workflow.html">Workflow</a> section documenting an <strong>Android</strong> demo, I used these options:</p>
+<pre><code>flutter_rust_bridge_codegen \
+--rust-input rust/src/api.rs \                      // Source file
+--dart-output ./lib/bridge_generated.dart \         // Output in Dart folder
+--dart-decl-output ./lib/bridge_definitions.dart    // Seperate definition file in Dart folder
+</code></pre>
+<p>When working on code for <strong>iOS</strong>, you will require the following options for the Code Generator:</p>
+<pre><code>flutter_rust_bridge_codegen \
+--rust-input rust/src/api.rs \                      // Source file
+--dart-output ./lib/bridge_generated.dart \         // Output in Dart folder
+--dart-decl-output ./lib/bridge_definitions.dart \  // Seperate definition file in Dart folder
+--c-output ios/Runner/bridge_generated.h            // Generate a C header in the correct iOS folder
+</code></pre>
+<p>Similar for <strong>macOS</strong>:</p>
+<pre><code>flutter_rust_bridge_codegen \
+--rust-input rust/src/api.rs \                      // Source file
+--dart-output ./lib/bridge_generated.dart \         // Output in Dart folder
+--dart-decl-output ./lib/bridge_definitions.dart \  // Seperate definition file in Dart folder
+--c-output macos/Runner/bridge_generated.h          // Generate a C header in the correct macOS folder
+</code></pre>
+<hr />
+<blockquote>
+<p><strong>A task for you</strong></p>
+<p>For other target platforms such as Browser, Linux, and Windows, please refer to the User Guide for specific instructions on using the Code Generator. Additionally, you have the option to create a YAML config file and utilize the command <code>flutter_run_bridge_codegen [CONFIG_FILE]</code> to streamline the code generation process. I encourage you to give it a try and explore the flexibility and convenience it offers.</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="about"><a class="header" href="#about">About</a></h1>
 <hr />
 <p>Bridging the gap: The power of <em>Flutter Rust Bridge</em></p>
@@ -914,13 +946,13 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <figure style="margin:0;"><img src="overview/flutter-rust-bridge/../../assets/frb.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>User Guide of the Flutter Rust Bridge</p></figcaption></figure>
 <p>One of the selection criteria was the project's open-source nature and the fact that it is an active project. From my impression, regular updates ensure that the <em>Flutter Rust Bridge</em> stays up to date.</p>
 <p>Additionally, it was important to me that I found support when I had questions. I received friendly and helpful answers, which was reassuring. It's great to know that there are dedicated individuals willing to help and facilitate the development process.</p>
-<p>For developers embarking on the IOTA for Flutter journey, the GitHub page of the <em>Flutter Rust Bridge</em> is a valuable resource. Whether you have questions or can support others with your knowledge, it's a place to turn to.</p>
+<p>For developers embarking on the <em>IOTA for Flutter</em> journey, the GitHub page of the <em>Flutter Rust Bridge</em> is a valuable resource. Whether you have questions or can support others with your knowledge, it's a place to turn to.</p>
 <blockquote>
-<p><strong>How Does <em>IOTA for Flutter</em> differ from <em>Flutter Rust Bridge</em>?</strong></p>
+<p><strong>How does <em>IOTA for Flutter</em> differ from <em>Flutter Rust Bridge</em>?</strong></p>
 <p>While the workflow of <em>IOTA for Flutter</em> utilizes the <em>Flutter Rust Bridge</em> as its foundation, it offers distinct advantages through its context-specific content centered around Shimmer and IOTA. The focus of <em>IOTA for Flutter</em> is to enhance the application and installation process, which has sometimes proven to be challenging. By addressing these difficulties, <em>IOTA for Flutter</em> aims to provide a smoother and more user-friendly experience.</p>
 </blockquote>
 <p>What further convinced me is the power of the project itself: the <em>Flutter Rust Bridge</em> is packed with features! It's like a treasure chest waiting to be explored. I haven't discovered all its possibilities yet, and that's something for you to explore as well.</p>
-<p>For example, IOTA for Flutter has not yet utilized the capability to create multiple API files, to run Flutter Unit tests or the integration of the command runner just, which could potentially optimize the workflow, among other things.</p>
+<p>For example, <em>IOTA for Flutter</em> has not yet utilized the capability to create multiple API files, to run Flutter Unit tests or the integration of the command runner just, which could potentially optimize the workflow, among other things.</p>
 <p>All in all, the <em>Flutter Rust Bridge</em> has become the indispensable tool for this project. I'm grateful to have found a solution that perfectly fits our needs and simplifies the development process.</p>
 <div style="break-before: page; page-break-before: always;"></div><hr />
 <h2 id="description-dart---rust-mappings"><a class="header" href="#description-dart---rust-mappings">description: Dart - Rust Mappings</a></h2>
