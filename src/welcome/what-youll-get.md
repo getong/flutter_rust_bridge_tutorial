@@ -18,7 +18,7 @@ Rust plays a crucial role in _IOTA for Flutter_, too. All of IOTA's libraries ar
 
 ## Tutorial Structure: Overview, Fundamentals, and Practical Chapters
 
-The _IOTA for Flutter_ tutorial is divided into several sections, including an overview for getting the key concept, a fundamentals section for preparing what you need, and several practical chapters that focus on building real-world products.&#x20;
+The _IOTA for Flutter_ tutorial is divided into several sections, including a fundamentals section for preparing what you need, an overview for getting the key concept, and several practical chapters that focus on building real-world products.&#x20;
 
 To make it easier to follow along with the written text, each practical chapter has a corresponding repository on GitHub. I also provide some videos to demonstrate the resulting app, the workflow and guide users through important steps, so you can watch over my shoulder as I work through the examples.&#x20;
 

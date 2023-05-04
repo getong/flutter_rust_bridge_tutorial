@@ -14,6 +14,27 @@
 
 ---
 
+# Fundamentals
+
+---
+
+- [Android Studio](fundamentals/android-studio/README.md)
+  - [Set up](fundamentals/android-studio/set-up.md)
+  - [Essentials](fundamentals/android-studio/essentials.md)
+- [Xcode](fundamentals/xcode/README.md)
+  - [Set up](fundamentals/xcode/set-up.md)
+  - [Essentials](fundamentals/xcode/essentials.md)
+- [Flutter](fundamentals/flutter/README.md)
+  - [Set up](fundamentals/flutter/set-up.md)
+  - [Essentials](fundamentals/flutter/essentials.md)
+- [Rust](fundamentals/rust/README.md)
+  - [Set up](fundamentals/rust/set-up.md)
+  - [Essentials](fundamentals/rust/essentials.md)
+- [IDE: Visual Studio Code](fundamentals/ide-visual-studio-code/README.md)
+  - [Set up](fundamentals/ide-visual-studio-code/set-up.md)
+
+---
+
 # Overview
 
 ---
@@ -25,27 +46,6 @@
   - [About](overview/flutter-rust-bridge/about.md)
   - [Language translations](overview/flutter-rust-bridge/features.md)
 - [📚 IOTA libraries](overview/iota-libraries.md)
-
----
-
-# Fundamentals
-
----
-
-- [Flutter](fundamentals/flutter/README.md)
-  - [Set up](fundamentals/flutter/set-up.md)
-  - [Essentials](fundamentals/flutter/essentials.md)
-- [Xcode](fundamentals/xcode/README.md)
-  - [Set up](fundamentals/xcode/set-up.md)
-  - [Essentials](fundamentals/xcode/essentials.md)
-- [Android Studio](fundamentals/android-studio/README.md)
-  - [Set up](fundamentals/android-studio/set-up.md)
-  - [Essentials](fundamentals/android-studio/essentials.md)
-- [Rust](fundamentals/rust/README.md)
-  - [Set up](fundamentals/rust/set-up.md)
-  - [Essentials](fundamentals/rust/essentials.md)
-- [IDE: Visual Studio Code](fundamentals/ide-visual-studio-code/README.md)
-  - [Set up](fundamentals/ide-visual-studio-code/set-up.md)
 
 ---
 

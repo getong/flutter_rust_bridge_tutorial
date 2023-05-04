@@ -6,8 +6,6 @@ Bridging the gap: The power of _Flutter Rust Bridge_
 
 ---
 
-## Flutter Rust Bridge
-
 The _Flutter Rust Bridge_ serves as the foundation for the "IOTA for Flutter" project. I was glad to have found this solution for the glueing task, with extensive documentation. There may be other alternatives out there, but I didn't look further because the _Flutter Rust Bridge_ met my needs. The scope and features are so vast that I haven't even explored them all myself.
 
 ###

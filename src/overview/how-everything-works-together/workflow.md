@@ -8,7 +8,7 @@ A step-by-step guide
 
 The workflow is identical to the one demonstrated in the video. I will also provide the commands used in the video for reference. Please keep in mind that this is only a high-level overview for now. More detailed explanations will be provided later on.
 
-> ⚠️ So far, we haven't covered the setup of your workplace and all tools. If you genuinely want to practically code the described steps outlined below, I assume that you have completed this setup.
+> ⚠️ If you genuinely want to practically code the described steps outlined below, I assume that you have completed the setup of your workplace and all tools, as described in the "Fundamentals" section.
 
 ## 1. Check the Setup
 
