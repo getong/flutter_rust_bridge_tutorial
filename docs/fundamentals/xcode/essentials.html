@@ -147,8 +147,73 @@
                     <main>
                         <h1 id="essentials"><a class="header" href="#essentials">Essentials</a></h1>
 <hr />
-<p>TODO</p>
+<p>A glimpse into the project basics.</p>
 <hr />
+<p>At first glance, Xcode resembles an airplane cockpit: Overwhelming and seemingly impossible to navigate. But here's the thing: You don't need to fiddle with most of the settings.</p>
+<p>Flutter has taken care of generating the Xcode project for you. As for the second Xcode project for the Rust library (mentioned below), that's created by cargo-xcode.</p>
+<p>So, don't worry! All you need to do is grasp a few essential concepts and locate some helpful resources to find your way around. And hey, who knows, maybe you'll even learn to enjoy the Xcode experience, despite its initial complexity!</p>
+<h2 id="project-structure"><a class="header" href="#project-structure">Project structure</a></h2>
+<p>A Xcode project follows a specific structure that organizes the various files and resources used to build an macOS or iOS application.</p>
+<p><strong>Project File</strong>: A project file with the extension <em>.xcodeproj</em> or <em>.xcworkspace</em> serves as the entry point for the Xcode project. It contains information about the project settings, build configurations, and references to all the project files.</p>
+<ul>
+<li>The <strong><em>.xcodeproj</em></strong> file is the traditional project file used in Xcode. It represents a single Xcode project and is used for organizing and building a single target, such as an iOS app, extension, or framework. It contains project settings, build configurations, and references to all the project files specific to that target.</li>
+<li>The <strong><em>.xcworkspace</em></strong> file, on the other hand, is used when you have multiple Xcode projects or multiple targets that depend on each other. It is a workspace file that can include one or more <em>.xcodeproj</em> files and their associated targets. The <em>.xcworkspace</em> file acts as a container that allows you to work on and build multiple projects or targets together in a unified workspace.</li>
+</ul>
+<p><strong>Targets</strong>: An Xcode project can have one or more targets. Each target represents a distinct product, such as the main app, extensions, or test suites. Targets contain the necessary build settings, dependencies, and references to source files.</p>
+<p><strong>Source Code</strong>: The source code files are organized within groups or folders. The default group is typically named after the project and contains the main application's source code files. Additional groups can be created to organize code files into logical categories or features.</p>
+<p><strong>Frameworks and Libraries</strong>: Xcode projects often use external frameworks and libraries to extend functionality or reuse code. These dependencies are managed within the project and are listed in the &quot;Frameworks and Libraries&quot; section. They can be system frameworks, third-party libraries, or custom frameworks.</p>
+<blockquote>
+<p>In the Flutter/Rust context, the Rust Code is a separate Xcode Project which is included as &quot;subproject&quot; into the main project. This Xcode Project is created by the tool <em>cargo-xcode</em>.</p>
+</blockquote>
+<p><strong>Configuration Files</strong>: Configuration files, such as <code>Info.plist</code>, contain essential metadata about the application, including its bundle identifier, version, required device capabilities, and permissions.</p>
+<p><strong>Build Settings</strong>: Xcode provides an interface to configure build settings for the project and individual targets. These settings control compiler flags, optimization settings, code signing, deployment targets, and various other project-specific configurations.</p>
+<figure style="margin:0;">
+<a href="../../assets/xcode/xcode_project.jpg" target="_blank">
+<img src="../../assets/xcode/xcode_project.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Xcode Project (click to enlarge)</p></figcaption>
+</a>
+</figure>
+<p>The interaction of this structure, composed of multiple Xcode projects, becomes more apparent when we build applications for macOS resp. iOS in the practical chapters.</p>
+<p>At this stage, it's worth mentioning that there exists a dedicated Rust Xcode project <em>rust.xcodeproj</em>. This project is created during an initialization step of the <em>Flutter Rust Bridge</em> for macOS or iOS. It includes a script (&quot;Build Rule&quot;) that serves the purpose of generating a static or dynamic library and integrating it into the build process of the main Xcode project <em>Runner.xcodeproj</em> for the app.</p>
+<h3 id=""><a class="header" href="#"></a></h3>
+<h2 id="static-and-dynamic-libraries"><a class="header" href="#static-and-dynamic-libraries">Static and dynamic libraries</a></h2>
+<p>Static and dynamic libraries are both forms of code libraries, but they differ in how they are linked and loaded into an application.</p>
+<p><strong>Static Libraries</strong>:</p>
+<ul>
+<li>A static library, also known as a static link library, is a compiled set of object code that is <strong>linked directly into an executable at the time of compilation</strong>. The library code becomes part of the final executable binary.</li>
+<li>When an application is built with a static library, <strong>all the library code is copied into the resulting binary</strong>. This means that the application becomes self-contained and doesn't rely on the presence of the library during runtime.</li>
+<li><strong>Static libraries are typically denoted by file extensions like .a (on macOS and iOS) or .lib (on Windows)</strong>. They provide a way to distribute pre-compiled code that can be linked with multiple applications without needing to distribute the library separately.</li>
+</ul>
+<p><strong>Dynamic Libraries</strong>:</p>
+<ul>
+<li>A dynamic library, also called a shared library or dynamic link library (DLL), is a separate binary file containing compiled code that <strong>can be loaded and linked by multiple applications at runtime</strong>.</li>
+<li>Unlike static libraries, dynamic libraries <strong>are not copied into the application binary</strong>. Instead, the application references the dynamic library and loads it dynamically during runtime.</li>
+<li>Dynamic libraries offer advantages such as code sharing among multiple applications and the ability to update the library independently without recompiling the applications that depend on it.</li>
+<li><strong>Dynamic libraries are usually denoted by file extensions like .dylib (on macOS and iOS) or .dll (on Windows)</strong>.</li>
+</ul>
+<h3 id="-1"><a class="header" href="#-1"></a></h3>
+<h2 id="ide-basics"><a class="header" href="#ide-basics">IDE Basics</a></h2>
+<h3 id="project-navigator"><a class="header" href="#project-navigator">Project Navigator</a></h3>
+<p>Click on the leftmost symbol in the left pane. This will activate the <em>Project Navigator</em>. It can be used to configure project settings or adjust the project structure, such as adding libraries or other Xcode projects (by dragging them into the workspace).</p>
+<figure style="margin:0;">
+<a href="../../assets/xcode/xcode_ide.001.jpg" target="_blank">
+<img src="../../assets/xcode/xcode_ide.001.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Project Navigator (click to enlarge)</p></figcaption>
+</a>
+</figure>
+<h3 id="device-or-simulator-selection--launch-the-app-manually"><a class="header" href="#device-or-simulator-selection--launch-the-app-manually">Device or Simulator Selection / Launch the app manually</a></h3>
+<p>Normally, Flutter automatically builds and launches the macOS/iOS app. It uses the preselected device (if connected to your Mac) or Simulator.</p>
+<p>You can switch the device by selecting a different one from the drop-down menu.</p>
+<p>In some cases, you may need to manually start your app instead of using Flutter. In such cases, use the Play button.</p>
+<figure style="margin:0;">
+<a href="../../assets/xcode/xcode_ide.002.jpg" target="_blank">
+<img src="../../assets/xcode/xcode_ide.002.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Device Selection and Start App (click to enlarge)</p></figcaption>
+</a>
+</figure>
+<h3 id="report-navigator"><a class="header" href="#report-navigator">Report Navigator</a></h3>
+<figure style="margin:0;">
+<a href="../../assets/xcode/xcode_ide.003.jpg" target="_blank">
+<img src="../../assets/xcode/xcode_ide.003.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Report Navigator (click to enlarge)</p></figcaption>
+</a>
+</figure>
 
                     </main>
 
