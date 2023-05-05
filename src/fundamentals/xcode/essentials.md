@@ -2,7 +2,7 @@
 
 ---
 
-A glimpse into the project basics.
+Xcode: Where Complexity Unfolds, Humor Helps Break the Mold.
 
 ---
 
