@@ -6,13 +6,9 @@ Getting a bit familiar with Flutter Development in Visual Studio Code.
 
 ---
 
-## Codelab from Google
-
-As the creator of Flutter and Dart, Google has some excellent resources to make it easy for beginners to get started with Flutter. Here is a codelab that guides developers through the steps, which they can follow in their IDE. Simply click on the button _Start codelab_.
-
-<a href="https://docs.flutter.dev/get-started/codelab" target="_blank">👉 &nbsp; A Codelab to write your first app</a>
-
 ## Flutter Standard App
+
+The purpose of this section is to get familiar with Flutter and how to work with it in Visual Studio Code. The _Flutter Default App_ is a small app that consists of only one file (main.dart). This app can be generated quickly, allowing you to practice how to launch the app on different target platforms using Visual Studio.
 
 ### Create the _Flutter Standard App_ in your Terminal App
 
@@ -93,3 +89,9 @@ I find these ones especially practical in my daily use of VS Code to boost my pr
 When I first started exploring Flutter, I found this video to be particularly valuable. In addition to learning about the interplay of widgets and arguments, the tips on practical handling in VS Code were also very helpful to me.
 
 <a href="https://www.youtube.com/watch?v=C-fKAzdTrLU" target="_blank">👉 &nbsp; Flutter Tutorial For Beginners In 1 Hour</a>
+
+## Codelab from Google
+
+As the creator of Flutter and Dart, Google has some excellent resources to make it easy for beginners to get started with Flutter. Here is a codelab that guides developers through the steps, which they can follow in their IDE. Simply click on the button _Start codelab_.
+
+<a href="https://docs.flutter.dev/get-started/codelab" target="_blank">👉 &nbsp; A Codelab to write your first app</a>
