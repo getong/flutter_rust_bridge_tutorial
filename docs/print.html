@@ -1017,14 +1017,20 @@ flutter:
 <p>Install the latest stable version of VS Code:</p>
 <p><a href="https://code.visualstudio.com/Download" target="_blank">👉   Download VS Code</a></p>
 </blockquote>
+<p>The installation of extensions is optional and often a matter of personal work style. Below, I have listed a sample selection of extensions.</p>
 <h3 id="-8"><a class="header" href="#-8"></a></h3>
 <h3 id="flutter-extension"><a class="header" href="#flutter-extension">Flutter Extension</a></h3>
-<p>I recommend to install the Flutter Extension for VS Code. Read the section &quot;Install the Flutter and Dart plugins&quot; and follow the instructions:</p>
+<p>I recommend to install the <em>Flutter</em> Extension for VS Code. Read the section &quot;Install the Flutter and Dart plugins&quot; and follow the instructions:</p>
 <p><a href="https://docs.flutter.dev/get-started/editor?tab=vscode" target="_blank">👉   Set up an editor - Install the Flutter and Dart plugins</a></p>
+<p>Additionally I have installed the <em>Awesome Flutter Snippets</em> extension:</p>
+<figure style="margin:0;"><img src="fundamentals/ide-visual-studio-code/../../assets/awesome_flutter_snippets.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Extension <i>Awesome Flutter Snippets</i></p></figcaption></figure>
 <h3 id="-9"><a class="header" href="#-9"></a></h3>
 <h3 id="rust-extension"><a class="header" href="#rust-extension">Rust Extension</a></h3>
-<p>I am also using the Rust Extension for VS Code. Read the section &quot;Install the rust-analyzer extension&quot; and follow the instructions:</p>
+<p>I am also using the <em>rust-analyzer</em> Extension for VS Code. Read the section &quot;Install the rust-analyzer extension&quot; and follow the instructions:</p>
 <p><a href="https://code.visualstudio.com/docs/languages/rust" target="_blank">👉   Rust in Visual Studio Code</a></p>
+<h3 id="others"><a class="header" href="#others">Others</a></h3>
+<p>The <em>Material Icon Theme</em> extension provides pretty icons. It's up to you...</p>
+<figure style="margin:0;"><img src="fundamentals/ide-visual-studio-code/../../assets/material_icon_extension.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Extension <i>Material Icon Theme</i></p></figcaption></figure>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="-how-everything-works-together"><a class="header" href="#-how-everything-works-together">💡 How everything works together</a></h1>
 <hr />
 <p>The Big Picture</p>
@@ -1513,11 +1519,63 @@ analyze real versions and dependencies
 Cargo.lock -&gt; Herausfinden von Versionen,
 Wie man Referenzen in github löst</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="flutter-only"><a class="header" href="#flutter-only">Flutter only</a></h1>
-<ul>
-<li><a href="https://docs.flutter.dev/get-started/codelab" target="_blank">👉   A Codelab to write your first app</a></li>
-</ul>
-<h2 id="different-ways-to-run-your-app"><a class="header" href="#different-ways-to-run-your-app">Different ways to run your app</a></h2>
-<p>Starten über IDE</p>
+<hr />
+<p>Getting a bit familiar with Flutter Development in Visual Studio Code.</p>
+<hr />
+<h2 id="codelab-from-google"><a class="header" href="#codelab-from-google">Codelab from Google</a></h2>
+<p>As the creator of Flutter and Dart, Google has some excellent resources to make it easy for beginners to get started with Flutter. Here is a codelab that guides developers through the steps, which they can follow in their IDE. Simply click on the button <em>Start codelab</em>.</p>
+<p><a href="https://docs.flutter.dev/get-started/codelab" target="_blank">👉   A Codelab to write your first app</a></p>
+<h2 id="flutter-standard-app"><a class="header" href="#flutter-standard-app">Flutter Standard App</a></h2>
+<h3 id="create-the-flutter-standard-app-in-your-terminal-app"><a class="header" href="#create-the-flutter-standard-app-in-your-terminal-app">Create the <em>Flutter Standard App</em> in your Terminal App</a></h3>
+<pre><code>flutter create &lt;flutter_project_name&gt;
+</code></pre>
+<p>Executing this command will generate a new folder in the current directory that includes all necessary files and subfolders for a Flutter project. The default application is a Counter App, featuring a screen with a number that can be incremented by tapping on a Floating Action Button.</p>
+<figure style="margin:0;"><img src="building-without-iota/../../assets/launchapp/flutter_default_app.jpg" alt="Flutter Default App"><figcaption style="font-size: 0.8em;text-align:center;"><p>Flutter Default App</p></figcaption></figure>
+<h3 id="open-the-app-in-visual-studio-code"><a class="header" href="#open-the-app-in-visual-studio-code">Open the app in Visual Studio code</a></h3>
+<p>a) Switch into the subfolder <em>flutter_project_name</em></p>
+<pre><code>cd &lt;flutter_project_name&gt;
+</code></pre>
+<p>b) Open VS Code by</p>
+<pre><code>code .
+</code></pre>
+<blockquote>
+<p>On Windows, the command <code>code .</code> should work out of the box.</p>
+<p>If not working on Mac, you need to install the 'code' command once:
+Open up VS Code, go to View -&gt; Command Palette (or use the shortcut, see <em>Keyboard Shortcuts</em> below), type 'shell' and search for
+<em>Shell Command: Install 'code' command in PATH</em>. Click on it and it will install in seconds.</p>
+</blockquote>
+<h3 id="launch-the-app-in-different-ways"><a class="header" href="#launch-the-app-in-different-ways">Launch the App in different ways</a></h3>
+<p>Once Visual Studio Code is open you can launch the app in different ways.</p>
+<p>a) By using <code>flutter run</code> command:</p>
+<p>Open the Terminal in VS Code (see Shortcut below) and type in <code>flutter run</code>. If there are several targets, the execution is paused and you need to select the target:</p>
+<figure style="margin:0;"><img src="building-without-iota/../../assets/flutter_run.jpg" alt="Launch app"><figcaption style="font-size: 0.8em;text-align:center;"><p>Launching app by <i>flutter run</i></p></figcaption></figure>
+<p>b) By selecting the Target Platform first, and then by using one of several starting options:</p>
+<figure style="margin:0;"><img src="building-without-iota/../../assets/launchapp/launch1.jpg" alt="Current Target platform"><figcaption style="font-size: 0.8em;text-align:center;"><p>Current Target Platform - click to select another one</p></figcaption></figure>
+<figure style="margin:0;"><img src="building-without-iota/../../assets/launchapp/launch2.jpg" alt="Select Target platform"><figcaption style="font-size: 0.8em;text-align:center;"><p>Start and/or select a Target Platform</p></figcaption></figure>
+<figure style="margin:0;"><img src="building-without-iota/../../assets/launchapp/launch3.jpg" alt="Launch options"><figcaption style="font-size: 0.8em;text-align:center;"><p>Launch Options</p></figcaption></figure>
+<figure style="margin:0;"><img src="building-without-iota/../../assets/launchapp/launch4.jpg" alt="Control Panel"><figcaption style="font-size: 0.8em;text-align:center;"><p>Control Panel</p></figcaption></figure>
+<p>When you launch the app using this method, any code changes you make will trigger a hot reload automatically. If you were to use &quot;flutter run&quot;, you would need to manually press the &quot;r&quot; key to initiate a hot reload of the app.</p>
+<h2 id="keyboard-shortcuts-visual-studio-code"><a class="header" href="#keyboard-shortcuts-visual-studio-code">Keyboard Shortcuts (Visual Studio Code)</a></h2>
+<p>I find these ones especially practical in my daily use of VS Code to boost my productivity:</p>
+<table style="display: flex; justify-content: left;">
+<tr><th style="text-align:left;padding:5px 20px;">Function</th><th style="text-align:left;padding:5px 20px;">Windows</th><th style="text-align:left;padding:5px 20px;">Mac</th><th>Usage</th></th></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">Open Files quickly</td><td style="white-space:nowrap;vertical-align:top;">Ctrl + P</td>
+<td style="white-space:nowrap;vertical-align:top;">Command + P</td><td style="vertical-align:top;">Use the shortcut and start typing the name of the file...</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">Toggle left Sidebar</td><td style="white-space:nowrap;vertical-align:top;">Ctrl + B</td>
+<td style="white-space:nowrap;vertical-align:top;">Command + B</td><td></td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">Toggle Terminal</td><td style="white-space:nowrap;vertical-align:top;">Ctrl + J</td>
+<td style="white-space:nowrap;vertical-align:top;">Command + J</td><td></td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">Multi-Select Cursor</td><td style="white-space:nowrap;vertical-align:top;">Ctrl + D</td>
+<td style="white-space:nowrap;vertical-align:top;">Command + D</td><td style="vertical-align:top;">When you need to change all occurences of a function or tag in a file, select one. Then use the short cut to select all and make your changes.</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">Copy Line</td><td style="white-space:nowrap;vertical-align:top;">Shift + Alt + Up <br> Shift + Alt + Down</td>
+<td style="white-space:nowrap;vertical-align:top;">Option + Shift + Up <br> Option + Shift + Down</td><td style="vertical-align:top;">Click in one line and use the shortcut.</td></tr>
+<tr><td style="white-space:nowrap;vertical-align:top;">Open Command Palette</td><td style="white-space:nowrap;vertical-align:top;">Ctrl + Shift + P</td>
+<td style="white-space:nowrap;vertical-align:top;">Command + Shift + P</td><td style="vertical-align:top;">Use the shortcut and start typing the command...</td></tr>
+</table>
+<h3 id="-20"><a class="header" href="#-20"></a></h3>
+<h2 id="flutter-tutorial-for-beginners-in-1-hour"><a class="header" href="#flutter-tutorial-for-beginners-in-1-hour">Flutter Tutorial For Beginners In 1 Hour</a></h2>
+<p>When I first started exploring Flutter, I found this video to be particularly valuable. In addition to learning about the interplay of widgets and arguments, the tips on practical handling in VS Code were also very helpful to me.</p>
+<p><a href="https://www.youtube.com/watch?v=C-fKAzdTrLU" target="_blank">👉   Flutter Tutorial For Beginners In 1 Hour</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="flutter-and-rust"><a class="header" href="#flutter-and-rust">Flutter and Rust</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="frb-example-app"><a class="header" href="#frb-example-app">FRB Example App</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="logging-example-app"><a class="header" href="#logging-example-app">Logging Example App</a></h1>
