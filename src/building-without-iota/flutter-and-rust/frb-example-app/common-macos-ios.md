@@ -47,37 +47,3 @@ cd ..
 </figure>
 
 ###
-
----
-
-## WORKAROUND WORKAROUND WORKAROUND
-
-When you have installed the **version 1.5.0** from `cargo-xcode`, Flutter will not be able to find the dynamic library. You'll get an error like this:
-
-```
-Launching lib/main.dart on macOS in debug mode...
---- xcodebuild: WARNING: Using the first of multiple matching destinations:
-{ platform:macOS, arch:arm64, id:00008103-001251441A62001E }
-{ platform:macOS, arch:x86_64, id:00008103-001251441A62001E }
-Building macOS application...
-dyld[64001]: Library not loaded: /usr/local/lib/rust.dylib
-  Referenced from: <29A02B41-EAF9-315B-977F-429B4DD80404> /Users/kaimueller/Documents/iota_for_flutter/example2/build/macos/Build/Products/Debug/example2.app/Contents/MacOS/example2
-  Reason: tried: '/usr/local/lib/rust.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/usr/local/lib/rust.dylib' (no such file), '/usr/local/lib/rust.dylib' (no such file), '/usr/lib/rust.dylib' (no such file, not in dyld cache)
-Error waiting for a debug connection: The log reader stopped unexpectedly, or never started.
-Error launching application on macOS.
-```
-
-Here's the solution:
-
-<figure style="margin:0;">
-<a style="width:50%" href="https://github.com/fzyzcjy/flutter_rust_bridge/issues/870" target="_blank">
-<img src="../../../assets/dylib_workaround.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Workaround for "rust.dylib (no such file)" - click to go to Issue 870</p></figcaption>
-</a>
-</figure>
-
-1. In VS Code, open file _rust/rust.xcodeproj/project.pbxproj_.
-2. Search for the 2 lines with the text `CARGO_XCODE_FEATURES = "";`
-3. Insert a new line after each of these lines and insert
-   ```
-   DYLIB_INSTALL_NAME_BASE = "$(TARGET_BUILD_DIR)";
-   ```
