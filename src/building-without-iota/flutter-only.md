@@ -50,7 +50,7 @@ Open the Terminal in VS Code (see Shortcut below) and type in `flutter run`. If 
 
 <figure style="margin:0;"><img src="../assets/flutter_run.jpg" alt="Launch app"><figcaption style="font-size: 0.8em;text-align:center;"><p>Launching app by <i>flutter run</i></p></figcaption></figure>
 
-b) By selecting the Target Platform first, and then by using one of several starting options:
+b) By selecting the Target Platform first, and then by using one of several starting options **(ensure that the _main.dart_ file is open)**:
 
 <figure style="margin:0;"><img src="../assets/launchapp/launch1.jpg" alt="Current Target platform"><figcaption style="font-size: 0.8em;text-align:center;"><p>Current Target Platform - click to select another one</p></figcaption></figure>
 

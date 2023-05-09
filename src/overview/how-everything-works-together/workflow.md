@@ -64,6 +64,10 @@ flutter pub add -d freezed
 flutter pub add freezed_annotation
 ```
 
+```
+cargo install cargo-ndk
+```
+
 In _Cargo.toml_:
 
 ```

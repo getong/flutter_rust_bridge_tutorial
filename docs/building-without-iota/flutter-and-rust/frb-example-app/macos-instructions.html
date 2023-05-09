@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>4. macOS instructions</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/custom.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Welcome</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../index.html">👋 About: IOTA for Flutter</a></li><li class="chapter-item expanded "><a href="../../../welcome/what-youll-get.html">💻 What you'll get</a></li><li class="chapter-item expanded "><a href="../../../welcome/when-you-are-js-developer/index.html">☕ When you are JS developer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../welcome/when-you-are-js-developer/dart-vs.-javascript.html">Dart vs. JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="../../../welcome/which-resources-you-need.html">✨ Which resources you need</a></li><li class="chapter-item expanded "><a href="../../../welcome/how-to-get-the-most-out-of-this-tutorial.html">🧐 How to get the most out of this tutorial</a></li><li class="chapter-item expanded "><a href="../../../welcome/what-does-this-tutorial-not-contain.html">⚠️ What does this tutorial NOT contain?</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Fundamentals</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../fundamentals/android-studio/index.html">Android Studio</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/android-studio/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/android-studio/essentials.html">Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/xcode/index.html">Xcode</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/xcode/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/xcode/essentials.html">Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/flutter/index.html">Flutter</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/flutter/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/flutter/essentials.html">Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/rust/index.html">Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/rust/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/rust/essentials.html">Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/ide-visual-studio-code/index.html">IDE: Visual Studio Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/ide-visual-studio-code/set-up.html">Set up</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Overview</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../overview/how-everything-works-together/index.html">💡 How everything works together</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../overview/how-everything-works-together/workflow.html">Workflow</a></li></ol></li><li class="chapter-item expanded "><a href="../../../overview/cross-compiling.html">🏭 Cross-Compiling</a></li><li class="chapter-item expanded "><a href="../../../overview/flutter-rust-bridge/index.html">🌁 Flutter Rust Bridge</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../overview/flutter-rust-bridge/about.html">About</a></li><li class="chapter-item expanded "><a href="../../../overview/flutter-rust-bridge/features.html">Language translations</a></li></ol></li><li class="chapter-item expanded "><a href="../../../overview/iota-libraries.html">📚 IOTA libraries</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Building without IOTA</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-only.html">Flutter only</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/index.html">Flutter and Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/index.html">FRB Template App - modified Workflow</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/common-part-1.html">1. Initialization and Rust part</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/android-instructions.html">2. Android instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/common-macos-ios.html">3. Common macOS/iOS instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.html" class="active">4. macOS instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/ios-instructions.html">5. iOS instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/common-part-2.html">6. Flutter part</a></li></ol></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/logging-example-app.html">Logging Example App</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="part-4-macos-specific-instructions"><a class="header" href="#part-4-macos-specific-instructions">Part 4: macOS specific instructions</a></h1>
+<hr />
+<p>FRB Template App: Applying the <strong><a href="../frb-example-app">modified Workflow</a></strong>.</p>
+<hr />
+<h2 id="macos-steps"><a class="header" href="#macos-steps">macOS steps</a></h2>
+<h3 id="generate-the-dart-interface"><a class="header" href="#generate-the-dart-interface">Generate the Dart Interface</a></h3>
+<p>Our next task is to create the generated code. This will also copy the C header file <code>bridge_generated.h</code> into the folder <em>macos/Runner/</em>. Use this command (you need to be in the root of your project):</p>
+<pre><code>flutter_rust_bridge_codegen \
+--rust-input rust/src/api.rs \
+--dart-output ./lib/bridge_generated.dart \
+--dart-decl-output ./lib/bridge_definitions.dart \
+--c-output macos/Runner/bridge_generated.h
+</code></pre>
+<h3 id="create-the-subproject"><a class="header" href="#create-the-subproject">Create the subproject</a></h3>
+<p>How is a subproject created in Xcode?</p>
+<p>Simply open the <em>macos/Runner.xcodeproj</em> in Xcode, open the <em>rust/</em> directory in Finder and drag the <em>rust.xcodeproj</em> into the Runner folder. The next images will illustrate the steps.</p>
+<figure style="margin:0;">
+<img src="../../../assets/macos_instructions/macos_1.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Open <i>Runner.xcodeproj</i></p></figcaption>
+</figure>
+<figure style="margin:0;">
+<img src="../../../assets/macos_instructions/macos_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
+</figure>
+<figure style="margin:0;">
+<img src="../../../assets/macos_instructions/macos_3.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>The new subproject</p></figcaption>
+</figure>
+<h3 id="adjust-the-runner-targets-build-phases"><a class="header" href="#adjust-the-runner-targets-build-phases">Adjust the Runner Target's <em>Build Phases</em></a></h3>
+<p><a href="https://cjycode.com/flutter_rust_bridge/integrate/ios_linking.html" target="_blank">For macOS, FRB recommends to include the dynamic library.</a></p>
+<p>a) In Runner Target's <em>Build Phase</em> -&gt; <em>Target Dependencies</em>:</p>
+<p>Click on &quot;+&quot; and select <code>rust-cdylib</code>.</p>
+<p>b) In Runner Target's <em>Build Phase</em> -&gt; <em>Link Binary with Libraries</em>:</p>
+<p>Click on &quot;+&quot; and select <code>rust.dylib</code>.</p>
+<figure style="margin:0;">
+<img src="../../../assets/macos_instructions/macos_4.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Phases</i></p></figcaption>
+</figure>
+<h3 id="adjust-the-runner-targets-build-settings"><a class="header" href="#adjust-the-runner-targets-build-settings">Adjust the Runner Target's <em>Build Settings</em></a></h3>
+<p>Start typing &quot;Objective-C Bridging Header&quot; in the filter... the hard-to-find setting is in the <em>Swift Compiler - General</em> section of the settings.</p>
+<p>As value, insert:</p>
+<pre><code>Runner/bridge_generated.h
+</code></pre>
+<figure style="margin:0;">
+<img src="../../../assets/macos_instructions/macos_5.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Settings</i></p></figcaption>
+</figure>
+<h3 id="adjust-minimum-deployments"><a class="header" href="#adjust-minimum-deployments">Adjust <em>Minimum Deployments</em></a></h3>
+<p>To ensure that your app can run on your host computer and Xcode version, you may only be able to support newer macOS versions. To set the minimum supported macOS version for your app, go to the <em>General</em> tab and select macOS version <code>13.1</code> as the <em>Minimum Deployments</em> target.</p>
+<figure style="margin:0;">
+<img src="../../../assets/macos_instructions/macos_6.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Minimum Deployment</i></p></figcaption>
+</figure>
+<h3 id="adjust-the-appdelegateswift-file"><a class="header" href="#adjust-the-appdelegateswift-file">Adjust the <code>AppDelegate.swift</code> file</a></h3>
+<p>Switch to Visual Studio Code and open the file <code>macos/Runner/AppDelegate.swift</code>. We need to call the function <em>dummy_method_to_enforce_bundling()</em> (from FRB) somewhere to avoid that Xcode doesn't handle our library as dead code.</p>
+<p>Add:</p>
+<pre><code>dummy_method_to_enforce_bundling()
+</code></pre>
+<p>Your file should look like:</p>
+<pre><code>import Cocoa
+import FlutterMacOS
+
+@NSApplicationMain
+class AppDelegate: FlutterAppDelegate {
+  override func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -&gt; Bool {
+    dummy_method_to_enforce_bundling()
+    return true
+  }
+}
+</code></pre>
+<h3 id=""><a class="header" href="#"></a></h3>
+<hr />
+<h2 id="just-for-your-information"><a class="header" href="#just-for-your-information">Just for your information</a></h2>
+<p>When it comes to building the libraries, you might be curious about the process. When you use the <code>cargo-xcode</code> command to create the Rust Xcode project, it also installs build rules. These build rules tell Xcode how to create the libraries during the build process. So, when Xcode builds the application, it first builds the subproject and then follows the build rules to create the necessary libraries.</p>
+<blockquote>
+<p><strong>Look twice!</strong> It's not the target of the Runner Project, but the target of the Rust subproject!</p>
+</blockquote>
+<figure style="margin:0;">
+<a href="../../../assets/xcode/macos_build-rules.jpg" target="_blank">
+<img src="../../../assets/xcode/macos_build-rules.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Build rules generated by <i>cargo-xcode</i> (click to enlarge)</p></figcaption>
+</a>
+</figure>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../building-without-iota/flutter-and-rust/frb-example-app/common-macos-ios.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../building-without-iota/flutter-and-rust/frb-example-app/ios-instructions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../building-without-iota/flutter-and-rust/frb-example-app/common-macos-ios.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../building-without-iota/flutter-and-rust/frb-example-app/ios-instructions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -55,5 +55,11 @@
 
 - [Flutter only](building-without-iota/flutter-only.md)
 - [Flutter and Rust](building-without-iota/flutter-and-rust/README.md)
-  - [FRB Example App](building-without-iota/flutter-and-rust/frb-example-app.md)
+  - [FRB Template App - modified Workflow](building-without-iota/flutter-and-rust/frb-example-app/README.md)
+    - [1. Initialization and Rust part](building-without-iota/flutter-and-rust/frb-example-app/common-part-1.md)
+    - [2. Android instructions](building-without-iota/flutter-and-rust/frb-example-app/android-instructions.md)
+    - [3. Common macOS/iOS instructions](building-without-iota/flutter-and-rust/frb-example-app/common-macos-ios.md)
+    - [4. macOS instructions](building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.md)
+    - [5. iOS instructions](building-without-iota/flutter-and-rust/frb-example-app/ios-instructions.md)
+    - [6. Flutter part](building-without-iota/flutter-and-rust/frb-example-app/common-part-2.md)
   - [Logging Example App](building-without-iota/flutter-and-rust/logging-example-app.md)

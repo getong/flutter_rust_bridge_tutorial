@@ -2,10 +2,12 @@
 
 ---
 
+Will be completed in Milestone 2 and 3.
+
 ---
 
-IOTAs Rust libraries
-Stardust / Library versions and how to mix
-analyze real versions and dependencies
-Cargo.lock -> Herausfinden von Versionen,
-Wie man Referenzen in github löst
+- IOTA's Rust libraries
+- Chrysalis and Stardust - library versions
+- Cargo.lock: How to find out versions of dependencies
+- How to mix IOTA libraries
+- How to use GitHub references
