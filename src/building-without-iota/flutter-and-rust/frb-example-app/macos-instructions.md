@@ -117,8 +117,6 @@ When it comes to building the libraries, you might be curious about the process.
 </a>
 </figure>
 
----
-
 ## WORKAROUND WORKAROUND WORKAROUND
 
 When you have installed the **version 1.5.0** from `cargo-xcode` (as you can see in the _Build rules_ image above), Flutter will not be able to find the dynamic library. You'll get an error like this:

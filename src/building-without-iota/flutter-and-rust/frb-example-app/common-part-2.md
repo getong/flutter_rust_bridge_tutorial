@@ -8,7 +8,7 @@ FRB Template App: Applying the **<a href="../frb-example-app">modified Workflow<
 
 ## Flutter instructions
 
-### Create Helper file
+### Create helper file
 
 Let's make a new file in the _lib/_ directory called `ffi.dart`. This file will help us load the library into our code. Here's what you should put inside the file:
 
