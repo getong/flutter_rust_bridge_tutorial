@@ -62,4 +62,5 @@
     - [4. macOS instructions](building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.md)
     - [5. iOS instructions](building-without-iota/flutter-and-rust/frb-example-app/ios-instructions.md)
     - [6. Flutter part](building-without-iota/flutter-and-rust/frb-example-app/common-part-2.md)
+    - [7. Build and run](building-without-iota/flutter-and-rust/frb-example-app/build-run.md)
   - [Logging Example App](building-without-iota/flutter-and-rust/logging-example-app.md)
