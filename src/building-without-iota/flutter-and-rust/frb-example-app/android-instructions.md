@@ -8,6 +8,19 @@ FRB Template App: Applying the **<a href="../frb-example-app">modified Workflow<
 
 ## Android steps
 
+### Generate the Dart Interface
+
+Use this command (you need to be in the root of your project):
+
+```
+flutter_rust_bridge_codegen \
+--rust-input rust/src/api.rs \
+--dart-output ./lib/bridge_generated.dart \
+--dart-decl-output ./lib/bridge_definitions.dart \
+```
+
+### Set up the Flutter Rust Bridge (2)
+
 To install the `cargo-ndk` command use:
 
 ```

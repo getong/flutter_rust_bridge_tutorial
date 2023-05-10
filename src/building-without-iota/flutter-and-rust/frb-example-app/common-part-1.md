@@ -30,7 +30,7 @@ In VS Code open the terminal and execute:
 cargo new --lib rust
 ```
 
-## Setup the Flutter Rust Bridge (1)
+## Set up the Flutter Rust Bridge (1)
 
 ```
 cargo install flutter_rust_bridge_codegen
