@@ -34,15 +34,25 @@ cargo new --lib rust
 
 ```
 cargo install flutter_rust_bridge_codegen
+```
 
+```
 flutter pub add --dev ffigen && flutter pub add ffi
+```
 
+```
 flutter pub add flutter_rust_bridge
+```
 
+```
 flutter pub add -d build_runner
+```
 
+```
 flutter pub add -d freezed
+```
 
+```
 flutter pub add freezed_annotation
 ```
 

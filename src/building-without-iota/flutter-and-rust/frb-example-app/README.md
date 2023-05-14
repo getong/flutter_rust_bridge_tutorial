@@ -24,7 +24,7 @@ Remember the workflow used in the introduction chapter <a href="../../../overvie
 
 <figure style="margin:0;"><img src="../../../assets/overview/Overview.011.png" alt="Summary of Workflow"><figcaption style="font-size: 0.8em;text-align:center;"><p>All steps of the workflow</p></figcaption></figure>
 
-You can simply list all the steps one after the other in a straightforward workflow.
+You can simply list all the steps one after the other in a straight forward workflow.
 
 <figure style="margin:0;"><img src="../../../assets/chicken_egg/chicken_egg.001.png" alt="Summary of Workflow"><figcaption style="font-size: 0.8em;text-align:center;"><p>Straight forward workflow</p></figcaption></figure>
 
@@ -32,7 +32,7 @@ This works for Android.
 
 <figure style="margin:0;"><img src="../../../assets/chicken_egg/chicken_egg.002.png" alt="Android: straight forward workflow"><figcaption style="font-size: 0.8em;text-align:center;"><p>Android: straight forward workflow</p></figcaption></figure>
 
-When working on macOS and iOS, you may encounter a _Chicken and Egg_ problem, which is not a serious issue but may result in error messages that we would like to avoid.
+When working on macOS and iOS, you may encounter a _Chicken and Egg_ problem, which is **not a serious issue** but may result in error messages that we would like to avoid.
 
 <figure style="margin:0;"><img src="../../../assets/chicken_egg/chicken_egg.003.png" alt="Straight forward workflow doesn't work for macOS / iOS"><figcaption style="font-size: 0.8em;text-align:center;"><p>Straight forward workflow doesn't work for macOS / iOS</p></figcaption></figure>
 

@@ -41,6 +41,7 @@
 
 - [💡 How everything works together](overview/how-everything-works-together/README.md)
   - [Workflow](overview/how-everything-works-together/workflow.md)
+  - [Handling code changes](overview/how-everything-works-together/handling-code-changes.md)
 - [🏭 Cross-Compiling](overview/cross-compiling.md)
 - [🌁 Flutter Rust Bridge](overview/flutter-rust-bridge/README.md)
   - [About](overview/flutter-rust-bridge/about.md)
@@ -64,3 +65,4 @@
     - [6. Flutter part](building-without-iota/flutter-and-rust/frb-example-app/common-part-2.md)
     - [7. Build and run](building-without-iota/flutter-and-rust/frb-example-app/build-run.md)
   - [Logging Example App](building-without-iota/flutter-and-rust/logging-example-app/README.md)
+    - [Resources](building-without-iota/flutter-and-rust/logging-example-app/resources.md)

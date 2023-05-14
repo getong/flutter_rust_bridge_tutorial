@@ -1,0 +1,823 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Resources</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/custom.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Welcome</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../index.html">👋 About: IOTA for Flutter</a></li><li class="chapter-item expanded "><a href="../../../welcome/what-youll-get.html">💻 What you'll get</a></li><li class="chapter-item expanded "><a href="../../../welcome/when-you-are-js-developer/index.html">☕ When you are JS developer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../welcome/when-you-are-js-developer/dart-vs.-javascript.html">Dart vs. JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="../../../welcome/which-resources-you-need.html">✨ Which resources you need</a></li><li class="chapter-item expanded "><a href="../../../welcome/how-to-get-the-most-out-of-this-tutorial.html">🧐 How to get the most out of this tutorial</a></li><li class="chapter-item expanded "><a href="../../../welcome/what-does-this-tutorial-not-contain.html">⚠️ What does this tutorial NOT contain?</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Fundamentals</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../fundamentals/android-studio/index.html">Android Studio</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/android-studio/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/android-studio/essentials.html">Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/xcode/index.html">Xcode</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/xcode/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/xcode/essentials.html">Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/flutter/index.html">Flutter</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/flutter/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/flutter/essentials.html">Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/rust/index.html">Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/rust/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/rust/essentials.html">Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/ide-visual-studio-code/index.html">IDE: Visual Studio Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/ide-visual-studio-code/set-up.html">Set up</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Overview</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../overview/how-everything-works-together/index.html">💡 How everything works together</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../overview/how-everything-works-together/workflow.html">Workflow</a></li><li class="chapter-item expanded "><a href="../../../overview/how-everything-works-together/handling-code-changes.html">Handling code changes</a></li></ol></li><li class="chapter-item expanded "><a href="../../../overview/cross-compiling.html">🏭 Cross-Compiling</a></li><li class="chapter-item expanded "><a href="../../../overview/flutter-rust-bridge/index.html">🌁 Flutter Rust Bridge</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../overview/flutter-rust-bridge/about.html">About</a></li><li class="chapter-item expanded "><a href="../../../overview/flutter-rust-bridge/features.html">Language translations</a></li></ol></li><li class="chapter-item expanded "><a href="../../../overview/iota-libraries.html">📚 IOTA libraries</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Building without IOTA</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-only.html">Flutter only</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/index.html">Flutter and Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/index.html">FRB Template App - modified Workflow</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/common-part-1.html">1. Initialization and Rust part</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/android-instructions.html">2. Android instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/common-macos-ios.html">3. Common macOS/iOS instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.html">4. macOS instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/ios-instructions.html">5. iOS instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/common-part-2.html">6. Flutter part</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/build-run.html">7. Build and run</a></li></ol></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/logging-example-app/index.html">Logging Example App</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/logging-example-app/resources.html" class="active">Resources</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="resources"><a class="header" href="#resources">Resources</a></h1>
+<hr />
+<p>Watch the video, check the source code and explore the Github Repository.</p>
+<hr />
+<h2 id="warning-the-name-of-your-project-matters"><a class="header" href="#warning-the-name-of-your-project-matters">WARNING: The name of your project matters!</a></h2>
+<blockquote>
+<p><strong>Don't name your project &quot;logging&quot;</strong>!</p>
+<p><strong>&quot;logging&quot;</strong> is the name of an <strong>existing</strong> Flutter package (search for it in <a href="https://pub.dev/packages?q=logging" target="_blank">Flutter packages</a>)...<br />
+... which is a dependency of the package &quot;ffigen&quot; ...<br />
+... which is a dependency of YOUR project!</p>
+<p>If your project name was &quot;logging&quot; you would run into serious troubles at some point:</p>
+<figure style="margin:0;"><img src="../../../assets/logging_troubles.jpg" alt=""></figure>
+</blockquote>
+<h2 id="rust-code-snippets"><a class="header" href="#rust-code-snippets">Rust Code Snippets</a></h2>
+<h3 id="cargotoml"><a class="header" href="#cargotoml">Cargo.toml</a></h3>
+<pre><code>[package]
+name = &quot;rust&quot;
+version = &quot;0.1.0&quot;
+edition = &quot;2021&quot;
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+flutter_rust_bridge = &quot;1&quot;
+
+# For the logger
+lazy_static = &quot;1.4.0&quot;
+log = &quot;0.4.17&quot;
+simplelog = &quot;0.12.0&quot;
+parking_lot = &quot;0.12.1&quot;
+anyhow = &quot;1&quot;
+
+[lib]
+crate-type = [&quot;staticlib&quot;, &quot;cdylib&quot;]
+</code></pre>
+<h3 id="loggerrs"><a class="header" href="#loggerrs">logger.rs</a></h3>
+<pre><code>use std::sync::Once;
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
+
+use flutter_rust_bridge::StreamSink;
+use lazy_static::lazy_static;
+use log::{error, info, warn, Log, Metadata, Record};
+use parking_lot::RwLock;
+use simplelog::*;
+
+use crate::api::LogEntry;
+
+static INIT_LOGGER_ONCE: Once = Once::new();
+
+pub fn init_logger() {
+
+    INIT_LOGGER_ONCE.call_once(|| {
+        let level = LevelFilter::Debug;
+
+        assert!(
+            level &lt;= log::STATIC_MAX_LEVEL,
+            &quot;Should respect log::STATIC_MAX_LEVEL={:?}, which is done in compile time. level{:?}&quot;,
+            log::STATIC_MAX_LEVEL,
+            level
+        );
+
+        CombinedLogger::init(vec![
+            Box::new(SendToDartLogger::new(level)),
+            // Box::new(MyMobileLogger::new(level)),
+            // #[cfg(not(any(target_os = &quot;android&quot;, target_os = &quot;ios&quot;)))]
+            TermLogger::new(
+                level,
+                ConfigBuilder::new()
+                    //.set_time_format_str(&quot;%H:%M:%S%.3f&quot;)
+                    //.set_time_format_custom(format_description!(&quot;[hour]:[minute]:[second].[subsecond]&quot;))
+                    .build(),
+                TerminalMode::Mixed,
+                ColorChoice::Auto,
+            ),
+        ])
+        .unwrap_or_else(|e| {
+            error!(&quot;init_logger (inside 'once') has error: {:?}&quot;, e);
+        });
+        info!(&quot;init_logger (inside 'once') finished&quot;);
+
+        warn!(
+            &quot;init_logger finished, chosen level={:?} (deliberately output by warn level)&quot;,
+            level
+        );
+    });
+}
+
+lazy_static! {
+    static ref SEND_TO_DART_LOGGER_STREAM_SINK: RwLock&lt;Option&lt;StreamSink&lt;LogEntry&gt;&gt;&gt; =
+        RwLock::new(None);
+}
+
+pub struct SendToDartLogger {
+    level: LevelFilter,
+}
+
+impl SendToDartLogger {
+    pub fn set_stream_sink(stream_sink: StreamSink&lt;LogEntry&gt;) {
+        let mut guard = SEND_TO_DART_LOGGER_STREAM_SINK.write();
+        let overriding = guard.is_some();
+
+        *guard = Some(stream_sink);
+
+        drop(guard);
+
+        if overriding {
+            warn!(
+                &quot;SendToDartLogger::set_stream_sink but already exist a sink, thus overriding. \
+                (This may or may not be a problem. It will happen normally if hot-reload Flutter app.)&quot;
+            );
+        }
+    }
+
+    pub fn new(level: LevelFilter) -&gt; Self {
+        SendToDartLogger { level }
+    }
+
+    fn record_to_entry(record: &amp;Record) -&gt; LogEntry {
+        let time_millis = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap_or_else(|_| Duration::from_secs(0))
+            .as_millis() as i64;
+
+        let level = match record.level() {
+            Level::Trace =&gt; Self::LEVEL_TRACE,
+            Level::Debug =&gt; Self::LEVEL_DEBUG,
+            Level::Info =&gt; Self::LEVEL_INFO,
+            Level::Warn =&gt; Self::LEVEL_WARN,
+            Level::Error =&gt; Self::LEVEL_ERROR,
+        };
+
+
+        let whole_msg = format!(&quot;{}&quot;, record.args());
+        let tag;
+        let user_id;
+        let user;
+        let msg;
+
+        if whole_msg.starts_with(&quot;my_domain&quot;) {
+            let vector: Vec&lt;&amp;str&gt; = whole_msg.split(&quot;@@@&quot;).collect();
+            //Position 1: Domain
+            //Position 2: Tag
+            tag = format!(&quot;{}&quot;, vector[1]);
+            //Position 3: User-ID
+            user_id = format!(&quot;{}&quot;, vector[2]).to_string();
+            //Position 4: User
+            user = format!(&quot;{}&quot;, vector[3]).to_string();
+            //Position 5: Message
+            msg = format!(&quot;{}&quot;, vector[4]);
+        } else {
+            tag = record.file().unwrap_or_else(|| record.target()).to_owned().to_string();
+            user_id = &quot;&quot;.into();
+            user = &quot;&quot;.into();
+            msg = format!(&quot;{}&quot;, record.args());
+        }
+
+        LogEntry {
+            time_millis,
+            level,
+            tag,
+            user_id,
+            user,
+            msg,
+        }
+    }
+
+    const LEVEL_TRACE: i32 = 5000;
+    const LEVEL_DEBUG: i32 = 10000;
+    const LEVEL_INFO: i32 = 20000;
+    const LEVEL_WARN: i32 = 30000;
+    const LEVEL_ERROR: i32 = 40000;
+}
+
+impl Log for SendToDartLogger {
+    fn enabled(&amp;self, _metadata: &amp;Metadata) -&gt; bool {
+        true
+    }
+
+    fn log(&amp;self, record: &amp;Record) {
+        let entry = Self::record_to_entry(record);
+        if let Some(sink) = &amp;*SEND_TO_DART_LOGGER_STREAM_SINK.read() {
+            sink.add(entry);
+        }
+    }
+
+    fn flush(&amp;self) {
+        // no need
+    }
+}
+
+impl SharedLogger for SendToDartLogger {
+    fn level(&amp;self) -&gt; LevelFilter {
+        self.level
+    }
+
+    fn config(&amp;self) -&gt; Option&lt;&amp;Config&gt; {
+        None
+    }
+
+    fn as_log(self: Box&lt;Self&gt;) -&gt; Box&lt;dyn Log&gt; {
+        Box::new(*self)
+    }
+}
+</code></pre>
+<h3 id="apirs"><a class="header" href="#apirs">api.rs</a></h3>
+<pre><code>use crate::logger;
+
+use anyhow::Result;
+use flutter_rust_bridge::StreamSink;
+
+use log::{trace, debug, warn, info, error};
+
+pub struct LogEntry {
+    pub time_millis: i64,
+    pub level: i32,
+    pub tag: String,
+    pub user_id: String,
+    pub user: String,
+    pub msg: String,
+}
+
+// Dummy function to fix Rust compiler complaints...
+// See https://github.com/fzyzcjy/flutter_rust_bridge/issues/398
+// Workaround:
+// 1. Save Rust Code
+// 2. Execute flutter_rust_bridge_codegen command
+// 3. Make any change to Rust code (e.g. add blank) and save again
+//    -&gt; next compile is ok
+#[allow(dead_code, unused_variables)]
+pub fn dummy(a: LogEntry) {}
+
+
+pub fn rust_set_up() -&gt; String {
+    logger::init_logger();
+    &quot;Logger was initialized&quot;.into()
+}
+
+pub fn create_log_stream(s: StreamSink&lt;LogEntry&gt;) -&gt; Result&lt;()&gt; {
+    logger::SendToDartLogger::set_stream_sink(s);
+    Ok(())
+}
+
+pub fn publish_message(message: String) {
+
+    trace!(&quot;TRACE   --------------- {}&quot;, message );
+    debug!(&quot;DEBUG   --------------- {}&quot;, message );
+    warn!(&quot;WARNING --------------- {}&quot;, message );
+    info!(&quot;INFO    --------------- {}&quot;, message );
+    error!(&quot;ERROR   --------------- {}&quot;, message );
+
+    debug!(&quot;my_domain@@@my_tag@@@uuid@@@name@@@This logger message comes from RUST:\n{}&quot;, message );
+
+}
+</code></pre>
+<p>To fix Rust compilation complains, add:</p>
+<pre><code>
+
+</code></pre>
+<h3 id="librs"><a class="header" href="#librs">lib.rs</a></h3>
+<pre><code>mod api;
+mod logger;
+</code></pre>
+<h2 id="flutter--dart-code-snippets"><a class="header" href="#flutter--dart-code-snippets">Flutter / Dart Code Snippets</a></h2>
+<h3 id="pubspecyaml"><a class="header" href="#pubspecyaml">pubspec.yaml</a></h3>
+<p><strong>Don't just copy &amp; paste the content of pubspec.yaml</strong> </p>
+<blockquote>
+<p>You have to adjust the property <em>name</em> in line 1:<br />
+replace the value <em>&lt;NAME_OF_YOUR_PROJECT&gt;</em> by the name of your project</p>
+</blockquote>
+<pre><code>name: &lt;NAME_OF_YOUR_PROJECT&gt;
+description: Logging Example App.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '&gt;=2.19.6 &lt;3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  ffi: ^2.0.2
+  flutter_rust_bridge: ^1.75.2
+  freezed_annotation: ^2.2.0
+  flutter_chat_ui: ^1.6.6
+  file_picker: ^5.3.0
+  image_picker: ^0.8.7+4
+  open_filex: ^4.3.2
+  path_provider: ^2.0.15
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  ffigen: ^7.2.11
+  build_runner: ^2.3.3
+  freezed: ^2.3.3
+
+flutter:
+
+   uses-material-design: true
+
+</code></pre>
+<h3 id="ffidart"><a class="header" href="#ffidart">ffi.dart</a></h3>
+<pre><code>// This file initializes the dynamic library and connects it with the stub
+// generated by flutter_rust_bridge_codegen.
+
+import 'dart:ffi';
+
+import 'bridge_generated.dart';
+import 'bridge_definitions.dart';
+export 'bridge_definitions.dart';
+
+// Re-export the bridge so it is only necessary to import this file.
+export 'bridge_generated.dart';
+import 'dart:io' as io;
+
+const _base = 'rust';
+
+// On MacOS, the dynamic library is not bundled with the binary,
+// but rather directly **linked** against the binary.
+final _dylib = io.Platform.isWindows ? '$_base.dll' : 'lib$_base.so';
+
+final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
+    ? DynamicLibrary.executable()
+    : DynamicLibrary.open(_dylib));
+</code></pre>
+<h3 id="maindart"><a class="header" href="#maindart">main.dart</a></h3>
+<pre><code>import 'dart:convert';
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:flutter_chat_ui/flutter_chat_ui.dart';
+import 'package:http/http.dart' as http;
+import 'package:image_picker/image_picker.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:mime/mime.dart';
+import 'package:open_filex/open_filex.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:uuid/uuid.dart';
+
+import 'ffi.dart';
+
+void main() {
+  initializeDateFormatting().then((_) =&gt; runApp(const MyApp()));
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) =&gt; const MaterialApp(
+        home: ChatPage(),
+      );
+}
+
+class ChatPage extends StatefulWidget {
+  const ChatPage({super.key});
+
+  @override
+  State&lt;ChatPage&gt; createState() =&gt; _ChatPageState();
+}
+
+class _ChatPageState extends State&lt;ChatPage&gt; {
+  List&lt;types.Message&gt; _messages = [];
+  final _user = const types.User(id: '82091008-a484-4a89-ae75-a22bf8d6f3ac');
+
+  final _tag = &quot;my_tag&quot;;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _setup();
+  }
+
+  @override
+  Widget build(BuildContext context) =&gt; Scaffold(
+        body: Chat(
+          messages: _messages,
+          onAttachmentPressed: null, //_handleAttachmentPressed,
+          onMessageTap: _handleMessageTap,
+          onPreviewDataFetched: null, //_handlePreviewDataFetched,
+          onSendPressed: _handleSendPressed,
+          showUserAvatars: true,
+          showUserNames: true,
+          user: _user,
+        ),
+      );
+
+  void _addMessage(types.Message message) {
+    setState(() {
+      _messages.insert(0, message);
+    });
+  }
+
+  void _handleAttachmentPressed() {
+    showModalBottomSheet&lt;void&gt;(
+      context: context,
+      builder: (BuildContext context) =&gt; SafeArea(
+        child: SizedBox(
+          height: 144,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: &lt;Widget&gt;[
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  _handleImageSelection();
+                },
+                child: const Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: Text('Photo'),
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  _handleFileSelection();
+                },
+                child: const Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: Text('File'),
+                ),
+              ),
+              TextButton(
+                onPressed: () =&gt; Navigator.pop(context),
+                child: const Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: Text('Cancel'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _handleFileSelection() async {
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.any,
+    );
+
+    if (result != null &amp;&amp; result.files.single.path != null) {
+      final message = types.FileMessage(
+        author: _user,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
+        id: const Uuid().v4(),
+        mimeType: lookupMimeType(result.files.single.path!),
+        name: result.files.single.name,
+        size: result.files.single.size,
+        uri: result.files.single.path!,
+      );
+
+      _addMessage(message);
+    }
+  }
+
+  void _handleImageSelection() async {
+    final result = await ImagePicker().pickImage(
+      imageQuality: 70,
+      maxWidth: 1440,
+      source: ImageSource.gallery,
+    );
+
+    if (result != null) {
+      final bytes = await result.readAsBytes();
+      final image = await decodeImageFromList(bytes);
+
+      final message = types.ImageMessage(
+        author: _user,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
+        height: image.height.toDouble(),
+        id: const Uuid().v4(),
+        name: result.name,
+        size: bytes.length,
+        uri: result.path,
+        width: image.width.toDouble(),
+      );
+
+      _addMessage(message);
+    }
+  }
+
+  void _handleMessageTap(BuildContext _, types.Message message) async {
+    if (message is types.FileMessage) {
+      var localPath = message.uri;
+
+      if (message.uri.startsWith('http')) {
+        try {
+          final index =
+              _messages.indexWhere((element) =&gt; element.id == message.id);
+          final updatedMessage =
+              (_messages[index] as types.FileMessage).copyWith(
+            isLoading: true,
+          );
+
+          setState(() {
+            _messages[index] = updatedMessage;
+          });
+
+          final client = http.Client();
+          final request = await client.get(Uri.parse(message.uri));
+          final bytes = request.bodyBytes;
+          final documentsDir = (await getApplicationDocumentsDirectory()).path;
+          localPath = '$documentsDir/${message.name}';
+
+          if (!File(localPath).existsSync()) {
+            final file = File(localPath);
+            await file.writeAsBytes(bytes);
+          }
+        } finally {
+          final index =
+              _messages.indexWhere((element) =&gt; element.id == message.id);
+          final updatedMessage =
+              (_messages[index] as types.FileMessage).copyWith(
+            isLoading: null,
+          );
+
+          setState(() {
+            _messages[index] = updatedMessage;
+          });
+        }
+      }
+
+      await OpenFilex.open(localPath);
+    }
+  }
+
+  void _handlePreviewDataFetched(
+    types.TextMessage message,
+    types.PreviewData previewData,
+  ) {
+    final index = _messages.indexWhere((element) =&gt; element.id == message.id);
+    final updatedMessage = (_messages[index] as types.TextMessage).copyWith(
+      previewData: previewData,
+    );
+
+    setState(() {
+      _messages[index] = updatedMessage;
+    });
+  }
+
+  void _handleSendPressed(types.PartialText message) {
+    final textMessage = types.TextMessage(
+      author: _user,
+      createdAt: DateTime.now().millisecondsSinceEpoch,
+      id: const Uuid().v4(),
+      text: message.text,
+    );
+
+    //_addMessage(textMessage);
+    _callFfiPublishMessage(message.text);
+  }
+
+  void _loadMessages() async {
+    final response = await rootBundle.loadString('assets/messages.json');
+    final messages = (jsonDecode(response) as List)
+        .map((e) =&gt; types.Message.fromJson(e as Map&lt;String, dynamic&gt;))
+        .toList();
+
+    setState(() {
+      _messages = messages;
+    });
+  }
+
+  //------- STREAMING &amp; LOGGING --------------------------------------------
+
+  types.TextMessage createTextMessage(
+      String userId, String user, String newMessage, int timeMillis) {
+    final userObject = types.User(
+      id: userId,
+    );
+    final textMessage = types.TextMessage(
+      author: userObject,
+      createdAt: timeMillis,
+      id: const Uuid().v4(),
+      text: newMessage,
+    );
+    return textMessage;
+  }
+
+  Future&lt;void&gt; _callFfiPublishMessage(String message) async {
+    await api.publishMessage(message: message);
+  }
+
+  Future&lt;void&gt; _setup() async {
+
+    String _result = await api.rustSetUp();
+    _addMessage(createTextMessage(
+        &quot;uuid&quot;, &quot;&quot;, _result, DateTime.now().millisecondsSinceEpoch));
+
+    api.createLogStream().listen((event) {
+      if (event.tag == _tag) {
+        _addMessage(createTextMessage(
+            event.userId, event.user, event.msg, event.timeMillis));
+      } else {
+        print(
+            'LOG FROM RUST: ${event.level} ${event.tag} ${event.userId} ${event.user} ${event.msg} ${event.timeMillis}');
+      }
+    });
+  }
+}
+
+</code></pre>
+<h2 id="video"><a class="header" href="#video">Video</a></h2>
+<h2 id="github-repository"><a class="header" href="#github-repository">Github Repository</a></h2>
+<p>You will find the complete source code from the video in this repository:</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../building-without-iota/flutter-and-rust/logging-example-app/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../building-without-iota/flutter-and-rust/logging-example-app/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,3 +1,5 @@
+<figure style="margin:0;width:100%;text-align:center;"><img style="width:150px;box-shadow: 2px 2px 5px  rgba(0, 0, 0, 0.3);border-radius: 22px;" src="assets/logo.png" alt=""></figure>
+
 # 👋 About: IOTA for Flutter
 
 ---

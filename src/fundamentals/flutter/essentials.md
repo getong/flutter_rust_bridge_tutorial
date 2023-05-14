@@ -123,7 +123,11 @@ flutter:
 
 ## Creating a project
 
-> **Very important**: Don't use Special Characters and Blanks as project name (use "\_" instead) and in your absolute project path!
+> **Very important hints**
+>
+> 1. Don't use special characters or blanks (use "\_" instead) as project name and in your absolute project path!
+>
+> 2. Don't name your project like an existing public package! It could lead to circular dependencies. See the <a href="../../building-without-iota/flutter-and-rust/logging-example-app/resources.md">Logging Example App -> Resources</a> section as example.
 
 To create an "empty" app use the command:
 
