@@ -245,7 +245,6 @@ pub struct LogEntry {
 #[allow(dead_code, unused_variables)]
 pub fn dummy(a: LogEntry) {}
 
-
 pub fn rust_set_up() -> String {
     logger::init_logger();
     "Logger was initialized".into()
