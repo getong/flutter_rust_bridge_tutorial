@@ -6,6 +6,15 @@ Logging: Stream Rust log messages (trace, debug, warn, info, error) to Flutter.
 
 ---
 
+<iframe 
+    class="video"  
+    src="https://youtu.be/9b90BfrJVDI" 
+    title="LOGGING EXAMPLE using Flutter, Rust and the Flutter-Rust-Bridge" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+
 ## Stream
 
 This chapter will focus on implementing logging in a Flutter + Rust application. When it comes to handling scenarios where you create a data consumer once and keep adding data to it continuously, Flutter provides a very useful abstraction called a `Stream`.
