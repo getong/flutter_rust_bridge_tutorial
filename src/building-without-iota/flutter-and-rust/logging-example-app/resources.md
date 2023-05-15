@@ -641,8 +641,8 @@ class _ChatPageState extends State<ChatPage> {
 
 ```
 
-## Video
-
 ## Github Repository
 
 You will find the complete source code from the video in this repository:
+
+<a href="https://github.com/iota-for-flutter/logging_example_app" target="_blank">👉 &nbsp; Repository - Logging Example App</a>
