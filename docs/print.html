@@ -2205,6 +2205,14 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; {
 <hr />
 <p>Logging: Stream Rust log messages (trace, debug, warn, info, error) to Flutter.</p>
 <hr />
+<iframe 
+    class="video"  
+    src="https://www.youtube.com/watch?v=9b90BfrJVDI" 
+    title="LOGGING EXAMPLE using Flutter, Rust and the Flutter-Rust-Bridge" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
 <h2 id="stream"><a class="header" href="#stream">Stream</a></h2>
 <p>This chapter will focus on implementing logging in a Flutter + Rust application. When it comes to handling scenarios where you create a data consumer once and keep adding data to it continuously, Flutter provides a very useful abstraction called a <code>Stream</code>.</p>
 <p>In this way, it is possible to create a function with little code that sends log messages from Rust to Flutter. Streaming in the opposite direction, from Flutter to Rust, unfortunately is not possible.</p>
@@ -2443,7 +2451,6 @@ pub struct LogEntry {
 //    -&gt; next compile is ok
 #[allow(dead_code, unused_variables)]
 pub fn dummy(a: LogEntry) {}
-
 
 pub fn rust_set_up() -&gt; String {
     logger::init_logger();
@@ -2824,9 +2831,9 @@ class _ChatPageState extends State&lt;ChatPage&gt; {
 }
 
 </code></pre>
-<h2 id="video"><a class="header" href="#video">Video</a></h2>
 <h2 id="github-repository"><a class="header" href="#github-repository">Github Repository</a></h2>
 <p>You will find the complete source code from the video in this repository:</p>
+<p><a href="https://github.com/iota-for-flutter/logging_example_app" target="_blank">👉   Repository - Logging Example App</a></p>
 
                     </main>
 

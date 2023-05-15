@@ -8,7 +8,7 @@ Logging: Stream Rust log messages (trace, debug, warn, info, error) to Flutter.
 
 <iframe 
     class="video"  
-    src="https://youtu.be/9b90BfrJVDI" 
+    src="https://www.youtube.com/watch?v=9b90BfrJVDI" 
     title="LOGGING EXAMPLE using Flutter, Rust and the Flutter-Rust-Bridge" 
     frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
