@@ -11,7 +11,7 @@ In this next section, I'll provide an overview of the workflow involved in integ
 <iframe 
     class="video"  
     src="https://www.youtube.com/embed/P0Kh0DSaddA" 
-    title="YouTube video player" 
+    title="How everything works together" 
     frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
     allowfullscreen>
