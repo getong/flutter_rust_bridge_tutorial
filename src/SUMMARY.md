@@ -66,3 +66,16 @@
     - [7. Build and run](building-without-iota/flutter-and-rust/frb-example-app/build-run.md)
   - [Logging Example App](building-without-iota/flutter-and-rust/logging-example-app/README.md)
     - [Resources](building-without-iota/flutter-and-rust/logging-example-app/resources.md)
+
+---
+
+# Building a Simple App
+
+---
+
+- [What's the result?](building-a-simple-app/whats-the-result.md)
+- [Core API and iota.rs](building-a-simple-app/core-api.md)
+- [Create Flutter App and Rust folder](building-a-simple-app/create-flutter-app-and-rust-folder.md)
+- [Building for Android](building-a-simple-app/building-for-android.md)
+- [Building for macOS](building-a-simple-app/building-for-macos.md)
+- [Building for iOS](building-a-simple-app/building-for-ios.md)
