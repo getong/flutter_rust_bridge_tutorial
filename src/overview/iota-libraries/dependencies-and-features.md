@@ -2,7 +2,7 @@
 
 ---
 
-Cargo.toml and your friend: Cargo.lock
+Dependencies, Features, Cargo.toml and your friend: Cargo.lock
 
 ---
 
