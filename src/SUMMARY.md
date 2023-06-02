@@ -46,7 +46,13 @@
 - [🌁 Flutter Rust Bridge](overview/flutter-rust-bridge/README.md)
   - [About](overview/flutter-rust-bridge/about.md)
   - [Language translations](overview/flutter-rust-bridge/features.md)
-- [📚 IOTA libraries](overview/iota-libraries.md)
+- [📚 IOTA libraries](overview/iota-libraries/README.md)
+  - [Rust Project Structure](overview/iota-libraries/rust-project-structure.md)
+  - [Create Rust Docs](overview/iota-libraries/rust-docs.md)
+  - [Dependencies and Features](overview/iota-libraries/dependencies-and-features.md)
+  - [iota.rs, wallet.rs and identity.rs](overview/iota-libraries/iota-wallet-identity.md)
+  - [Library Versions](overview/iota-libraries/library-versions.md)
+  - [Deeper Insights](overview/iota-libraries/deeper-insights.md)
 
 ---
 

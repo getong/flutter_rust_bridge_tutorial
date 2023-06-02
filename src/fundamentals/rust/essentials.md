@@ -6,7 +6,9 @@ A glimpse into the project basics.
 
 ---
 
-## Project structure
+In the course of our Flutter-Rust project, when creating a Rust library with an API, we generate a Rust _Package_. For larger projects like the IOTA Libraries, the source code can be further organized using another Rust feature called _Workspace_. The complete organizational structure is explained in more detail in the separate chapter titled [Rust Project Structure](../../overview/iota-libraries/rust-project-structure.md).
+
+## Package structure
 
 A Rust Library Project includes the following elements:
 
@@ -25,9 +27,9 @@ A Rust Library Project includes the following elements:
 
 <figure style="margin:0;"><img src="../../assets/rust_structure.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Project Structure</p></figcaption></figure>
 
-## Packages / Crates
+## Crates
 
-A _Crate_ refers to a package or a module of code. Crates act as a unit of code organization and encapsulation, providing a way to manage and share code functionality.
+A _Crate_ acts as a unit of code organization and encapsulation, providing a way to manage and share code functionality.
 
 Crates can also have dependencies on other crates, allowing them to utilize external code and libraries. The dependencies are declared in the Cargo.toml file of the crate, under the [dependencies] section.
 
