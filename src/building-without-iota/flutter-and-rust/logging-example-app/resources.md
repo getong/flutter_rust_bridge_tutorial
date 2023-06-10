@@ -268,13 +268,6 @@ pub fn publish_message(message: String) {
 }
 ```
 
-To fix Rust compilation complains, add:
-
-```
-
-
-```
-
 ### lib.rs
 
 ```

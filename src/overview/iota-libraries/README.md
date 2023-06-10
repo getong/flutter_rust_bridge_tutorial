@@ -32,8 +32,5 @@ To approach IOTA's Rust libraries, there are several sources of information avai
 
 In the following sections I will provide you with some additional starter information:
 
-- [How are larger Rust projects typically managed?](rust-project-structure.md)
-- [How can Rust documentation be created?](rust-docs.md)
-- [How do you specify dependencies and features?](dependencies-and-features.md)
 - [What is the structure of iota.rs, wallet.rs, and identity.rs?](iota-wallet-identity.md)
 - [Which library versions are the right ones for which purpose?](library-versions.md)

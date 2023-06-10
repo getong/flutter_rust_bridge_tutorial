@@ -30,6 +30,9 @@
 - [Rust](fundamentals/rust/README.md)
   - [Set up](fundamentals/rust/set-up.md)
   - [Essentials](fundamentals/rust/essentials.md)
+  - [Project Structure](fundamentals/rust/project-structure.md)
+  - [Create Rust Docs](fundamentals/rust/rust-docs.md)
+  - [Dependencies and Features](fundamentals/rust/dependencies-and-features.md)
 - [IDE: Visual Studio Code](fundamentals/ide-visual-studio-code/README.md)
   - [Set up](fundamentals/ide-visual-studio-code/set-up.md)
 
@@ -47,9 +50,6 @@
   - [About](overview/flutter-rust-bridge/about.md)
   - [Language translations](overview/flutter-rust-bridge/features.md)
 - [📚 IOTA libraries](overview/iota-libraries/README.md)
-  - [Rust Project Structure](overview/iota-libraries/rust-project-structure.md)
-  - [Create Rust Docs](overview/iota-libraries/rust-docs.md)
-  - [Dependencies and Features](overview/iota-libraries/dependencies-and-features.md)
   - [iota.rs, wallet.rs and identity.rs](overview/iota-libraries/iota-wallet-identity.md)
   - [Library Versions](overview/iota-libraries/library-versions.md)
   - [Deeper Insights](overview/iota-libraries/deeper-insights.md)
@@ -81,7 +81,7 @@
 
 - [What's the result?](building-a-simple-app/whats-the-result.md)
 - [Core API and iota.rs](building-a-simple-app/core-api.md)
-- [Create Flutter App and Rust folder](building-a-simple-app/create-flutter-app-and-rust-folder.md)
+- [Init Flutter App and Setup FRB](building-a-simple-app/init-flutter-app-and-setup-frb.md)
 - [Building for Android](building-a-simple-app/building-for-android.md)
 - [Building for macOS](building-a-simple-app/building-for-macos.md)
 - [Building for iOS](building-a-simple-app/building-for-ios.md)

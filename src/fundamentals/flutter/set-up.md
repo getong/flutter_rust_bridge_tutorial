@@ -47,11 +47,13 @@ So, I wholeheartedly encourage you to check out his tutorial about _Flutter & Da
 
 ## Upgrading Flutter
 
-To update the Flutter SDK use this command:
+> As a general recommendation, I suggest deleting the `build` and `target` folders after upgrading the Flutter version.
+
+To upgrade the Flutter SDK use this command:
 
 `flutter upgrade`
 
-To update to the latest compatible versions of all the dependencies listed in the pubspec.yaml file, use the _flutter pub_ command:
+To upgrade to the latest compatible versions of all the dependencies listed in the pubspec.yaml file, use the _flutter pub_ command:
 
 `flutter pub upgrade`
 

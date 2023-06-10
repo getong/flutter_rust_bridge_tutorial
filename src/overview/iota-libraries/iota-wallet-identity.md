@@ -20,6 +20,8 @@ A look at `client/Cargo.toml` reveals the features of the library crate.
 
 <figure style="margin:0;"><img src="../../assets/rust_projects/rust_iotars-features.jpg" alt="Features of iota-client"><figcaption style="font-size: 0.8em;text-align:center;"><p>Features of iota-client</p></figcaption></figure>
 
+If you're looking for another entry point into iota.rs, you can check out the chapter titled [Simple App -> Core API and iota.rs](../../building-a-simple-app/core-api.md). This chapter provides more information about the structure of the iota-client using an example.
+
 ## wallet.rs
 
 <a href="https://github.com/iotaledger/wallet.rs" target="_blank">👉 &nbsp; GitHub - wallet.rs</a>
