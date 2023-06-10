@@ -8,6 +8,8 @@ Our target is to create a simple app to send a data message to the tangle, using
 
 ## Video
 
+will follow
+
 ## Let's write a User Story
 
 As a user, I want to use an app to create a message and tag it, so that I can then send it to the tangle. I also want to be able to find my tag and message in the tangle in order to check if the data was sent correctly.
