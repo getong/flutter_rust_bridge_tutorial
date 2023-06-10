@@ -164,7 +164,7 @@
 </iframe>
 <p><a href="https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml" target="_blank">👉   IOTA Core REST API</a></p>
 <p>The structure of a block including a tag and a message is displayed when you expand the accordion with the POST endpoint <code>/api/core/v2/blocks</code>.</p>
-<figure style="margin:0;"><img src="../../assets/block-tagged-data.jpg" alt="Block with tagged data payload"><figcaption style="font-size: 0.8em;text-align:center;"><p>Block with tagged data payload</p></figcaption></figure>
+<figure style="margin:0;"><img src="../assets/block-tagged-data.jpg" alt="Block with tagged data payload"><figcaption style="font-size: 0.8em;text-align:center;"><p>Block with tagged data payload</p></figcaption></figure>
 <h2 id="posting-a-block-into-the-tangle"><a class="header" href="#posting-a-block-into-the-tangle">Posting a Block into the tangle</a></h2>
 <p>To post a block of this kind using the features provided by the <code>iota-client</code> crate, we can utilize the example <em>client/examples/block/004_example_tagged_data.rs</em> as a template. Let's first try it out.</p>
 <iframe 
@@ -239,7 +239,7 @@ async fn main() -&gt; Result&lt;()&gt; {
 <li>generating the block, which includes sending the block to the Tangle in the finish method.</li>
 </ol>
 <p>I want to exemplify how a client instance is created in <code>iota-client</code>. A static method of the <code>Client</code> struct first creates a <code>ClientBuilder</code>. The builder allows dynamic configuration of the client by chaining multiple methods to override default values. Only when the <code>finish()</code> method is called, the client instance is returned from the builder.</p>
-<figure style="margin:0;"><img src="../../assets/client-builder.jpg" alt="ClientBuilder used to configure a client instance"><figcaption style="font-size: 0.8em;text-align:center;"><p>ClientBuilder used to configure a client instance</p></figcaption></figure>
+<figure style="margin:0;"><img src="../assets/client-builder.jpg" alt="ClientBuilder used to configure a client instance"><figcaption style="font-size: 0.8em;text-align:center;"><p>ClientBuilder used to configure a client instance </p></figcaption></figure>
 <blockquote>
 <p>The principle used for creating instances with builders is frequently employed in <code>iota-client</code>, such as with the <code>Node_Manager</code>, <code>Blocks</code> (used in the code above), or <code>Addresses</code>. It's like the builder taking Lego blocks from a storage shelf and assembling them together.</p>
 </blockquote>

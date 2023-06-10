@@ -115,7 +115,7 @@ The two important lines in the code above are the ones for
 
 I want to exemplify how a client instance is created in `iota-client`. A static method of the `Client` struct first creates a `ClientBuilder`. The builder allows dynamic configuration of the client by chaining multiple methods to override default values. Only when the `finish()` method is called, the client instance is returned from the builder.
 
-<figure style="margin:0;"><img src="../assets/client-builder.jpg" alt="ClientBuilder used to configure a client instance"><figcaption style="font-size: 0.8em;text-align:center;"><p>ClientBuilder used to configure a client instance</p></figcaption></figure>
+<figure style="margin:0;"><img src="../assets/client-builder.jpg" alt="ClientBuilder used to configure a client instance"><figcaption style="font-size: 0.8em;text-align:center;"><p>ClientBuilder used to configure a client instance </p></figcaption></figure>
 
 > The principle used for creating instances with builders is frequently employed in `iota-client`, such as with the `Node_Manager`, `Blocks` (used in the code above), or `Addresses`. It's like the builder taking Lego blocks from a storage shelf and assembling them together.
 
