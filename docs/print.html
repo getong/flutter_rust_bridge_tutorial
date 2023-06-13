@@ -3547,8 +3547,8 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 </li>
 <li>
 <p>This step is for <strong>macOS only</strong> because the macOS app uses the <em>dynamic</em> library:</p>
-<p>Open up that <code>rust/rust.xcodeproj</code> file with Xcode and select the root item (named <em>rust</em>) at the left pane.
-In the Build Settings tab, search for <em>Dynamic Library Install Name Base</em> and change the value into <code>@executable_path/../Frameworks/</code>.</p>
+<p>Open up that <code>rust/rust.xcodeproj</code> file with Xcode and select the root item <em>rust</em>, at the left pane on top.
+Select the Target <em>rust-cdylib</em> and the <em>Build Settings</em> tab. Here, search for <em>Dynamic Library Install Name Base</em> and change the value into <code>$(TARGET_BUILD_DIR)</code>.</p>
 </li>
 </ol>
 <h2 id="pitfalls-and-solutions-1"><a class="header" href="#pitfalls-and-solutions-1">Pitfalls and Solutions</a></h2>
@@ -3560,7 +3560,7 @@ In the Build Settings tab, search for <em>Dynamic Library Install Name Base</em>
 <ol start="2">
 <li>
 <p>When macOS cannot locate the dynamic library:</p>
-<p>This might happen due to cargo-xcode version v1.5.0. To prevent this, execute the third step above: it enables an macOS executable to properly locate dynamic <code>*.dylib</code> library files in the package.</p>
+<p>This might happen due to cargo-xcode version v1.5.0. To prevent this, execute the third step above. Make sure that you have selected the Target for the dynamic library, called <em>rust-cdylib</em>. It enables an macOS executable to properly locate dynamic <code>*.dylib</code> library files in the package. Do NOT select <em>rust-staticlib</em> !</p>
 <p>FYI, there is an alternative solution described in the tutorial section <a href="building-a-simple-app/../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.html">macOS Instructions</a> at the bottom.</p>
 </li>
 </ol>

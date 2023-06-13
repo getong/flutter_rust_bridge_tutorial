@@ -32,8 +32,8 @@ An common step for macOS / iOS is needed: creating an Xcode project **inside of 
 
 3. This step is for **macOS only** because the macOS app uses the _dynamic_ library:
 
-   Open up that `rust/rust.xcodeproj` file with Xcode and select the root item (named _rust_) at the left pane.
-   In the Build Settings tab, search for _Dynamic Library Install Name Base_ and change the value into `@executable_path/../Frameworks/`.
+   Open up that `rust/rust.xcodeproj` file with Xcode and select the root item _rust_, at the left pane on top.
+   Select the Target _rust-cdylib_ and the _Build Settings_ tab. Here, search for _Dynamic Library Install Name Base_ and change the value into `$(TARGET_BUILD_DIR)`.
 
 ## Pitfalls and Solutions
 
@@ -45,7 +45,7 @@ An common step for macOS / iOS is needed: creating an Xcode project **inside of 
 
 2. When macOS cannot locate the dynamic library:
 
-   This might happen due to cargo-xcode version v1.5.0. To prevent this, execute the third step above: it enables an macOS executable to properly locate dynamic `*.dylib` library files in the package.
+   This might happen due to cargo-xcode version v1.5.0. To prevent this, execute the third step above. Make sure that you have selected the Target for the dynamic library, called _rust-cdylib_. It enables an macOS executable to properly locate dynamic `*.dylib` library files in the package. Do NOT select _rust-staticlib_ !
 
    FYI, there is an alternative solution described in the tutorial section [macOS Instructions](../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.md) at the bottom.
 
