@@ -73,3 +73,12 @@ An common step for macOS / iOS is needed: creating an Xcode project **inside of 
 ### Video
 
 Follow the video for the remaining steps.
+
+<iframe 
+    class="video"  
+    src="https://www.youtube.com/embed/t13Ya6jPCNw" 
+    title="Building a Simple App for SHIMMER - finalize the MACOS part" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
