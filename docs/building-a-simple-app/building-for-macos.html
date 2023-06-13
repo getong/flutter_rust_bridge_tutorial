@@ -188,12 +188,13 @@ Select the Target <em>rust-cdylib</em> and the <em>Build Settings</em> tab. Here
 <hr />
 <ol start="3">
 <li>
-<p>The error message <strong>[macOS] SocketException: Connection failed</strong> is encountered when making API calls:</p>
+<p>The error message <strong>no healthy node available</strong>, or <strong>SocketException: Connection failed</strong> is encountered when making API calls:</p>
+<figure style="margin:0;"><img src="../assets/macos_instructions/macos-pitfall-2.png" alt="no healthy node available"><figcaption style="font-size: 0.8em;text-align:center;"><p>No healthy node available</p></figcaption></figure>
 <p>macOS applications are sandboxed by default. If you come across this error message, you need to add the network.client <a href="https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox">entitlement</a> to <code>macOS/Runner/DebugProfile.entitlements</code>:</p>
 <pre><code>&lt;key&gt;com.apple.security.network.client&lt;/key&gt;
 &lt;true/&gt;
 </code></pre>
-<figure style="margin:0;"><img src="../assets/macos_instructions/macos-pitfall-1.png" alt="network.client entitlement"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solution for SocketException: Connection failed</p></figcaption></figure>
+<figure style="margin:0;"><img src="../assets/macos_instructions/macos-pitfall-1.png" alt="network.client entitlement"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solution for Sandbox Problem</p></figcaption></figure>
 </li>
 </ol>
 <hr />

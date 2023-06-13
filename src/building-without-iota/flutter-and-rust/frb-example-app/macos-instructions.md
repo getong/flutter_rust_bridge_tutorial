@@ -78,7 +78,7 @@ To ensure that your app can run on your host computer and Xcode version, you may
 
 ### Adjust the `AppDelegate.swift` file
 
-Switch to Visual Studio Code and open the file `macos/Runner/AppDelegate.swift`. We need to call the function _dummy_method_to_enforce_bundling()_ (from FRB) somewhere to avoid that Xcode doesn't handle our library as dead code.
+Switch to Visual Studio Code and open the file `macos/Runner/AppDelegate.swift`. We need to call the function _dummy_method_to_enforce_bundling()_ (from FRB) somewhere to avoid that Xcode handles our library as dead code.
 
 Add:
 

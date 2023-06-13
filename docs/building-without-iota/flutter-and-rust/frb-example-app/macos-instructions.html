@@ -193,7 +193,7 @@
 <img src="../../../assets/macos_instructions/macos_6.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Minimum Deployment</i></p></figcaption>
 </figure>
 <h3 id="adjust-the-appdelegateswift-file"><a class="header" href="#adjust-the-appdelegateswift-file">Adjust the <code>AppDelegate.swift</code> file</a></h3>
-<p>Switch to Visual Studio Code and open the file <code>macos/Runner/AppDelegate.swift</code>. We need to call the function <em>dummy_method_to_enforce_bundling()</em> (from FRB) somewhere to avoid that Xcode doesn't handle our library as dead code.</p>
+<p>Switch to Visual Studio Code and open the file <code>macos/Runner/AppDelegate.swift</code>. We need to call the function <em>dummy_method_to_enforce_bundling()</em> (from FRB) somewhere to avoid that Xcode handles our library as dead code.</p>
 <p>Add:</p>
 <pre><code>dummy_method_to_enforce_bundling()
 </code></pre>
