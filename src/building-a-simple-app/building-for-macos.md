@@ -51,11 +51,9 @@ An common step for macOS / iOS is needed: creating an Xcode project **inside of 
 
 ---
 
-3. The error message **[macOS] SocketException: Connection failed** is encountered when making API calls.
+3. The error message **[macOS] SocketException: Connection failed** is encountered when making API calls:
 
-   macOS applications are sandboxed by default. If you come across this error message, you need to do the following steps:
-
-   Add the network.client [entitlement](https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox) to `macOS/Runner/DebugProfile.entitlements`:
+   macOS applications are sandboxed by default. If you come across this error message, you need to add the network.client [entitlement](https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox) to `macOS/Runner/DebugProfile.entitlements`:
 
    ```
    <key>com.apple.security.network.client</key>

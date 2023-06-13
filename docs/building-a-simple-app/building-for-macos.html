@@ -188,9 +188,8 @@ In the Build Settings tab, search for <em>Dynamic Library Install Name Base</em>
 <hr />
 <ol start="3">
 <li>
-<p>The error message <strong>[macOS] SocketException: Connection failed</strong> is encountered when making API calls.</p>
-<p>macOS applications are sandboxed by default. If you come across this error message, you need to do the following steps:</p>
-<p>Add the network.client <a href="https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox">entitlement</a> to <code>macOS/Runner/DebugProfile.entitlements</code>:</p>
+<p>The error message <strong>[macOS] SocketException: Connection failed</strong> is encountered when making API calls:</p>
+<p>macOS applications are sandboxed by default. If you come across this error message, you need to add the network.client <a href="https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox">entitlement</a> to <code>macOS/Runner/DebugProfile.entitlements</code>:</p>
 <pre><code>&lt;key&gt;com.apple.security.network.client&lt;/key&gt;
 &lt;true/&gt;
 </code></pre>
