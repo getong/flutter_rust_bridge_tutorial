@@ -43,7 +43,7 @@ An common step for macOS / iOS is needed: creating an Xcode project **inside of 
 
 ---
 
-2. macOS doesn't locate the dynamic library
+2. When macOS cannot locate the dynamic library:
 
    This might happen due to cargo-xcode version v1.5.0. To prevent this, execute the third step above: it enables an macOS executable to properly locate dynamic `*.dylib` library files in the package.
 

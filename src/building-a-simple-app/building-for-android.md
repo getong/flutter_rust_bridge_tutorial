@@ -54,7 +54,7 @@ In _android/app/build.gradle_, add at the bottom:
 }
 ```
 
-### Pitfalls and Solutions
+## Pitfalls and Solutions
 
 What is the purpose of the section above in _build.gradle_?
 

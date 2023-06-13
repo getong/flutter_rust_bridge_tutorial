@@ -3450,7 +3450,7 @@ pub fn publish_tagged_data_block(tag: String, message: String) -&gt; Result&lt;S
     }
 }
 </code></pre>
-<h3 id="pitfalls-and-solutions"><a class="header" href="#pitfalls-and-solutions">Pitfalls and Solutions</a></h3>
+<h2 id="pitfalls-and-solutions"><a class="header" href="#pitfalls-and-solutions">Pitfalls and Solutions</a></h2>
 <p>What is the purpose of the section above in <em>build.gradle</em>?</p>
 <p>Well, it is intended to ensure that Rust is recompiled when the app is launched. To make it all work, you need to pay special attention to the following things.</p>
 <hr />
@@ -3559,7 +3559,7 @@ In the Build Settings tab, search for <em>Dynamic Library Install Name Base</em>
 <hr />
 <ol start="2">
 <li>
-<p>macOS doesn't locate the dynamic library</p>
+<p>When macOS cannot locate the dynamic library:</p>
 <p>This might happen due to cargo-xcode version v1.5.0. To prevent this, execute the third step above: it enables an macOS executable to properly locate dynamic <code>*.dylib</code> library files in the package.</p>
 <p>FYI, there is an alternative solution described in the tutorial section <a href="building-a-simple-app/../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.html">macOS Instructions</a> at the bottom.</p>
 </li>
