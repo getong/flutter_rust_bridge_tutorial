@@ -117,7 +117,7 @@ When it comes to building the libraries, you might be curious about the process.
 </a>
 </figure>
 
-## WORKAROUND WORKAROUND WORKAROUND
+## Problem: Flutter doesn't find the dynamic library
 
 When you have installed the **version 1.5.0** from `cargo-xcode` (as you can see in the _Build rules_ image above), Flutter will not be able to find the dynamic library. You'll get an error like this:
 
@@ -134,7 +134,9 @@ Error waiting for a debug connection: The log reader stopped unexpectedly, or ne
 Error launching application on macOS.
 ```
 
-Here's the solution:
+### Solution 1
+
+Here's a first solution:
 
 <figure style="margin:0;">
 <a style="width:50%" href="https://github.com/fzyzcjy/flutter_rust_bridge/issues/870" target="_blank">
@@ -148,3 +150,9 @@ Here's the solution:
    ```
    DYLIB_INSTALL_NAME_BASE = "$(TARGET_BUILD_DIR)";
    ```
+
+### Solution 2
+
+After completing this chapter, another solution emerged.
+
+The alternative solution is outlined in the tutorial's chapter titled _Building a Simple App_, see [Building for macOS](../../../building-a-simple-app/building-for-macos.md).

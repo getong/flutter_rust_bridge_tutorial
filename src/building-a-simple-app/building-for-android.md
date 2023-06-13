@@ -2,7 +2,7 @@
 
 ---
 
-Completing the remaining steps for Android and listing some pitfalls.
+Listing some pitfalls and completing the remaining steps for Android.
 
 ---
 
@@ -130,7 +130,7 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 
 Wherever you intend to utilize the library functions, import the ffi.dart file into your Dart code. The exposed API function(s) can then be invoked by utilizing the returned `api` variable.
 
-## Video
+### Video
 
 Follow the video for the remaining steps.
 
