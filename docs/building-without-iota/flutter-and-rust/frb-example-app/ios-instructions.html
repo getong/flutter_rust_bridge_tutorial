@@ -189,7 +189,7 @@
 #import &quot;bridge_generated.h&quot;
 </code></pre>
 <h3 id="adjust-the-appdelegateswift-file"><a class="header" href="#adjust-the-appdelegateswift-file">Adjust the <code>AppDelegate.swift</code> file</a></h3>
-<p>In Visual Studio Code, open the file <code>ios/Runner/AppDelegate.swift</code>. We need to call the function <em>dummy_method_to_enforce_bundling()</em> (from FRB) somewhere to avoid that Xcode doesn't handle our library as dead code.</p>
+<p>In Visual Studio Code, open the file <code>ios/Runner/AppDelegate.swift</code>. We need to call the function <em>dummy_method_to_enforce_bundling()</em> (from FRB) somewhere to avoid that Xcode handles our library as dead code.</p>
 <p>Add:</p>
 <pre><code>let dummy = dummy_method_to_enforce_bundling()
 print(dummy)

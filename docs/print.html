@@ -2273,7 +2273,7 @@ Error launching application on macOS.
 #import &quot;bridge_generated.h&quot;
 </code></pre>
 <h3 id="adjust-the-appdelegateswift-file-1"><a class="header" href="#adjust-the-appdelegateswift-file-1">Adjust the <code>AppDelegate.swift</code> file</a></h3>
-<p>In Visual Studio Code, open the file <code>ios/Runner/AppDelegate.swift</code>. We need to call the function <em>dummy_method_to_enforce_bundling()</em> (from FRB) somewhere to avoid that Xcode doesn't handle our library as dead code.</p>
+<p>In Visual Studio Code, open the file <code>ios/Runner/AppDelegate.swift</code>. We need to call the function <em>dummy_method_to_enforce_bundling()</em> (from FRB) somewhere to avoid that Xcode handles our library as dead code.</p>
 <p>Add:</p>
 <pre><code>let dummy = dummy_method_to_enforce_bundling()
 print(dummy)
@@ -3598,8 +3598,52 @@ Select the Target <em>rust-cdylib</em> and the <em>Build Settings</em> tab. Here
 </iframe>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="building-for-ios"><a class="header" href="#building-for-ios">Building for iOS</a></h1>
 <hr />
-<p>Coming in Milestone 2.</p>
+<p>Completing the remaining steps for iOS. After successfully creating macOS, building the iOS version is relatively straightforward.</p>
 <hr />
+<h2 id="ios-setup"><a class="header" href="#ios-setup">iOS Setup</a></h2>
+<p>An common step for macOS / iOS is needed: creating an Xcode project <strong>inside of the Rust library project folder</strong> (<em>rust/</em>). This can be done using the <code>cargo-xcode</code> command.</p>
+<ol>
+<li>
+<p>To install the <code>cargo-xcode</code> command use:</p>
+<pre><code>cargo install cargo-xcode
+</code></pre>
+</li>
+<li>
+<p>After the installation of the command, create the Rust Xcode project. <strong>Make sure to be in the <em>rust/</em> directory</strong>. From the project's root folder you may switch into the right directory:</p>
+<pre><code>cd rust
+</code></pre>
+<pre><code>cargo xcode
+</code></pre>
+<pre><code>cd ..
+</code></pre>
+</li>
+</ol>
+<h2 id="completing-the-ios-app"><a class="header" href="#completing-the-ios-app">Completing the iOS App</a></h2>
+<h3 id="generate-the-dart-interface-5"><a class="header" href="#generate-the-dart-interface-5">Generate the Dart Interface</a></h3>
+<p>Our next task is to create the generated code. This will also copy the C header file <code>bridge_generated.h</code> into the folder <em>ios/Runner/</em>. Use this command (you need to be in the root of your project):</p>
+<pre><code>flutter_rust_bridge_codegen \
+--rust-input rust/src/api.rs \
+--dart-output ./lib/bridge_generated.dart \
+--dart-decl-output ./lib/bridge_definitions.dart \
+--c-output ios/Runner/bridge_generated.h
+</code></pre>
+<h3 id="starting-the-ios-simulator-in-vs-code"><a class="header" href="#starting-the-ios-simulator-in-vs-code">Starting the iOS Simulator in VS Code</a></h3>
+<p><strong>Option 1</strong></p>
+<figure style="margin:0;"><img src="building-a-simple-app/../assets/start-ios-simulator.png" alt="Start iOS Simulator"><figcaption style="font-size: 0.8em;text-align:center;"><p>Start iOS Simulator</p></figcaption></figure>
+<p><strong>Option 2</strong></p>
+<p>As a shortcut, use the terminal and execute:</p>
+<pre><code>open -a simulator
+</code></pre>
+<h3 id="video-3"><a class="header" href="#video-3">Video</a></h3>
+<p>Follow the video for the remaining steps.</p>
+<iframe 
+    class="video"  
+    src="https://www.youtube.com/embed/-dXodEDAL_Q" 
+    title="Building a Simple App for SHIMMER - finalize the iOS part" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
 
                     </main>
 

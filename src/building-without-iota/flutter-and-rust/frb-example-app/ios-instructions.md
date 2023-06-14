@@ -73,7 +73,7 @@ The content should look like:
 
 ### Adjust the `AppDelegate.swift` file
 
-In Visual Studio Code, open the file `ios/Runner/AppDelegate.swift`. We need to call the function _dummy_method_to_enforce_bundling()_ (from FRB) somewhere to avoid that Xcode doesn't handle our library as dead code.
+In Visual Studio Code, open the file `ios/Runner/AppDelegate.swift`. We need to call the function _dummy_method_to_enforce_bundling()_ (from FRB) somewhere to avoid that Xcode handles our library as dead code.
 
 Add:
 
