@@ -8,7 +8,14 @@ Our target is to create a simple app to send a data message to the tangle, using
 
 ## Video
 
-will follow
+<iframe 
+    class="video"  
+    src="https://www.youtube.com/embed/9irdEV_v4_A" 
+    title="ADOPTION can start NOW - Building a SIMPLE APP for SHIMMER" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
 
 ## Let's write a User Story
 
@@ -32,3 +39,9 @@ Note: It is assumed that the user is using the Shimmer Network.
 An image speaks louder than a thousand words...
 
 <figure style="margin:0;"><img src="../assets/simple-app.jpg" alt="Screen Flow"><figcaption style="font-size: 0.8em;text-align:center;"><p>Screen flow of simple app</p></figcaption></figure>
+
+## Github Repository
+
+You will find the complete source code from the video in this repository:
+
+<a href="https://github.com/iota-for-flutter/simple_app_complete" target="_blank">👉 &nbsp; Repository - Simple App complete</a>
