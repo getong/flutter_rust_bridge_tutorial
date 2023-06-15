@@ -85,3 +85,13 @@
 - [Building for Android](building-a-simple-app/building-for-android.md)
 - [Building for macOS](building-a-simple-app/building-for-macos.md)
 - [Building for iOS](building-a-simple-app/building-for-ios.md)
+
+# Building a Comprehensive App
+
+---
+
+- [What's the result?](building-a-comprehensive-app/whats-the-result.md)
+- [Init Flutter App and Setup FRB](building-a-comprehensive-app/init-flutter-app-and-setup-frb.md)
+- [Building for Android](building-a-comprehensive-app/building-for-android.md)
+- [Building for macOS](building-a-comprehensive-app/building-for-macos.md)
+- [Building for iOS](building-a-comprehensive-app/building-for-ios.md)
