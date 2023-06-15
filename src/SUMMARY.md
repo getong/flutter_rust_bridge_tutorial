@@ -86,6 +86,8 @@
 - [Building for macOS](building-a-simple-app/building-for-macos.md)
 - [Building for iOS](building-a-simple-app/building-for-ios.md)
 
+---
+
 # Building a Comprehensive App
 
 ---
