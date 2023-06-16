@@ -93,6 +93,7 @@
 ---
 
 - [What's the result?](building-a-comprehensive-app/whats-the-result.md)
+- [Locations on the filesystem](building-a-comprehensive-app/locations-on-the-filesystem.md)
 - [Init Flutter App and Setup FRB](building-a-comprehensive-app/init-flutter-app-and-setup-frb.md)
 - [Building for Android](building-a-comprehensive-app/building-for-android.md)
 - [Building for macOS](building-a-comprehensive-app/building-for-macos.md)
