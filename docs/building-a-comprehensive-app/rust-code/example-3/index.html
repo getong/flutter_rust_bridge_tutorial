@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Example 3: Create Wallet Account</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/custom.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Welcome</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../index.html">👋 About: IOTA for Flutter</a></li><li class="chapter-item expanded "><a href="../../../welcome/what-youll-get.html">💻 What you'll get</a></li><li class="chapter-item expanded "><a href="../../../welcome/when-you-are-js-developer/index.html">☕ When you are JS developer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../welcome/when-you-are-js-developer/dart-vs.-javascript.html">Dart vs. JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="../../../welcome/which-resources-you-need.html">✨ Which resources you need</a></li><li class="chapter-item expanded "><a href="../../../welcome/how-to-get-the-most-out-of-this-tutorial.html">🧐 How to get the most out of this tutorial</a></li><li class="chapter-item expanded "><a href="../../../welcome/what-does-this-tutorial-not-contain.html">⚠️ What does this tutorial NOT contain?</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Fundamentals</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../fundamentals/android-studio/index.html">Android Studio</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/android-studio/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/android-studio/essentials.html">Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/xcode/index.html">Xcode</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/xcode/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/xcode/essentials.html">Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/flutter/index.html">Flutter</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/flutter/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/flutter/essentials.html">Essentials</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/rust/index.html">Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/rust/set-up.html">Set up</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/rust/essentials.html">Essentials</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/rust/project-structure.html">Project Structure</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/rust/rust-docs.html">Create Rust Docs</a></li><li class="chapter-item expanded "><a href="../../../fundamentals/rust/dependencies-and-features.html">Dependencies and Features</a></li></ol></li><li class="chapter-item expanded "><a href="../../../fundamentals/ide-visual-studio-code/index.html">IDE: Visual Studio Code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../fundamentals/ide-visual-studio-code/set-up.html">Set up</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Overview</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../overview/how-everything-works-together/index.html">💡 How everything works together</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../overview/how-everything-works-together/workflow.html">Workflow</a></li><li class="chapter-item expanded "><a href="../../../overview/how-everything-works-together/handling-code-changes.html">Handling code changes</a></li></ol></li><li class="chapter-item expanded "><a href="../../../overview/cross-compiling.html">🏭 Cross-Compiling</a></li><li class="chapter-item expanded "><a href="../../../overview/flutter-rust-bridge/index.html">🌁 Flutter Rust Bridge</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../overview/flutter-rust-bridge/about.html">About</a></li><li class="chapter-item expanded "><a href="../../../overview/flutter-rust-bridge/features.html">Language translations</a></li></ol></li><li class="chapter-item expanded "><a href="../../../overview/iota-libraries/index.html">📚 IOTA libraries</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../overview/iota-libraries/iota-wallet-identity.html">iota.rs, wallet.rs and identity.rs</a></li><li class="chapter-item expanded "><a href="../../../overview/iota-libraries/library-versions.html">Library Versions</a></li><li class="chapter-item expanded "><a href="../../../overview/iota-libraries/deeper-insights.html">Deeper Insights</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Building without IOTA</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-only.html">Flutter only</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/index.html">Flutter and Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/index.html">FRB Template App - modified Workflow</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/common-part-1.html">1. Initialization and Rust part</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/android-instructions.html">2. Android instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/common-macos-ios.html">3. Common macOS/iOS instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.html">4. macOS instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/ios-instructions.html">5. iOS instructions</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/common-part-2.html">6. Flutter part</a></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/frb-example-app/build-run.html">7. Build and run</a></li></ol></li><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/logging-example-app/index.html">Logging Example App</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../building-without-iota/flutter-and-rust/logging-example-app/resources.html">Resources</a></li><li class="spacer"></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Building a Simple App</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../building-a-simple-app/whats-the-result.html">What's the result?</a></li><li class="chapter-item expanded "><a href="../../../building-a-simple-app/core-api.html">Core API and iota.rs</a></li><li class="chapter-item expanded "><a href="../../../building-a-simple-app/init-flutter-app-and-setup-frb.html">Init Flutter App and Setup FRB</a></li><li class="chapter-item expanded "><a href="../../../building-a-simple-app/building-for-android.html">Building for Android</a></li><li class="chapter-item expanded "><a href="../../../building-a-simple-app/building-for-macos.html">Building for macOS</a></li><li class="chapter-item expanded "><a href="../../../building-a-simple-app/building-for-ios.html">Building for iOS</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Building a Comprehensive App</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/whats-the-result.html">What's the result?</a></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/locations-on-the-filesystem.html">Locations on the filesystem</a></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/init-flutter-app-and-setup-frb.html">Init Flutter App and Setup FRB</a></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/rust-code/index.html">Rust Code for Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/rust-code/example-1.html">Example 1: Get Node Information</a></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/rust-code/example-2.html">Example 2: Generate Mnemonics</a></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/rust-code/example-3/index.html" class="active">Example 3: Create Wallet Account</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/rust-code/example-3/libsodium.html">Libsodium library for Android</a></li></ol></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/rust-code/example-4.html">Example 4: Generate Address</a></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/rust-code/example-5.html">Example 5: Request Funds</a></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/rust-code/example-6.html">Example 6: Check Balance</a></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/rust-code/example-7.html">Example 7: Create DID</a></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/rust-code/bin-to-hex.html">Bin to Hex</a></li></ol></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/building-for-android.html">Building for Android</a></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/building-for-macos.html">Building for macOS</a></li><li class="chapter-item expanded "><a href="../../../building-a-comprehensive-app/building-for-ios.html">Building for iOS</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="example-3"><a class="header" href="#example-3">Example 3</a></h1>
+<hr />
+<p>Rust adjustments for Example &quot;Create Wallet Account&quot;. 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>
+<hr />
+<h2 id="what-adjustments-do-i-need-to-make-in-rust"><a class="header" href="#what-adjustments-do-i-need-to-make-in-rust">What adjustments do I need to make in Rust?</a></h2>
+<p>In summary, here are the steps you need to take to create the API function.</p>
+<h3 id="cargotoml"><a class="header" href="#cargotoml">Cargo.toml</a></h3>
+<p>Let's try to use the <code>iota-client</code> from <code>iota-wallet</code>. So first, comment out the dependency:</p>
+<pre><code class="language-toml"># iota-client = { version = &quot;2.0.1-rc&quot; }
+</code></pre>
+<p>Second, add this crate to the existing dependencies:</p>
+<pre><code class="language-toml">[dependencies]
+iota-wallet = { version = &quot;1.0.0-rc&quot; }
+</code></pre>
+<p>By checking <code>Cargo.lock</code> you can determine the real downloaded versions. At the time of writing this tutorial section (June 2023) we are using iota-wallet version v1.0.0-rc.6. Please refer to <a href="https://crates.io/crates/iota-wallet/versions">Crates.io</a> to get more information about the current versions.</p>
+<p>But how can you determine if this version supports the Shimmer network?
+After adding and saving the library in <code>Cargo.toml_</code> check the <code>Cargo.lock</code> file. Look for the <code>iota-client</code> version included. If it's a v2 version, then it's compatible for Shimmer. For more information, refer to <a href="../../overview/iota-libraries/library-versions.html#stardust-and-chrysalis-versions">Stardust and Chrysalis Versions</a> documentation.</p>
+<h3 id="apirs---used-paths"><a class="header" href="#apirs---used-paths">api.rs - Used Paths</a></h3>
+<p>Comment out the usage of <code>iota_client::Client</code>:</p>
+<pre><code class="language-rust ignore">//use iota_client::Client;</code></pre>
+<p>Instead, we are using the <em>Client</em> from <code>iota_wallet::iota_client::Client</code>:</p>
+<pre><code class="language-rust ignore">use iota_wallet::{
+    iota_client::Client,  // &lt;- Let's use this one
+    iota_client::constants::SHIMMER_COIN_TYPE,
+    ClientOptions,
+    account_manager::AccountManager,
+    secret::{stronghold::StrongholdSecretManager as WalletStrongholdSecretManager},
+    secret::{SecretManager as WalletSecretManager}
+};
+use std::{env, fs, path::PathBuf};</code></pre>
+<blockquote>
+<p>In Rust you can shorten several lines, e.g.</p>
+<pre><code>use iota_wallet::iota_client::Client;
+use iota_wallet::ClientOptions;
+use iota_wallet::account_manager::AccountManager;
+</code></pre>
+<p>by using curly brackets:</p>
+<pre><code>use iota_wallet::{
+  iota_client::Client,
+  ClientOptions,
+  account_manager::AccountManager
+};
+</code></pre>
+</blockquote>
+<h3 id="apirs---struct-walletinfo"><a class="header" href="#apirs---struct-walletinfo">api.rs - Struct <em>WalletInfo</em></a></h3>
+<p>This struct bundles various wallet information. Through code generation of the Flutter-Rust-Bridge, the struct is translated into a Flutter class and becomes part of the <code>bridge_definitions.dart</code> file.</p>
+<p>Therefore, it is not necessary to explicitly create it in Flutter! On the other hand, this means that the code generator needs to be executed once for the class to be seamlessly used in Flutter without any errors.</p>
+<pre><code class="language-rust ignore">#[derive(Debug, Clone)]
+pub struct WalletInfo {
+    pub alias: String,
+    pub mnemonic: String,
+    pub stronghold_password: String,
+    pub stronghold_filepath: String,
+    pub last_address: String
+}</code></pre>
+<h3 id="apirs---function-create_wallet_account"><a class="header" href="#apirs---function-create_wallet_account">api.rs - Function <em>create_wallet_account()</em></a></h3>
+<p>There is a lot to talk about here. But first, let's start with the source code.</p>
+<pre><code class="language-rust ignore">#[allow(dead_code)]
+pub fn create_wallet_account(network_info: NetworkInfo, wallet_info: WalletInfo) -&gt; Result&lt;String&gt; {
+    let rt = Runtime::new().unwrap();
+    rt.block_on(async {
+
+        let node_url = network_info.node_url;
+        let stronghold_password = wallet_info.stronghold_password;
+        let stronghold_filepath = wallet_info.stronghold_filepath;
+
+        // Create the needed directory according to the given path
+        let mut path_buf = PathBuf::new();
+        path_buf.push(&amp;stronghold_filepath);
+        let path = PathBuf::from(path_buf);
+        fs::create_dir_all(path).ok();
+
+        // THIS NEXT STEP IS CRUCIAL:
+        // Point the &quot;current working directory&quot; to the given path
+        env::set_current_dir(&amp;stronghold_filepath).ok();
+
+        // Create the Rust file for the stronghold snapshot file
+        let mut path_buf_snapshot = PathBuf::new();
+        path_buf_snapshot.push(&amp;stronghold_filepath);
+        path_buf_snapshot.push(&quot;wallet.stronghold&quot;);
+        let path_snapshot = PathBuf::from(path_buf_snapshot);
+
+        let mut secret_manager = WalletStrongholdSecretManager::builder()
+            .password(&amp;stronghold_password)
+            .build(path_snapshot)?;
+
+        // Storing the mnemonic is ONLY REQUIRED THE FIRST TIME
+        // calling it TWICE THROWS AN ERROR
+        secret_manager.store_mnemonic(wallet_info.mnemonic).await?;
+
+        // Create a ClientBuilder (= client_options in wallet.rs)
+        // See wallet.rs:
+        // -&gt; src/lib.rs
+        // -&gt; line &quot;pub use iota_client::ClientBuilder as ClientOptions&quot;
+        let client_options = ClientOptions::new().with_node(&amp;node_url)?;
+
+        // Create the account manager with the secret_manager
+        // and client_options (= ClientBuilder).
+        // The Client itself is created in the AccountManagerBuilder's finish() method.
+        // See wallet.rs:
+        // -&gt; src/account_manager/builder.rs
+        // -&gt; line &quot;let client = client_options.clone().finish()?;&quot;
+        let manager = AccountManager::builder()
+           .with_secret_manager(WalletSecretManager::Stronghold(secret_manager))
+           .with_client_options(client_options)
+           .with_coin_type(SHIMMER_COIN_TYPE)
+           .finish()
+          .await?;
+
+        // Create a new account
+        let _account = manager
+            .create_account()
+            .with_alias((&amp;wallet_info.alias).to_string())
+            .finish()
+            .await?;
+
+        Ok(&quot;Wallet Account was created successfully.&quot;.into())
+    })
+}</code></pre>
+<p>The two structs passed as input parameters contain data from Flutter that is needed to create the wallet. These include the node URL, the mnemonics, the Wallet Alias, the Stronghold Password, and the directory path where both the wallet's database and the Stronghold Snapshot file will be stored.</p>
+<p>In the first part of the function, we need to create a <em>PathBuf</em>. It is commonly used when dealing with file I/O operations and working with file systems in Rust.</p>
+<p><em>PathBuf</em> is a type that represents a platform-dependent path. It is used to manipulate and work with file paths in a convenient and cross-platform manner. PathBuf provides various methods for path manipulation, such as joining paths, appending components, and resolving relative paths.</p>
+<p><strong>The crucial part of working with paths in our library is that we change the <em>current working directory</em> to our specific path for the database and snapshot file. By doing so, we can perform file operations relative to that directory or access files located in that specific path.</strong></p>
+<p>In the next part of the function, we create a <em>Stronghold Secret Manager</em> that is initialized with our Stronghold password and mnemonics. We have chosen to use Stronghold in our wallet for secure storage and management of sensitive information.</p>
+<p>The StrongholdSecretManager uses advanced encryption techniques to protect the stored data and provides secure access methods for retrieving and using the secrets when required. It offers features like encryption, decryption, secure key generation, and secure storage of cryptographic material.</p>
+<p>Our goal of creating a wallet account is achieved through the <em>Account Manager</em>. The Account Manager provides a set of functionalities and APIs to manage multiple accounts within a wallet. It allows us to create, modify, and interact with individual accounts, such as generating addresses, sending transactions, and retrieving account information.</p>
+<p>The Account Manager is configured with our Stronghold Secret Manager and the Client &quot;Options&quot;. ClientOptions is nothing more than the ClientBuilder in the original iota-client. Keep this in mind!</p>
+<p>Once we have created the Account Manager, there is only one step left, which is creating a new Account for the given wallet Alias. The account's Alias serves as a name or identifier for the account within the wallet.</p>
+<p>By creating a new Account, we establish a distinct entity within the wallet to manage specific funds, transactions, and associated addresses. This step enables us to organize and track different accounts within the wallet application effectively.</p>
+<p>Behind the scenes, when creating the Stronghold Secret Manager, the snapshot file is generated. Additionally, when creating the Account Manager, a RocksDB database is created.</p>
+<p>It is worth noting that the use of RocksDB has previously caused issues between different target platforms with older versions of wallet.rs. Let's see if this problem still persists. In the next section, I will attempt to build the library for all platforms and investigate if any conflicts arise.</p>
+<h2 id="checks-using-cargo-build"><a class="header" href="#checks-using-cargo-build">Checks using <em>cargo build</em></a></h2>
+<hr />
+<blockquote>
+<p><strong>There are issues when cross-compiling to Android and iOS Simulator.</strong></p>
+<p>Please also refer to the corresponding video.</p>
+</blockquote>
+<hr />
+<h3 id="android"><a class="header" href="#android">Android</a></h3>
+<p>Since the latest Android NDK version 25 is being used, I have been encountering issues compiling the <em>libsodium-sys</em> library (v0.2.7) on macOS (M1 chip). This problem did not exist with the previous NDK version 22, which I was using in January.</p>
+<figure style="margin:0;"><img src="../../../assets/playground/libsodium-sys_android-check.png" alt="Cross-compilation error - Android"><figcaption style="font-size: 0.8em;text-align:center;"><p>Cross-compilation error - Android</p></figcaption></figure>
+<p>It's possible that you may <em>not</em> encounter this issue if you use a different hosting operating system. If you manage to successfully compile libsodium-sys on your host system, consider yourself fortunate.</p>
+<p><strong>Fix</strong></p>
+<p>Since I haven't identified the root cause of the issue, I am currently unable to propose a specific solution or fix.</p>
+<p><strong>Workaround</strong></p>
+<p>As a temporary workaround, I can suggest building the <em>libsodium.so</em> library for each target individually and including it in our target Rust library. This can be achieved by utilizing the SODIUM_LIB_DIR and SODIUM_SHARED environment variables, as described in the libsodium-sys documentation. I will elaborate on this approach in the upcoming subsection <a href="libsodium.html">Libsodium library for Android</a>.</p>
+<h3 id="ios-simulator"><a class="header" href="#ios-simulator">iOS Simulator</a></h3>
+<p>The compilation fails because there is an unknown build target in <em>libsodium-sys</em> build script:</p>
+<figure style="margin:0;"><img src="../../../assets/playground/libsodium-sys_ios-check.png" alt="Cross-compilation error - iOS"><figcaption style="font-size: 0.8em;text-align:center;"><p>Cross-compilation error - iOS</p></figcaption></figure>
+<p>The fact that the <em>libsodium-sys</em> project is marked as deprecated is unfortunate since it limits the opportunity to address and resolve the issue within the repository. See <a href="https://github.com/sodiumoxide/sodiumoxide#readme">Sodiumoxide's documentation</a>:</p>
+<p><em>&quot;[DEPRECATED]
+This project has reached the end of its development as a cryptographic library for rust. Feel free to browse the code, and feel free to use it, but it will not see any more updates (unless a security issue arises, those will be fixed).&quot;</em></p>
+<p><strong>Fix</strong></p>
+<p>One potential solution could be to add a target to the <code>build.rs</code> file within the <em>libsodium-sys</em> folder. However, since the repository is not actively maintained, implementing this fix is currently not possible. As a suggestion, I proposed that the Stronghold team could consider forking the repository and taking up maintenance responsibilities. You can find more information about this suggestion here:</p>
+<p><a href="https://github.com/iotaledger/stronghold.rs/discussions/310" target="_blank">👉   Stronghold Discussion - Portability and reliance on libsodium</a></p>
+<p><strong>Workaround</strong></p>
+<p>To utilize Stronghold for iOS, the only viable workaround at the moment is to compile the code and employ your <strong>iOS Device</strong> as a test device. Unfortunately, the Simulator cannot be utilized due to the aforementioned problem.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../building-a-comprehensive-app/rust-code/example-2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../building-a-comprehensive-app/rust-code/example-3/libsodium.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../building-a-comprehensive-app/rust-code/example-2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../building-a-comprehensive-app/rust-code/example-3/libsodium.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

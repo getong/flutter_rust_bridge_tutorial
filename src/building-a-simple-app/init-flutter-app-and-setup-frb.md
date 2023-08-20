@@ -18,3 +18,5 @@ Watch the video! Step 1: A guide to connect Flutter and Rust for the Simple App 
 ## GitHub Repository
 
 <a href="https://github.com/iota-for-flutter/simple_app" target="_blank">👉 &nbsp; GitHub Repo - Simple App (Flutter only)</a>
+
+---

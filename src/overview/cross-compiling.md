@@ -110,18 +110,26 @@ Sometimes, you might need to cross-compile your Rust code to a specific target s
 
 On macOS and/or iOS you can start the process by executing this command in the Terminal:
 
-`cargo build --target <target>`
+```
+cargo build --target <target>
+```
 
 For example:
 
-`cargo build --target aarch64-apple-ios`
+```
+cargo build --target aarch64-apple-ios
+```
 
 ### Manually cross-compile for Android
 
 On Android you can start the process by executing this command in the Terminal:
 
-`cargo ndk -t <abi> build`
+```
+cargo ndk -t <abi> build
+```
 
 For example:
 
-`cargo ndk -t arm64-v8a build`
+```
+cargo ndk -t arm64-v8a build
+```

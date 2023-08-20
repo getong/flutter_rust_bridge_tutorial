@@ -10,7 +10,7 @@ Exploring the File System in a Flutter Rust App: Key Considerations and Tips.
 
 When developing apps, especially those that involve file storage, it is important to know where these files can be stored within the app. This knowledge is crucial for both development and app verification.
 
-In the _Playground App_, a snapshot file and a database file are stored within the app. This is needed for the usage of Stronghold. The creation and storage of these files are handled by the Rust library. However, the Rust library does not know _where_ exactly these files should be stored.
+In the _Playground App_, a snapshot file and a database file are stored within the app. This is needed for the usage of Stronghold and the Wallet. The creation and storage of these files are handled by the Rust library. However, the Rust library does not know _where_ exactly these files should be stored.
 
 To solve this problem, the Flutter code needs to determine the folder path and pass it to Rust. This is where the _path_provider_ comes into play. This official Flutter package enables Flutter to find commonly used locations on the filesystem. It supports Android, iOS, Linux, macOS and Windows - but not all methods ("directories") are supported on all platforms. You can find a compatibility matrix on the _path_provider_ page:
 
