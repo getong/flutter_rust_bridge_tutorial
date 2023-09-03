@@ -2,7 +2,7 @@
 
 ---
 
-Rust adjustments for Example "Create Wallet Account". 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.
+Rust adjustments for Example "Create Wallet Account".
 
 ---
 
@@ -186,7 +186,7 @@ It is worth noting that the use of RocksDB has previously caused issues between 
 
 > **There are issues when cross-compiling to Android and iOS Simulator.**
 >
-> Please also refer to the corresponding video.
+> Please also refer to the corresponding video (2023-09-03: ToDo).
 
 ---
 

@@ -147,7 +147,7 @@
                     <main>
                         <h1 id="example-5"><a class="header" href="#example-5">Example 5</a></h1>
 <hr />
-<p>Rust adjustments for Example &quot;Request Funds&quot;. 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>
+<p>Rust adjustments for Example &quot;Request Funds&quot;.</p>
 <hr />
 <h2 id="what-adjustments-do-i-need-to-make-in-rust"><a class="header" href="#what-adjustments-do-i-need-to-make-in-rust">What adjustments do I need to make in Rust?</a></h2>
 <p>In summary, here are the steps you need to take to create the API function.</p>
@@ -181,6 +181,35 @@ pub fn request_funds(network_info: NetworkInfo, wallet_info: WalletInfo) -&gt; R
         Ok(faucet_response.to_string())
     })
 }</code></pre>
+<h2 id="checks-using-cargo-build"><a class="header" href="#checks-using-cargo-build">Checks using <em>cargo build</em></a></h2>
+<hr />
+<blockquote>
+<p>All checks <a href="./example-3/README.html">(-&gt; except iOS Simulator)</a> should work without any issue. Please also refer to the corresponding video (2023-09-03: ToDo).</p>
+</blockquote>
+<hr />
+<p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
+<pre><code>cd rust
+</code></pre>
+<p>Then, within the <em>rust</em> directory, excute the following commands.</p>
+<h3 id="android"><a class="header" href="#android">Android</a></h3>
+<p>If you haven't already, install the <code>cargo-ndk</code> command using:</p>
+<pre><code>cargo install cargo-ndk
+</code></pre>
+<p>I only check the ABI <em>arm64-v8a</em>. <a href="./example-3/libsodium.html">-&gt; Why do you need SODIUM_LIB_DIR and SODIUM_SHARED here?</a></p>
+<pre><code>SODIUM_LIB_DIR=&quot;/path/to/libsodium&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
+</code></pre>
+<p>e.g.</p>
+<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
+</code></pre>
+<h3 id="macos"><a class="header" href="#macos">macOS</a></h3>
+<pre><code>cargo build --target aarch64-apple-darwin
+</code></pre>
+<h3 id="ios-simulator"><a class="header" href="#ios-simulator">iOS Simulator</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios-sim
+</code></pre>
+<h3 id="ios-device"><a class="header" href="#ios-device">iOS Device</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios
+</code></pre>
 
                     </main>
 

@@ -32,7 +32,7 @@ pub fn generate_mnemonic() -> String {
 
 ---
 
-> All checks should work without any issue. Please also refer to the corresponding video.
+> All checks should work without any issue. Please also refer to the corresponding video (2023-09-03: ToDo).
 
 ---
 

@@ -2,7 +2,7 @@
 
 ---
 
-Rust adjustments for Example "Request Funds". 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.
+Rust adjustments for Example "Request Funds".
 
 ---
 
@@ -50,3 +50,7 @@ pub fn request_funds(network_info: NetworkInfo, wallet_info: WalletInfo) -> Resu
     })
 }
 ```
+
+## Checks using _cargo build_
+
+{{#include ./example-4.md:51:}}

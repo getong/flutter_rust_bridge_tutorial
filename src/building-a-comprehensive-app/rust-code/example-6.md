@@ -2,7 +2,7 @@
 
 ---
 
-Rust adjustments for Example "Check Balance". 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.
+Rust adjustments for Example "Check Balance".
 
 ---
 
@@ -69,3 +69,7 @@ pub fn check_balance(wallet_info: WalletInfo) -> Result<BaseCoinBalance> {
     })
 }
 ```
+
+## Checks using _cargo build_
+
+{{#include ./example-4.md:51:}}

@@ -3844,7 +3844,7 @@ pub fn get_node_info(network_info: NetworkInfo) -&gt; Result&lt;String&gt; {
 <h2 id="checks-using-cargo-build"><a class="header" href="#checks-using-cargo-build">Checks using <em>cargo build</em></a></h2>
 <hr />
 <blockquote>
-<p>All checks should work without any issue. Please also refer to the corresponding video.</p>
+<p>All checks should work without any issue. Please also refer to the corresponding video (2023-09-03: ToDo).</p>
 </blockquote>
 <hr />
 <p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
@@ -3885,7 +3885,7 @@ pub fn generate_mnemonic() -&gt; String {
 <h2 id="checks-using-cargo-build-1"><a class="header" href="#checks-using-cargo-build-1">Checks using <em>cargo build</em></a></h2>
 <hr />
 <blockquote>
-<p>All checks should work without any issue. Please also refer to the corresponding video.</p>
+<p>All checks should work without any issue. Please also refer to the corresponding video (2023-09-03: ToDo).</p>
 </blockquote>
 <hr />
 <p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
@@ -3909,7 +3909,7 @@ pub fn generate_mnemonic() -&gt; String {
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="example-3"><a class="header" href="#example-3">Example 3</a></h1>
 <hr />
-<p>Rust adjustments for Example &quot;Create Wallet Account&quot;. 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>
+<p>Rust adjustments for Example &quot;Create Wallet Account&quot;.</p>
 <hr />
 <h2 id="what-adjustments-do-i-need-to-make-in-rust-2"><a class="header" href="#what-adjustments-do-i-need-to-make-in-rust-2">What adjustments do I need to make in Rust?</a></h2>
 <p>In summary, here are the steps you need to take to create the API function.</p>
@@ -4042,7 +4042,7 @@ pub fn create_wallet_account(network_info: NetworkInfo, wallet_info: WalletInfo)
 <hr />
 <blockquote>
 <p><strong>There are issues when cross-compiling to Android and iOS Simulator.</strong></p>
-<p>Please also refer to the corresponding video.</p>
+<p>Please also refer to the corresponding video (2023-09-03: ToDo).</p>
 </blockquote>
 <hr />
 <p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
@@ -4199,7 +4199,7 @@ This project has reached the end of its development as a cryptographic library f
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="example-4"><a class="header" href="#example-4">Example 4</a></h1>
 <hr />
-<p>Rust adjustments for Example &quot;Generate Address&quot;. 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>
+<p>Rust adjustments for Example &quot;Generate Address&quot;.</p>
 <hr />
 <h2 id="what-adjustments-do-i-need-to-make-in-rust-3"><a class="header" href="#what-adjustments-do-i-need-to-make-in-rust-3">What adjustments do I need to make in Rust?</a></h2>
 <p>In summary, here are the steps you need to take to create the API function.</p>
@@ -4232,9 +4232,38 @@ pub fn generate_address(wallet_info: WalletInfo) -&gt; Result&lt;String&gt; {
         Ok(addresses[0].address().to_bech32())
     })
 }</code></pre>
+<h2 id="checks-using-cargo-build-3"><a class="header" href="#checks-using-cargo-build-3">Checks using <em>cargo build</em></a></h2>
+<hr />
+<blockquote>
+<p>All checks <a href="building-a-comprehensive-app/rust-code/./example-3/README.html">(-&gt; except iOS Simulator)</a> should work without any issue. Please also refer to the corresponding video (2023-09-03: ToDo).</p>
+</blockquote>
+<hr />
+<p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
+<pre><code>cd rust
+</code></pre>
+<p>Then, within the <em>rust</em> directory, excute the following commands.</p>
+<h3 id="android-4"><a class="header" href="#android-4">Android</a></h3>
+<p>If you haven't already, install the <code>cargo-ndk</code> command using:</p>
+<pre><code>cargo install cargo-ndk
+</code></pre>
+<p>I only check the ABI <em>arm64-v8a</em>. <a href="building-a-comprehensive-app/rust-code/./example-3/libsodium.html">-&gt; Why do you need SODIUM_LIB_DIR and SODIUM_SHARED here?</a></p>
+<pre><code>SODIUM_LIB_DIR=&quot;/path/to/libsodium&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
+</code></pre>
+<p>e.g.</p>
+<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
+</code></pre>
+<h3 id="macos-4"><a class="header" href="#macos-4">macOS</a></h3>
+<pre><code>cargo build --target aarch64-apple-darwin
+</code></pre>
+<h3 id="ios-simulator-1"><a class="header" href="#ios-simulator-1">iOS Simulator</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios-sim
+</code></pre>
+<h3 id="ios-device-1"><a class="header" href="#ios-device-1">iOS Device</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="example-5"><a class="header" href="#example-5">Example 5</a></h1>
 <hr />
-<p>Rust adjustments for Example &quot;Request Funds&quot;. 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>
+<p>Rust adjustments for Example &quot;Request Funds&quot;.</p>
 <hr />
 <h2 id="what-adjustments-do-i-need-to-make-in-rust-4"><a class="header" href="#what-adjustments-do-i-need-to-make-in-rust-4">What adjustments do I need to make in Rust?</a></h2>
 <p>In summary, here are the steps you need to take to create the API function.</p>
@@ -4268,9 +4297,38 @@ pub fn request_funds(network_info: NetworkInfo, wallet_info: WalletInfo) -&gt; R
         Ok(faucet_response.to_string())
     })
 }</code></pre>
+<h2 id="checks-using-cargo-build-4"><a class="header" href="#checks-using-cargo-build-4">Checks using <em>cargo build</em></a></h2>
+<hr />
+<blockquote>
+<p>All checks <a href="building-a-comprehensive-app/rust-code/./example-3/README.html">(-&gt; except iOS Simulator)</a> should work without any issue. Please also refer to the corresponding video (2023-09-03: ToDo).</p>
+</blockquote>
+<hr />
+<p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
+<pre><code>cd rust
+</code></pre>
+<p>Then, within the <em>rust</em> directory, excute the following commands.</p>
+<h3 id="android-5"><a class="header" href="#android-5">Android</a></h3>
+<p>If you haven't already, install the <code>cargo-ndk</code> command using:</p>
+<pre><code>cargo install cargo-ndk
+</code></pre>
+<p>I only check the ABI <em>arm64-v8a</em>. <a href="building-a-comprehensive-app/rust-code/./example-3/libsodium.html">-&gt; Why do you need SODIUM_LIB_DIR and SODIUM_SHARED here?</a></p>
+<pre><code>SODIUM_LIB_DIR=&quot;/path/to/libsodium&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
+</code></pre>
+<p>e.g.</p>
+<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
+</code></pre>
+<h3 id="macos-5"><a class="header" href="#macos-5">macOS</a></h3>
+<pre><code>cargo build --target aarch64-apple-darwin
+</code></pre>
+<h3 id="ios-simulator-2"><a class="header" href="#ios-simulator-2">iOS Simulator</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios-sim
+</code></pre>
+<h3 id="ios-device-2"><a class="header" href="#ios-device-2">iOS Device</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="example-6"><a class="header" href="#example-6">Example 6</a></h1>
 <hr />
-<p>Rust adjustments for Example &quot;Check Balance&quot;. 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>
+<p>Rust adjustments for Example &quot;Check Balance&quot;.</p>
 <hr />
 <h2 id="what-adjustments-do-i-need-to-make-in-rust-5"><a class="header" href="#what-adjustments-do-i-need-to-make-in-rust-5">What adjustments do I need to make in Rust?</a></h2>
 <p>In summary, here are the steps you need to take to create the API function.</p>
@@ -4320,6 +4378,35 @@ pub fn check_balance(wallet_info: WalletInfo) -&gt; Result&lt;BaseCoinBalance&gt
         Ok(base_coin_balance)
     })
 }</code></pre>
+<h2 id="checks-using-cargo-build-5"><a class="header" href="#checks-using-cargo-build-5">Checks using <em>cargo build</em></a></h2>
+<hr />
+<blockquote>
+<p>All checks <a href="building-a-comprehensive-app/rust-code/./example-3/README.html">(-&gt; except iOS Simulator)</a> should work without any issue. Please also refer to the corresponding video (2023-09-03: ToDo).</p>
+</blockquote>
+<hr />
+<p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
+<pre><code>cd rust
+</code></pre>
+<p>Then, within the <em>rust</em> directory, excute the following commands.</p>
+<h3 id="android-6"><a class="header" href="#android-6">Android</a></h3>
+<p>If you haven't already, install the <code>cargo-ndk</code> command using:</p>
+<pre><code>cargo install cargo-ndk
+</code></pre>
+<p>I only check the ABI <em>arm64-v8a</em>. <a href="building-a-comprehensive-app/rust-code/./example-3/libsodium.html">-&gt; Why do you need SODIUM_LIB_DIR and SODIUM_SHARED here?</a></p>
+<pre><code>SODIUM_LIB_DIR=&quot;/path/to/libsodium&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
+</code></pre>
+<p>e.g.</p>
+<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
+</code></pre>
+<h3 id="macos-6"><a class="header" href="#macos-6">macOS</a></h3>
+<pre><code>cargo build --target aarch64-apple-darwin
+</code></pre>
+<h3 id="ios-simulator-3"><a class="header" href="#ios-simulator-3">iOS Simulator</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios-sim
+</code></pre>
+<h3 id="ios-device-3"><a class="header" href="#ios-device-3">iOS Device</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="example-7"><a class="header" href="#example-7">Example 7</a></h1>
 <hr />
 <p>Rust adjustments for Example &quot;Create Decentralized Identifier&quot;. 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>
