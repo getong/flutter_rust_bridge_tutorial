@@ -12,7 +12,7 @@ In summary, here are the steps you need to take to create the API function.
 
 ### Cargo.toml
 
-There is no need to add any crates. It's the same as in [Example 3](./example-3.md).
+There is no need to add any crates. It's the same as in [Example 3](./example-3/).
 
 ### api.rs - Used Paths
 
