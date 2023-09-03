@@ -147,32 +147,48 @@
                     <main>
                         <h1 id="example-7"><a class="header" href="#example-7">Example 7</a></h1>
 <hr />
-<p>Rust adjustments for Example &quot;Create Decentralized Identifier&quot;. 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>
+<p>Rust adjustments for Example &quot;Create Decentralized Identifier&quot;.</p>
 <hr />
 <h2 id="what-adjustments-do-i-need-to-make-in-rust"><a class="header" href="#what-adjustments-do-i-need-to-make-in-rust">What adjustments do I need to make in Rust?</a></h2>
 <p>In summary, here are the steps you need to take to create the API function.</p>
 <h3 id="cargotoml"><a class="header" href="#cargotoml">Cargo.toml</a></h3>
 <p>Add this crate to the existing dependencies:</p>
 <pre><code class="language-toml">[dependencies]
-identity_iota = { version = &quot;0.7.0-alpha&quot; }
+identity_iota = { version = &quot;0.7.0-alpha.5&quot; }
 </code></pre>
+<p>Also refer to: <a href="https://docs.rs/identity_iota/0.7.0-alpha.5/identity_iota/">https://docs.rs/identity_iota/0.7.0-alpha.5/identity_iota/</a></p>
 <h3 id="apirs---used-paths"><a class="header" href="#apirs---used-paths">api.rs - Used Paths</a></h3>
-<p>Add these paths:</p>
+<p>Add these two paths for <em>Address</em> and <em>AliasOutput</em> here:</p>
+<pre><code class="language-rust ignore">use iota_wallet::{
+    account_manager::AccountManager,
+    iota_client::block::address::Address,    // &lt;- Add this for Identity-Example
+    iota_client::block::output::AliasOutput, // &lt;- Add this for Identity-Example
+    iota_client::constants::SHIMMER_COIN_TYPE,
+    iota_client::request_funds_from_faucet,
+    iota_client::Client,
+    secret::stronghold::StrongholdSecretManager as WalletStrongholdSecretManager,
+    secret::SecretManager as WalletSecretManager,
+    ClientOptions,
+};</code></pre>
+<p>And add this whole section:</p>
 <pre><code class="language-rust ignore">use identity_iota::{
     crypto::KeyPair,
     crypto::KeyType,
-    iota::did::MethodScope,
     iota::IotaClientExt,
     iota::IotaDocument,
     iota::IotaIdentityClientExt,
-    iota::NetworkName
+    iota::NetworkName,
+    verification::MethodScope,
+    verification::VerificationMethod,
 };</code></pre>
 <h3 id="apirs---function-create_decentralized_identifier"><a class="header" href="#apirs---function-create_decentralized_identifier">api.rs - Function <em>create_decentralized_identifier()</em></a></h3>
 <pre><code class="language-rust ignore">#[allow(dead_code)]
-pub fn create_decentralized_identifier(network_info: NetworkInfo, wallet_info: WalletInfo) -&gt; Result&lt;String&gt; {
+pub fn create_decentralized_identifier(
+    network_info: NetworkInfo,
+    wallet_info: WalletInfo,
+) -&gt; Result&lt;String&gt; {
     let rt = Runtime::new().unwrap();
     rt.block_on(async {
-
         let node_url = network_info.node_url;
         let stronghold_password = wallet_info.stronghold_password;
         let stronghold_filepath = wallet_info.stronghold_filepath;
@@ -190,10 +206,10 @@ pub fn create_decentralized_identifier(network_info: NetworkInfo, wallet_info: W
         //     .build(path_snapshot)?;
 
         // THIS returns a StrongholdSecretManager:
-        let secret_manager: SecretManager = SecretManager::Stronghold(
-            StrongholdSecretManager::builder()
-            .password(&amp;stronghold_password)
-            .build(path_snapshot)?,
+        let secret_manager: WalletSecretManager = WalletSecretManager::Stronghold(
+            WalletStrongholdSecretManager::builder()
+                .password(&amp;stronghold_password)
+                .build(path_snapshot)?,
         );
         //Create a client with that node.
         // let client = Client::builder()
@@ -202,7 +218,9 @@ pub fn create_decentralized_identifier(network_info: NetworkInfo, wallet_info: W
         //     .finish()?;
 
         // Create a new client to interact with the IOTA ledger.
-        let client: Client = Client::builder().with_primary_node(&amp;node_url, None)?.finish()?;
+        let client: Client = Client::builder()
+            .with_primary_node(&amp;node_url, None)?
+            .finish()?;
 
         //let client: Client = Client::builder().with_primary_node(node_url, None)?.finish()?;
         // Get the Bech32 human-readable part (HRP) of the network.
@@ -214,8 +232,12 @@ pub fn create_decentralized_identifier(network_info: NetworkInfo, wallet_info: W
 
         // Insert a new Ed25519 verification method in the DID document.
         let keypair: KeyPair = KeyPair::new(KeyType::Ed25519)?;
-        let method: IotaVerificationMethod =
-            IotaVerificationMethod::new(document.id().clone(), keypair.type_(), keypair.public(), &quot;#key-1&quot;)?;
+        let method: VerificationMethod = VerificationMethod::new(
+            document.id().clone(),
+            keypair.type_(),
+            keypair.public(),
+            &quot;#key-1&quot;,
+        )?;
         document.insert_method(method, MethodScope::VerificationMethod)?;
 
         // Construct an Alias Output containing the DID document, with the wallet address
@@ -228,7 +250,9 @@ pub fn create_decentralized_identifier(network_info: NetworkInfo, wallet_info: W
         let alias_output: AliasOutput = client.new_did_output(address, document, None).await?;
 
         // Publish the Alias Output and get the published DID document.
-        let document: IotaDocument = client.publish_did_output(&amp;secret_manager, alias_output).await?;
+        let document: IotaDocument = client
+            .publish_did_output(&amp;secret_manager, alias_output)
+            .await?;
         Ok(document.to_string())
 
         //println!(&quot;Published DID document: {:#}&quot;, document);
@@ -241,7 +265,6 @@ pub fn create_decentralized_identifier(network_info: NetworkInfo, wallet_info: W
         //Ok(address.is_ed25519().to_string())
 
         //Ok(document.to_string())
-
     })
 }</code></pre>
 

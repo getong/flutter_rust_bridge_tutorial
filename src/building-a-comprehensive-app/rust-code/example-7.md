@@ -2,7 +2,7 @@
 
 ---
 
-Rust adjustments for Example "Create Decentralized Identifier". 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.
+Rust adjustments for Example "Create Decentralized Identifier".
 
 ---
 
@@ -18,6 +18,8 @@ Add this crate to the existing dependencies:
 [dependencies]
 identity_iota = { version = "0.7.0-alpha.5" }
 ```
+
+Also refer to: [https://docs.rs/identity_iota/0.7.0-alpha.5/identity_iota/](https://docs.rs/identity_iota/0.7.0-alpha.5/identity_iota/)
 
 ### api.rs - Used Paths
 
