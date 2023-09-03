@@ -19,6 +19,8 @@ Watch the video! We start by cloning the pure Flutter project that includes ever
 
 <a href="https://github.com/iota-for-flutter/playground_app" target="_blank">👉 &nbsp; GitHub Repo - Playground App (Flutter only)</a>
 
+> Are you encountering the "Could not create task ':generateLockfiles" issue after cloning the project and launching VSCode? Here's the cause: Gradle files are absent in the Android subfolder at this stage. These files are fetched when you initially run the project on your Virtual Android device. To resolve it, follow these steps: Run the Flutter app on your Android device, stop it, and then restart VSCode. The error should disappear.
+
 ---
 
 ## App Characteristics and used Packages
