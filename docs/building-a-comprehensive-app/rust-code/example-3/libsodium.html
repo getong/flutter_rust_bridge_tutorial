@@ -204,20 +204,64 @@
 <p>You will need to repeat the last command for each ABI/target accordingly.</p>
 <h3 id="step-2-copy-the-libsodiumso-file-and-test-the-build"><a class="header" href="#step-2-copy-the-libsodiumso-file-and-test-the-build">Step 2: Copy the libsodium.so file and test the build</a></h3>
 <p>Copy the created library and paste it into a directory of your choice. Personally, I utilize the folder &quot;android/app/src/main/jniLibs/&lt;ABI&gt;/&quot;, where all libraries are stored together in the appropriate ABI directory for libs, see the image below.</p>
-<p>Now, I recommend to test the <strong>playground_app</strong> build in Terminal by setting the following environment variables before executing the commands. Please replace &quot;<em>/path/to/library</em>&quot; with the correct directory path you have chosen(do NOT append &quot;<em>libsodium.so</em>&quot; at the end of the path).</p>
+<p>Now, I recommend to test the <strong>playground_app</strong> build in Terminal by setting the following environment variables before executing the commands. Please replace &quot;<em>/path/to/library</em>&quot; with the correct directory path you have chosen (do NOT append &quot;<em>libsodium.so</em>&quot; at the end of the path).</p>
 <p>Make a test build by executing:</p>
 <pre><code>SODIUM_LIB_DIR=&quot;/path/to/library&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
+</code></pre>
+<p>e.g.</p>
+<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
 </code></pre>
 <figure style="margin:0;"><img src="../../../assets/playground/libsodium_paste.png" alt="Successful test of cross-compilation for Android arm64-v8a"><figcaption style="font-size: 0.8em;text-align:center;"><p>Successful test of cross-compilation for Android arm64-v8a</p></figcaption></figure>
 <h3 id="step-3-update-buildgradle"><a class="header" href="#step-3-update-buildgradle">Step 3: Update build.gradle</a></h3>
 <p>In the aforementioned test, we defined the variables SODIUM_LIB_DIR and SODIUM_SHARED within the command line. However, these definitions will not persist.</p>
-<p>To ensure proper setup for usage in Flutter, you need to make adjustments to the <code>android/app/build.gradle</code> file. Once again, replace &quot;<em>/path/to/library</em>&quot; with the actual directory path you have selected.</p>
+<p>To ensure proper setup for usage in Flutter, you need to make adjustments to the <code>android/app/build.gradle</code> file, see below (once again, replace &quot;<em>/path/to/library</em>&quot; with the actual directory path you have selected).</p>
 <pre><code>        ...
         environment ANDROID_NDK_HOME: &quot;$ANDROID_NDK&quot;
         environment SODIUM_LIB_DIR: &quot;/path/to/library&quot;
         environment SODIUM_SHARED: 1
         commandLine 'cargo', 'ndk',
         ...
+</code></pre>
+<hr />
+<blockquote>
+<p><strong>Be aware</strong>: At this point, I am anticipating the <a href="../../building-for-android.html">Android setup</a>!</p>
+</blockquote>
+<hr />
+<p>In <em>android/app/build.gradle</em>, fix error:</p>
+<pre><code>Replace GradleException by FileNotFoundException
+</code></pre>
+<p>In <em>android/app/build.gradle</em>, add at the bottom:</p>
+<pre><code>[
+        Debug: null,
+        Profile: '--release',
+        Release: '--release'
+].each {
+    def taskPostfix = it.key
+    def profileMode = it.value
+    tasks.whenTaskAdded { task -&gt;
+        if (task.name == &quot;javaPreCompile$taskPostfix&quot;) {
+            task.dependsOn &quot;cargoBuild$taskPostfix&quot;
+        }
+    }
+    tasks.register(&quot;cargoBuild$taskPostfix&quot;, Exec) {
+        workingDir &quot;../../rust&quot;  // &lt;-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment ANDROID_NDK_HOME: &quot;$ANDROID_NDK&quot;
+        environment SODIUM_LIB_DIR: &quot;/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a&quot; // &lt;-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment SODIUM_SHARED: 1
+        commandLine 'cargo', 'ndk',
+                // the 2 ABIs below are used by real Android devices
+                // '-t', 'armeabi-v7a',
+                '-t', 'arm64-v8a',
+                // the below 2 ABIs are usually used for Android simulators,
+                // add or remove these ABIs as needed.
+                // '-t', 'x86',
+                // '-t', 'x86_64',
+                '-o', '../android/app/src/main/jniLibs', 'build'
+        if (profileMode != null) {
+            args profileMode
+        }
+    }
+}
 </code></pre>
 
                     </main>

@@ -190,7 +190,19 @@ It is worth noting that the use of RocksDB has previously caused issues between 
 
 ---
 
+To examine the various targets, you should navigate from _playground_app_ root directory to the _rust_ directory:
+
+```
+cd rust
+```
+
 ### Android
+
+I only check the ABI _arm64-v8a_.
+
+```
+cargo ndk -t arm64-v8a build
+```
 
 Since the latest Android NDK version 25 is being used, I have been encountering issues compiling the _libsodium-sys_ library (v0.2.7) on macOS (M1 chip). This problem did not exist with the previous NDK version 22, which I was using in January.
 
@@ -206,7 +218,19 @@ Since I haven't identified the root cause of the issue, I am currently unable to
 
 As a temporary workaround, I can suggest building the _libsodium.so_ library for each target individually and including it in our target Rust library. This can be achieved by utilizing the SODIUM_LIB_DIR and SODIUM_SHARED environment variables, as described in the libsodium-sys documentation. I will elaborate on this approach in the upcoming subsection [Libsodium library for Android](libsodium.md).
 
+### macOS
+
+```
+cargo build --target aarch64-apple-darwin
+```
+
+That one functions flawlessly :-))
+
 ### iOS Simulator
+
+```
+cargo build --target aarch64-apple-ios-sim
+```
 
 The compilation fails because there is an unknown build target in _libsodium-sys_ build script:
 
@@ -226,3 +250,9 @@ One potential solution could be to add a target to the `build.rs` file within th
 **Workaround**
 
 To utilize Stronghold for iOS, the only viable workaround at the moment is to compile the code and employ your **iOS Device** as a test device. Unfortunately, the Simulator cannot be utilized due to the aforementioned problem.
+
+### iOS Device
+
+```
+cargo build --target aarch64-apple-ios
+```

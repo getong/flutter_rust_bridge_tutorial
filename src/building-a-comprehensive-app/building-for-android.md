@@ -6,6 +6,58 @@
 
 ---
 
+## Android Setup
+
+If you haven't already, install the `cargo-ndk` command using:
+
+```
+cargo install cargo-ndk
+```
+
+In _android/app/build.gradle_, fix error:
+
+```
+Replace GradleException by FileNotFoundException
+```
+
+In _android/app/build.gradle_, add at the bottom:
+
+```
+[
+        Debug: null,
+        Profile: '--release',
+        Release: '--release'
+].each {
+    def taskPostfix = it.key
+    def profileMode = it.value
+    tasks.whenTaskAdded { task ->
+        if (task.name == "javaPreCompile$taskPostfix") {
+            task.dependsOn "cargoBuild$taskPostfix"
+        }
+    }
+    tasks.register("cargoBuild$taskPostfix", Exec) {
+        workingDir "../../rust"  // <-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment ANDROID_NDK_HOME: "$ANDROID_NDK"
+        environment SODIUM_LIB_DIR: "/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a" // <-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment SODIUM_SHARED: 1
+        commandLine 'cargo', 'ndk',
+                // the 2 ABIs below are used by real Android devices
+                // '-t', 'armeabi-v7a',
+                '-t', 'arm64-v8a',
+                // the below 2 ABIs are usually used for Android simulators,
+                // add or remove these ABIs as needed.
+                // '-t', 'x86',
+                // '-t', 'x86_64',
+                '-o', '../android/app/src/main/jniLibs', 'build'
+        if (profileMode != null) {
+            args profileMode
+        }
+    }
+}
+```
+
+> Please note that due to the use of libsodium, there are two additional lines related to SODIUM_LIB_DIR and SODIUM_SHARED (compared to the former configurations) -> please also refer to [Libsodium library for Android](./rust-code/example-3/libsodium.md).
+
 ## Enabling Dynamic Library Loading
 
 Even if the our dynamic library `librust.so` has been successfully compiled in Android, you haven't won yet. It also needs to be able to be loaded.

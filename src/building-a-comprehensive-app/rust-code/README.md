@@ -14,7 +14,7 @@ This is the situation upon which we are basing our starting point.
 
 ## Preparation
 
-1. As usual, create an empty file called `api.rs`.
+1. As usual, create an empty file called `api.rs`, at the same level as `lib.rs`.
 
 2. Include it as module in `lib.rs`:
 
@@ -39,6 +39,12 @@ cd rust
 Then, within the _rust_ directory, excute the following commands.
 
 ### Android
+
+If you haven't already, install the `cargo-ndk` command using:
+
+```
+cargo install cargo-ndk
+```
 
 I only check the ABI _arm64-v8a_.
 

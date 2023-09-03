@@ -149,6 +149,49 @@
 <hr />
 <p>2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>
 <hr />
+<h2 id="android-setup"><a class="header" href="#android-setup">Android Setup</a></h2>
+<p>If you haven't already, install the <code>cargo-ndk</code> command using:</p>
+<pre><code>cargo install cargo-ndk
+</code></pre>
+<p>In <em>android/app/build.gradle</em>, fix error:</p>
+<pre><code>Replace GradleException by FileNotFoundException
+</code></pre>
+<p>In <em>android/app/build.gradle</em>, add at the bottom:</p>
+<pre><code>[
+        Debug: null,
+        Profile: '--release',
+        Release: '--release'
+].each {
+    def taskPostfix = it.key
+    def profileMode = it.value
+    tasks.whenTaskAdded { task -&gt;
+        if (task.name == &quot;javaPreCompile$taskPostfix&quot;) {
+            task.dependsOn &quot;cargoBuild$taskPostfix&quot;
+        }
+    }
+    tasks.register(&quot;cargoBuild$taskPostfix&quot;, Exec) {
+        workingDir &quot;../../rust&quot;  // &lt;-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment ANDROID_NDK_HOME: &quot;$ANDROID_NDK&quot;
+        environment SODIUM_LIB_DIR: &quot;/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a&quot; // &lt;-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment SODIUM_SHARED: 1
+        commandLine 'cargo', 'ndk',
+                // the 2 ABIs below are used by real Android devices
+                // '-t', 'armeabi-v7a',
+                '-t', 'arm64-v8a',
+                // the below 2 ABIs are usually used for Android simulators,
+                // add or remove these ABIs as needed.
+                // '-t', 'x86',
+                // '-t', 'x86_64',
+                '-o', '../android/app/src/main/jniLibs', 'build'
+        if (profileMode != null) {
+            args profileMode
+        }
+    }
+}
+</code></pre>
+<blockquote>
+<p>Please note that due to the use of libsodium, there are two additional lines related to SODIUM_LIB_DIR and SODIUM_SHARED (compared to the former configurations) -&gt; please also refer to <a href="./rust-code/example-3/libsodium.html">Libsodium library for Android</a>.</p>
+</blockquote>
 <h2 id="enabling-dynamic-library-loading"><a class="header" href="#enabling-dynamic-library-loading">Enabling Dynamic Library Loading</a></h2>
 <p>Even if the our dynamic library <code>librust.so</code> has been successfully compiled in Android, you haven't won yet. It also needs to be able to be loaded.</p>
 <p>There is an error message that only becomes apparent when using the app, after you have completed all steps and successfully launched the app in Flutter.</p>

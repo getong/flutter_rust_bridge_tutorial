@@ -3758,7 +3758,7 @@ code .
 <h2 id="preparation"><a class="header" href="#preparation">Preparation</a></h2>
 <ol>
 <li>
-<p>As usual, create an empty file called <code>api.rs</code>.</p>
+<p>As usual, create an empty file called <code>api.rs</code>, at the same level as <code>lib.rs</code>.</p>
 </li>
 <li>
 <p>Include it as module in <code>lib.rs</code>:</p>
@@ -3774,6 +3774,9 @@ code .
 </code></pre>
 <p>Then, within the <em>rust</em> directory, excute the following commands.</p>
 <h3 id="android"><a class="header" href="#android">Android</a></h3>
+<p>If you haven't already, install the <code>cargo-ndk</code> command using:</p>
+<pre><code>cargo install cargo-ndk
+</code></pre>
 <p>I only check the ABI <em>arm64-v8a</em>.</p>
 <pre><code>cargo ndk -t arm64-v8a build
 </code></pre>
@@ -3849,6 +3852,9 @@ pub fn get_node_info(network_info: NetworkInfo) -&gt; Result&lt;String&gt; {
 </code></pre>
 <p>Then, within the <em>rust</em> directory, excute the following commands.</p>
 <h3 id="android-1"><a class="header" href="#android-1">Android</a></h3>
+<p>If you haven't already, install the <code>cargo-ndk</code> command using:</p>
+<pre><code>cargo install cargo-ndk
+</code></pre>
 <p>I only check the ABI <em>arm64-v8a</em>.</p>
 <pre><code>cargo ndk -t arm64-v8a build
 </code></pre>
@@ -3887,6 +3893,9 @@ pub fn generate_mnemonic() -&gt; String {
 </code></pre>
 <p>Then, within the <em>rust</em> directory, excute the following commands.</p>
 <h3 id="android-2"><a class="header" href="#android-2">Android</a></h3>
+<p>If you haven't already, install the <code>cargo-ndk</code> command using:</p>
+<pre><code>cargo install cargo-ndk
+</code></pre>
 <p>I only check the ABI <em>arm64-v8a</em>.</p>
 <pre><code>cargo ndk -t arm64-v8a build
 </code></pre>
@@ -4036,7 +4045,13 @@ pub fn create_wallet_account(network_info: NetworkInfo, wallet_info: WalletInfo)
 <p>Please also refer to the corresponding video.</p>
 </blockquote>
 <hr />
+<p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
+<pre><code>cd rust
+</code></pre>
 <h3 id="android-3"><a class="header" href="#android-3">Android</a></h3>
+<p>I only check the ABI <em>arm64-v8a</em>.</p>
+<pre><code>cargo ndk -t arm64-v8a build
+</code></pre>
 <p>Since the latest Android NDK version 25 is being used, I have been encountering issues compiling the <em>libsodium-sys</em> library (v0.2.7) on macOS (M1 chip). This problem did not exist with the previous NDK version 22, which I was using in January.</p>
 <figure style="margin:0;"><img src="building-a-comprehensive-app/rust-code/example-3/../../../assets/playground/libsodium-sys_android-check.png" alt="Cross-compilation error - Android"><figcaption style="font-size: 0.8em;text-align:center;"><p>Cross-compilation error - Android</p></figcaption></figure>
 <p>It's possible that you may <em>not</em> encounter this issue if you use a different hosting operating system. If you manage to successfully compile libsodium-sys on your host system, consider yourself fortunate.</p>
@@ -4044,7 +4059,13 @@ pub fn create_wallet_account(network_info: NetworkInfo, wallet_info: WalletInfo)
 <p>Since I haven't identified the root cause of the issue, I am currently unable to propose a specific solution or fix.</p>
 <p><strong>Workaround</strong></p>
 <p>As a temporary workaround, I can suggest building the <em>libsodium.so</em> library for each target individually and including it in our target Rust library. This can be achieved by utilizing the SODIUM_LIB_DIR and SODIUM_SHARED environment variables, as described in the libsodium-sys documentation. I will elaborate on this approach in the upcoming subsection <a href="building-a-comprehensive-app/rust-code/example-3/libsodium.html">Libsodium library for Android</a>.</p>
+<h3 id="macos-3"><a class="header" href="#macos-3">macOS</a></h3>
+<pre><code>cargo build --target aarch64-apple-darwin
+</code></pre>
+<p>That one functions flawlessly :-))</p>
 <h3 id="ios-simulator"><a class="header" href="#ios-simulator">iOS Simulator</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios-sim
+</code></pre>
 <p>The compilation fails because there is an unknown build target in <em>libsodium-sys</em> build script:</p>
 <figure style="margin:0;"><img src="building-a-comprehensive-app/rust-code/example-3/../../../assets/playground/libsodium-sys_ios-check.png" alt="Cross-compilation error - iOS"><figcaption style="font-size: 0.8em;text-align:center;"><p>Cross-compilation error - iOS</p></figcaption></figure>
 <p>The fact that the <em>libsodium-sys</em> project is marked as deprecated is unfortunate since it limits the opportunity to address and resolve the issue within the repository. See <a href="https://github.com/sodiumoxide/sodiumoxide#readme">Sodiumoxide's documentation</a>:</p>
@@ -4055,6 +4076,9 @@ This project has reached the end of its development as a cryptographic library f
 <p><a href="https://github.com/iotaledger/stronghold.rs/discussions/310" target="_blank">👉   Stronghold Discussion - Portability and reliance on libsodium</a></p>
 <p><strong>Workaround</strong></p>
 <p>To utilize Stronghold for iOS, the only viable workaround at the moment is to compile the code and employ your <strong>iOS Device</strong> as a test device. Unfortunately, the Simulator cannot be utilized due to the aforementioned problem.</p>
+<h3 id="ios-device"><a class="header" href="#ios-device">iOS Device</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="libsodium-library-for-android"><a class="header" href="#libsodium-library-for-android">Libsodium library for Android</a></h1>
 <hr />
 <p>Please refer to this chapter to learn about a <strong>Workaround for Android</strong> that can be used <strong>if you wish to utilize Stronghold</strong>.</p>
@@ -4114,20 +4138,64 @@ This project has reached the end of its development as a cryptographic library f
 <p>You will need to repeat the last command for each ABI/target accordingly.</p>
 <h3 id="step-2-copy-the-libsodiumso-file-and-test-the-build"><a class="header" href="#step-2-copy-the-libsodiumso-file-and-test-the-build">Step 2: Copy the libsodium.so file and test the build</a></h3>
 <p>Copy the created library and paste it into a directory of your choice. Personally, I utilize the folder &quot;android/app/src/main/jniLibs/&lt;ABI&gt;/&quot;, where all libraries are stored together in the appropriate ABI directory for libs, see the image below.</p>
-<p>Now, I recommend to test the <strong>playground_app</strong> build in Terminal by setting the following environment variables before executing the commands. Please replace &quot;<em>/path/to/library</em>&quot; with the correct directory path you have chosen(do NOT append &quot;<em>libsodium.so</em>&quot; at the end of the path).</p>
+<p>Now, I recommend to test the <strong>playground_app</strong> build in Terminal by setting the following environment variables before executing the commands. Please replace &quot;<em>/path/to/library</em>&quot; with the correct directory path you have chosen (do NOT append &quot;<em>libsodium.so</em>&quot; at the end of the path).</p>
 <p>Make a test build by executing:</p>
 <pre><code>SODIUM_LIB_DIR=&quot;/path/to/library&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
+</code></pre>
+<p>e.g.</p>
+<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
 </code></pre>
 <figure style="margin:0;"><img src="building-a-comprehensive-app/rust-code/example-3/../../../assets/playground/libsodium_paste.png" alt="Successful test of cross-compilation for Android arm64-v8a"><figcaption style="font-size: 0.8em;text-align:center;"><p>Successful test of cross-compilation for Android arm64-v8a</p></figcaption></figure>
 <h3 id="step-3-update-buildgradle"><a class="header" href="#step-3-update-buildgradle">Step 3: Update build.gradle</a></h3>
 <p>In the aforementioned test, we defined the variables SODIUM_LIB_DIR and SODIUM_SHARED within the command line. However, these definitions will not persist.</p>
-<p>To ensure proper setup for usage in Flutter, you need to make adjustments to the <code>android/app/build.gradle</code> file. Once again, replace &quot;<em>/path/to/library</em>&quot; with the actual directory path you have selected.</p>
+<p>To ensure proper setup for usage in Flutter, you need to make adjustments to the <code>android/app/build.gradle</code> file, see below (once again, replace &quot;<em>/path/to/library</em>&quot; with the actual directory path you have selected).</p>
 <pre><code>        ...
         environment ANDROID_NDK_HOME: &quot;$ANDROID_NDK&quot;
         environment SODIUM_LIB_DIR: &quot;/path/to/library&quot;
         environment SODIUM_SHARED: 1
         commandLine 'cargo', 'ndk',
         ...
+</code></pre>
+<hr />
+<blockquote>
+<p><strong>Be aware</strong>: At this point, I am anticipating the <a href="building-a-comprehensive-app/rust-code/example-3/../../building-for-android.html">Android setup</a>!</p>
+</blockquote>
+<hr />
+<p>In <em>android/app/build.gradle</em>, fix error:</p>
+<pre><code>Replace GradleException by FileNotFoundException
+</code></pre>
+<p>In <em>android/app/build.gradle</em>, add at the bottom:</p>
+<pre><code>[
+        Debug: null,
+        Profile: '--release',
+        Release: '--release'
+].each {
+    def taskPostfix = it.key
+    def profileMode = it.value
+    tasks.whenTaskAdded { task -&gt;
+        if (task.name == &quot;javaPreCompile$taskPostfix&quot;) {
+            task.dependsOn &quot;cargoBuild$taskPostfix&quot;
+        }
+    }
+    tasks.register(&quot;cargoBuild$taskPostfix&quot;, Exec) {
+        workingDir &quot;../../rust&quot;  // &lt;-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment ANDROID_NDK_HOME: &quot;$ANDROID_NDK&quot;
+        environment SODIUM_LIB_DIR: &quot;/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a&quot; // &lt;-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment SODIUM_SHARED: 1
+        commandLine 'cargo', 'ndk',
+                // the 2 ABIs below are used by real Android devices
+                // '-t', 'armeabi-v7a',
+                '-t', 'arm64-v8a',
+                // the below 2 ABIs are usually used for Android simulators,
+                // add or remove these ABIs as needed.
+                // '-t', 'x86',
+                // '-t', 'x86_64',
+                '-o', '../android/app/src/main/jniLibs', 'build'
+        if (profileMode != null) {
+            args profileMode
+        }
+    }
+}
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="example-4"><a class="header" href="#example-4">Example 4</a></h1>
 <hr />
@@ -4371,6 +4439,49 @@ pub fn create_decentralized_identifier(network_info: NetworkInfo, wallet_info: W
 <hr />
 <p>2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>
 <hr />
+<h2 id="android-setup-1"><a class="header" href="#android-setup-1">Android Setup</a></h2>
+<p>If you haven't already, install the <code>cargo-ndk</code> command using:</p>
+<pre><code>cargo install cargo-ndk
+</code></pre>
+<p>In <em>android/app/build.gradle</em>, fix error:</p>
+<pre><code>Replace GradleException by FileNotFoundException
+</code></pre>
+<p>In <em>android/app/build.gradle</em>, add at the bottom:</p>
+<pre><code>[
+        Debug: null,
+        Profile: '--release',
+        Release: '--release'
+].each {
+    def taskPostfix = it.key
+    def profileMode = it.value
+    tasks.whenTaskAdded { task -&gt;
+        if (task.name == &quot;javaPreCompile$taskPostfix&quot;) {
+            task.dependsOn &quot;cargoBuild$taskPostfix&quot;
+        }
+    }
+    tasks.register(&quot;cargoBuild$taskPostfix&quot;, Exec) {
+        workingDir &quot;../../rust&quot;  // &lt;-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment ANDROID_NDK_HOME: &quot;$ANDROID_NDK&quot;
+        environment SODIUM_LIB_DIR: &quot;/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a&quot; // &lt;-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment SODIUM_SHARED: 1
+        commandLine 'cargo', 'ndk',
+                // the 2 ABIs below are used by real Android devices
+                // '-t', 'armeabi-v7a',
+                '-t', 'arm64-v8a',
+                // the below 2 ABIs are usually used for Android simulators,
+                // add or remove these ABIs as needed.
+                // '-t', 'x86',
+                // '-t', 'x86_64',
+                '-o', '../android/app/src/main/jniLibs', 'build'
+        if (profileMode != null) {
+            args profileMode
+        }
+    }
+}
+</code></pre>
+<blockquote>
+<p>Please note that due to the use of libsodium, there are two additional lines related to SODIUM_LIB_DIR and SODIUM_SHARED (compared to the former configurations) -&gt; please also refer to <a href="building-a-comprehensive-app/./rust-code/example-3/libsodium.html">Libsodium library for Android</a>.</p>
+</blockquote>
 <h2 id="enabling-dynamic-library-loading"><a class="header" href="#enabling-dynamic-library-loading">Enabling Dynamic Library Loading</a></h2>
 <p>Even if the our dynamic library <code>librust.so</code> has been successfully compiled in Android, you haven't won yet. It also needs to be able to be loaded.</p>
 <p>There is an error message that only becomes apparent when using the app, after you have completed all steps and successfully launched the app in Flutter.</p>

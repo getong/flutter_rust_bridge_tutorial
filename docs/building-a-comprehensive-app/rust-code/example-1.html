@@ -209,6 +209,9 @@ pub fn get_node_info(network_info: NetworkInfo) -&gt; Result&lt;String&gt; {
 </code></pre>
 <p>Then, within the <em>rust</em> directory, excute the following commands.</p>
 <h3 id="android"><a class="header" href="#android">Android</a></h3>
+<p>If you haven't already, install the <code>cargo-ndk</code> command using:</p>
+<pre><code>cargo install cargo-ndk
+</code></pre>
 <p>I only check the ABI <em>arm64-v8a</em>.</p>
 <pre><code>cargo ndk -t arm64-v8a build
 </code></pre>

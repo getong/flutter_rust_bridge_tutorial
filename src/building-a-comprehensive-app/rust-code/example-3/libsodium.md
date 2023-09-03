@@ -108,12 +108,18 @@ You will need to repeat the last command for each ABI/target accordingly.
 
 Copy the created library and paste it into a directory of your choice. Personally, I utilize the folder "android/app/src/main/jniLibs/\<ABI\>/", where all libraries are stored together in the appropriate ABI directory for libs, see the image below.
 
-Now, I recommend to test the **playground_app** build in Terminal by setting the following environment variables before executing the commands. Please replace "_/path/to/library_" with the correct directory path you have chosen(do NOT append "_libsodium.so_" at the end of the path).
+Now, I recommend to test the **playground_app** build in Terminal by setting the following environment variables before executing the commands. Please replace "_/path/to/library_" with the correct directory path you have chosen (do NOT append "_libsodium.so_" at the end of the path).
 
 Make a test build by executing:
 
 ```
 SODIUM_LIB_DIR="/path/to/library" SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
+```
+
+e.g.
+
+```
+SODIUM_LIB_DIR="/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a" SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
 ```
 
 <figure style="margin:0;"><img src="../../../assets/playground/libsodium_paste.png" alt="Successful test of cross-compilation for Android arm64-v8a"><figcaption style="font-size: 0.8em;text-align:center;"><p>Successful test of cross-compilation for Android arm64-v8a</p></figcaption></figure>
@@ -122,7 +128,7 @@ SODIUM_LIB_DIR="/path/to/library" SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
 
 In the aforementioned test, we defined the variables SODIUM_LIB_DIR and SODIUM_SHARED within the command line. However, these definitions will not persist.
 
-To ensure proper setup for usage in Flutter, you need to make adjustments to the `android/app/build.gradle` file. Once again, replace "_/path/to/library_" with the actual directory path you have selected.
+To ensure proper setup for usage in Flutter, you need to make adjustments to the `android/app/build.gradle` file, see below (once again, replace "_/path/to/library_" with the actual directory path you have selected).
 
 ```
         ...
@@ -131,4 +137,52 @@ To ensure proper setup for usage in Flutter, you need to make adjustments to the
         environment SODIUM_SHARED: 1
         commandLine 'cargo', 'ndk',
         ...
+```
+
+---
+
+> **Be aware**: At this point, I am anticipating the [Android setup](../../building-for-android.md)!
+
+---
+
+In _android/app/build.gradle_, fix error:
+
+```
+Replace GradleException by FileNotFoundException
+```
+
+In _android/app/build.gradle_, add at the bottom:
+
+```
+[
+        Debug: null,
+        Profile: '--release',
+        Release: '--release'
+].each {
+    def taskPostfix = it.key
+    def profileMode = it.value
+    tasks.whenTaskAdded { task ->
+        if (task.name == "javaPreCompile$taskPostfix") {
+            task.dependsOn "cargoBuild$taskPostfix"
+        }
+    }
+    tasks.register("cargoBuild$taskPostfix", Exec) {
+        workingDir "../../rust"  // <-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment ANDROID_NDK_HOME: "$ANDROID_NDK"
+        environment SODIUM_LIB_DIR: "/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a" // <-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment SODIUM_SHARED: 1
+        commandLine 'cargo', 'ndk',
+                // the 2 ABIs below are used by real Android devices
+                // '-t', 'armeabi-v7a',
+                '-t', 'arm64-v8a',
+                // the below 2 ABIs are usually used for Android simulators,
+                // add or remove these ABIs as needed.
+                // '-t', 'x86',
+                // '-t', 'x86_64',
+                '-o', '../android/app/src/main/jniLibs', 'build'
+        if (profileMode != null) {
+            args profileMode
+        }
+    }
+}
 ```

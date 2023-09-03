@@ -283,7 +283,13 @@ pub fn create_wallet_account(network_info: NetworkInfo, wallet_info: WalletInfo)
 <p>Please also refer to the corresponding video.</p>
 </blockquote>
 <hr />
+<p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
+<pre><code>cd rust
+</code></pre>
 <h3 id="android"><a class="header" href="#android">Android</a></h3>
+<p>I only check the ABI <em>arm64-v8a</em>.</p>
+<pre><code>cargo ndk -t arm64-v8a build
+</code></pre>
 <p>Since the latest Android NDK version 25 is being used, I have been encountering issues compiling the <em>libsodium-sys</em> library (v0.2.7) on macOS (M1 chip). This problem did not exist with the previous NDK version 22, which I was using in January.</p>
 <figure style="margin:0;"><img src="../../../assets/playground/libsodium-sys_android-check.png" alt="Cross-compilation error - Android"><figcaption style="font-size: 0.8em;text-align:center;"><p>Cross-compilation error - Android</p></figcaption></figure>
 <p>It's possible that you may <em>not</em> encounter this issue if you use a different hosting operating system. If you manage to successfully compile libsodium-sys on your host system, consider yourself fortunate.</p>
@@ -291,7 +297,13 @@ pub fn create_wallet_account(network_info: NetworkInfo, wallet_info: WalletInfo)
 <p>Since I haven't identified the root cause of the issue, I am currently unable to propose a specific solution or fix.</p>
 <p><strong>Workaround</strong></p>
 <p>As a temporary workaround, I can suggest building the <em>libsodium.so</em> library for each target individually and including it in our target Rust library. This can be achieved by utilizing the SODIUM_LIB_DIR and SODIUM_SHARED environment variables, as described in the libsodium-sys documentation. I will elaborate on this approach in the upcoming subsection <a href="libsodium.html">Libsodium library for Android</a>.</p>
+<h3 id="macos"><a class="header" href="#macos">macOS</a></h3>
+<pre><code>cargo build --target aarch64-apple-darwin
+</code></pre>
+<p>That one functions flawlessly :-))</p>
 <h3 id="ios-simulator"><a class="header" href="#ios-simulator">iOS Simulator</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios-sim
+</code></pre>
 <p>The compilation fails because there is an unknown build target in <em>libsodium-sys</em> build script:</p>
 <figure style="margin:0;"><img src="../../../assets/playground/libsodium-sys_ios-check.png" alt="Cross-compilation error - iOS"><figcaption style="font-size: 0.8em;text-align:center;"><p>Cross-compilation error - iOS</p></figcaption></figure>
 <p>The fact that the <em>libsodium-sys</em> project is marked as deprecated is unfortunate since it limits the opportunity to address and resolve the issue within the repository. See <a href="https://github.com/sodiumoxide/sodiumoxide#readme">Sodiumoxide's documentation</a>:</p>
@@ -302,6 +314,9 @@ This project has reached the end of its development as a cryptographic library f
 <p><a href="https://github.com/iotaledger/stronghold.rs/discussions/310" target="_blank">👉   Stronghold Discussion - Portability and reliance on libsodium</a></p>
 <p><strong>Workaround</strong></p>
 <p>To utilize Stronghold for iOS, the only viable workaround at the moment is to compile the code and employ your <strong>iOS Device</strong> as a test device. Unfortunately, the Simulator cannot be utilized due to the aforementioned problem.</p>
+<h3 id="ios-device"><a class="header" href="#ios-device">iOS Device</a></h3>
+<pre><code>cargo build --target aarch64-apple-ios
+</code></pre>
 
                     </main>
 
