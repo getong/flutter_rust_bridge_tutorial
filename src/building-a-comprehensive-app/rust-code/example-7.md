@@ -19,7 +19,9 @@ Add this crate to the existing dependencies:
 identity_iota = { version = "0.7.0-alpha.5" }
 ```
 
-Also refer to: [https://docs.rs/identity_iota/0.7.0-alpha.5/identity_iota/](https://docs.rs/identity_iota/0.7.0-alpha.5/identity_iota/)
+Here, I've employed iota_identity's v0.7.0-alpha.5 release. If you intend to utilize a different version, kindly refer to the documentation for information on the paths used, and adapt them in the sample code provided below.
+
+<a href="https://docs.rs/identity_iota/0.7.0-alpha.5/identity_iota/" target="_blank">👉 &nbsp; Crate iota_identity (v0.7.0-alpha.5)</a>
 
 ### api.rs - Used Paths
 
