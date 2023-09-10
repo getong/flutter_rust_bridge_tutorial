@@ -184,7 +184,7 @@ pub fn request_funds(network_info: NetworkInfo, wallet_info: WalletInfo) -&gt; R
 <h2 id="checks-using-cargo-build"><a class="header" href="#checks-using-cargo-build">Checks using <em>cargo build</em></a></h2>
 <hr />
 <blockquote>
-<p>All checks <a href="./example-3/README.html">(-&gt; except iOS Simulator)</a> should work without any issue. Please also refer to the explanations of <a href="./example-3/README.html">Example 3</a> and the corresponding video (2023-09-03: ToDo).</p>
+<p>All checks <a href="./example-3/#ios-simulator">(-&gt; except iOS Simulator)</a> should work without any issue. Please also refer to the explanations of <a href="./example-3/">Example 3</a> and the corresponding video (2023-09-03: ToDo).</p>
 </blockquote>
 <hr />
 <p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
@@ -205,6 +205,7 @@ pub fn request_funds(network_info: NetworkInfo, wallet_info: WalletInfo) -&gt; R
 <pre><code>cargo build --target aarch64-apple-darwin
 </code></pre>
 <h3 id="ios-simulator"><a class="header" href="#ios-simulator">iOS Simulator</a></h3>
+<p>This check will fail, please refer to the explanations of <a href="./example-3/#ios-simulator">Example 3</a> (Libsodium).</p>
 <pre><code>cargo build --target aarch64-apple-ios-sim
 </code></pre>
 <h3 id="ios-device"><a class="header" href="#ios-device">iOS Device</a></h3>
