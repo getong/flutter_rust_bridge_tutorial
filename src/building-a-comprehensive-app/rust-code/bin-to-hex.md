@@ -25,8 +25,13 @@ use std::u32;
 ### api.rs - Function _bin_to_hex()_
 
 ```rust,ignore
+#[allow(dead_code)]
 pub fn bin_to_hex(val: String, len: usize) -> String {
     let n: u32 = u32::from_str_radix(&val, 2).unwrap();
     format!("{:01$x}", n, len * 2)
 }
 ```
+
+## Checks using _cargo build_
+
+{{#include ./example-4.md:51:}}

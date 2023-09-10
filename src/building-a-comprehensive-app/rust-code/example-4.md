@@ -51,7 +51,7 @@ pub fn generate_address(wallet_info: WalletInfo) -> Result<String> {
 
 ---
 
-> All checks [(-> except iOS Simulator)](./example-3/README.md) should work without any issue. Please also refer to the corresponding video (2023-09-03: ToDo).
+> All checks [(-> except iOS Simulator)](./example-3/README.md) should work without any issue. Please also refer to the explanations of [Example 3](./example-3/README.md) and the corresponding video (2023-09-03: ToDo).
 
 ---
 

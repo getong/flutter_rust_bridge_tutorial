@@ -145,3 +145,7 @@ pub fn create_decentralized_identifier(
     })
 }
 ```
+
+## Checks using _cargo build_
+
+{{#include ./example-4.md:51:}}
