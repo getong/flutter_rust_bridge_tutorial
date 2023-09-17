@@ -71,7 +71,15 @@ If you haven't already, install the `cargo-ndk` command using:
 cargo install cargo-ndk
 ```
 
-I only check the ABI _arm64-v8a_. [-> Why do you need SODIUM_LIB_DIR and SODIUM_SHARED here?](./example-3/libsodium.md)
+I only check the ABI _arm64-v8a_.
+
+a) If you've had NO problems with the 3rd party library _libsodium_, use the command:
+
+```
+cargo ndk -t arm64-v8a build
+```
+
+b) If you've HAD problems with the 3rd party library _libsodium_, use the command:
 
 ```
 SODIUM_LIB_DIR="/path/to/libsodium" SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
@@ -82,6 +90,8 @@ e.g.
 ```
 SODIUM_LIB_DIR="/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a" SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
 ```
+
+[-> Why do you need SODIUM_LIB_DIR and SODIUM_SHARED here?](./example-3/libsodium.md)
 
 ### macOS
 

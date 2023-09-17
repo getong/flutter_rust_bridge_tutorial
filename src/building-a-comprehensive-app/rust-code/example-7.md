@@ -16,7 +16,7 @@ Add this crate to the existing dependencies:
 
 ```toml
 [dependencies]
-identity_iota = { version = "0.7.0-alpha.5" }
+identity_iota = { version = "<0.7.0-alpha.6" }
 ```
 
 Here, I've employed iota_identity's v0.7.0-alpha.5 release. If you intend to utilize a different version, kindly refer to the documentation for information on the paths used, and adapt them in the sample code provided below.

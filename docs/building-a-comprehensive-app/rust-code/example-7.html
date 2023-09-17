@@ -154,7 +154,7 @@
 <h3 id="cargotoml"><a class="header" href="#cargotoml">Cargo.toml</a></h3>
 <p>Add this crate to the existing dependencies:</p>
 <pre><code class="language-toml">[dependencies]
-identity_iota = { version = &quot;0.7.0-alpha.5&quot; }
+identity_iota = { version = &quot;&lt;0.7.0-alpha.6&quot; }
 </code></pre>
 <p>Here, I've employed iota_identity's v0.7.0-alpha.5 release. If you intend to utilize a different version, kindly refer to the documentation for information on the paths used, and adapt them in the sample code provided below.</p>
 <p><a href="https://docs.rs/identity_iota/0.7.0-alpha.5/identity_iota/" target="_blank">👉   Crate iota_identity (v0.7.0-alpha.5)</a></p>
@@ -282,12 +282,17 @@ pub fn create_decentralized_identifier(
 <p>If you haven't already, install the <code>cargo-ndk</code> command using:</p>
 <pre><code>cargo install cargo-ndk
 </code></pre>
-<p>I only check the ABI <em>arm64-v8a</em>. <a href="./example-3/libsodium.html">-&gt; Why do you need SODIUM_LIB_DIR and SODIUM_SHARED here?</a></p>
+<p>I only check the ABI <em>arm64-v8a</em>.</p>
+<p>a) If you've had NO problems with the 3rd party library <em>libsodium</em>, use the command:</p>
+<pre><code>cargo ndk -t arm64-v8a build
+</code></pre>
+<p>b) If you've HAD problems with the 3rd party library <em>libsodium</em>, use the command:</p>
 <pre><code>SODIUM_LIB_DIR=&quot;/path/to/libsodium&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
 </code></pre>
 <p>e.g.</p>
 <pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a&quot; SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
 </code></pre>
+<p><a href="./example-3/libsodium.html">-&gt; Why do you need SODIUM_LIB_DIR and SODIUM_SHARED here?</a></p>
 <h3 id="macos"><a class="header" href="#macos">macOS</a></h3>
 <pre><code>cargo build --target aarch64-apple-darwin
 </code></pre>
