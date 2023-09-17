@@ -159,6 +159,22 @@
 </iframe>
 <h2 id="github-repository"><a class="header" href="#github-repository">GitHub Repository</a></h2>
 <p><a href="https://github.com/iota-for-flutter/playground_app" target="_blank">👉   GitHub Repo - Playground App (Flutter only)</a></p>
+<h3 id="setup-steps-according-to-the-video"><a class="header" href="#setup-steps-according-to-the-video">Setup steps according to the video</a></h3>
+<pre><code>% cargo new --lib rust
+% cargo install flutter_rust_bridge_codegen
+% flutter pub add --dev ffigen &amp;&amp; flutter pub add ffi
+% flutter pub add flutter_rust_bridge
+% flutter pub add -d build_runner
+% flutter pub add -d freezed
+% flutter pub add freezed_annotation
+</code></pre>
+<pre><code class="language-rust  ignore">[dependencies]
+flutter_rust_bridge = &quot;1&quot;
+
+[lib]
+crate-type = [&quot;staticlib&quot;, &quot;cdylib&quot;]</code></pre>
+<h3 id="facing-a-problem-with-missing-gradle-files"><a class="header" href="#facing-a-problem-with-missing-gradle-files">Facing a problem with missing gradle files?</a></h3>
+<figure style="margin:0;"><img src="../assets/android-could-not-generateLockfiles.png" alt="Could not generate lockfiles"><figcaption style="font-size: 0.8em;text-align:center;"><p>After cloning: there are missing Gradle files</p></figcaption></figure>
 <blockquote>
 <p>Are you encountering the &quot;Could not create task ':generateLockfiles&quot; issue after cloning the project and launching VSCode? Here's the cause: Gradle files are absent in the Android subfolder at this stage. These files are fetched when you initially run the project on your Virtual Android device. To resolve it, follow these steps: Run the Flutter app on your Android device, stop it, and then restart VSCode. The error should disappear.</p>
 </blockquote>
