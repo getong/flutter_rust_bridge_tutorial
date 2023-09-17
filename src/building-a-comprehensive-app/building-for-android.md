@@ -20,7 +20,7 @@ In _android/app/build.gradle_, fix error:
 Replace GradleException by FileNotFoundException
 ```
 
-If you've had NO problems with the 3rd party library _libsodium_, add at the bottom:
+If you've had NO problem with the 3rd party library _libsodium_, add at the bottom:
 
 ```
 [
@@ -54,7 +54,7 @@ If you've had NO problems with the 3rd party library _libsodium_, add at the bot
 }
 ```
 
-Otherwise, if you've HAD problems with 3rd party library _libsodium_, add at the bottom:
+Otherwise, if you've HAD a problem with the 3rd party library _libsodium_, add at the bottom:
 
 ```
 [
