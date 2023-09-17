@@ -2,7 +2,7 @@
 
 ---
 
-Please refer to this chapter to learn about a **Workaround for Android** that can be used **if you wish to utilize Stronghold**.
+Please refer to this chapter to learn about a **Workaround for Android** that can be used **if you wish to utilize Stronghold AND if you have problems creating libsodium**.
 
 ---
 

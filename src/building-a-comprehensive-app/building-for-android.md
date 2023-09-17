@@ -20,7 +20,41 @@ In _android/app/build.gradle_, fix error:
 Replace GradleException by FileNotFoundException
 ```
 
-In _android/app/build.gradle_, add at the bottom:
+If you've had NO problems with the 3rd party library _libsodium_, add at the bottom:
+
+```
+[
+        Debug: null,
+        Profile: '--release',
+        Release: '--release'
+].each {
+    def taskPostfix = it.key
+    def profileMode = it.value
+    tasks.whenTaskAdded { task ->
+        if (task.name == "javaPreCompile$taskPostfix") {
+            task.dependsOn "cargoBuild$taskPostfix"
+        }
+    }
+    tasks.register("cargoBuild$taskPostfix", Exec) {
+        workingDir "../../rust"  // <-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment ANDROID_NDK_HOME: "$ANDROID_NDK"
+        commandLine 'cargo', 'ndk',
+                // the 2 ABIs below are used by real Android devices
+                // '-t', 'armeabi-v7a',
+                '-t', 'arm64-v8a',
+                // the below 2 ABIs are usually used for Android simulators,
+                // add or remove these ABIs as needed.
+                // '-t', 'x86',
+                // '-t', 'x86_64',
+                '-o', '../android/app/src/main/jniLibs', 'build'
+        if (profileMode != null) {
+            args profileMode
+        }
+    }
+}
+```
+
+Otherwise, if you've HAD problems with 3rd party library _libsodium_, add at the bottom:
 
 ```
 [
@@ -56,7 +90,7 @@ In _android/app/build.gradle_, add at the bottom:
 }
 ```
 
-> Please note that due to the use of libsodium, there are two additional lines related to SODIUM_LIB_DIR and SODIUM_SHARED (compared to the former configurations) -> please also refer to [Libsodium library for Android](./rust-code/example-3/libsodium.md).
+> Please note that due to the manual use of libsodium, there are two additional lines related to SODIUM_LIB_DIR and SODIUM_SHARED (compared to the former configurations) -> please also refer to [Libsodium library for Android](./rust-code/example-3/libsodium.md).
 
 ## Enabling Dynamic Library Loading
 

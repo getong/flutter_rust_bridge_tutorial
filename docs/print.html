@@ -4097,7 +4097,7 @@ This project has reached the end of its development as a cryptographic library f
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="libsodium-library-for-android"><a class="header" href="#libsodium-library-for-android">Libsodium library for Android</a></h1>
 <hr />
-<p>Please refer to this chapter to learn about a <strong>Workaround for Android</strong> that can be used <strong>if you wish to utilize Stronghold</strong>.</p>
+<p>Please refer to this chapter to learn about a <strong>Workaround for Android</strong> that can be used <strong>if you wish to utilize Stronghold AND if you have problems creating libsodium</strong>.</p>
 <hr />
 <p>The <em>libsodium</em> library is a widely used library for cryptography, offering a variety of functions for encryption, decryption, hashing, signatures, and more.</p>
 <p><em>libsodium-sys</em> is a Rust wrapper around the <em>libsodium</em> library. It provides the necessary Rust bindings and FFI (Foreign Function Interface) declarations to link and interact with the <em>libsodium</em> library from Rust code.</p>
@@ -4637,7 +4637,38 @@ pub fn bin_to_hex(val: String, len: usize) -&gt; String {
 <p>In <em>android/app/build.gradle</em>, fix error:</p>
 <pre><code>Replace GradleException by FileNotFoundException
 </code></pre>
-<p>In <em>android/app/build.gradle</em>, add at the bottom:</p>
+<p>If you've had NO problems with the 3rd party library <em>libsodium</em>, add at the bottom:</p>
+<pre><code>[
+        Debug: null,
+        Profile: '--release',
+        Release: '--release'
+].each {
+    def taskPostfix = it.key
+    def profileMode = it.value
+    tasks.whenTaskAdded { task -&gt;
+        if (task.name == &quot;javaPreCompile$taskPostfix&quot;) {
+            task.dependsOn &quot;cargoBuild$taskPostfix&quot;
+        }
+    }
+    tasks.register(&quot;cargoBuild$taskPostfix&quot;, Exec) {
+        workingDir &quot;../../rust&quot;  // &lt;-- ATTENTION: CHECK THE CORRECT FOLDER!!!
+        environment ANDROID_NDK_HOME: &quot;$ANDROID_NDK&quot;
+        commandLine 'cargo', 'ndk',
+                // the 2 ABIs below are used by real Android devices
+                // '-t', 'armeabi-v7a',
+                '-t', 'arm64-v8a',
+                // the below 2 ABIs are usually used for Android simulators,
+                // add or remove these ABIs as needed.
+                // '-t', 'x86',
+                // '-t', 'x86_64',
+                '-o', '../android/app/src/main/jniLibs', 'build'
+        if (profileMode != null) {
+            args profileMode
+        }
+    }
+}
+</code></pre>
+<p>Otherwise, if you've HAD problems with 3rd party library <em>libsodium</em>, add at the bottom:</p>
 <pre><code>[
         Debug: null,
         Profile: '--release',
@@ -4671,7 +4702,7 @@ pub fn bin_to_hex(val: String, len: usize) -&gt; String {
 }
 </code></pre>
 <blockquote>
-<p>Please note that due to the use of libsodium, there are two additional lines related to SODIUM_LIB_DIR and SODIUM_SHARED (compared to the former configurations) -&gt; please also refer to <a href="building-a-comprehensive-app/./rust-code/example-3/libsodium.html">Libsodium library for Android</a>.</p>
+<p>Please note that due to the manual use of libsodium, there are two additional lines related to SODIUM_LIB_DIR and SODIUM_SHARED (compared to the former configurations) -&gt; please also refer to <a href="building-a-comprehensive-app/./rust-code/example-3/libsodium.html">Libsodium library for Android</a>.</p>
 </blockquote>
 <h2 id="enabling-dynamic-library-loading"><a class="header" href="#enabling-dynamic-library-loading">Enabling Dynamic Library Loading</a></h2>
 <p>Even if the our dynamic library <code>librust.so</code> has been successfully compiled in Android, you haven't won yet. It also needs to be able to be loaded.</p>
