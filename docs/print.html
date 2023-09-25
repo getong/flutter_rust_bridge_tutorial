@@ -3768,6 +3768,14 @@ crate-type = [&quot;staticlib&quot;, &quot;cdylib&quot;]</code></pre>
 <hr />
 <p>In the following subchapters we'll prepare the Rust Code for each example. We will only discuss the changes in the <code>Cargo.toml</code> and <code>api.rs</code> files.</p>
 <hr />
+<iframe 
+    class="video"  
+    src="https://www.youtube.com/embed/vhL-Gsu4KnM" 
+    title="Building the Playground App - incorporating the RUST Backend Code" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
 <h2 id="initial-situation"><a class="header" href="#initial-situation">Initial Situation</a></h2>
 <p>This is the situation upon which we are basing our starting point.</p>
 <figure style="margin:0;"><img src="building-a-comprehensive-app/rust-code/../../assets/playground/playground-rust-start.png" alt="Rust - Initial Situation"><figcaption style="font-size: 0.8em;text-align:center;"><p>Rust - Initial Situation</p></figcaption></figure>
@@ -3863,6 +3871,10 @@ pub fn get_node_info(network_info: NetworkInfo) -&gt; Result&lt;String&gt; {
 <p>All checks should work without any issue. Please also refer to the corresponding video (2023-09-03: ToDo).</p>
 </blockquote>
 <hr />
+<h2 id="new-checks-using-cargo-build-1"><a class="header" href="#new-checks-using-cargo-build-1">New: Checks using <em>cargo build</em></a></h2>
+<p>In the next subchapters, we will test individually for each example whether our library can be cross-compiled to the target platforms Android, macOS, and iOS.</p>
+<p>This way, we can independently test the correctness of the dependencies in <code>Cargo.toml</code>, and the paths and the syntax of our Rust Code in <code>api.rs</code>, regardless of the Flutter build process.</p>
+<p><a href="building-a-comprehensive-app/rust-code/../../overview/cross-compiling.html?highlight=cargo%20build#how-to-manually-cross-compile-to-a-target-of-your-choice" target="_blank">👉   How to manually cross-compile to a target of your choice</a></p>
 <p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
 <pre><code>cd rust
 </code></pre>
@@ -3904,6 +3916,10 @@ pub fn generate_mnemonic() -&gt; String {
 <p>All checks should work without any issue. Please also refer to the corresponding video (2023-09-03: ToDo).</p>
 </blockquote>
 <hr />
+<h2 id="new-checks-using-cargo-build-2"><a class="header" href="#new-checks-using-cargo-build-2">New: Checks using <em>cargo build</em></a></h2>
+<p>In the next subchapters, we will test individually for each example whether our library can be cross-compiled to the target platforms Android, macOS, and iOS.</p>
+<p>This way, we can independently test the correctness of the dependencies in <code>Cargo.toml</code>, and the paths and the syntax of our Rust Code in <code>api.rs</code>, regardless of the Flutter build process.</p>
+<p><a href="building-a-comprehensive-app/rust-code/../../overview/cross-compiling.html?highlight=cargo%20build#how-to-manually-cross-compile-to-a-target-of-your-choice" target="_blank">👉   How to manually cross-compile to a target of your choice</a></p>
 <p>To examine the various targets, you should navigate from <em>playground_app</em> root directory to the <em>rust</em> directory:</p>
 <pre><code>cd rust
 </code></pre>

@@ -6,6 +6,15 @@ In the following subchapters we'll prepare the Rust Code for each example. We wi
 
 ---
 
+<iframe 
+    class="video"  
+    src="https://www.youtube.com/embed/vhL-Gsu4KnM" 
+    title="Building the Playground App - incorporating the RUST Backend Code" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+
 ## Initial Situation
 
 This is the situation upon which we are basing our starting point.
@@ -67,4 +76,3 @@ cargo build --target aarch64-apple-ios-sim
 ```
 cargo build --target aarch64-apple-ios
 ```
-
