@@ -10,9 +10,9 @@ A Tutorial to build modern apps using IOTA, the next generation Distributed Ledg
 
 ## Hey there!!
 
-Ready to add some sparkle to your app development? Stay here, where we back the IOTA Mainnet and the Shimmer Network! Applying this approach, developers can effortlessly incorporate the Stardust version into their projects (and let's be honest, who doesn't love a little shimmer in their code)? So why wait? Say hello to Flutter and Rust and join me on this exciting journey and let us make your apps shine!
+Ready to add some sparkle to your app development? Stay here, where we back the IOTA Mainnet and the Shimmer Network, the staging network of IOTA! Applying this approach, developers can effortlessly incorporate the Stardust Protocol version into their projects (and let's be honest, who doesn't love a little shimmer and stardust in their code)? So why wait? Say hello to Flutter and Rust and join me on this exciting journey and let us make your apps shine!
 
-> Since the Stardust protocol upgrade on the IOTA Mainnet on October 4th, 2023, developers can leverage the latest enhancements also on the IOTA Mainnet.
+> Since the Stardust protocol upgrade on the IOTA Mainnet on October 4th, 2023, developers can leverage the latest enhancements not only in the Shimmer network but also on the IOTA Mainnet.
 > <a href="https://blog.iota.org/iota-stardust-upgrade/" target="_blank">👉 &nbsp; Stardust protocol upgrade</a>
 
 ## Background
