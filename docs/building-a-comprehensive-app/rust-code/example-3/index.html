@@ -160,8 +160,8 @@
 iota-wallet = { version = &quot;1.0.0-rc&quot; }
 </code></pre>
 <p>By checking <code>Cargo.lock</code> you can determine the real downloaded versions. At the time of writing this tutorial section (June 2023) we are using iota-wallet version v1.0.0-rc.6. Please refer to <a href="https://crates.io/crates/iota-wallet/versions">Crates.io</a> to get more information about the current versions.</p>
-<p>But how can you determine if this version supports the Shimmer network?
-After adding and saving the library in <code>Cargo.toml_</code> check the <code>Cargo.lock</code> file. Look for the <code>iota-client</code> version included. If it's a v2 version, then it's compatible for Shimmer. For more information, refer to <a href="../../overview/iota-libraries/library-versions.html#stardust-and-chrysalis-versions">Stardust and Chrysalis Versions</a> documentation.</p>
+<p>But how can you determine if this version supports the Stardust Protocol, used by the Shimmer network and the IOTA Mainnet (since 4th of October 2023)?
+After adding and saving the library in <code>Cargo.toml_</code> check the <code>Cargo.lock</code> file. Look for the <code>iota-client</code> version included. If it's a v2 version, then it's compatible for Stardust. For more information, refer to <a href="../../overview/iota-libraries/library-versions.html#stardust-and-chrysalis-versions">Stardust and (outdated) Chrysalis Versions</a> documentation.</p>
 <h3 id="apirs---used-paths"><a class="header" href="#apirs---used-paths">api.rs - Used Paths</a></h3>
 <p>Comment out the usage of <code>iota_client::Client</code>:</p>
 <pre><code class="language-rust ignore">//use iota_client::Client;</code></pre>

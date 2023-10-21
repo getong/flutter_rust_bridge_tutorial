@@ -1789,19 +1789,18 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <p>While some third-party crates like OpenSSL and RustLS may have mutually exclusive usage, this isn't a concern with the IOTA libraries. Instead, the key focus lies in addressing the following two questions:</p>
 <ol>
 <li>
-<p>Which versions are designated for Stardust, the current protocol version of the Shimmer network, and which versions are intended for Chrysalis, the current protocol version of the IOTA mainnet?</p>
+<p>Which versions are designated for Stardust, the current protocol version of the IOTA mainnet and Shimmer network, and which versions are intended for Chrysalis, the outdated protocol version of the IOTA mainnet?</p>
 </li>
 <li>
 <p>Which versions can be successfully cross-compiled for the respective platform targets, including iOS, Android, and macOS?</p>
 </li>
 </ol>
-<h2 id="stardust-and-chrysalis-versions"><a class="header" href="#stardust-and-chrysalis-versions">Stardust and Chrysalis Versions</a></h2>
+<h2 id="stardust-and-outdated-chrysalis-versions"><a class="header" href="#stardust-and-outdated-chrysalis-versions">Stardust and (outdated) Chrysalis Versions</a></h2>
 <p>The first question (see above) can be relatively straightforward to address.</p>
-<p>To support the Shimmer network, the version of the iota-client being used should start with major version 2, such as 2.0.1.rc-7. <em>As a developer, you can verify this by checking the Cargo.lock file</em>. The Shimmer Network versions of iota-client can be found in the <em>develop</em> branch of iota.rs</p>
-<p>To support the IOTA Mainnet, it is recommended to use version 1.4.0 of the iota-client library (as of June 2023). You can verify this by checking if there is a newer major version 1 available on crates.io or by referring to the GitHub repository. The IOTA Mainnet versions of iota-client can be found in the <em>production</em> branch of iota.rs.</p>
+<p>To support both current networks, the version of the iota-client being used should start with major version 2, such as 2.0.1.rc-7. <em>As a developer, you can verify this by checking the Cargo.lock file</em>.</p>
 <blockquote>
 <p><strong>Why?</strong></p>
-<p>Browse the list of TIPs, and you will note that every item is tagged with Chrysalis or Stardust.</p>
+<p>Browse the list of TIPs, and you will note that every item is tagged with Chrysalis (outdated) or Stardust.</p>
 <p><a href="https://github.com/iotaledger/tips#list-of-tips" target="_blank">👉   The list of TIPs</a></p>
 <p>TIP-0013 is labeled as <em>Chrysalis</em>, and it is associated with the REST API, which includes API calls using <code>api/v1</code>. These requests are utilized in version 1.4.0.</p>
 <p>TIP-0025 is labeled as <em>Stardust</em>, and it is associated with the Core REST API that involves API calls using <code>api/v2</code>. These requests are utilized in versions 2.x.y.</p>
@@ -1810,7 +1809,7 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <p>The second question (see above) is more complex. It primarily revolves around determining which third-party libraries are used by the IOTA libraries and what dependencies are employed by those libraries, and so on.</p>
 <p>Because each additional library increases the risk that it may not be cross-compiled for a specific target platform (iOS, Android, etc.). I specifically want to mention the two libraries, <em>libsodium</em> and <em>rocksdb</em>, at this point. Unfortunately, there are often issues when compiling for different targets with these libraries.</p>
 <hr />
-<p>Here is a matrix illustrating the library versions utilized in a &quot;full-featured&quot; Shimmer app. The objective is to employ iota-client, iota-wallet, and identity_iota simultaneously, along with the stronghold feature.</p>
+<p>Here is a matrix illustrating the library versions utilized in a &quot;full-featured&quot; Stardust app. The objective is to employ iota-client, iota-wallet, and identity_iota simultaneously, along with the stronghold feature.</p>
 <p>** NEEDS TO BE REVIEWED ! Status as of Jan 2023**</p>
 <table style="display: flex; justify-content: left;">
 <tr><th style="white-space:nowrap;text-align:left;padding:5px 20px;">Library Crate</th><th style="text-align:left;padding:5px 20px;">Android</th><th style="text-align:left;padding:5px 20px;">iOS/macOS</th></tr>
@@ -3953,8 +3952,8 @@ pub fn generate_mnemonic() -&gt; String {
 iota-wallet = { version = &quot;1.0.0-rc&quot; }
 </code></pre>
 <p>By checking <code>Cargo.lock</code> you can determine the real downloaded versions. At the time of writing this tutorial section (June 2023) we are using iota-wallet version v1.0.0-rc.6. Please refer to <a href="https://crates.io/crates/iota-wallet/versions">Crates.io</a> to get more information about the current versions.</p>
-<p>But how can you determine if this version supports the Shimmer network?
-After adding and saving the library in <code>Cargo.toml_</code> check the <code>Cargo.lock</code> file. Look for the <code>iota-client</code> version included. If it's a v2 version, then it's compatible for Shimmer. For more information, refer to <a href="building-a-comprehensive-app/rust-code/example-3/../../overview/iota-libraries/library-versions.html#stardust-and-chrysalis-versions">Stardust and Chrysalis Versions</a> documentation.</p>
+<p>But how can you determine if this version supports the Stardust Protocol, used by the Shimmer network and the IOTA Mainnet (since 4th of October 2023)?
+After adding and saving the library in <code>Cargo.toml_</code> check the <code>Cargo.lock</code> file. Look for the <code>iota-client</code> version included. If it's a v2 version, then it's compatible for Stardust. For more information, refer to <a href="building-a-comprehensive-app/rust-code/example-3/../../overview/iota-libraries/library-versions.html#stardust-and-chrysalis-versions">Stardust and (outdated) Chrysalis Versions</a> documentation.</p>
 <h3 id="apirs---used-paths-2"><a class="header" href="#apirs---used-paths-2">api.rs - Used Paths</a></h3>
 <p>Comment out the usage of <code>iota_client::Client</code>:</p>
 <pre><code class="language-rust ignore">//use iota_client::Client;</code></pre>

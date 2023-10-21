@@ -27,8 +27,8 @@ iota-wallet = { version = "1.0.0-rc" }
 
 By checking `Cargo.lock` you can determine the real downloaded versions. At the time of writing this tutorial section (June 2023) we are using iota-wallet version v1.0.0-rc.6. Please refer to [Crates.io](https://crates.io/crates/iota-wallet/versions) to get more information about the current versions.
 
-But how can you determine if this version supports the Shimmer network?
-After adding and saving the library in `Cargo.toml_` check the `Cargo.lock` file. Look for the `iota-client` version included. If it's a v2 version, then it's compatible for Shimmer. For more information, refer to [Stardust and Chrysalis Versions](../../overview/iota-libraries/library-versions.html#stardust-and-chrysalis-versions) documentation.
+But how can you determine if this version supports the Stardust Protocol, used by the Shimmer network and the IOTA Mainnet (since 4th of October 2023)?
+After adding and saving the library in `Cargo.toml_` check the `Cargo.lock` file. Look for the `iota-client` version included. If it's a v2 version, then it's compatible for Stardust. For more information, refer to [Stardust and (outdated) Chrysalis Versions](../../overview/iota-libraries/library-versions.html#stardust-and-chrysalis-versions) documentation.
 
 ### api.rs - Used Paths
 

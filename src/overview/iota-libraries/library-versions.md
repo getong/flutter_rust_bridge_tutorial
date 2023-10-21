@@ -10,21 +10,19 @@ When configuring dependencies, it's crucial to consider the compatibility betwee
 
 While some third-party crates like OpenSSL and RustLS may have mutually exclusive usage, this isn't a concern with the IOTA libraries. Instead, the key focus lies in addressing the following two questions:
 
-1. Which versions are designated for Stardust, the current protocol version of the Shimmer network, and which versions are intended for Chrysalis, the current protocol version of the IOTA mainnet?
+1. Which versions are designated for Stardust, the current protocol version of the IOTA mainnet and Shimmer network, and which versions are intended for Chrysalis, the outdated protocol version of the IOTA mainnet?
 
 2. Which versions can be successfully cross-compiled for the respective platform targets, including iOS, Android, and macOS?
 
-## Stardust and Chrysalis Versions
+## Stardust and (outdated) Chrysalis Versions
 
 The first question (see above) can be relatively straightforward to address.
 
-To support the Shimmer network, the version of the iota-client being used should start with major version 2, such as 2.0.1.rc-7. _As a developer, you can verify this by checking the Cargo.lock file_. The Shimmer Network versions of iota-client can be found in the _develop_ branch of iota.rs
-
-To support the IOTA Mainnet, it is recommended to use version 1.4.0 of the iota-client library (as of June 2023). You can verify this by checking if there is a newer major version 1 available on crates.io or by referring to the GitHub repository. The IOTA Mainnet versions of iota-client can be found in the _production_ branch of iota.rs.
+To support both current networks, the version of the iota-client being used should start with major version 2, such as 2.0.1.rc-7. _As a developer, you can verify this by checking the Cargo.lock file_.
 
 > **Why?**
 >
-> Browse the list of TIPs, and you will note that every item is tagged with Chrysalis or Stardust.
+> Browse the list of TIPs, and you will note that every item is tagged with Chrysalis (outdated) or Stardust.
 >
 > <a href="https://github.com/iotaledger/tips#list-of-tips" target="_blank">👉 &nbsp; The list of TIPs</a>
 >
@@ -40,7 +38,7 @@ Because each additional library increases the risk that it may not be cross-comp
 
 ---
 
-Here is a matrix illustrating the library versions utilized in a "full-featured" Shimmer app. The objective is to employ iota-client, iota-wallet, and identity_iota simultaneously, along with the stronghold feature.
+Here is a matrix illustrating the library versions utilized in a "full-featured" Stardust app. The objective is to employ iota-client, iota-wallet, and identity_iota simultaneously, along with the stronghold feature.
 
 ** NEEDS TO BE REVIEWED ! Status as of Jan 2023**
 
