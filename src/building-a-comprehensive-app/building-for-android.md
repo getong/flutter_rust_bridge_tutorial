@@ -467,3 +467,12 @@ Replace the fake code in line 59 `receivedText = 'fake 0000 0000 0000';` by:
 ### Video
 
 Follow the video for the remaining steps.
+
+<iframe 
+    class="video"  
+    src="https://www.youtube.com/embed/hypLXX9lDwo" 
+    title="Building the Playground App - finalize the ANDROID part" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
