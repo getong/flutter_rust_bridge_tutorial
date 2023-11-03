@@ -3579,7 +3579,8 @@ Select the Target <em>rust-cdylib</em> and the <em>Build Settings</em> tab. Here
 <ol start="2">
 <li>
 <p>When macOS cannot locate the dynamic library:</p>
-<p>This might happen due to cargo-xcode version v1.5.0. To prevent this, execute the third step above. Make sure that you have selected the Target for the dynamic library, called <em>rust-cdylib</em>. It enables an macOS executable to properly locate dynamic <code>*.dylib</code> library files in the package. Do NOT select <em>rust-staticlib</em> !</p>
+<p>This might happen due to cargo-xcode version v1.5.0.</p>
+<p>To prevent this, <strong>execute the third step of the macOS Setup above</strong> (maintain the <em>Dynamic Library Install Name Base</em>). Make sure that you have selected the Target for the dynamic library, called <em>rust-cdylib</em>. It enables an macOS executable to properly locate dynamic <code>*.dylib</code> library files in the package. Do NOT select <em>rust-staticlib</em> !</p>
 <blockquote>
 <p>To find out the version of cargo-xcode, you can run the command
 <code>cargo install --list</code>
