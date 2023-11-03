@@ -134,6 +134,10 @@ Error waiting for a debug connection: The log reader stopped unexpectedly, or ne
 Error launching application on macOS.
 ```
 
+> To find out the version of cargo-xcode, you can run the command
+> `cargo install --list`
+> to list all installed Cargo subcommands along with their versions.
+
 ### Solution 1
 
 Here's a first solution:

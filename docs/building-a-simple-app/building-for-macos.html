@@ -182,6 +182,11 @@ Select the Target <em>rust-cdylib</em> and the <em>Build Settings</em> tab. Here
 <li>
 <p>When macOS cannot locate the dynamic library:</p>
 <p>This might happen due to cargo-xcode version v1.5.0. To prevent this, execute the third step above. Make sure that you have selected the Target for the dynamic library, called <em>rust-cdylib</em>. It enables an macOS executable to properly locate dynamic <code>*.dylib</code> library files in the package. Do NOT select <em>rust-staticlib</em> !</p>
+<blockquote>
+<p>To find out the version of cargo-xcode, you can run the command
+<code>cargo install --list</code>
+to list all installed Cargo subcommands along with their versions.</p>
+</blockquote>
 <p>FYI, there is an alternative solution described in the tutorial section <a href="../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.html">macOS Instructions</a> at the bottom.</p>
 </li>
 </ol>
