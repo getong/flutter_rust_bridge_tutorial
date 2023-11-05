@@ -28,11 +28,11 @@ We need to incorporate the new Rust XCode project (_rust/rust.xcodeproj_) into o
 {{#include ../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.md:27:27}}
 
 <figure style="margin:0;">
-<img src="../../../assets/macos_instructions/macos_1_playground.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Open <i>Runner.xcodeproj</i></p></figcaption>
+<img src="../assets/macos_instructions/macos_1_playground.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Open <i>Runner.xcodeproj</i></p></figcaption>
 </figure>
 
 <figure style="margin:0;">
-<img src="../../../assets/macos_instructions/macos_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
+<img src="../assets/macos_instructions/macos_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
 </figure>
 
 {{#include ../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.md:37:102}}

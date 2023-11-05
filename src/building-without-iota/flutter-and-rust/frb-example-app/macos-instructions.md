@@ -35,7 +35,7 @@ Simply open the _macos/Runner.xcodeproj_ in Xcode, open the _rust/_ directory in
 </figure>
 
 <figure style="margin:0;">
-<img src="//src/assets/macos_instructions/macos_3.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>The new subproject</p></figcaption>
+<img src="/assets/macos_instructions/macos_3.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>The new subproject</p></figcaption>
 </figure>
 
 ### Adjust the Runner Target's _Build Phases_
