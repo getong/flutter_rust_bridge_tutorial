@@ -61,7 +61,7 @@ An common step for macOS / iOS is needed: creating an Xcode project **inside of 
 
    <figure style="margin:0;"><img src="../assets/macos_instructions/macos-pitfall-2.png" alt="no healthy node available"><figcaption style="font-size: 0.8em;text-align:center;"><p>No healthy node available</p></figcaption></figure>
 
-   macOS applications are sandboxed by default. If you come across this error message, you need to add the network.client [entitlement](https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox) to `macOS/Runner/DebugProfile.entitlements`:
+   macOS applications are sandboxed by default. To avoid a SocketException, you need to add the network.client [entitlement](https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox) to `macOS/Runner/DebugProfile.entitlements`:
 
    ```
    <key>com.apple.security.network.client</key>

@@ -3594,7 +3594,7 @@ to list all installed Cargo subcommands along with their versions.</p>
 <li>
 <p>The error message <strong>no healthy node available</strong>, or <strong>SocketException: Connection failed</strong> is encountered when making API calls:</p>
 <figure style="margin:0;"><img src="building-a-simple-app/../assets/macos_instructions/macos-pitfall-2.png" alt="no healthy node available"><figcaption style="font-size: 0.8em;text-align:center;"><p>No healthy node available</p></figcaption></figure>
-<p>macOS applications are sandboxed by default. If you come across this error message, you need to add the network.client <a href="https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox">entitlement</a> to <code>macOS/Runner/DebugProfile.entitlements</code>:</p>
+<p>macOS applications are sandboxed by default. To avoid a SocketException, you need to add the network.client <a href="https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox">entitlement</a> to <code>macOS/Runner/DebugProfile.entitlements</code>:</p>
 <pre><code>&lt;key&gt;com.apple.security.network.client&lt;/key&gt;
 &lt;true/&gt;
 </code></pre>
@@ -5083,8 +5083,112 @@ import '../ffi.dart';
 </iframe>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="building-for-macos-1"><a class="header" href="#building-for-macos-1">Building for macOS</a></h1>
 <hr />
-<p>Coming in Milestone 3. 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>
+<p>Completing the remaining steps for macOS.</p>
 <hr />
+<p>Everything is repeating. So in this section, I consolidate all the macOS instructions outlined in the previous chapters:</p>
+<ul>
+<li><a href="building-a-comprehensive-app/../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.html">FRB Template App - modified Workflow -&gt; macOS instructions</a></li>
+<li><a href="building-a-comprehensive-app/../building-a-simple-app/building-for-macos.html">Building a Simple App -&gt; Building for macOS</a></li>
+</ul>
+<h2 id="macos-steps-1"><a class="header" href="#macos-steps-1">macOS Steps</a></h2>
+<p>To integrate our Rust backend, we create an additional Xcode project first and add it as a &quot;subproject&quot; to the existing Flutter Xcode project (<em>macos/Runner.xcodeproj</em>). During the build, the inner Xcode project is built first, enabling its use by the parent project.</p>
+<h3 id="create-the-xcode-project-for-our-rust-library"><a class="header" href="#create-the-xcode-project-for-our-rust-library">Create the XCode project for our Rust library</a></h3>
+<p>An common step for macOS / iOS is needed: creating an Xcode project <strong>inside of the Rust library project folder</strong> (<em>rust/</em>). This can be done using the <code>cargo-xcode</code> command.</p>
+<ol>
+<li>
+<p>To install the <code>cargo-xcode</code> command use:</p>
+<pre><code>cargo install cargo-xcode
+</code></pre>
+</li>
+<li>
+<p>After the installation of the command, create the Rust Xcode project. Make sure to be in the <em>rust/</em> directory. From the project's root folder you may switch into the right directory:</p>
+<pre><code>cd rust
+</code></pre>
+<pre><code>cargo xcode
+</code></pre>
+<pre><code>cd ..
+</code></pre>
+</li>
+<li>
+<p>This step is for <strong>macOS only</strong> because the macOS app uses the <em>dynamic</em> library:</p>
+<p>Open up that <code>rust/rust.xcodeproj</code> file with Xcode and select the root item <em>rust</em>, at the left pane on top.
+Select the Target <em>rust-cdylib</em> and the <em>Build Settings</em> tab. Here, search for <em>Dynamic Library Install Name Base</em> and change the value into <code>$(TARGET_BUILD_DIR)</code>.</p>
+<blockquote>
+<p>A SCREENSHOT WILL FOLLOW! In the meanwhile refer to the Simple App video (&quot;Building for macOS&quot;).</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="merge-both-projects"><a class="header" href="#merge-both-projects">Merge both projects</a></h3>
+<p>We need to incorporate the new Rust XCode project (<em>rust/rust.xcodeproj</em>) into our Flutter XCode project which was created inside the <em>macos</em> folder when Flutter initialized our project.</p>
+<p>Simply open the <em>macos/Runner.xcodeproj</em> in Xcode, open the <em>rust/</em> directory in Finder and drag the <em>rust.xcodeproj</em> into the Runner folder. The next images will illustrate the steps.</p>
+<figure style="margin:0;">
+<img src="building-a-comprehensive-app/../../../assets/macos_instructions/macos_1_playground.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Open <i>Runner.xcodeproj</i></p></figcaption>
+</figure>
+<figure style="margin:0;">
+<img src="building-a-comprehensive-app/../../../assets/macos_instructions/macos_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
+</figure>
+<figure style="margin:0;">
+<img src="building-a-comprehensive-app/../../../assets/macos_instructions/macos_3.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>The new subproject</p></figcaption>
+</figure>
+<h3 id="adjust-the-runner-targets-build-phases-2"><a class="header" href="#adjust-the-runner-targets-build-phases-2">Adjust the Runner Target's <em>Build Phases</em></a></h3>
+<p><a href="https://cjycode.com/flutter_rust_bridge/integrate/ios_linking.html" target="_blank">For macOS, FRB recommends to include the dynamic library.</a></p>
+<p>a) In Runner Target's <em>Build Phase</em> -&gt; <em>Target Dependencies</em>:</p>
+<p>Click on &quot;+&quot; and select <code>rust-cdylib</code>.</p>
+<p>b) In Runner Target's <em>Build Phase</em> -&gt; <em>Link Binary with Libraries</em>:</p>
+<p>Click on &quot;+&quot; and select <code>rust.dylib</code>.</p>
+<figure style="margin:0;">
+<img src="building-a-comprehensive-app/../../../assets/macos_instructions/macos_4.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Phases</i></p></figcaption>
+</figure>
+<h3 id="adjust-the-runner-targets-build-settings-1"><a class="header" href="#adjust-the-runner-targets-build-settings-1">Adjust the Runner Target's <em>Build Settings</em></a></h3>
+<p>Start typing &quot;Objective-C Bridging Header&quot; in the filter... the hard-to-find setting is in the <em>Swift Compiler - General</em> section of the settings.</p>
+<p>As value, insert:</p>
+<pre><code>Runner/bridge_generated.h
+</code></pre>
+<figure style="margin:0;">
+<img src="building-a-comprehensive-app/../../../assets/macos_instructions/macos_5.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Settings</i></p></figcaption>
+</figure>
+<h3 id="adjust-minimum-deployments-1"><a class="header" href="#adjust-minimum-deployments-1">Adjust <em>Minimum Deployments</em></a></h3>
+<p>To ensure that your app can run on your host computer and Xcode version, you may only be able to support newer macOS versions. To set the minimum supported macOS version for your app, go to the <em>General</em> tab and select macOS version <code>13.1</code> as the <em>Minimum Deployments</em> target.</p>
+<figure style="margin:0;">
+<img src="building-a-comprehensive-app/../../../assets/macos_instructions/macos_6.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Minimum Deployment</i></p></figcaption>
+</figure>
+<h3 id="adjust-the-appdelegateswift-file-2"><a class="header" href="#adjust-the-appdelegateswift-file-2">Adjust the <code>AppDelegate.swift</code> file</a></h3>
+<p>Switch to Visual Studio Code and open the file <code>macos/Runner/AppDelegate.swift</code>. We need to call the function <em>dummy_method_to_enforce_bundling()</em> (from FRB) somewhere to avoid that Xcode handles our library as dead code.</p>
+<p>Add:</p>
+<pre><code>dummy_method_to_enforce_bundling()
+</code></pre>
+<p>Your file should look like:</p>
+<pre><code>import Cocoa
+import FlutterMacOS
+
+@NSApplicationMain
+class AppDelegate: FlutterAppDelegate {
+  override func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -&gt; Bool {
+    dummy_method_to_enforce_bundling()
+    return true
+  }
+}
+</code></pre>
+<h3 id="add-the-security-entitlement"><a class="header" href="#add-the-security-entitlement">Add the Security Entitlement</a></h3>
+<p>macOS applications are sandboxed by default. To avoid a SocketException, you need to add the network.client <a href="https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox">entitlement</a> to <code>macOS/Runner/DebugProfile.entitlements</code>:</p>
+<pre><code>&lt;key&gt;com.apple.security.network.client&lt;/key&gt;
+&lt;true/&gt;
+</code></pre>
+<figure style="margin:0;"><img src="building-a-comprehensive-app/../assets/macos_instructions/macos-pitfall-1.png" alt="network.client entitlement"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solution for Sandbox Problem</p></figcaption></figure>
+<h2 id="completing-the-macos-app-1"><a class="header" href="#completing-the-macos-app-1">Completing the macOS App</a></h2>
+<h3 id="generate-the-dart-interface-7"><a class="header" href="#generate-the-dart-interface-7">Generate the Dart Interface</a></h3>
+<p>Our next task is to create the generated code. This will also copy the C header file <code>bridge_generated.h</code> into the folder <em>macos/Runner/</em>. Use this command (you need to be in the root of your project):</p>
+<pre><code>flutter_rust_bridge_codegen \
+--rust-input rust/src/api.rs \
+--dart-output ./lib/bridge_generated.dart \
+--dart-decl-output ./lib/bridge_definitions.dart \
+--c-output macos/Runner/bridge_generated.h
+</code></pre>
+<h3 id="video-6"><a class="header" href="#video-6">Video</a></h3>
+<p>Follow the video for the remaining steps.</p>
+<blockquote>
+<p>THE VIDEO WILL FOLLOW...</p>
+</blockquote>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="building-for-ios-1"><a class="header" href="#building-for-ios-1">Building for iOS</a></h1>
 <hr />
 <p>Coming in Milestone 3. 2023-08-20: INTERMEDIATE VERSION - NEEDS TO BE REVIEWED.</p>

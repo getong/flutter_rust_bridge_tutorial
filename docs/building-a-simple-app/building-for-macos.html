@@ -196,7 +196,7 @@ to list all installed Cargo subcommands along with their versions.</p>
 <li>
 <p>The error message <strong>no healthy node available</strong>, or <strong>SocketException: Connection failed</strong> is encountered when making API calls:</p>
 <figure style="margin:0;"><img src="../assets/macos_instructions/macos-pitfall-2.png" alt="no healthy node available"><figcaption style="font-size: 0.8em;text-align:center;"><p>No healthy node available</p></figcaption></figure>
-<p>macOS applications are sandboxed by default. If you come across this error message, you need to add the network.client <a href="https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox">entitlement</a> to <code>macOS/Runner/DebugProfile.entitlements</code>:</p>
+<p>macOS applications are sandboxed by default. To avoid a SocketException, you need to add the network.client <a href="https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox">entitlement</a> to <code>macOS/Runner/DebugProfile.entitlements</code>:</p>
 <pre><code>&lt;key&gt;com.apple.security.network.client&lt;/key&gt;
 &lt;true/&gt;
 </code></pre>
