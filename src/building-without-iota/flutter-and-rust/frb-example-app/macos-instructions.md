@@ -27,15 +27,15 @@ How is a subproject created in Xcode?
 Simply open the _macos/Runner.xcodeproj_ in Xcode, open the _rust/_ directory in Finder and drag the _rust.xcodeproj_ into the Runner folder. The next images will illustrate the steps.
 
 <figure style="margin:0;">
-<img src="../../../assets/macos_instructions/macos_1.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Open <i>Runner.xcodeproj</i></p></figcaption>
+<img src="https://iota-for-flutter.github.io/tutorial/assets/macos_instructions/macos_1.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Open <i>Runner.xcodeproj</i></p></figcaption>
 </figure>
 
 <figure style="margin:0;">
-<img src="../../../assets/macos_instructions/macos_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
+<img src="https://iota-for-flutter.github.io/tutorial/assets/macos_instructions/macos_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
 </figure>
 
 <figure style="margin:0;">
-<img src="/assets/macos_instructions/macos_3.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>The new subproject</p></figcaption>
+<img src="https://iota-for-flutter.github.io/tutorial/assets/macos_instructions/macos_3.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>The new subproject</p></figcaption>
 </figure>
 
 ### Adjust the Runner Target's _Build Phases_
@@ -51,7 +51,7 @@ b) In Runner Target's _Build Phase_ -> _Link Binary with Libraries_:
 Click on "+" and select `rust.dylib`.
 
 <figure style="margin:0;">
-<img src="../../../assets/macos_instructions/macos_4.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Phases</i></p></figcaption>
+<img src="https://iota-for-flutter.github.io/tutorial/assets/macos_instructions/macos_4.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Phases</i></p></figcaption>
 </figure>
 
 ### Adjust the Runner Target's _Build Settings_
@@ -65,7 +65,7 @@ Runner/bridge_generated.h
 ```
 
 <figure style="margin:0;">
-<img src="../../../assets/macos_instructions/macos_5.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Settings</i></p></figcaption>
+<img src="https://iota-for-flutter.github.io/tutorial/assets/macos_instructions/macos_5.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Settings</i></p></figcaption>
 </figure>
 
 ### Adjust _Minimum Deployments_
@@ -73,7 +73,7 @@ Runner/bridge_generated.h
 To ensure that your app can run on your host computer and Xcode version, you may only be able to support newer macOS versions. To set the minimum supported macOS version for your app, go to the _General_ tab and select macOS version `13.1` as the _Minimum Deployments_ target.
 
 <figure style="margin:0;">
-<img src="../../../assets/macos_instructions/macos_6.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Minimum Deployment</i></p></figcaption>
+<img src="https://iota-for-flutter.github.io/tutorial/assets/macos_instructions/macos_6.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Minimum Deployment</i></p></figcaption>
 </figure>
 
 ### Adjust the `AppDelegate.swift` file

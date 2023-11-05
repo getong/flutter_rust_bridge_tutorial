@@ -192,7 +192,7 @@ Select the Target <em>rust-cdylib</em> and the <em>Build Settings</em> tab. Here
 <img src="../assets/macos_instructions/macos_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
 </figure>
 <figure style="margin:0;">
-<img src="/assets/macos_instructions/macos_3.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>The new subproject</p></figcaption>
+<img src="https://iota-for-flutter.github.io/tutorial/assets/macos_instructions/macos_3.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>The new subproject</p></figcaption>
 </figure>
 <h3 id="adjust-the-runner-targets-build-phases"><a class="header" href="#adjust-the-runner-targets-build-phases">Adjust the Runner Target's <em>Build Phases</em></a></h3>
 <p><a href="https://cjycode.com/flutter_rust_bridge/integrate/ios_linking.html" target="_blank">For macOS, FRB recommends to include the dynamic library.</a></p>
@@ -201,7 +201,7 @@ Select the Target <em>rust-cdylib</em> and the <em>Build Settings</em> tab. Here
 <p>b) In Runner Target's <em>Build Phase</em> -&gt; <em>Link Binary with Libraries</em>:</p>
 <p>Click on &quot;+&quot; and select <code>rust.dylib</code>.</p>
 <figure style="margin:0;">
-<img src="../../../assets/macos_instructions/macos_4.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Phases</i></p></figcaption>
+<img src="https://iota-for-flutter.github.io/tutorial/assets/macos_instructions/macos_4.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Phases</i></p></figcaption>
 </figure>
 <h3 id="adjust-the-runner-targets-build-settings"><a class="header" href="#adjust-the-runner-targets-build-settings">Adjust the Runner Target's <em>Build Settings</em></a></h3>
 <p>Start typing &quot;Objective-C Bridging Header&quot; in the filter... the hard-to-find setting is in the <em>Swift Compiler - General</em> section of the settings.</p>
@@ -209,12 +209,12 @@ Select the Target <em>rust-cdylib</em> and the <em>Build Settings</em> tab. Here
 <pre><code>Runner/bridge_generated.h
 </code></pre>
 <figure style="margin:0;">
-<img src="../../../assets/macos_instructions/macos_5.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Settings</i></p></figcaption>
+<img src="https://iota-for-flutter.github.io/tutorial/assets/macos_instructions/macos_5.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Build Settings</i></p></figcaption>
 </figure>
 <h3 id="adjust-minimum-deployments"><a class="header" href="#adjust-minimum-deployments">Adjust <em>Minimum Deployments</em></a></h3>
 <p>To ensure that your app can run on your host computer and Xcode version, you may only be able to support newer macOS versions. To set the minimum supported macOS version for your app, go to the <em>General</em> tab and select macOS version <code>13.1</code> as the <em>Minimum Deployments</em> target.</p>
 <figure style="margin:0;">
-<img src="../../../assets/macos_instructions/macos_6.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Minimum Deployment</i></p></figcaption>
+<img src="https://iota-for-flutter.github.io/tutorial/assets/macos_instructions/macos_6.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Minimum Deployment</i></p></figcaption>
 </figure>
 <h3 id="adjust-the-appdelegateswift-file"><a class="header" href="#adjust-the-appdelegateswift-file">Adjust the <code>AppDelegate.swift</code> file</a></h3>
 <p>Switch to Visual Studio Code and open the file <code>macos/Runner/AppDelegate.swift</code>. We need to call the function <em>dummy_method_to_enforce_bundling()</em> (from FRB) somewhere to avoid that Xcode handles our library as dead code.</p>
