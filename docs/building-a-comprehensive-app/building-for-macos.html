@@ -216,6 +216,14 @@ Select the Target <em>rust-cdylib</em> and the <em>Build Settings</em> tab. Here
 <figure style="margin:0;">
 <img src="https://iota-for-flutter.github.io/tutorial/assets/macos_instructions/macos_6.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted <i>Minimum Deployment</i></p></figcaption>
 </figure>
+<h3 id="generate-the-dart-interface"><a class="header" href="#generate-the-dart-interface">Generate the Dart Interface</a></h3>
+<p>Our next task is to create the generated code. This will also copy the C header file <code>bridge_generated.h</code> into the folder <em>macos/Runner/</em>. Use this command (you need to be in the root of your project):</p>
+<pre><code>flutter_rust_bridge_codegen \
+--rust-input rust/src/api.rs \
+--dart-output ./lib/bridge_generated.dart \
+--dart-decl-output ./lib/bridge_definitions.dart \
+--c-output macos/Runner/bridge_generated.h
+</code></pre>
 <h3 id="adjust-the-appdelegateswift-file"><a class="header" href="#adjust-the-appdelegateswift-file">Adjust the <code>AppDelegate.swift</code> file</a></h3>
 <p>Switch to Visual Studio Code and open the file <code>macos/Runner/AppDelegate.swift</code>. We need to call the function <em>dummy_method_to_enforce_bundling()</em> (from FRB) somewhere to avoid that Xcode handles our library as dead code.</p>
 <p>Add:</p>
@@ -239,17 +247,8 @@ class AppDelegate: FlutterAppDelegate {
 &lt;true/&gt;
 </code></pre>
 <figure style="margin:0;"><img src="../assets/macos_instructions/macos-pitfall-1.png" alt="network.client entitlement"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solution for Sandbox Problem</p></figcaption></figure>
-<h2 id="completing-the-macos-app"><a class="header" href="#completing-the-macos-app">Completing the macOS App</a></h2>
-<h3 id="generate-the-dart-interface"><a class="header" href="#generate-the-dart-interface">Generate the Dart Interface</a></h3>
-<p>Our next task is to create the generated code. This will also copy the C header file <code>bridge_generated.h</code> into the folder <em>macos/Runner/</em>. Use this command (you need to be in the root of your project):</p>
-<pre><code>flutter_rust_bridge_codegen \
---rust-input rust/src/api.rs \
---dart-output ./lib/bridge_generated.dart \
---dart-decl-output ./lib/bridge_definitions.dart \
---c-output macos/Runner/bridge_generated.h
-</code></pre>
-<h3 id="video"><a class="header" href="#video">Video</a></h3>
-<p>Follow the video for the remaining steps.</p>
+<h2 id="video"><a class="header" href="#video">Video</a></h2>
+<p>The video summarizes all remaining steps.</p>
 <blockquote>
 <p>THE VIDEO WILL FOLLOW...</p>
 </blockquote>

@@ -35,12 +35,18 @@ We need to incorporate the new Rust XCode project (_rust/rust.xcodeproj_) into o
 <img src="../assets/macos_instructions/macos_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
 </figure>
 
-{{#include ../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.md:37:102}}
+{{#include ../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.md:37:77}}
+
+{{#include ../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.md:11:22}}
+
+{{#include ../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.md:79:102}}
 
 ### Add the Security Entitlement
 
 {{#include ../building-a-simple-app/building-for-macos.md:64:71}}
 
-{{#include ../building-a-simple-app/building-for-macos.md:75:81}}
+## Video
+
+The video summarizes all remaining steps.
 
 > THE VIDEO WILL FOLLOW...
