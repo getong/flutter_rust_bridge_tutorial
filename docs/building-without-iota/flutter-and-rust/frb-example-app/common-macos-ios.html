@@ -153,7 +153,7 @@
 <p>An common step for macOS / iOS is needed: creating an Xcode project <strong>inside of the Rust library project folder</strong> (<em>rust/</em>). This can be done using the <code>cargo-xcode</code> command.</p>
 <p>This Cargo subcommand is used to generate all Xcode project files for Rust projects. It will also create a <em>build rule</em> that will be used to create a dynamic and a static library from the Rust library code in Xcode's build step. If you don't remember, take a look back and read the section <a href="../../fundamentals/xcode/essentials.html">Xcode Essentials</a>.</p>
 <p>To install the <code>cargo-xcode</code> command use:</p>
-<pre><code>cargo install cargo-xcode
+<pre><code>cargo install cargo-xcode@1.5.0
 </code></pre>
 <p>After the installation of the command, create the Rust Xcode project. Make sure to be in the <em>rust/</em> directory. From the project's root folder you may switch into the right directory:</p>
 <pre><code>cd rust

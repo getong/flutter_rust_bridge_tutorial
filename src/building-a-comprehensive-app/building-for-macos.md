@@ -17,7 +17,7 @@ To integrate our Rust backend, we create an additional Xcode project first and a
 
 ### Create the XCode project for our Rust library
 
-{{#include ../building-a-simple-app/building-for-macos.md:11:36}}
+{{#include ../building-a-simple-app/building-for-macos.md:11:38}}
 
     > A SCREENSHOT WILL FOLLOW! In the meanwhile refer to the Simple App video ("Building for macOS").
 

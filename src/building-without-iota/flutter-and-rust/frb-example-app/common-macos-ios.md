@@ -15,7 +15,7 @@ This Cargo subcommand is used to generate all Xcode project files for Rust proje
 To install the `cargo-xcode` command use:
 
 ```
-cargo install cargo-xcode
+cargo install cargo-xcode@1.5.0
 ```
 
 After the installation of the command, create the Rust Xcode project. Make sure to be in the _rust/_ directory. From the project's root folder you may switch into the right directory:

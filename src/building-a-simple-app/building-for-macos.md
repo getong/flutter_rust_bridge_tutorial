@@ -10,10 +10,12 @@ Listing some pitfalls and completing the remaining steps for macOS.
 
 An common step for macOS / iOS is needed: creating an Xcode project **inside of the Rust library project folder** (_rust/_). This can be done using the `cargo-xcode` command.
 
+> I utilize cargo-xcode v1.5.0 to ensure smooth operation. For example, when I employed version v1.9.0, Xcode flagged an issue regarding the absence of a development team for signing (but: I couldn't add a development team because the "Signing & Capabilities" tab is missing for the target _rust-cdylib_ in the Rust Xcode project).
+
 1. To install the `cargo-xcode` command use:
 
    ```
-   cargo install cargo-xcode
+   cargo install cargo-xcode@1.5.0
    ```
 
 2. After the installation of the command, create the Rust Xcode project. Make sure to be in the _rust/_ directory. From the project's root folder you may switch into the right directory:

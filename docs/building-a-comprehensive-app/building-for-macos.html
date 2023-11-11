@@ -158,10 +158,13 @@
 <p>To integrate our Rust backend, we create an additional Xcode project first and add it as a &quot;subproject&quot; to the existing Flutter Xcode project (<em>macos/Runner.xcodeproj</em>). During the build, the inner Xcode project is built first, enabling its use by the parent project.</p>
 <h3 id="create-the-xcode-project-for-our-rust-library"><a class="header" href="#create-the-xcode-project-for-our-rust-library">Create the XCode project for our Rust library</a></h3>
 <p>An common step for macOS / iOS is needed: creating an Xcode project <strong>inside of the Rust library project folder</strong> (<em>rust/</em>). This can be done using the <code>cargo-xcode</code> command.</p>
+<blockquote>
+<p>I utilize cargo-xcode v1.5.0 to ensure smooth operation. For example, when I employed version v1.9.0, Xcode flagged an issue regarding the absence of a development team for signing (but: I couldn't add a development team because the &quot;Signing &amp; Capabilities&quot; tab is missing for the target <em>rust-cdylib</em> in the Rust Xcode project).</p>
+</blockquote>
 <ol>
 <li>
 <p>To install the <code>cargo-xcode</code> command use:</p>
-<pre><code>cargo install cargo-xcode
+<pre><code>cargo install cargo-xcode@1.5.0
 </code></pre>
 </li>
 <li>
@@ -242,11 +245,11 @@ class AppDelegate: FlutterAppDelegate {
 }
 </code></pre>
 <h3 id="add-the-security-entitlement"><a class="header" href="#add-the-security-entitlement">Add the Security Entitlement</a></h3>
+<figure style="margin:0;"><img src="../assets/macos_instructions/macos-pitfall-2.png" alt="no healthy node available"><figcaption style="font-size: 0.8em;text-align:center;"><p>No healthy node available</p></figcaption></figure>
 <p>macOS applications are sandboxed by default. To avoid a SocketException, you need to add the network.client <a href="https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox">entitlement</a> to <code>macOS/Runner/DebugProfile.entitlements</code>:</p>
 <pre><code>&lt;key&gt;com.apple.security.network.client&lt;/key&gt;
 &lt;true/&gt;
 </code></pre>
-<figure style="margin:0;"><img src="../assets/macos_instructions/macos-pitfall-1.png" alt="network.client entitlement"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solution for Sandbox Problem</p></figcaption></figure>
 <h2 id="video"><a class="header" href="#video">Video</a></h2>
 <p>The video summarizes all remaining steps.</p>
 <blockquote>
