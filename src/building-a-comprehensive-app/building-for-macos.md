@@ -19,7 +19,7 @@ To integrate our Rust backend, we create an additional Xcode project first and a
 
 {{#include ../building-a-simple-app/building-for-macos.md:11:38}}
 
-    > A SCREENSHOT WILL FOLLOW! In the meanwhile refer to the Simple App video ("Building for macOS").
+    <figure style="margin:0;"><img src="../assets/macos_instructions/macos_target-build-dir.jpg" alt="Dynamic Library Install Name Base"><figcaption style="font-size: 0.8em;text-align:center;"><p>Dynamic Library Install Name Base</p></figcaption></figure>
 
 ### Merge both projects
 

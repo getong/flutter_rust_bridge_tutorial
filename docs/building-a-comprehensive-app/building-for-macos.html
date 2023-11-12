@@ -180,9 +180,7 @@
 <p>This step is for <strong>macOS only</strong> because the macOS app uses the <em>dynamic</em> library:</p>
 <p>Open up that <code>rust/rust.xcodeproj</code> file with Xcode and select the root item <em>rust</em>, at the left pane on top.
 Select the Target <em>rust-cdylib</em> and the <em>Build Settings</em> tab. Here, search for <em>Dynamic Library Install Name Base</em> and change the value into <code>$(TARGET_BUILD_DIR)</code>.</p>
-<blockquote>
-<p>A SCREENSHOT WILL FOLLOW! In the meanwhile refer to the Simple App video (&quot;Building for macOS&quot;).</p>
-</blockquote>
+<figure style="margin:0;"><img src="../assets/macos_instructions/macos_target-build-dir.jpg" alt="Dynamic Library Install Name Base"><figcaption style="font-size: 0.8em;text-align:center;"><p>Dynamic Library Install Name Base</p></figcaption></figure>
 </li>
 </ol>
 <h3 id="merge-both-projects"><a class="header" href="#merge-both-projects">Merge both projects</a></h3>
