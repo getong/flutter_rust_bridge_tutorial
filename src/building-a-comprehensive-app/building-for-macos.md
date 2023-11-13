@@ -49,4 +49,11 @@ We need to incorporate the new Rust XCode project (_rust/rust.xcodeproj_) into o
 
 The video summarizes all remaining steps.
 
-> THE VIDEO WILL FOLLOW...
+<iframe 
+    class="video"  
+    src="https://www.youtube.com/embed/e6SddPzZ1rg" 
+    title="Building the Playground App - finalize the macOS part" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
