@@ -3688,7 +3688,7 @@ to list all installed Cargo subcommands along with their versions.</p>
 <li>Regenerated the Dart Code using the command in the tutorial, resulting in the creation of two Rust files and two Dart files.</li>
 <li>Initially, VS Code displayed an error in the bridge_generated.rs file. After restarting VS Code, the error disappeared.</li>
 <li>In the Terminal, navigated to the rust/ directory and executed &quot;cargo build --target aarch64-apple-ios-sim,&quot; which was successful.</li>
-<li>Returned to the root directory (cd ..) and ran &quot;flutter run.&quot;</li>
+<li>Returned to the root directory (cd ..) and ran &quot;flutter run&quot;</li>
 <li>I received messages about &quot;Xcode 15 compatibility&quot; (or similar) and ultimately, the library and the app were successfully built, launching without any issues.</li>
 </ol>
 <p>These steps were necessary because I initially created the project under macOS 13, Xcode 14, and lower versions of Flutter and Rust. I assume if you build the project from scratch using the Flutter-only version on GitHub and follow the steps outlined in the tutorial, you shouldn't encounter the same issue.</p>

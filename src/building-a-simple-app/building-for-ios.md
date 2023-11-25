@@ -82,7 +82,7 @@ I followed these steps to address the issue:
 7. Regenerated the Dart Code using the command in the tutorial, resulting in the creation of two Rust files and two Dart files.
 8. Initially, VS Code displayed an error in the bridge_generated.rs file. After restarting VS Code, the error disappeared.
 9. In the Terminal, navigated to the rust/ directory and executed "cargo build --target aarch64-apple-ios-sim," which was successful.
-10. Returned to the root directory (cd ..) and ran "flutter run."
+10. Returned to the root directory (cd ..) and ran "flutter run"
 11. I received messages about "Xcode 15 compatibility" (or similar) and ultimately, the library and the app were successfully built, launching without any issues.
 
 These steps were necessary because I initially created the project under macOS 13, Xcode 14, and lower versions of Flutter and Rust. I assume if you build the project from scratch using the Flutter-only version on GitHub and follow the steps outlined in the tutorial, you shouldn't encounter the same issue.
