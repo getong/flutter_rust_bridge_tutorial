@@ -193,6 +193,26 @@
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
     allowfullscreen>
 </iframe>
+<h3 id="troubleshooting"><a class="header" href="#troubleshooting">Troubleshooting</a></h3>
+<p>A user informed me about encountering issues when attempting to run the app on the iOS Simulator. Having not used the app for several months, I decided to test it myself and encountered some problems, too. Here is my response to the user.</p>
+<hr />
+<p>Upon receiving your notification about the issue, I dedicated time today to rebuild the project. Since I initially set up and completed the project, there have been changes in my personal development environment. Specifically, I upgraded to macOS Sonoma 14.1.1 and installed Xcode 15. Upon launching VS Code, the project prompted me to execute &quot;flutter pub upgrade&quot; due to a change in the Flutter version during this period. Unfortunately, when attempting to run the project on iOS using &quot;flutter run,&quot; the build process encountered a failure.</p>
+<p>Despite not being aware of your specific circumstances, I managed to resolve all errors, successfully rebuild the project, and run it on the iOS Simulator, specifically using iPhone 15 Pro Max with iOS 17.0.</p>
+<p>I followed these steps to address the issue:</p>
+<ol>
+<li>Updated Rust to the latest version using &quot;rustup update.&quot;</li>
+<li>Deleted the Cargo.lock file.</li>
+<li>Deleted the rust/target/ folder.</li>
+<li>Deleted the following generated files: rust/src/bridge_generated.io.rs, rust/src/bridge_generated.rs, bridge_definitions.dart, bridge_generated.dart.</li>
+<li>Removed the first generated line in rust/src/lib.rs.</li>
+<li>Restarted VS Code.</li>
+<li>Regenerated the Dart Code using the command in the tutorial, resulting in the creation of two Rust files and two Dart files.</li>
+<li>Initially, VS Code displayed an error in the bridge_generated.rs file. After restarting VS Code, the error disappeared.</li>
+<li>In the Terminal, navigated to the rust/ directory and executed &quot;cargo build --target aarch64-apple-ios-sim,&quot; which was successful.</li>
+<li>Returned to the root directory (cd ..) and ran &quot;flutter run.&quot;</li>
+<li>I received messages about &quot;Xcode 15 compatibility&quot; (or similar) and ultimately, the library and the app were successfully built, launching without any issues.</li>
+</ol>
+<p>These steps were necessary because I initially created the project under macOS 13, Xcode 14, and lower versions of Flutter and Rust. I assume if you build the project from scratch using the Flutter-only version on GitHub and follow the steps outlined in the tutorial, you shouldn't encounter the same issue.</p>
 
                     </main>
 
