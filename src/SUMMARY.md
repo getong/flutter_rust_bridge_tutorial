@@ -51,6 +51,7 @@
   - [Language translations](overview/flutter-rust-bridge/features.md)
 - [📚 IOTA libraries](overview/iota-libraries/README.md)
   - [iota.rs, wallet.rs and identity.rs](overview/iota-libraries/iota-wallet-identity.md)
+  - [IOTA SDK and indentity.rs](overview/iota-libraries/iota-sdk.md)
   - [Library Versions](overview/iota-libraries/library-versions.md)
   - [Deeper Insights](overview/iota-libraries/deeper-insights.md)
 

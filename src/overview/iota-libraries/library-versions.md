@@ -30,7 +30,7 @@ To support both current networks, the version of the iota-client being used shou
 >
 > TIP-0025 is labeled as _Stardust_, and it is associated with the Core REST API that involves API calls using `api/v2`. These requests are utilized in versions 2.x.y.
 
-## Versions used for "full-featured" app
+## Versions used for "full-featured" app - based on the deprecated libraries iota.rs and wallet.rs
 
 The second question (see above) is more complex. It primarily revolves around determining which third-party libraries are used by the IOTA libraries and what dependencies are employed by those libraries, and so on.
 
@@ -40,7 +40,7 @@ Because each additional library increases the risk that it may not be cross-comp
 
 Here is a matrix illustrating the library versions utilized in a "full-featured" Stardust app. The objective is to employ iota-client, iota-wallet, and identity_iota simultaneously, along with the stronghold feature.
 
-** NEEDS TO BE REVIEWED ! Status as of Jan 2023**
+**Status as of Jan 2023**
 
 <table style="display: flex; justify-content: left;">
 <tr><th style="white-space:nowrap;text-align:left;padding:5px 20px;">Library Crate</th><th style="text-align:left;padding:5px 20px;">Android</th><th style="text-align:left;padding:5px 20px;">iOS/macOS</th></tr>
@@ -64,7 +64,3 @@ Here is a matrix illustrating the library versions utilized in a "full-featured"
 </table>
 
 You need to include different dependencies for the crate iota-wallet. This is due to an unsolved issue with regard to the third-party library of rocksdb.
-
-**TODO: Versions to be reviewed in milestone 3**
-
-**TODO: Explain rocksdb issue in more detail in milestone 3 IF STILL EXISTS - [rocksdb 0.20.1 was included into iota-wallet on 13th of Feb 2023](https://github.com/iotaledger/wallet.rs/commit/970f6df22ee88c1ae7e5595ba4e9815998077f01)**

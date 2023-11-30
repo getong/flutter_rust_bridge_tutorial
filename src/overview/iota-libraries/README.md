@@ -4,6 +4,12 @@
 
 How should one approach IOTA's Rust libraries? What sources of information are available? How can one discover the information needed for their work?
 
+> **Note from 30/11/2023** : Please note that the **iota.rs and wallet.rs libraries have been deprecated**. The recommended approach for development is now using the new **IOTA SDK**, which consolidates iota.rs and wallet.rs into a single library.
+>
+> It's important to be aware that, despite this being the preferred choice, the tutorial primarily utilizes the older libraries in most chapters. This decision is based on the fact that the tutorial and accompanying videos were initially created using the deprecated libraries.
+>
+> While the workflow remains unchanged, there are slight differences in dependencies within Cargo.toml and the Rust backend code. To maintain consistency, the tutorial retains the use of the older libraries. However, an additional chapter will be included for the Playground App, where the Rust code based on the IOTA SDK will be provided.
+
 ---
 
 To approach IOTA's Rust libraries, there are several sources of information available to help you understand and work with them effectively:
