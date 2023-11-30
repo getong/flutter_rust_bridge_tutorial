@@ -8,7 +8,7 @@ How should one approach IOTA's Rust libraries? What sources of information are a
 >
 > It's important to be aware that, despite this not being the preferred choice from now on, the tutorial primarily utilizes the older libraries in most chapters. This decision is based on the fact that the tutorial and accompanying videos were initially created using the deprecated libraries.
 >
-> While the workflow remains unchanged, there are slight differences in dependencies within Cargo.toml and the Rust backend code. To maintain consistency, the tutorial retains the use of the older libraries. However, an additional chapter will be included for the Playground App, where the Rust code based on the IOTA SDK will be provided.
+> While the workflow remains unchanged, there are slight differences in dependencies within Cargo.toml and the Rust backend code. To maintain consistency, the tutorial retains the use of the older libraries. However, an additional chapter will be included for the Playground App (see chapter "Building a Comprehensive App"), where the Rust code based on the IOTA SDK will be provided.
 
 ---
 
