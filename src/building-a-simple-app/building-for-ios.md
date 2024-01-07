@@ -13,7 +13,7 @@ An common step for macOS / iOS is needed: creating an Xcode project **inside of 
 1. To install the `cargo-xcode` command use:
 
    ```
-   cargo install cargo-xcode
+   cargo install cargo-xcode@1.5.0
    ```
 
 2. After the installation of the command, create the Rust Xcode project. **Make sure to be in the _rust/_ directory**. From the project's root folder you may switch into the right directory:

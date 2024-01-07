@@ -49,9 +49,10 @@
 - [🌁 Flutter Rust Bridge](overview/flutter-rust-bridge/README.md)
   - [About](overview/flutter-rust-bridge/about.md)
   - [Language translations](overview/flutter-rust-bridge/features.md)
+  - [Alternatives?](overview/flutter-rust-bridge/alternatives.md)
 - [📚 IOTA libraries](overview/iota-libraries/README.md)
   - [iota.rs, wallet.rs and identity.rs](overview/iota-libraries/iota-wallet-identity.md)
-  - [IOTA SDK and indentity.rs](overview/iota-libraries/iota-sdk.md)
+  - [IOTA SDK and identity.rs](overview/iota-libraries/iota-sdk.md)
   - [Library Versions](overview/iota-libraries/library-versions.md)
   - [Deeper Insights](overview/iota-libraries/deeper-insights.md)
 
@@ -109,3 +110,14 @@
 - [Building for Android](building-a-comprehensive-app/building-for-android.md)
 - [Building for macOS](building-a-comprehensive-app/building-for-macos.md)
 - [Building for iOS](building-a-comprehensive-app/building-for-ios.md)
+
+---
+
+# Building a Comprehensive App using IOTA SDK
+
+---
+
+- [Motivation](building-a-comprehensive-app-with-iota-sdk/motivation.md)
+- [Building for Android](building-a-comprehensive-app-with-iota-sdk/building-for-android.md)
+- [Building for iOS](building-a-comprehensive-app-with-iota-sdk/building-for-ios/README.md)
+  - [Libsodium library for iOS](building-a-comprehensive-app-with-iota-sdk/building-for-ios/libsodium.md)
