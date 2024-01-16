@@ -6280,8 +6280,13 @@ import '../ffi.dart';
 <p>Check with <code>automake --version</code> if you can skip the installation. If already installed, a version is returned. Otherwise install <em>automake</em> with the command:</p>
 <pre><code>brew install automake
 </code></pre>
+<p>d) libtool</p>
+<p>Install <em>libtool</em> with the command:</p>
+<pre><code>brew install libtool
+</code></pre>
+<p>If it's already installed, you'll get a message returned: &quot;Warning: libtool 2.4.7 is already installed and up-to-date.&quot;</p>
 <hr />
-<p>Once you've setup everything, you can navigate into the &quot;libsodium-master&quot; directory and execute:</p>
+<p>Once you've setup everything, you can navigate into the &quot;libsodium&quot; directory and execute:</p>
 <pre><code>./autogen.sh -s
 </code></pre>
 <p>This will create the <code>configure</code> file. The next command will create the libraries for several Apple targets (iOS, macOS, tvOS, watchOS):</p>
@@ -6290,13 +6295,14 @@ import '../ffi.dart';
 <blockquote>
 <p>To save time feel free to adjust the script in order to skip some of the targets.</p>
 </blockquote>
-<p>The console output tells you where you will find the wanted <code>libsodium.a</code>: It's located in the folder &quot;&lt;path/to/your/libsodium-master&gt;/libsodium-apple/tmp/ios64/lib/&quot;.</p>
+<p>The console output tells you where you will find the wanted <code>libsodium.a</code>: It's located in the folder &quot;&lt;path/to/your/libsodium&gt;/libsodium-apple/tmp/ios64/lib/&quot;.</p>
 <h3 id="step-2-test-the-built-library"><a class="header" href="#step-2-test-the-built-library">Step 2: Test the built library</a></h3>
+<p>Navigate to the <code>rust</code> folder of the Playground App you have created in the Android section.</p>
 <p>Now, I recommend to test the cargo build in Terminal by setting the following environment variables before executing the commands. Please replace &quot;<em>/path/to/library</em>&quot; with the correct directory path to your library (do NOT append &quot;<em>libsodium.a</em>&quot; at the end of the path).</p>
 <pre><code>SODIUM_LIB_DIR=&quot;/path/to/library&quot; SODIUM_SHARED=1 cargo build --target aarch64-apple-ios
 </code></pre>
 <p>e.g.</p>
-<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/libsodium-master/libsodium-apple/tmp/ios64/lib&quot; SODIUM_SHARED=1 cargo build --target aarch64-apple-ios
+<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/libsodium/libsodium-apple/tmp/ios64/lib&quot; SODIUM_SHARED=1 cargo build --target aarch64-apple-ios
 </code></pre>
 <h3 id="step-3-integrate-libsodiuma-in-xcode-and-in-the-build-process"><a class="header" href="#step-3-integrate-libsodiuma-in-xcode-and-in-the-build-process">Step 3: Integrate libsodium.a in Xcode and in the build process</a></h3>
 <p>In the aforementioned test, we defined the variables SODIUM_LIB_DIR and SODIUM_SHARED within the command line. However, these definitions will not persist.</p>

@@ -64,9 +64,19 @@ Check with `automake --version` if you can skip the installation. If already ins
 brew install automake
 ```
 
+d) libtool
+
+Install _libtool_ with the command:
+
+```
+brew install libtool
+```
+
+If it's already installed, you'll get a message returned: "Warning: libtool 2.4.7 is already installed and up-to-date."
+
 ---
 
-Once you've setup everything, you can navigate into the "libsodium-master" directory and execute:
+Once you've setup everything, you can navigate into the "libsodium" directory and execute:
 
 ```
 ./autogen.sh -s
@@ -80,9 +90,11 @@ This will create the `configure` file. The next command will create the librarie
 
 > To save time feel free to adjust the script in order to skip some of the targets.
 
-The console output tells you where you will find the wanted `libsodium.a`: It's located in the folder "\<path/to/your/libsodium-master\>/libsodium-apple/tmp/ios64/lib/".
+The console output tells you where you will find the wanted `libsodium.a`: It's located in the folder "\<path/to/your/libsodium\>/libsodium-apple/tmp/ios64/lib/".
 
 ### Step 2: Test the built library
+
+Navigate to the `rust` folder of the Playground App you have created in the Android section.
 
 Now, I recommend to test the cargo build in Terminal by setting the following environment variables before executing the commands. Please replace "_/path/to/library_" with the correct directory path to your library (do NOT append "_libsodium.a_" at the end of the path).
 
@@ -93,7 +105,7 @@ SODIUM_LIB_DIR="/path/to/library" SODIUM_SHARED=1 cargo build --target aarch64-a
 e.g.
 
 ```
-SODIUM_LIB_DIR="/Users/yourname/libsodium-master/libsodium-apple/tmp/ios64/lib" SODIUM_SHARED=1 cargo build --target aarch64-apple-ios
+SODIUM_LIB_DIR="/Users/yourname/libsodium/libsodium-apple/tmp/ios64/lib" SODIUM_SHARED=1 cargo build --target aarch64-apple-ios
 ```
 
 ### Step 3: Integrate libsodium.a in Xcode and in the build process
