@@ -202,7 +202,7 @@
 <pre><code>SODIUM_LIB_DIR=&quot;/path/to/library&quot; SODIUM_SHARED=1 cargo build --target aarch64-apple-ios
 </code></pre>
 <p>e.g.</p>
-<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/libsodium/libsodium-apple/tmp/ios64/lib&quot; SODIUM_SHARED=1 cargo build --target aarch64-apple-ios
+<pre><code>SODIUM_LIB_DIR=&quot;/Users/&lt;yourname&gt;/libsodium/libsodium-apple/tmp/ios64/lib&quot; SODIUM_SHARED=1 cargo build --target aarch64-apple-ios
 </code></pre>
 <h3 id="step-3-integrate-libsodiuma-in-xcode-and-in-the-build-process"><a class="header" href="#step-3-integrate-libsodiuma-in-xcode-and-in-the-build-process">Step 3: Integrate libsodium.a in Xcode and in the build process</a></h3>
 <p>In the aforementioned test, we defined the variables SODIUM_LIB_DIR and SODIUM_SHARED within the command line. However, these definitions will not persist.</p>
@@ -215,14 +215,14 @@
 <p>Add a new group &quot;sodium&quot; in the Runner</p>
 </li>
 <li>
-<p>Switch to Finder, copy the libsodium.a from <code>/Users/yourname/libsodium/libsodium-apple/tmp/ios64/lib</code> into the new folder <code>/Users/yourname/playground_app/ios/Runner/sodium</code></p>
+<p>Switch to Finder, copy the libsodium.a from <code>/Users/&lt;yourname&gt;/libsodium/libsodium-apple/tmp/ios64/lib</code> into the new folder <code>/Users/&lt;yourname&gt;/playground_app/ios/Runner/sodium</code></p>
 </li>
 <li>
 <p>Simultaneously open the Runner.xcworkspace and drag the libsodium.a library from the Finder into the newly created group &quot;sodium&quot;</p>
 </li>
 <li>
-<p>Adjust the <em>Build Rules</em> (line 25) of the target &quot;Rust&quot; in order to persist the environment variables SODIUM_LIB_DIR and SODIUM_SHARED:</p>
-<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/playground_app/ios/Runner/sodium&quot;
+<p>Adjust the <em>Build Rules</em> (line 25) of the target &quot;Rust&quot; in order to persist the environment variables SODIUM_LIB_DIR and SODIUM_SHARED, e.g. in my case:</p>
+<pre><code>SODIUM_LIB_DIR=&quot;/Users/&lt;yourname&gt;/playground_app/ios/Runner/sodium&quot;
 SODIUM_SHARED=1
 </code></pre>
 </li>

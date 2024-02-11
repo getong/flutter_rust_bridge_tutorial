@@ -105,7 +105,7 @@ SODIUM_LIB_DIR="/path/to/library" SODIUM_SHARED=1 cargo build --target aarch64-a
 e.g.
 
 ```
-SODIUM_LIB_DIR="/Users/yourname/libsodium/libsodium-apple/tmp/ios64/lib" SODIUM_SHARED=1 cargo build --target aarch64-apple-ios
+SODIUM_LIB_DIR="/Users/<yourname>/libsodium/libsodium-apple/tmp/ios64/lib" SODIUM_SHARED=1 cargo build --target aarch64-apple-ios
 ```
 
 ### Step 3: Integrate libsodium.a in Xcode and in the build process
@@ -116,12 +116,12 @@ To ensure proper setup, you need to
 
 - Open the Runner.xcworkspace
 - Add a new group "sodium" in the Runner
-- Switch to Finder, copy the libsodium.a from `/Users/yourname/libsodium/libsodium-apple/tmp/ios64/lib` into the new folder `/Users/yourname/playground_app/ios/Runner/sodium`
+- Switch to Finder, copy the libsodium.a from `/Users/<yourname>/libsodium/libsodium-apple/tmp/ios64/lib` into the new folder `/Users/<yourname>/playground_app/ios/Runner/sodium`
 - Simultaneously open the Runner.xcworkspace and drag the libsodium.a library from the Finder into the newly created group "sodium"
-- Adjust the _Build Rules_ (line 25) of the target "Rust" in order to persist the environment variables SODIUM_LIB_DIR and SODIUM_SHARED:
+- Adjust the _Build Rules_ (line 25) of the target "Rust" in order to persist the environment variables SODIUM_LIB_DIR and SODIUM_SHARED, e.g. in my case:
 
   ```
-  SODIUM_LIB_DIR="/Users/yourname/playground_app/ios/Runner/sodium"
+  SODIUM_LIB_DIR="/Users/<yourname>/playground_app/ios/Runner/sodium"
   SODIUM_SHARED=1
   ```
 

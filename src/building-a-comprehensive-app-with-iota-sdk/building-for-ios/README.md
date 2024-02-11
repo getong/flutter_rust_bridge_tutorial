@@ -73,25 +73,27 @@ I'm unveiling a sneaky maneuver to get the app up and running on iOS:
 
 ## Give it a try
 
-1. Connect your iOS **device**
+1. Connect your iOS _Device_
 
-   Little note: if libsodium.a can be built for the iOS Simulator using the Extended usage, perhaps the app will also strut its stuff on the iOS Simulator... I didn't follow this way after all my attempts... I am a bit tired...
+   Little note: if libsodium.a can be built for the iOS _Simulator_ using the Extended usage, perhaps the app will also strut its stuff on the iOS _Simulator_... I didn't follow this way after all my attempts... I am a bit tired...
 
-2. Launch the app
+2. Options to launch the app
 
-   a) with flutter run => \*fails because the compile process stops - the app wants to be launched from Xcode
+   a) Launch with `flutter run`
 
-   b) Launch with Runner.xcodeproj => \*fails because "shared_preferences_foundation" is not found
+   => \*Could fail when the compile process stops - you will get more detailed information when you launch the app from Xcode
 
-   c) Launch with Runner.xcworkspace => \*fails whenever libsodium-sys cannot be built; doesn't fail when you precompile libsodium.a
+   b) Launch with `Runner.xcodeproj`
+
+   => \*Could fail because "shared_preferences_foundation" is not found
+
+   c) Launch with `Runner.xcworkspace`
+
+   => \*Could fail whenever libsodium-sys cannot be built; doesn't fail when you precompile libsodium.a as described in the subchapter
+
+   => \*Could fail when the Pods (dependencies) aren't yet installed
 
 \*Possible failures
-
-## Additional adjustments
-
-1. Update all iOS Deployment Targets to the current supported version of iOS: It must be a version greater than v11.0
-2. Adjust the Runner's Build Settings "Other Linker Flags":
-   To prevent a error during the build process that "CoreAudioTypes" cannot be linked (which is a misleading message!) you need to add the Linker Flags `-lc++` and `-framework Flutter` (if not present) in the build setting "Other Linker Flags"
 
 ---
 
@@ -105,13 +107,40 @@ Verifying your environment by `flutter doctor -v` might log this error:
 
 To resolve this issue, I searched online and followed the instructions outlined in the article titled [How to Remove and Re-install cocoapods in Flutter](https://myatminlu.medium.com/how-to-remove-and-re-install-cocoapods-d9f434dd8eca). You may find other sources.
 
+### Error: Missing `pod install`
+
+The first time around, the dependencies "path_provider_foundation" and "shared_preferences_foundation" are not yet installed. You will notice it in Xcode.
+
+<figure style="margin:0;"><img src="../../assets/ios_iota-sdk/pod-install.png" alt="What pod install does"><figcaption style="font-size: 0.8em;text-align:center;"><p>What "pod install" does</p></figcaption></figure>
+
+The straightforward method is to let Flutter handle the install. Switch to VS Code and launch the app using `flutter run`. You'll notice that before the Xcode build, the command `pod install` will be executed.
+
 ### Error: iOS Deployment Target
 
 Throughout the Xcode build process, you may receive an alert indicating that the current iOS Deployment target is incorrect. Example:
 
 <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/problem-ios-deployment-target.png" alt="iOS Deployment Target"><figcaption style="font-size: 0.8em;text-align:center;"><p>Message about "iOS Deployment Target"</p></figcaption></figure>
 
-You should go through ALL targets (Runner, Rust, Pods -> path_provider_foundation, Pods -> shared_preferences_foundation) and adjust the default iOS Deployment Targets to the supported version. In my situation, I chose version 17.2 (after updating to Xcode 15.2 and installing iOS SDK 17.2).
+You should go through ALL targets (Runner, Rust, Pods -> path_provider_foundation, Pods -> shared_preferences_foundation) and adjust the default iOS Deployment Targets to your version of choice. In my situation, I often chose the latest available version 17.2 (after updating to Xcode 15.2 and installing iOS SDK 17.2), but it's up to you. It MUST be a version greater than v11.0.
+
+### Linking failed: CoreAudioTypes not found
+
+After updating from Xcode v15.0.1 to Xcode v15.2, I encountered the following error:
+
+```
+Linking failed: linker command failed with exit code 1 (use -v to see invocation).
+  ld: warning: Could not find or use auto-linked framework 'CoreAudioTypes': framework 'CoreAudioTypes' not found.
+```
+
+The message indicating that the framework 'CoreAudioTypes' could not be found is highly misleading!
+
+Potential solutions:
+
+1. Option 1: Attempt to include the Linker Flags `-lc++` and/or `-framework Flutter` (if they are not already present) in the build settings "Other Linker Flags" of the Runner target.
+
+   <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/solution-core-audio-types.png" alt="Solution for linking failure"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solution for linking failure</p></figcaption></figure>
+
+2. Option 2: Rebuild the app from scratch. Surprisingly, this seemingly drastic step resolved the issue for me.
 
 ### Error: Missing Signing Certificate
 
@@ -124,3 +153,4 @@ To proceed, a Development Account is required, and you must be logged in to it w
 <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/step1.png" alt="You're not logged in -> please log in!"><figcaption style="font-size: 0.8em;text-align:center;"><p>You're not logged in -> please log in!</p></figcaption></figure>
 
 <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/step2.png" alt="Solved!"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solved!</p></figcaption></figure>
+````

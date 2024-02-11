@@ -200,39 +200,58 @@
 <h2 id="give-it-a-try"><a class="header" href="#give-it-a-try">Give it a try</a></h2>
 <ol>
 <li>
-<p>Connect your iOS <strong>device</strong></p>
-<p>Little note: if libsodium.a can be built for the iOS Simulator using the Extended usage, perhaps the app will also strut its stuff on the iOS Simulator... I didn't follow this way after all my attempts... I am a bit tired...</p>
+<p>Connect your iOS <em>Device</em></p>
+<p>Little note: if libsodium.a can be built for the iOS <em>Simulator</em> using the Extended usage, perhaps the app will also strut its stuff on the iOS <em>Simulator</em>... I didn't follow this way after all my attempts... I am a bit tired...</p>
 </li>
 <li>
-<p>Launch the app</p>
-<p>a) with flutter run =&gt; *fails because the compile process stops - the app wants to be launched from Xcode</p>
-<p>b) Launch with Runner.xcodeproj =&gt; *fails because &quot;shared_preferences_foundation&quot; is not found</p>
-<p>c) Launch with Runner.xcworkspace =&gt; *fails whenever libsodium-sys cannot be built; doesn't fail when you precompile libsodium.a</p>
+<p>Options to launch the app</p>
+<p>a) Launch with <code>flutter run</code></p>
+<p>=&gt; *Could fail when the compile process stops - you will get more detailed information when you launch the app from Xcode</p>
+<p>b) Launch with <code>Runner.xcodeproj</code></p>
+<p>=&gt; *Could fail because &quot;shared_preferences_foundation&quot; is not found</p>
+<p>c) Launch with <code>Runner.xcworkspace</code></p>
+<p>=&gt; *Could fail whenever libsodium-sys cannot be built; doesn't fail when you precompile libsodium.a as described in the subchapter</p>
+<p>=&gt; *Could fail when the Pods (dependencies) aren't yet installed</p>
 </li>
 </ol>
 <p>*Possible failures</p>
-<h2 id="additional-adjustments"><a class="header" href="#additional-adjustments">Additional adjustments</a></h2>
-<ol>
-<li>Update all iOS Deployment Targets to the current supported version of iOS: It must be a version greater than v11.0</li>
-<li>Adjust the Runner's Build Settings &quot;Other Linker Flags&quot;:
-To prevent a error during the build process that &quot;CoreAudioTypes&quot; cannot be linked (which is a misleading message!) you need to add the Linker Flags <code>-lc++</code> and <code>-framework Flutter</code> (if not present) in the build setting &quot;Other Linker Flags&quot;</li>
-</ol>
 <hr />
 <h2 id="other-issues-you-might-encounter"><a class="header" href="#other-issues-you-might-encounter">Other Issues you might encounter</a></h2>
 <h3 id="error-cocoapods-installed-but-not-working"><a class="header" href="#error-cocoapods-installed-but-not-working">Error: CocoaPods installed but not working</a></h3>
 <p>Verifying your environment by <code>flutter doctor -v</code> might log this error:</p>
 <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/example-problem-cocoapods.png" alt="CocoaPods installed but not working"><figcaption style="font-size: 0.8em;text-align:center;"><p>CocoaPods installed but not working</p></figcaption></figure>
 <p>To resolve this issue, I searched online and followed the instructions outlined in the article titled <a href="https://myatminlu.medium.com/how-to-remove-and-re-install-cocoapods-d9f434dd8eca">How to Remove and Re-install cocoapods in Flutter</a>. You may find other sources.</p>
+<h3 id="error-missing-pod-install"><a class="header" href="#error-missing-pod-install">Error: Missing <code>pod install</code></a></h3>
+<p>The first time around, the dependencies &quot;path_provider_foundation&quot; and &quot;shared_preferences_foundation&quot; are not yet installed. You will notice it in Xcode.</p>
+<figure style="margin:0;"><img src="../../assets/ios_iota-sdk/pod-install.png" alt="What pod install does"><figcaption style="font-size: 0.8em;text-align:center;"><p>What "pod install" does</p></figcaption></figure>
+<p>The straightforward method is to let Flutter handle the install. Switch to VS Code and launch the app using <code>flutter run</code>. You'll notice that before the Xcode build, the command <code>pod install</code> will be executed.</p>
 <h3 id="error-ios-deployment-target"><a class="header" href="#error-ios-deployment-target">Error: iOS Deployment Target</a></h3>
 <p>Throughout the Xcode build process, you may receive an alert indicating that the current iOS Deployment target is incorrect. Example:</p>
 <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/problem-ios-deployment-target.png" alt="iOS Deployment Target"><figcaption style="font-size: 0.8em;text-align:center;"><p>Message about "iOS Deployment Target"</p></figcaption></figure>
-<p>You should go through ALL targets (Runner, Rust, Pods -&gt; path_provider_foundation, Pods -&gt; shared_preferences_foundation) and adjust the default iOS Deployment Targets to the supported version. In my situation, I chose version 17.2 (after updating to Xcode 15.2 and installing iOS SDK 17.2).</p>
+<p>You should go through ALL targets (Runner, Rust, Pods -&gt; path_provider_foundation, Pods -&gt; shared_preferences_foundation) and adjust the default iOS Deployment Targets to your version of choice. In my situation, I often chose the latest available version 17.2 (after updating to Xcode 15.2 and installing iOS SDK 17.2), but it's up to you. It MUST be a version greater than v11.0.</p>
+<h3 id="linking-failed-coreaudiotypes-not-found"><a class="header" href="#linking-failed-coreaudiotypes-not-found">Linking failed: CoreAudioTypes not found</a></h3>
+<p>After updating from Xcode v15.0.1 to Xcode v15.2, I encountered the following error:</p>
+<pre><code>Linking failed: linker command failed with exit code 1 (use -v to see invocation).
+  ld: warning: Could not find or use auto-linked framework 'CoreAudioTypes': framework 'CoreAudioTypes' not found.
+</code></pre>
+<p>The message indicating that the framework 'CoreAudioTypes' could not be found is highly misleading!</p>
+<p>Potential solutions:</p>
+<ol>
+<li>
+<p>Option 1: Attempt to include the Linker Flags <code>-lc++</code> and/or <code>-framework Flutter</code> (if they are not already present) in the build settings &quot;Other Linker Flags&quot; of the Runner target.</p>
+<figure style="margin:0;"><img src="../../assets/ios_iota-sdk/solution-core-audio-types.png" alt="Solution for linking failure"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solution for linking failure</p></figcaption></figure>
+</li>
+<li>
+<p>Option 2: Rebuild the app from scratch. Surprisingly, this seemingly drastic step resolved the issue for me.</p>
+</li>
+</ol>
 <h3 id="error-missing-signing-certificate"><a class="header" href="#error-missing-signing-certificate">Error: Missing Signing Certificate</a></h3>
 <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/missing-signing-certificate.png" alt="Missing Signing Certificate"><figcaption style="font-size: 0.8em;text-align:center;"><p>Missing Signing Certificate</p></figcaption></figure>
 <p>&quot;Error (Xcode): No signing certificate 'iOS Development' found&quot;</p>
 <p>To proceed, a Development Account is required, and you must be logged in to it within Xcode.</p>
 <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/step1.png" alt="You're not logged in -> please log in!"><figcaption style="font-size: 0.8em;text-align:center;"><p>You're not logged in -> please log in!</p></figcaption></figure>
 <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/step2.png" alt="Solved!"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solved!</p></figcaption></figure>
+````
 
                     </main>
 
