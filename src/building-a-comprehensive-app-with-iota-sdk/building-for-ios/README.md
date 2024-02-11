@@ -71,12 +71,6 @@ I'm unveiling a sneaky maneuver to get the app up and running on iOS:
 
 ---
 
-## Additional adjustments
-
-1. Update all iOS Deployment Targets to the current supported version of iOS: It must be a version greater than v11.0
-2. Adjust the Runner's Build Settings "Other Linker Flags":
-   To prevent a error during the build process that "CoreAudioTypes" cannot be linked (which is a misleading message!) you need to add the Linker Flags `-lc++` and `-framework Flutter` (if not present) in the build setting "Other Linker Flags"
-
 ## Give it a try
 
 1. Connect your iOS **device**
@@ -92,6 +86,12 @@ I'm unveiling a sneaky maneuver to get the app up and running on iOS:
    c) Launch with Runner.xcworkspace => \*fails whenever libsodium-sys cannot be built; doesn't fail when you precompile libsodium.a
 
 \*Possible failures
+
+## Additional adjustments
+
+1. Update all iOS Deployment Targets to the current supported version of iOS: It must be a version greater than v11.0
+2. Adjust the Runner's Build Settings "Other Linker Flags":
+   To prevent a error during the build process that "CoreAudioTypes" cannot be linked (which is a misleading message!) you need to add the Linker Flags `-lc++` and `-framework Flutter` (if not present) in the build setting "Other Linker Flags"
 
 ---
 
