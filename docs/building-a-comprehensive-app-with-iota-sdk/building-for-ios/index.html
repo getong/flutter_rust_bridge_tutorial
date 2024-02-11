@@ -197,12 +197,6 @@
 </ol>
 <p><strong>This process is described in the subchapter <a href="./libsodium.html">-&gt; Libsodium library for iOS</a>.</strong></p>
 <hr />
-<h2 id="additional-adjustments"><a class="header" href="#additional-adjustments">Additional adjustments</a></h2>
-<ol>
-<li>Update all iOS Deployment Targets to the current supported version of iOS: It must be a version greater than v11.0</li>
-<li>Adjust the Runner's Build Settings &quot;Other Linker Flags&quot;:
-To prevent a error during the build process that &quot;CoreAudioTypes&quot; cannot be linked (which is a misleading message!) you need to add the Linker Flags <code>-lc++</code> and <code>-framework Flutter</code> (if not present) in the build setting &quot;Other Linker Flags&quot;</li>
-</ol>
 <h2 id="give-it-a-try"><a class="header" href="#give-it-a-try">Give it a try</a></h2>
 <ol>
 <li>
@@ -217,6 +211,12 @@ To prevent a error during the build process that &quot;CoreAudioTypes&quot; cann
 </li>
 </ol>
 <p>*Possible failures</p>
+<h2 id="additional-adjustments"><a class="header" href="#additional-adjustments">Additional adjustments</a></h2>
+<ol>
+<li>Update all iOS Deployment Targets to the current supported version of iOS: It must be a version greater than v11.0</li>
+<li>Adjust the Runner's Build Settings &quot;Other Linker Flags&quot;:
+To prevent a error during the build process that &quot;CoreAudioTypes&quot; cannot be linked (which is a misleading message!) you need to add the Linker Flags <code>-lc++</code> and <code>-framework Flutter</code> (if not present) in the build setting &quot;Other Linker Flags&quot;</li>
+</ol>
 <hr />
 <h2 id="other-issues-you-might-encounter"><a class="header" href="#other-issues-you-might-encounter">Other Issues you might encounter</a></h2>
 <h3 id="error-cocoapods-installed-but-not-working"><a class="header" href="#error-cocoapods-installed-but-not-working">Error: CocoaPods installed but not working</a></h3>
