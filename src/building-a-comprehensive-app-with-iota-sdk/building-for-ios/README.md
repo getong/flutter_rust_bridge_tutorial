@@ -6,7 +6,7 @@ Building The Playground App for iOS using **IOTA SDK and identity.rs**.
 
 This will be a tough nut to crack once again.
 
-> Status January 2024: This chapter is still in progress, and the video is being prepared.
+> Status February 2024: This descriptions have been finalized - the video is being prepared.
 
 ---
 
