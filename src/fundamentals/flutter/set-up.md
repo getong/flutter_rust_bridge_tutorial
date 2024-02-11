@@ -49,7 +49,11 @@ So, I wholeheartedly encourage you to check out his tutorial about _Flutter & Da
 
 > As a general recommendation, I suggest deleting the `build` and `target` folders after upgrading the Flutter version.
 
-To upgrade the Flutter SDK use this command:
+To upgrade the Flutter SDK, navigate to the Flutter SDK directory - you'll find it using the command:
+
+`flutter doctor -v`
+
+Then use this command:
 
 `flutter upgrade`
 

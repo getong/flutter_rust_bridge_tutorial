@@ -755,7 +755,9 @@ Keep the <em>ABI</em> in mind, here &quot;arm64-v8a&quot;. The <em>ABI</em> info
 <blockquote>
 <p>As a general recommendation, I suggest deleting the <code>build</code> and <code>target</code> folders after upgrading the Flutter version.</p>
 </blockquote>
-<p>To upgrade the Flutter SDK use this command:</p>
+<p>To upgrade the Flutter SDK, navigate to the Flutter SDK directory - you'll find it using the command:</p>
+<p><code>flutter doctor -v</code></p>
+<p>Then use this command:</p>
 <p><code>flutter upgrade</code></p>
 <p>To upgrade to the latest compatible versions of all the dependencies listed in the pubspec.yaml file, use the <em>flutter pub</em> command:</p>
 <p><code>flutter pub upgrade</code></p>
@@ -5295,6 +5297,12 @@ class AppDelegate: FlutterAppDelegate {
   meta: ^1.9.1
   uuid: ^4.0.0
 </code></pre>
+<p>You might also encounter a message asking you to update the dependencies. You can execute updates by typing <code>flutter pub upgrade</code>. There is one exception regarding the dev_dependency ffi_gen: The version number should be</p>
+<pre><code>dev_dependencies:
+  ...
+  ffigen: ^9.0.1
+  ...
+</code></pre>
 <h3 id="fix-the-problem-with-missing-gradle-files"><a class="header" href="#fix-the-problem-with-missing-gradle-files">Fix the problem with missing gradle files</a></h3>
 <ul>
 <li>Start the Android Emulator</li>
@@ -5326,9 +5334,7 @@ class AppDelegate: FlutterAppDelegate {
 <li>rocksdb: 0.21.0</li>
 </ul>
 <h3 id="cargotoml-10"><a class="header" href="#cargotoml-10">Cargo.toml</a></h3>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>[package]
+<pre><code class="language-rust ignore">[package]
 name = &quot;rust&quot;
 version = &quot;0.1.0&quot;
 edition = &quot;2021&quot;
@@ -5356,8 +5362,7 @@ lazy_static = &quot;1.4.0&quot;
 once_cell = &quot;1.19.0&quot;
 
 [lib]
-crate-type = [&quot;staticlib&quot;, &quot;cdylib&quot;]
-<span class="boring">}</span></code></pre></pre>
+crate-type = [&quot;staticlib&quot;, &quot;cdylib&quot;]</code></pre>
 <blockquote>
 <p>Make sure to include the necessary features for utilizing Stronghold and RocksDB. Forgetting any feature might render certain code inaccessible. If you're interested, simply download the library code from GitHub and check it out.</p>
 </blockquote>
@@ -6187,8 +6192,13 @@ import '../ffi.dart';
 <blockquote>
 <p>I presume the functionality of the <a href="building-a-comprehensive-app-with-iota-sdk/building-for-ios/../building-for-android.html">-&gt; Android app</a> is operational. From the iOS standpoint, this implies that you've configured the Flutter Rust Bridge and incorporated both Rust and Dart code.</p>
 </blockquote>
-<p><strong>I am working on a MacBook Air (Apple M1) with macOS Sonoma 14.1.1 and Xcode 15.0.1.</strong> It's possible that the standard workflow works smoothly in other working environments.</p>
+<p><strong>I am working on a MacBook Air (Apple M1) with macOS Sonoma 14.2.1 and Xcode 15.2.</strong> It's possible that the standard workflow works smoothly in other working environments.</p>
 <p>Unfortunately, on my system, I faced challenges working with iOS. The libsodium-sys wrapper only built successfully when the libsodium library was pre-built as a static lib and manually added. The app only ran on my iPhone, not in the simulator (but refer to the little note at the bottom). It could only be launched from the Runner.xcworkspace project, not the Runner.xcodeproj. These were quite intricate issues that were very time-consuming to resolve.</p>
+<h2 id="verify-your-working-environment"><a class="header" href="#verify-your-working-environment">Verify your working environment</a></h2>
+<p>Before you start working on iOS, I suggest you check your environment by running <code>flutter doctor</code> or <code>flutter doctor -v</code> for detailed information.</p>
+<p>Based on my experience, updating your macOS, Xcode, and/or iOS versions can lead to unforeseen issues. Each update tends to bring about new problems, so it requires patience to set up your workspace properly. It's essential to make it a routine to verify that everything is configured correctly.</p>
+<p>See example &quot;CocoaPods installed but not working&quot; in the section &quot;Other Issues you might encounter&quot; at the bottom of this page.</p>
+<p>Resolve any issues before proceeding further.</p>
 <h2 id="ios-set-up"><a class="header" href="#ios-set-up">iOS Set-up</a></h2>
 <p>To install the <code>cargo-xcode</code> command use:</p>
 <pre><code>cargo install cargo-xcode@1.5.0
@@ -6223,6 +6233,12 @@ import '../ffi.dart';
 </ol>
 <p><strong>This process is described in the subchapter <a href="building-a-comprehensive-app-with-iota-sdk/building-for-ios/./libsodium.html">-&gt; Libsodium library for iOS</a>.</strong></p>
 <hr />
+<h2 id="additional-adjustments"><a class="header" href="#additional-adjustments">Additional adjustments</a></h2>
+<ol>
+<li>Update all iOS Deployment Targets to the current supported version of iOS: It must be a version greater than v11.0</li>
+<li>Adjust the Runner's Build Settings &quot;Other Linker Flags&quot;:
+To prevent a error during the build process that &quot;CoreAudioTypes&quot; cannot be linked (which is a misleading message!) you need to add the Linker Flags <code>-lc++</code> and <code>-framework Flutter</code> (if not present) in the build setting &quot;Other Linker Flags&quot;</li>
+</ol>
 <h2 id="give-it-a-try"><a class="header" href="#give-it-a-try">Give it a try</a></h2>
 <ol>
 <li>
@@ -6239,6 +6255,14 @@ import '../ffi.dart';
 <p>*Possible failures</p>
 <hr />
 <h2 id="other-issues-you-might-encounter"><a class="header" href="#other-issues-you-might-encounter">Other Issues you might encounter</a></h2>
+<h3 id="error-cocoapods-installed-but-not-working"><a class="header" href="#error-cocoapods-installed-but-not-working">Error: CocoaPods installed but not working</a></h3>
+<p>Verifying your environment by <code>flutter doctor -v</code> might log this error:</p>
+<figure style="margin:0;"><img src="building-a-comprehensive-app-with-iota-sdk/building-for-ios/../../assets/ios_iota-sdk/example-problem-cocoapods.png" alt="CocoaPods installed but not working"><figcaption style="font-size: 0.8em;text-align:center;"><p>CocoaPods installed but not working</p></figcaption></figure>
+<p>To resolve this issue, I searched online and followed the instructions outlined in the article titled <a href="https://myatminlu.medium.com/how-to-remove-and-re-install-cocoapods-d9f434dd8eca">How to Remove and Re-install cocoapods in Flutter</a>. You may find other sources.</p>
+<h3 id="error-ios-deployment-target"><a class="header" href="#error-ios-deployment-target">Error: iOS Deployment Target</a></h3>
+<p>Throughout the Xcode build process, you may receive an alert indicating that the current iOS Deployment target is incorrect. Example:</p>
+<figure style="margin:0;"><img src="building-a-comprehensive-app-with-iota-sdk/building-for-ios/../../assets/ios_iota-sdk/problem-ios-deployment-target.png" alt="iOS Deployment Target"><figcaption style="font-size: 0.8em;text-align:center;"><p>Message about "iOS Deployment Target"</p></figcaption></figure>
+<p>You should go through ALL targets (Runner, Rust, Pods -&gt; path_provider_foundation, Pods -&gt; shared_preferences_foundation) and adjust the default iOS Deployment Targets to the supported version. In my situation, I chose version 17.2 (after updating to Xcode 15.2 and installing iOS SDK 17.2).</p>
 <h3 id="error-missing-signing-certificate"><a class="header" href="#error-missing-signing-certificate">Error: Missing Signing Certificate</a></h3>
 <figure style="margin:0;"><img src="building-a-comprehensive-app-with-iota-sdk/building-for-ios/../../assets/ios_iota-sdk/missing-signing-certificate.png" alt="Missing Signing Certificate"><figcaption style="font-size: 0.8em;text-align:center;"><p>Missing Signing Certificate</p></figcaption></figure>
 <p>&quot;Error (Xcode): No signing certificate 'iOS Development' found&quot;</p>
@@ -6308,10 +6332,24 @@ import '../ffi.dart';
 <p>In the aforementioned test, we defined the variables SODIUM_LIB_DIR and SODIUM_SHARED within the command line. However, these definitions will not persist.</p>
 <p>To ensure proper setup, you need to</p>
 <ul>
-<li>Open the Runner.xcworkspace</li>
-<li>Add a new group &quot;sodium&quot; in the Runner</li>
-<li>Drag the libsodium.a library into the new group</li>
-<li>Adjust the <em>Build Rules</em> (line 25) of the target &quot;Rust&quot; in order to persist the environment variables SODIUM_LIB_DIR and SODIUM_SHARED.</li>
+<li>
+<p>Open the Runner.xcworkspace</p>
+</li>
+<li>
+<p>Add a new group &quot;sodium&quot; in the Runner</p>
+</li>
+<li>
+<p>Switch to Finder, copy the libsodium.a from <code>/Users/yourname/libsodium/libsodium-apple/tmp/ios64/lib</code> into the new folder <code>/Users/yourname/playground_app/ios/Runner/sodium</code></p>
+</li>
+<li>
+<p>Simultaneously open the Runner.xcworkspace and drag the libsodium.a library from the Finder into the newly created group &quot;sodium&quot;</p>
+</li>
+<li>
+<p>Adjust the <em>Build Rules</em> (line 25) of the target &quot;Rust&quot; in order to persist the environment variables SODIUM_LIB_DIR and SODIUM_SHARED:</p>
+<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/playground_app/ios/Runner/sodium&quot;
+SODIUM_SHARED=1
+</code></pre>
+</li>
 </ul>
 <h2 id="give-it-a-try-1"><a class="header" href="#give-it-a-try-1">Give it a try</a></h2>
 <p>Continue and go back to chapter <a href="building-a-comprehensive-app-with-iota-sdk/building-for-ios/../building-for-ios/">-&gt; Building for iOS</a>.</p>

@@ -116,8 +116,14 @@ To ensure proper setup, you need to
 
 - Open the Runner.xcworkspace
 - Add a new group "sodium" in the Runner
-- Drag the libsodium.a library into the new group
-- Adjust the _Build Rules_ (line 25) of the target "Rust" in order to persist the environment variables SODIUM_LIB_DIR and SODIUM_SHARED.
+- Switch to Finder, copy the libsodium.a from `/Users/yourname/libsodium/libsodium-apple/tmp/ios64/lib` into the new folder `/Users/yourname/playground_app/ios/Runner/sodium`
+- Simultaneously open the Runner.xcworkspace and drag the libsodium.a library from the Finder into the newly created group "sodium"
+- Adjust the _Build Rules_ (line 25) of the target "Rust" in order to persist the environment variables SODIUM_LIB_DIR and SODIUM_SHARED:
+
+  ```
+  SODIUM_LIB_DIR="/Users/yourname/playground_app/ios/Runner/sodium"
+  SODIUM_SHARED=1
+  ```
 
 ## Give it a try
 

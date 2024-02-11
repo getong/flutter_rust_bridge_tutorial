@@ -36,6 +36,15 @@ dependencies:
   uuid: ^4.0.0
 ```
 
+You might also encounter a message asking you to update the dependencies. You can execute updates by typing `flutter pub upgrade`. There is one exception regarding the dev_dependency ffi_gen: The version number should be
+
+```
+dev_dependencies:
+  ...
+  ffigen: ^9.0.1
+  ...
+```
+
 ### Fix the problem with missing gradle files
 
 - Start the Android Emulator
@@ -77,7 +86,7 @@ This is a brief list of the specific versions I utilized:
 
 ### Cargo.toml
 
-```rust
+```rust,ignore
 [package]
 name = "rust"
 version = "0.1.0"

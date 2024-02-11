@@ -169,6 +169,12 @@
   meta: ^1.9.1
   uuid: ^4.0.0
 </code></pre>
+<p>You might also encounter a message asking you to update the dependencies. You can execute updates by typing <code>flutter pub upgrade</code>. There is one exception regarding the dev_dependency ffi_gen: The version number should be</p>
+<pre><code>dev_dependencies:
+  ...
+  ffigen: ^9.0.1
+  ...
+</code></pre>
 <h3 id="fix-the-problem-with-missing-gradle-files"><a class="header" href="#fix-the-problem-with-missing-gradle-files">Fix the problem with missing gradle files</a></h3>
 <ul>
 <li>Start the Android Emulator</li>
@@ -200,9 +206,7 @@
 <li>rocksdb: 0.21.0</li>
 </ul>
 <h3 id="cargotoml"><a class="header" href="#cargotoml">Cargo.toml</a></h3>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>[package]
+<pre><code class="language-rust ignore">[package]
 name = &quot;rust&quot;
 version = &quot;0.1.0&quot;
 edition = &quot;2021&quot;
@@ -230,8 +234,7 @@ lazy_static = &quot;1.4.0&quot;
 once_cell = &quot;1.19.0&quot;
 
 [lib]
-crate-type = [&quot;staticlib&quot;, &quot;cdylib&quot;]
-<span class="boring">}</span></code></pre></pre>
+crate-type = [&quot;staticlib&quot;, &quot;cdylib&quot;]</code></pre>
 <blockquote>
 <p>Make sure to include the necessary features for utilizing Stronghold and RocksDB. Forgetting any feature might render certain code inaccessible. If you're interested, simply download the library code from GitHub and check it out.</p>
 </blockquote>

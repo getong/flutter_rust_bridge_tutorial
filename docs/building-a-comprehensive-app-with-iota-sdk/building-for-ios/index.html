@@ -156,8 +156,13 @@
 <blockquote>
 <p>I presume the functionality of the <a href="../building-for-android.html">-&gt; Android app</a> is operational. From the iOS standpoint, this implies that you've configured the Flutter Rust Bridge and incorporated both Rust and Dart code.</p>
 </blockquote>
-<p><strong>I am working on a MacBook Air (Apple M1) with macOS Sonoma 14.1.1 and Xcode 15.0.1.</strong> It's possible that the standard workflow works smoothly in other working environments.</p>
+<p><strong>I am working on a MacBook Air (Apple M1) with macOS Sonoma 14.2.1 and Xcode 15.2.</strong> It's possible that the standard workflow works smoothly in other working environments.</p>
 <p>Unfortunately, on my system, I faced challenges working with iOS. The libsodium-sys wrapper only built successfully when the libsodium library was pre-built as a static lib and manually added. The app only ran on my iPhone, not in the simulator (but refer to the little note at the bottom). It could only be launched from the Runner.xcworkspace project, not the Runner.xcodeproj. These were quite intricate issues that were very time-consuming to resolve.</p>
+<h2 id="verify-your-working-environment"><a class="header" href="#verify-your-working-environment">Verify your working environment</a></h2>
+<p>Before you start working on iOS, I suggest you check your environment by running <code>flutter doctor</code> or <code>flutter doctor -v</code> for detailed information.</p>
+<p>Based on my experience, updating your macOS, Xcode, and/or iOS versions can lead to unforeseen issues. Each update tends to bring about new problems, so it requires patience to set up your workspace properly. It's essential to make it a routine to verify that everything is configured correctly.</p>
+<p>See example &quot;CocoaPods installed but not working&quot; in the section &quot;Other Issues you might encounter&quot; at the bottom of this page.</p>
+<p>Resolve any issues before proceeding further.</p>
 <h2 id="ios-set-up"><a class="header" href="#ios-set-up">iOS Set-up</a></h2>
 <p>To install the <code>cargo-xcode</code> command use:</p>
 <pre><code>cargo install cargo-xcode@1.5.0
@@ -192,6 +197,12 @@
 </ol>
 <p><strong>This process is described in the subchapter <a href="./libsodium.html">-&gt; Libsodium library for iOS</a>.</strong></p>
 <hr />
+<h2 id="additional-adjustments"><a class="header" href="#additional-adjustments">Additional adjustments</a></h2>
+<ol>
+<li>Update all iOS Deployment Targets to the current supported version of iOS: It must be a version greater than v11.0</li>
+<li>Adjust the Runner's Build Settings &quot;Other Linker Flags&quot;:
+To prevent a error during the build process that &quot;CoreAudioTypes&quot; cannot be linked (which is a misleading message!) you need to add the Linker Flags <code>-lc++</code> and <code>-framework Flutter</code> (if not present) in the build setting &quot;Other Linker Flags&quot;</li>
+</ol>
 <h2 id="give-it-a-try"><a class="header" href="#give-it-a-try">Give it a try</a></h2>
 <ol>
 <li>
@@ -208,6 +219,14 @@
 <p>*Possible failures</p>
 <hr />
 <h2 id="other-issues-you-might-encounter"><a class="header" href="#other-issues-you-might-encounter">Other Issues you might encounter</a></h2>
+<h3 id="error-cocoapods-installed-but-not-working"><a class="header" href="#error-cocoapods-installed-but-not-working">Error: CocoaPods installed but not working</a></h3>
+<p>Verifying your environment by <code>flutter doctor -v</code> might log this error:</p>
+<figure style="margin:0;"><img src="../../assets/ios_iota-sdk/example-problem-cocoapods.png" alt="CocoaPods installed but not working"><figcaption style="font-size: 0.8em;text-align:center;"><p>CocoaPods installed but not working</p></figcaption></figure>
+<p>To resolve this issue, I searched online and followed the instructions outlined in the article titled <a href="https://myatminlu.medium.com/how-to-remove-and-re-install-cocoapods-d9f434dd8eca">How to Remove and Re-install cocoapods in Flutter</a>. You may find other sources.</p>
+<h3 id="error-ios-deployment-target"><a class="header" href="#error-ios-deployment-target">Error: iOS Deployment Target</a></h3>
+<p>Throughout the Xcode build process, you may receive an alert indicating that the current iOS Deployment target is incorrect. Example:</p>
+<figure style="margin:0;"><img src="../../assets/ios_iota-sdk/problem-ios-deployment-target.png" alt="iOS Deployment Target"><figcaption style="font-size: 0.8em;text-align:center;"><p>Message about "iOS Deployment Target"</p></figcaption></figure>
+<p>You should go through ALL targets (Runner, Rust, Pods -&gt; path_provider_foundation, Pods -&gt; shared_preferences_foundation) and adjust the default iOS Deployment Targets to the supported version. In my situation, I chose version 17.2 (after updating to Xcode 15.2 and installing iOS SDK 17.2).</p>
 <h3 id="error-missing-signing-certificate"><a class="header" href="#error-missing-signing-certificate">Error: Missing Signing Certificate</a></h3>
 <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/missing-signing-certificate.png" alt="Missing Signing Certificate"><figcaption style="font-size: 0.8em;text-align:center;"><p>Missing Signing Certificate</p></figcaption></figure>
 <p>&quot;Error (Xcode): No signing certificate 'iOS Development' found&quot;</p>

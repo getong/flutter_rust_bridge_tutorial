@@ -208,10 +208,24 @@
 <p>In the aforementioned test, we defined the variables SODIUM_LIB_DIR and SODIUM_SHARED within the command line. However, these definitions will not persist.</p>
 <p>To ensure proper setup, you need to</p>
 <ul>
-<li>Open the Runner.xcworkspace</li>
-<li>Add a new group &quot;sodium&quot; in the Runner</li>
-<li>Drag the libsodium.a library into the new group</li>
-<li>Adjust the <em>Build Rules</em> (line 25) of the target &quot;Rust&quot; in order to persist the environment variables SODIUM_LIB_DIR and SODIUM_SHARED.</li>
+<li>
+<p>Open the Runner.xcworkspace</p>
+</li>
+<li>
+<p>Add a new group &quot;sodium&quot; in the Runner</p>
+</li>
+<li>
+<p>Switch to Finder, copy the libsodium.a from <code>/Users/yourname/libsodium/libsodium-apple/tmp/ios64/lib</code> into the new folder <code>/Users/yourname/playground_app/ios/Runner/sodium</code></p>
+</li>
+<li>
+<p>Simultaneously open the Runner.xcworkspace and drag the libsodium.a library from the Finder into the newly created group &quot;sodium&quot;</p>
+</li>
+<li>
+<p>Adjust the <em>Build Rules</em> (line 25) of the target &quot;Rust&quot; in order to persist the environment variables SODIUM_LIB_DIR and SODIUM_SHARED:</p>
+<pre><code>SODIUM_LIB_DIR=&quot;/Users/yourname/playground_app/ios/Runner/sodium&quot;
+SODIUM_SHARED=1
+</code></pre>
+</li>
 </ul>
 <h2 id="give-it-a-try"><a class="header" href="#give-it-a-try">Give it a try</a></h2>
 <p>Continue and go back to chapter <a href="../building-for-ios/">-&gt; Building for iOS</a>.</p>
