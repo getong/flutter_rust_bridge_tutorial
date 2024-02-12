@@ -6,8 +6,6 @@ Building The Playground App for iOS using **IOTA SDK and identity.rs**.
 
 This will be a tough nut to crack once again.
 
-> Status February 2024: This descriptions have been finalized - the video is being prepared.
-
 ---
 
 > I presume the functionality of the [-> Android app](../building-for-android.md) is operational. From the iOS standpoint, this implies that you've configured the Flutter Rust Bridge and incorporated both Rust and Dart code.
@@ -154,3 +152,14 @@ To proceed, a Development Account is required, and you must be logged in to it w
 
 <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/step2.png" alt="Solved!"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solved!</p></figcaption></figure>
 ````
+
+## Video
+
+<iframe 
+    class="video"  
+    src="https://www.youtube.com/embed/csHidpoj7Xo" 
+    title="Building the Playground App for iOS using IOTA SDK and identity.rs" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
