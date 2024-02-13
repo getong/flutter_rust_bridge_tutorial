@@ -163,3 +163,9 @@ To proceed, a Development Account is required, and you must be logged in to it w
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
     allowfullscreen>
 </iframe>
+
+## Github Repository
+
+You will find the complete source code from the video in this repository:
+
+<a href="https://github.com/iota-for-flutter/playground_app_complete" target="_blank">👉 &nbsp; Repository - Playground App complete</a>
