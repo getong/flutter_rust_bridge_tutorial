@@ -61,7 +61,7 @@ An common step for macOS / iOS is needed: creating an Xcode project **inside of 
 
 3. The error message **no healthy node available**, or **SocketException: Connection failed** is encountered when making API calls:
 
-   <figure style="margin:0;"><img src="../assets/macos_instructions/macos-pitfall-2.png" alt="no healthy node available"><figcaption style="font-size: 0.8em;text-align:center;"><p>No healthy node available</p></figcaption></figure>
+   <figure style="margin:0;border: 1px solid green;"><img src="../assets/macos_instructions/macos-pitfall-2.png" alt="no healthy node available"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">No healthy node available</p></figcaption></figure>
 
    macOS applications are sandboxed by default. To avoid a SocketException, you need to add the network.client [entitlement](https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox) to `macOS/Runner/DebugProfile.entitlements`:
 
@@ -70,7 +70,7 @@ An common step for macOS / iOS is needed: creating an Xcode project **inside of 
    <true/>
    ```
 
-   <figure style="margin:0;"><img src="../assets/macos_instructions/macos-pitfall-1.png" alt="network.client entitlement"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solution for Sandbox Problem</p></figcaption></figure>
+   <figure style="margin:0;border: 1px solid green;"><img src="../assets/macos_instructions/macos-pitfall-1.png" alt="network.client entitlement"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Solution for Sandbox Problem</p></figcaption></figure>
 
 ---
 

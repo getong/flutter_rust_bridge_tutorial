@@ -26,16 +26,16 @@ How is a subproject created in Xcode?
 
 Simply open the _ios/Runner.xcodeproj_ in Xcode, open the _rust/_ directory in Finder and drag the _rust.xcodeproj_ into the Runner folder. The next images will illustrate the steps.
 
-<figure style="margin:0;">
-<img src="../../../assets/ios_instructions/ios_xcodeproj.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Open <i>Runner.xcodeproj</i></p></figcaption>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../../assets/ios_instructions/ios_xcodeproj.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Open <i>Runner.xcodeproj</i></p></figcaption>
 </figure>
 
-<figure style="margin:0;">
-<img src="../../../assets/ios_instructions/ios_drag_rust.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../../assets/ios_instructions/ios_drag_rust.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
 </figure>
 
-<figure style="margin:0;">
-<img src="../../../assets/ios_instructions/ios_subproject.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>The new subproject</p></figcaption>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../../assets/ios_instructions/ios_subproject.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">The new subproject</p></figcaption>
 </figure>
 
 ### Adjust the Runner Target's _Build Phases_
@@ -50,8 +50,8 @@ b) In Runner Target's _Build Phase_ -> _Link Binary with Libraries_:
 
 Click on "+" and select `librust_static.a`.
 
-<figure style="margin:0;">
-<img src="../../../assets/ios_instructions/ios_build_phase.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjusted Build Phase</p></figcaption>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../../assets/ios_instructions/ios_build_phase.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Adjusted Build Phase</p></figcaption>
 </figure>
 
 ### Adjust the _Runner-Bridging-Header.h_ file

@@ -33,9 +33,9 @@ A Xcode project follows a specific structure that organizes the various files an
 
 **Build Settings**: Xcode provides an interface to configure build settings for the project and individual targets. These settings control compiler flags, optimization settings, code signing, deployment targets, and various other project-specific configurations.
 
-<figure style="margin:0;">
+<figure style="margin:0;border: 1px solid green;">
 <a href="../../assets/xcode/xcode_project.jpg" target="_blank">
-<img src="../../assets/xcode/xcode_project.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Xcode Project (click to enlarge)</p></figcaption>
+<img src="../../assets/xcode/xcode_project.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Xcode Project (click to enlarge)</p></figcaption>
 </a>
 </figure>
 
@@ -70,9 +70,9 @@ Static and dynamic libraries are both forms of code libraries, but they differ i
 
 Click on the leftmost symbol in the left pane. This will activate the _Project Navigator_. It can be used to configure project settings or adjust the project structure, such as adding libraries or other Xcode projects (by dragging them into the workspace).
 
-<figure style="margin:0;">
+<figure style="margin:0;border: 1px solid green;">
 <a href="../../assets/xcode/xcode_ide.001.jpg" target="_blank">
-<img src="../../assets/xcode/xcode_ide.001.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Project Navigator (click to enlarge)</p></figcaption>
+<img src="../../assets/xcode/xcode_ide.001.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Project Navigator (click to enlarge)</p></figcaption>
 </a>
 </figure>
 
@@ -84,16 +84,16 @@ You can switch the device by selecting a different one from the drop-down menu.
 
 In some cases, you may need to manually start your app instead of using Flutter. In such cases, use the Play button.
 
-<figure style="margin:0;">
+<figure style="margin:0;border: 1px solid green;">
 <a href="../../assets/xcode/xcode_ide.002.jpg" target="_blank">
-<img src="../../assets/xcode/xcode_ide.002.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Device Selection and Start App (click to enlarge)</p></figcaption>
+<img src="../../assets/xcode/xcode_ide.002.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Device Selection and Start App (click to enlarge)</p></figcaption>
 </a>
 </figure>
 
 ### Report Navigator
 
-<figure style="margin:0;">
+<figure style="margin:0;border: 1px solid green;">
 <a href="../../assets/xcode/xcode_ide.003.jpg" target="_blank">
-<img src="../../assets/xcode/xcode_ide.003.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Report Navigator (click to enlarge)</p></figcaption>
+<img src="../../assets/xcode/xcode_ide.003.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Report Navigator (click to enlarge)</p></figcaption>
 </a>
 </figure>

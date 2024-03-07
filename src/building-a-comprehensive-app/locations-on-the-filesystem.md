@@ -47,15 +47,15 @@ Click on a button and observe the result. Then, try to locate the displayed file
 
 **Android**
 
-<figure style="margin:0;"><img src="../assets/filesystem/filesystem-android.png" alt="Result example on Android"><figcaption style="font-size: 0.8em;text-align:center;"><p>Result example on Android: Application <i>Support</i> Directory</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/filesystem/filesystem-android.png" alt="Result example on Android"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Result example on Android: Application <i>Support</i> Directory</p></figcaption></figure>
 
 **macOS**
 
-<figure style="margin:0;"><img src="../assets/filesystem/filesystem-macos.png" alt="Result example on macOS"><figcaption style="font-size: 0.8em;text-align:center;"><p>Result example on macOS: Application <i>Documents</i>  Directory</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/filesystem/filesystem-macos.png" alt="Result example on macOS"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Result example on macOS: Application <i>Documents</i>  Directory</p></figcaption></figure>
 
 **iOS**
 
-<figure style="margin:0;"><img src="../assets/filesystem/filesystem-ios.png" alt="Result example on iOS"><figcaption style="font-size: 0.8em;text-align:center;"><p>Result example on iOS: Application <i>Support</i>  Directory</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/filesystem/filesystem-ios.png" alt="Result example on iOS"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Result example on iOS: Application <i>Support</i>  Directory</p></figcaption></figure>
 
 ## What is the appropriate directory?
 

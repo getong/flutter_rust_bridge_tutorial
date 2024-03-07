@@ -24,7 +24,7 @@ rustup show
 
 ## 2. Initialization Steps
 
-<figure style="margin:0;"><img src="../../assets/overview/Overview.003.png" alt="Create Flutter Project"><figcaption style="font-size: 0.8em;text-align:center;"><p>Create Flutter Project</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.003.png" alt="Create Flutter Project"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Create Flutter Project</p></figcaption></figure>
 
 In the first step, the following command sets up a new Flutter project with the necessary file structure and dependencies, ready for you to start developing your app. It creates a directory with the specified project name and populates it with the required Flutter files and folders. Now you're all set to unleash your creativity and build amazing Flutter applications!
 
@@ -36,7 +36,7 @@ flutter create --empty example1
 
 #### &nbsp;
 
-<figure style="margin:0;"><img src="../../assets/overview/Overview.004.png" alt="Create Rust Library Project Project"><figcaption style="font-size: 0.8em;text-align:center;"><p>Create Rust Library Project Project</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.004.png" alt="Create Rust Library Project Project"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Create Rust Library Project Project</p></figcaption></figure>
 
 This includes the required structure for the Rust code and any additional resources or dependencies needed for the backend implementation:
 
@@ -48,7 +48,7 @@ cargo new --lib rust
 
 #### &nbsp;
 
-<figure style="margin:0;"><img src="../../assets/overview/Overview.005.png" alt="Setup the Flutter Rust Bridge"><figcaption style="font-size: 0.8em;text-align:center;"><p>Setup the Flutter Rust Bridge</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.005.png" alt="Setup the Flutter Rust Bridge"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Setup the Flutter Rust Bridge</p></figcaption></figure>
 
 ```
 cargo install flutter_rust_bridge_codegen
@@ -118,7 +118,7 @@ The term "arm64" represents the 64-bit version of the ARM architecture, while "v
 
 ## 3. Development Steps
 
-<figure style="margin:0;"><img src="../../assets/overview/Overview.006.png" alt="Start coding the frontend"><figcaption style="font-size: 0.8em;text-align:center;"><p>Start coding the fronend</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.006.png" alt="Start coding the frontend"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Start coding the fronend</p></figcaption></figure>
 
 Add a Flutter package that beautifies JSON outputs:
 
@@ -236,7 +236,7 @@ flutter run
 
 #### &nbsp;
 
-<figure style="margin:0;"><img src="../../assets/overview/Overview.007.png" alt="Generate the Dart Interface Code (FFI)"><figcaption style="font-size: 0.8em;text-align:center;"><p>Generate the Dart Interface Code (FFI)</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.007.png" alt="Generate the Dart Interface Code (FFI)"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Generate the Dart Interface Code (FFI)</p><p style="background-color:#f6ff76;margin:0;padding:5px;text-align:left;">📚 <a href="https://github.com/iotaledger/iota-sdk"><strong>IOTA SDK Library</a> Update</strong> 📚 The Dependency on <strong>iota.rs</strong> must be replaced by <strong>iota-sdk.rs</strong></p></figcaption></figure>
 
 The first step on the Rust side is to include the iota-client library and other necessary resources.
 
@@ -291,7 +291,7 @@ mod api;
 
 #### &nbsp;
 
-<figure style="margin:0;"><img src="../../assets/overview/Overview.008.png" alt="Integrate the backend"><figcaption style="font-size: 0.8em;text-align:center;"><p>Integrate the backend</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.008.png" alt="Integrate the backend"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Integrate the backend</p></figcaption></figure>
 
 This one is easy! It's one of the tasks you need to do whenever the Rust API has changed (e.g. after changing method signatures or add/removing methods). In our example, generate the Dart Interface by executing this command:
 
@@ -303,7 +303,7 @@ flutter_rust_bridge_codegen --rust-input rust/src/api.rs --dart-output ./lib/bri
 
 #### &nbsp;
 
-<figure style="margin:0;"><img src="../../assets/overview/Overview.009.png" alt="Integrate the Dart Interface into your frontend code"><figcaption style="font-size: 0.8em;text-align:center;"><p>Integrate the Dart Interface into your frontend code</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.009.png" alt="Integrate the Dart Interface into your frontend code"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Integrate the Dart Interface into your frontend code</p></figcaption></figure>
 
 Next to _main.dart_, add a new file called _ffi.dart_ and add this content:
 
@@ -359,7 +359,7 @@ by:
 
 ## 4. Build and Run Step
 
-<figure style="margin:0;"><img src="../../assets/overview/Overview.010.png" alt="Build and Run a target"><figcaption style="font-size: 0.8em;text-align:center;"><p>Build and Run a target</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.010.png" alt="Build and Run a target"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Build and Run a target</p></figcaption></figure>
 
 > **Important**: Before starting the application, make sure that your Virtual Android Device is running.
 
@@ -379,4 +379,4 @@ Then the app is launched.
 
 Here is a brief summary about all steps, in one picture:
 
-<figure style="margin:0;"><img src="../../assets/overview/Overview.011.png" alt="Summary of Workflow"><figcaption style="font-size: 0.8em;text-align:center;"><p>All steps of the workflow</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.011.png" alt="Summary of Workflow"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">All steps of the workflow</p></figcaption></figure>

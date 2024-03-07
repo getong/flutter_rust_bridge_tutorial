@@ -18,7 +18,7 @@ flutter create <flutter_project_name>
 
 Executing this command will generate a new folder in the current directory that includes all necessary files and subfolders for a Flutter project. The default application is a Counter App, featuring a screen with a number that can be incremented by tapping on a Floating Action Button.
 
-<figure style="margin:0;"><img src="../assets/launchapp/flutter_default_app.jpg" alt="Flutter Default App"><figcaption style="font-size: 0.8em;text-align:center;"><p>Flutter Default App</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/launchapp/flutter_default_app.jpg" alt="Flutter Default App"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Flutter Default App</p></figcaption></figure>
 
 ### Open the app in Visual Studio code
 
@@ -48,17 +48,17 @@ a) By using `flutter run` command:
 
 Open the Terminal in VS Code (see Shortcut below) and type in `flutter run`. If there are several targets, the execution is paused and you need to select the target:
 
-<figure style="margin:0;"><img src="../assets/flutter_run.jpg" alt="Launch app"><figcaption style="font-size: 0.8em;text-align:center;"><p>Launching app by <i>flutter run</i></p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/flutter_run.jpg" alt="Launch app"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Launching app by <i>flutter run</i></p></figcaption></figure>
 
 b) By selecting the Target Platform first, and then by using one of several starting options **(ensure that the _main.dart_ file is open)**:
 
-<figure style="margin:0;"><img src="../assets/launchapp/launch1.jpg" alt="Current Target platform"><figcaption style="font-size: 0.8em;text-align:center;"><p>Current Target Platform - click to select another one</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/launchapp/launch1.jpg" alt="Current Target platform"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Current Target Platform - click to select another one</p></figcaption></figure>
 
-<figure style="margin:0;"><img src="../assets/launchapp/launch2.jpg" alt="Select Target platform"><figcaption style="font-size: 0.8em;text-align:center;"><p>Start and/or select a Target Platform</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/launchapp/launch2.jpg" alt="Select Target platform"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Start and/or select a Target Platform</p></figcaption></figure>
 
-<figure style="margin:0;"><img src="../assets/launchapp/launch3.jpg" alt="Launch options"><figcaption style="font-size: 0.8em;text-align:center;"><p>Launch Options</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/launchapp/launch3.jpg" alt="Launch options"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Launch Options</p></figcaption></figure>
 
-<figure style="margin:0;"><img src="../assets/launchapp/launch4.jpg" alt="Control Panel"><figcaption style="font-size: 0.8em;text-align:center;"><p>Control Panel</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/launchapp/launch4.jpg" alt="Control Panel"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Control Panel</p></figcaption></figure>
 
 When you launch the app using this method, any code changes you make will trigger a hot reload automatically. If you were to use "flutter run", you would need to manually press the "r" key to initiate a hot reload of the app.
 

@@ -8,7 +8,7 @@ Installing and upgrading Flutter on your system.
 
 ## Installing Flutter
 
-<figure style="margin:0;"><img src="../../assets/setup/setup.003.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Setting up Flutter</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/setup/setup.003.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Setting up Flutter</p></figcaption></figure>
 
 > For the most accurate and up-to-date installation instructions, please refer to the official guide:
 >
@@ -37,9 +37,9 @@ If you're more inclined to watch an installation video, I've got a fantastic rec
 
 So, I wholeheartedly encourage you to check out his tutorial about _Flutter & Dart ("The complete guide [2023 Edition]")_ and see for yourself. Don't just take my word for it, folks! Discover the wonders of Flutter installation with Max's delightful guidance. There are **several free videos**: amongst others you'll find a guide about the _**macOS Setup**_ and one about the _**Windows Setup**_!
 
-<figure style="margin:0;">
+<figure style="margin:0;border: 1px solid green;">
 <a href="https://acad.link/flutter" target="_blank">
-<img src="../../assets/setup/macOS_setup.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Courtesy of Academind / Maximilian Schwarzmüller</p></figcaption>
+<img src="../../assets/setup/macOS_setup.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Courtesy of Academind / Maximilian Schwarzmüller</p></figcaption>
 </a>
 </figure>
 

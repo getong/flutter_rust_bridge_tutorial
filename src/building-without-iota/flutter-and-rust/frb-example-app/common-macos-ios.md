@@ -32,17 +32,17 @@ cargo xcode
 cd ..
 ```
 
-<figure style="margin:0;">
+<figure style="margin:0;border: 1px solid green;">
 <a href="../../../assets/create_rust_xcodeproj_before.jpg" target="_blank">
-<img src="../../../assets/create_rust_xcodeproj_before.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Before building the Rust Xcode Project (click to enlarge)</p></figcaption>
+<img src="../../../assets/create_rust_xcodeproj_before.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Before building the Rust Xcode Project (click to enlarge)</p></figcaption>
 </a>
 </figure>
 
 > In this picture puzzle, you need to find the differences between two images. First, carefully examine the "before" image above ⬆️ - take note of all the details - and then look at the "after" image below ⬇️ and try to identify the differences.
 
-<figure style="margin:0;">
+<figure style="margin:0;border: 1px solid green;">
 <a style="width:50%" href="../../../assets/create_rust_xcodeproj_after.jpg" target="_blank">
-<img src="../../../assets/create_rust_xcodeproj_after.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>After building the Rust Xcode Project (click to enlarge)</p></figcaption>
+<img src="../../../assets/create_rust_xcodeproj_after.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">After building the Rust Xcode Project (click to enlarge)</p></figcaption>
 </a>
 </figure>
 

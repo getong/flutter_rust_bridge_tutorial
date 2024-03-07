@@ -8,7 +8,7 @@ Installing Rust on your system.
 
 ## Installing Rust
 
-<figure style="margin:0;"><img src="../../assets/setup/setup.004.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Setting up Rust</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/setup/setup.004.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Setting up Rust</p></figcaption></figure>
 
 > Quickly set up your Rust development environment:
 >

@@ -12,4 +12,4 @@ Good news: it's getting easier
 
 The IOTA SDK consolidates the two deprecated libraries iota.rs and wallet.rs. It also addresses the issue with rocksdb, making it easier for us to use on Android and iOS. I will provide more information once I have completed the tutorial.
 
-<figure style="margin:0;"><img src="../../assets/iota-sdk.jpg" alt="IOTA SDK"><figcaption style="font-size: 0.8em;text-align:center;"><p>Wikipage</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/iota-sdk.jpg" alt="IOTA SDK"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Wikipage</p></figcaption></figure>

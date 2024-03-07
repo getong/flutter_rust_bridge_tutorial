@@ -122,7 +122,7 @@ e.g.
 SODIUM_LIB_DIR="/Users/yourname/playground_app/android/app/src/main/jniLibs/arm64-v8a" SODIUM_SHARED=1 cargo ndk -t arm64-v8a build
 ```
 
-<figure style="margin:0;"><img src="../../../assets/playground/libsodium_paste.png" alt="Successful test of cross-compilation for Android arm64-v8a"><figcaption style="font-size: 0.8em;text-align:center;"><p>Successful test of cross-compilation for Android arm64-v8a</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../../assets/playground/libsodium_paste.png" alt="Successful test of cross-compilation for Android arm64-v8a"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Successful test of cross-compilation for Android arm64-v8a</p></figcaption></figure>
 
 ### Step 3: Update build.gradle
 

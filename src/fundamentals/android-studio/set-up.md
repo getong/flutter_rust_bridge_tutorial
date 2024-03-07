@@ -8,7 +8,7 @@ Installing Android Studio on your system.
 
 ## Installing Android Studio
 
-<figure style="margin:0;"><img src="../../assets/setup/setup.001.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Setting up Android Studio</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/setup/setup.001.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Setting up Android Studio</p></figcaption></figure>
 
 > Install the latest stable version of Android Studio:
 >

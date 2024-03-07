@@ -41,7 +41,7 @@ crate-type = ["staticlib", "cdylib"]
 
 ### Facing a problem with missing gradle files?
 
-<figure style="margin:0;"><img src="../assets/android-could-not-generateLockfiles.png" alt="Could not generate lockfiles"><figcaption style="font-size: 0.8em;text-align:center;"><p>After cloning: there are missing Gradle files</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/android-could-not-generateLockfiles.png" alt="Could not generate lockfiles"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">After cloning: there are missing Gradle files</p></figcaption></figure>
 
 > Are you encountering the "Could not create task ':generateLockfiles" issue after cloning the project and launching VSCode? Here's the cause: Gradle files are absent in the Android subfolder at this stage. These files are fetched when you initially run the project on your Virtual Android device. To resolve it, follow these steps: Run the Flutter app on your Android device, stop it, and then restart VSCode. The error should disappear.
 
@@ -49,7 +49,7 @@ crate-type = ["staticlib", "cdylib"]
 
 ## App Characteristics and used Packages
 
-<figure style="margin:0;"><img src="../assets/playground/playground-app.png" alt="Playground App - Flutter Part"><figcaption style="font-size: 0.8em;text-align:center;"><p>Playground App - Flutter Part</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/playground/playground-app.png" alt="Playground App - Flutter Part"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Playground App - Flutter Part</p></figcaption></figure>
 
 ## Example Structure
 
@@ -59,7 +59,7 @@ Each _Example_ consists of a sequence of _ExampleSteps_, which have a similar st
 
 > It's a minor detail: The numbering of Examples and ExampleSteps begin with 1 in the User Interface, but in the code, the index starts with 0. Therefore, `example_0.dart` corresponds to _Example 1_, and so on.
 
-<figure style="margin:0;"><img src="../assets/playground/example-structure.jpg" alt="Example Structure"><figcaption style="font-size: 0.8em;text-align:center;"><p>Example Structure</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/playground/example-structure.jpg" alt="Example Structure"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Example Structure</p></figcaption></figure>
 
 Along with a title and an information text, an _ExampleStep_ can display an input value as text and/or as an input field.
 

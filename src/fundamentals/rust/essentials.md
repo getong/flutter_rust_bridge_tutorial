@@ -25,7 +25,7 @@ A Rust Library Project includes the following elements:
 
 **Cargo.lock**: This file is an automatically generated file. When you build a Rust project using Cargo, it resolves the dependencies specified in the _Cargo.toml_ manifest file and generates the _Cargo.lock_ file. This file includes the specific versions of each dependency and their transitive dependencies that were resolved during the build process.
 
-<figure style="margin:0;"><img src="../../assets/rust_structure.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Project Structure</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/rust_structure.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Project Structure</p></figcaption></figure>
 
 ## What are Crates?
 
@@ -43,7 +43,7 @@ Crates can also have dependencies on other crates, allowing them to utilize exte
 
 ### Example: Search for "IOTA" crates
 
-<figure style="margin:0;"><img src="../../assets/crates_iota.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Search Result for "IOTA" crates</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/crates_iota.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Search Result for "IOTA" crates</p></figcaption></figure>
 
 ## Package Manager & Configuration file
 

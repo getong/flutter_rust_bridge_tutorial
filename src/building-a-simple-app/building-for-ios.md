@@ -38,7 +38,7 @@ An common step for macOS / iOS is needed: creating an Xcode project **inside of 
 
 **Option 1**
 
-<figure style="margin:0;"><img src="../assets/start-ios-simulator.png" alt="Start iOS Simulator"><figcaption style="font-size: 0.8em;text-align:center;"><p>Start iOS Simulator</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/start-ios-simulator.png" alt="Start iOS Simulator"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Start iOS Simulator</p></figcaption></figure>
 
 **Option 2**
 

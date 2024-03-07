@@ -6,9 +6,9 @@ For macOS only: Apple's Integrated Development Environment (IDE) for iOS, macOS,
 
 ---
 
-<figure style="margin:0;">
+<figure style="margin:0;border: 1px solid green;">
 <a href="https://developer.apple.com/xcode/" target="_blank">
-<img src="../../assets/xcode_website.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Xcode Website</p></figcaption>
+<img src="../../assets/xcode_website.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Xcode Website</p></figcaption>
 </a>
 </figure>
 

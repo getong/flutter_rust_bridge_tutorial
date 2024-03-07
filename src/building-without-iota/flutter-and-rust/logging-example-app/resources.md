@@ -16,7 +16,7 @@ Watch the video, check the source code and explore the Github Repository.
 >
 > If your project name was "logging" you would run into serious troubles at some point:
 >
-> <figure style="margin:0;"><img src="../../../assets/logging_troubles.jpg" alt=""></figure>
+> <figure style="margin:0;border: 1px solid green;"><img src="../../../assets/logging_troubles.jpg" alt=""></figure>
 
 ## Rust Code Snippets
 

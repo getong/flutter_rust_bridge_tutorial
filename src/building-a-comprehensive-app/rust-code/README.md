@@ -19,7 +19,7 @@ In the following subchapters we'll prepare the Rust Code for each example. We wi
 
 This is the situation upon which we are basing our starting point.
 
-<figure style="margin:0;"><img src="../../assets/playground/playground-rust-start.png" alt="Rust - Initial Situation"><figcaption style="font-size: 0.8em;text-align:center;"><p>Rust - Initial Situation</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/playground/playground-rust-start.png" alt="Rust - Initial Situation"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Rust - Initial Situation</p></figcaption></figure>
 
 ## Preparation
 

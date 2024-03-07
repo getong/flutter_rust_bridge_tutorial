@@ -38,7 +38,7 @@ Note: It is assumed that the user is using the Shimmer Network.
 
 An image speaks louder than a thousand words...
 
-<figure style="margin:0;"><img src="../assets/simple-app.jpg" alt="Screen Flow"><figcaption style="font-size: 0.8em;text-align:center;"><p>Screen flow of simple app</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/simple-app.jpg" alt="Screen Flow"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Screen flow of simple app</p></figcaption></figure>
 
 ## Github Repository
 

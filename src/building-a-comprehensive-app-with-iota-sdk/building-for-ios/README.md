@@ -101,7 +101,7 @@ I'm unveiling a sneaky maneuver to get the app up and running on iOS:
 
 Verifying your environment by `flutter doctor -v` might log this error:
 
-<figure style="margin:0;"><img src="../../assets/ios_iota-sdk/example-problem-cocoapods.png" alt="CocoaPods installed but not working"><figcaption style="font-size: 0.8em;text-align:center;"><p>CocoaPods installed but not working</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/ios_iota-sdk/example-problem-cocoapods.png" alt="CocoaPods installed but not working"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">CocoaPods installed but not working</p></figcaption></figure>
 
 To resolve this issue, I searched online and followed the instructions outlined in the article titled [How to Remove and Re-install cocoapods in Flutter](https://myatminlu.medium.com/how-to-remove-and-re-install-cocoapods-d9f434dd8eca). You may find other sources.
 
@@ -109,7 +109,7 @@ To resolve this issue, I searched online and followed the instructions outlined 
 
 The first time around, the dependencies "path_provider_foundation" and "shared_preferences_foundation" are not yet installed. You will notice it in Xcode.
 
-<figure style="margin:0;"><img src="../../assets/ios_iota-sdk/pod-install.png" alt="What pod install does"><figcaption style="font-size: 0.8em;text-align:center;"><p>What "pod install" does</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/ios_iota-sdk/pod-install.png" alt="What pod install does"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">What "pod install" does</p></figcaption></figure>
 
 The straightforward method is to let Flutter handle the install. Switch to VS Code and launch the app using `flutter run`. You'll notice that before the Xcode build, the command `pod install` will be executed.
 
@@ -117,7 +117,7 @@ The straightforward method is to let Flutter handle the install. Switch to VS Co
 
 Throughout the Xcode build process, you may receive an alert indicating that the current iOS Deployment target is incorrect. Example:
 
-<figure style="margin:0;"><img src="../../assets/ios_iota-sdk/problem-ios-deployment-target.png" alt="iOS Deployment Target"><figcaption style="font-size: 0.8em;text-align:center;"><p>Message about "iOS Deployment Target"</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/ios_iota-sdk/problem-ios-deployment-target.png" alt="iOS Deployment Target"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Message about "iOS Deployment Target"</p></figcaption></figure>
 
 You should go through ALL targets (Runner, Rust, Pods -> path_provider_foundation, Pods -> shared_preferences_foundation) and adjust the default iOS Deployment Targets to your version of choice. In my situation, I often chose the latest available version 17.2 (after updating to Xcode 15.2 and installing iOS SDK 17.2), but it's up to you. It MUST be a version greater than v11.0.
 
@@ -136,21 +136,21 @@ Potential solutions:
 
 1. Option 1: Attempt to include the Linker Flags `-lc++` and/or `-framework Flutter` (if they are not already present) in the build settings "Other Linker Flags" of the Runner target.
 
-   <figure style="margin:0;"><img src="../../assets/ios_iota-sdk/solution-core-audio-types.png" alt="Solution for linking failure"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solution for linking failure</p></figcaption></figure>
+   <figure style="margin:0;border: 1px solid green;"><img src="../../assets/ios_iota-sdk/solution-core-audio-types.png" alt="Solution for linking failure"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Solution for linking failure</p></figcaption></figure>
 
 2. Option 2: Rebuild the app from scratch. Surprisingly, this seemingly drastic step resolved the issue for me.
 
 ### Error: Missing Signing Certificate
 
-<figure style="margin:0;"><img src="../../assets/ios_iota-sdk/missing-signing-certificate.png" alt="Missing Signing Certificate"><figcaption style="font-size: 0.8em;text-align:center;"><p>Missing Signing Certificate</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/ios_iota-sdk/missing-signing-certificate.png" alt="Missing Signing Certificate"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Missing Signing Certificate</p></figcaption></figure>
 
 "Error (Xcode): No signing certificate 'iOS Development' found"
 
 To proceed, a Development Account is required, and you must be logged in to it within Xcode.
 
-<figure style="margin:0;"><img src="../../assets/ios_iota-sdk/step1.png" alt="You're not logged in -> please log in!"><figcaption style="font-size: 0.8em;text-align:center;"><p>You're not logged in -> please log in!</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/ios_iota-sdk/step1.png" alt="You're not logged in -> please log in!"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">You're not logged in -> please log in!</p></figcaption></figure>
 
-<figure style="margin:0;"><img src="../../assets/ios_iota-sdk/step2.png" alt="Solved!"><figcaption style="font-size: 0.8em;text-align:center;"><p>Solved!</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/ios_iota-sdk/step2.png" alt="Solved!"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Solved!</p></figcaption></figure>
 
 ## Video
 

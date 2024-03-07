@@ -8,7 +8,7 @@ Installing Visual Studio Code on your system.
 
 ## Installing VS Code
 
-<figure style="margin:0;"><img src="../../assets/setup/setup.005.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Setting up Visual Studio Code</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/setup/setup.005.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Setting up Visual Studio Code</p></figcaption></figure>
 
 > Install the latest stable version of VS Code:
 >
@@ -26,7 +26,7 @@ I recommend to install the _Flutter_ Extension for VS Code. Read the section "In
 
 Additionally I have installed the _Awesome Flutter Snippets_ extension:
 
-<figure style="margin:0;"><img src="../../assets/awesome_flutter_snippets.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Extension <i>Awesome Flutter Snippets</i></p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/awesome_flutter_snippets.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Extension <i>Awesome Flutter Snippets</i></p></figcaption></figure>
 
 ###
 
@@ -40,4 +40,4 @@ I am also using the _rust-analyzer_ Extension for VS Code. Read the section "Ins
 
 The _Material Icon Theme_ extension provides pretty icons. It's up to you...
 
-<figure style="margin:0;"><img src="../../assets/material_icon_extension.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Extension <i>Material Icon Theme</i></p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/material_icon_extension.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Extension <i>Material Icon Theme</i></p></figcaption></figure>

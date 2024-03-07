@@ -8,7 +8,7 @@ Explore the world of Distributed Ledger Technology with a hands-on guide using t
 
 ## Seamless User Interfaces for human interaction
 
-<figure style="margin:0;"><img src="../assets/actors.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>This tutorial is about building User Interfaces for human interaction (highlighted in red)</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/actors.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">This tutorial is about building User Interfaces for human interaction (highlighted in red)</p></figcaption></figure>
 
 The focus of this project is to provide a user interface or interaction capability with IOTA for humans. While IOT devices, machines or smart contracts can also interact with IOTA, the primary goal here is to create a seamless experience for people to connect and engage with IOTA's Layer 1 network.
 

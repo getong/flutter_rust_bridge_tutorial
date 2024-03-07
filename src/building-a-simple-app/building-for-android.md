@@ -62,7 +62,7 @@ Well, it is intended to ensure that Rust is recompiled when the app is launched.
 
 ---
 
-1. Adjust the correct _build.gradle_ file: `android/app/build.gradle` <figure style="margin:0;"><img src="../assets/android-pitfall-1.png" alt="Adjust the correct file"><figcaption style="font-size: 0.8em;text-align:center;"><p>Adjust the correct file</p></figcaption></figure>
+1. Adjust the correct _build.gradle_ file: `android/app/build.gradle` <figure style="margin:0;border: 1px solid green;"><img src="../assets/android-pitfall-1.png" alt="Adjust the correct file"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Adjust the correct file</p></figcaption></figure>
 
 ---
 
@@ -82,7 +82,7 @@ Well, it is intended to ensure that Rust is recompiled when the app is launched.
 
 4. To ensure successful compilation, we have installed cargo-ndk as mentioned earlier. In order to utilize it, it is crucial to correctly define the constant **ANDROID_NDK** path. The recommended approach is to include the path in the _~gradle/gradle.properties_ file.
 
-   On **macOS** I have added this value: <figure style="margin:0;"><img src="../assets/android-pitfall-2.png" alt="Add ANDROID_NDK path"><figcaption style="font-size: 0.8em;text-align:center;"><p>Add ANDROID_NDK path</p></figcaption></figure>
+   On **macOS** I have added this value: <figure style="margin:0;border: 1px solid green;"><img src="../assets/android-pitfall-2.png" alt="Add ANDROID_NDK path"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Add ANDROID_NDK path</p></figcaption></figure>
 
 ---
 

@@ -28,8 +28,8 @@ Start Android Studio. You can open the _SDK Manager_ in one of the following way
 
 To start the development with Flutter use the latest Android SDK Platform.
 
-<figure style="margin:0;">
-<img src="../../assets/sdk_manager_1.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>SDK Platforms</p></figcaption>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../assets/sdk_manager_1.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">SDK Platforms</p></figcaption>
 </figure>
 
 ### SDK Tools
@@ -47,8 +47,8 @@ To use the Flutter-Rust-Bridge, also select:
 
 - NDK
 
-<figure style="margin:0;">
-<img src="../../assets/sdk_manager_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>SDK Tools</p></figcaption>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../assets/sdk_manager_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">SDK Tools</p></figcaption>
 </figure>
 
 ## Managing the Virtual Devices
@@ -73,8 +73,8 @@ If you don't have a Virtual Device yet, click on "Create Device".
   Keep the _ABI_ in mind, here "arm64-v8a". The _ABI_ information is used to configure the _build.gradle_ file later, in the context of the Flutter-Rust-Bridge configuration.
 - For better performance, choose "Hardware - GLES 2.0" for _Graphics_.
 
-<figure style="margin:0;">
-<img src="../../assets/avd.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Create a Virtual Device</p></figcaption>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../assets/avd.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Create a Virtual Device</p></figcaption>
 </figure>
 
 ###
@@ -87,14 +87,14 @@ Later on, you can refer to the following location to retrieve information regard
 
 > **Path to AVD's filesystem**: Root -> data -> data -> {app.id}
 
-<figure style="margin:0;">
-<img src="../../assets/avd.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>AVD filesystem</p></figcaption>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../assets/avd.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">AVD filesystem</p></figcaption>
 </figure>
 
 > For your information, the location of the cross-compiled Rust library can be found here:
 >
 > Root -> data -> app -> {temporary folder - use date to find the correct one} -> {app.id} -> lib
 
-<figure style="margin:0;">
-<img src="../../assets/avd_filesystem_1.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Location of the cross-compiled Rust library <i>librust.so</i></p></figcaption>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../assets/avd_filesystem_1.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Location of the cross-compiled Rust library <i>librust.so</i></p></figcaption>
 </figure>

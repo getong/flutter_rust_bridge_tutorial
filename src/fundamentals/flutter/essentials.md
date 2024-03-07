@@ -24,7 +24,7 @@ A typical Flutter project follows a specific structure that organizes the variou
 
 **pubspec.yaml**: The pubspec.yaml file is a YAML-formatted configuration file that defines the project's metadata, dependencies, and assets. It specifies the required packages, version constraints, and additional resources like fonts or images.
 
-<figure style="margin:0;"><img src="../../assets/flutter_project_structure.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Project Structure</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/flutter_project_structure.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Project Structure</p></figcaption></figure>
 
 ## Packages
 
@@ -36,9 +36,9 @@ Packages ("Plugins") refer to pre-built libraries or modules that developers can
 
 In my "MQTT Chat App" project, I utilized the "Flutter Chat UI" package to swiftly integrate a chat user interface and interactive functionality with just a single installation instruction!
 
-<figure style="margin:0;">
+<figure style="margin:0;border: 1px solid green;">
 <a href="https://pub.dev/packages/flutter_chat_ui" target="_blank">
-<img src="../../assets/flutter_chat_ui.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Package example: Flutter Chat UI</p></figcaption>
+<img src="../../assets/flutter_chat_ui.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Package example: Flutter Chat UI</p></figcaption>
 </a>
 </figure>
 

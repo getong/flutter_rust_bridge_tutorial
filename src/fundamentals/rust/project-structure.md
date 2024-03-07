@@ -14,7 +14,7 @@ By organizing packages as part of a workspace, you can share dependencies, coord
 
 Workspace and packages each have their own Cargo.toml file.
 
-<figure style="margin:0;"><img src="../../assets/rust_projects/rust_overview.jpg" alt="Workspace and Project Structure"><figcaption style="font-size: 0.8em;text-align:center;"><p>Rust Project Structure</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/rust_projects/rust_overview.jpg" alt="Workspace and Project Structure"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Rust Project Structure</p></figcaption></figure>
 
 ## Crates
 
@@ -29,13 +29,13 @@ Crates can be published to the Rust community's _Crate Registry_, allowing devel
 
 There are two types of crates: _library crates_ expose public functions or items , and _binary crates_ which are executable programs. A package can contain the source code of one or several crates.
 
-<figure style="margin:0;"><img src="../../assets/rust_projects/rust_crates.jpg" alt="Crates"><figcaption style="font-size: 0.8em;text-align:center;"><p>Crates</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/rust_projects/rust_crates.jpg" alt="Crates"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Crates</p></figcaption></figure>
 
 ## Modules
 
 A _Module_ is a way to organize and group related code within a crate. It allows for logical separation and encapsulation of functionality, helping to keep code organized and maintainable.
 
-<figure style="margin:0;"><img src="../../assets/rust_projects/rust_modules.jpg" alt="Rust Modules"><figcaption style="font-size: 0.8em;text-align:center;"><p>Modules</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/rust_projects/rust_modules.jpg" alt="Rust Modules"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Modules</p></figcaption></figure>
 
 ### Declaring and defining a module
 
@@ -77,7 +77,7 @@ The `use` keyword in Rust is used to bring items from a module or crate into sco
 
 The requirement, however, is that the used modules and items are public (indicated by the keyword `pub`).
 
-<figure style="margin:0;"><img src="../../assets/rust_projects/rust_paths.jpg" alt="Paths"><figcaption style="font-size: 0.8em;text-align:center;"><p>Paths</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/rust_projects/rust_paths.jpg" alt="Paths"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Paths</p></figcaption></figure>
 
 In Rust, _paths_ and _namespaces_ are interrelated concepts that help organize and reference code elements. For example:
 

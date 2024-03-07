@@ -8,21 +8,21 @@ Usually, Android is my buddy. Unfortunately, not in this case.
 
 ## Try it out
 
-<figure style="margin:0;"><img src="../assets/mqtt/android-ui.png" alt="At the beginning, everything seems normal."><figcaption style="font-size: 0.8em;text-align:center;"><p>At the beginning, everything seems normal.</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/mqtt/android-ui.png" alt="At the beginning, everything seems normal."><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">At the beginning, everything seems normal.</p></figcaption></figure>
 
 In the log file, you can see that the message was sent: "MESSAGE WAS PUBLISHED SUCCESSFULLY IN BLOCK ID ..."
 
-<figure style="margin:0;"><img src="../assets/mqtt/message-sent.png" alt="Logged as sent"><figcaption style="font-size: 0.8em;text-align:center;"><p>Logged as sent</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/mqtt/message-sent.png" alt="Logged as sent"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Logged as sent</p></figcaption></figure>
 
 And it's also traceable in the tangle explorer:
 
-<figure style="margin:0;"><img src="../assets/mqtt/tangle-explorer.png" alt="Proof in the Tangle Explorer"><figcaption style="font-size: 0.8em;text-align:center;"><p>Proof in the Tangle Explorer</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/mqtt/tangle-explorer.png" alt="Proof in the Tangle Explorer"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Proof in the Tangle Explorer</p></figcaption></figure>
 
 ## What's wrong?
 
 A tiny little thing trips us up. It's nestled in the log file as an error message:
 
-<figure style="margin:0;"><img src="../assets/mqtt/bad-certificate.png" alt="Bad Certificate"><figcaption style="font-size: 0.8em;text-align:center;"><p>Bad Certificate</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../assets/mqtt/bad-certificate.png" alt="Bad Certificate"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Bad Certificate</p></figcaption></figure>
 
 Android seems to have some qualms about the certificate, which is why it's not allowing the connection to the MQTT server via rustls.
 

@@ -10,7 +10,7 @@ The _Flutter Rust Bridge_ serves as the foundation for the "IOTA for Flutter" pr
 
 ###
 
-<figure style="margin:0;"><img src="../../assets/frb.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>User Guide of the Flutter Rust Bridge</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/frb.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">User Guide of the Flutter Rust Bridge</p></figcaption></figure>
 
 One of the selection criteria was the project's open-source nature and the fact that it is an active project. From my impression, regular updates ensure that the _Flutter Rust Bridge_ stays up to date.
 

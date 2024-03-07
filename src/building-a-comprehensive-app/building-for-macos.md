@@ -19,7 +19,7 @@ To integrate our Rust backend, we create an additional Xcode project first and a
 
 {{#include ../building-a-simple-app/building-for-macos.md:11:38}}
 
-    <figure style="margin:0;"><img src="../assets/macos_instructions/macos_target-build-dir.jpg" alt="Dynamic Library Install Name Base"><figcaption style="font-size: 0.8em;text-align:center;"><p>Dynamic Library Install Name Base</p></figcaption></figure>
+    <figure style="margin:0;border: 1px solid green;"><img src="../assets/macos_instructions/macos_target-build-dir.jpg" alt="Dynamic Library Install Name Base"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Dynamic Library Install Name Base</p></figcaption></figure>
 
 ### Merge both projects
 
@@ -27,12 +27,12 @@ We need to incorporate the new Rust XCode project (_rust/rust.xcodeproj_) into o
 
 {{#include ../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.md:27:27}}
 
-<figure style="margin:0;">
-<img src="../assets/macos_instructions/macos_1_playground.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Open <i>Runner.xcodeproj</i></p></figcaption>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../assets/macos_instructions/macos_1_playground.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Open <i>Runner.xcodeproj</i></p></figcaption>
 </figure>
 
-<figure style="margin:0;">
-<img src="../assets/macos_instructions/macos_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../assets/macos_instructions/macos_2.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Drag the file <i>rust.xcodeproj</i> into the Runner Project</p></figcaption>
 </figure>
 
 {{#include ../building-without-iota/flutter-and-rust/frb-example-app/macos-instructions.md:37:77}}

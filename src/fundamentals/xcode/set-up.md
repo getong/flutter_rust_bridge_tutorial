@@ -8,7 +8,7 @@ Installing Xcode on your system.
 
 ## Installing Xcode
 
-<figure style="margin:0;"><img src="../../assets/setup/setup.002.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p>Setting up Xcode</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/setup/setup.002.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Setting up Xcode</p></figcaption></figure>
 
 > Download (several GBs...) and install the latest stable version of Xcode using one of these sources:
 >

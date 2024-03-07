@@ -206,7 +206,7 @@ cargo ndk -t arm64-v8a build
 
 Since the latest Android NDK version 25 is being used, I have been encountering issues compiling the _libsodium-sys_ library (v0.2.7) on macOS (M1 chip). This problem did not exist with the previous NDK version 22, which I was using in January.
 
-<figure style="margin:0;"><img src="../../../assets/playground/libsodium-sys_android-check.png" alt="Cross-compilation error - Android"><figcaption style="font-size: 0.8em;text-align:center;"><p>Cross-compilation error - Android</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../../assets/playground/libsodium-sys_android-check.png" alt="Cross-compilation error - Android"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Cross-compilation error - Android</p></figcaption></figure>
 
 It's possible that you may _not_ encounter this issue if you use a different hosting operating system. If you manage to successfully compile libsodium-sys on your host system, consider yourself fortunate.
 
@@ -234,7 +234,7 @@ cargo build --target aarch64-apple-ios-sim
 
 The compilation fails because there is an unknown build target in _libsodium-sys_ build script:
 
-<figure style="margin:0;"><img src="../../../assets/playground/libsodium-sys_ios-check.png" alt="Cross-compilation error - iOS"><figcaption style="font-size: 0.8em;text-align:center;"><p>Cross-compilation error - iOS</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../../assets/playground/libsodium-sys_ios-check.png" alt="Cross-compilation error - iOS"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Cross-compilation error - iOS</p></figcaption></figure>
 
 The fact that the _libsodium-sys_ project is marked as deprecated is unfortunate since it limits the opportunity to address and resolve the issue within the repository. See [Sodiumoxide's documentation](https://github.com/sodiumoxide/sodiumoxide#readme):
 
