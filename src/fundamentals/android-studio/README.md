@@ -7,7 +7,7 @@ For macOS, Windows and Linux: Get the official Integrated Development Environmen
 ---
 
 <figure style="margin:0;border: 1px solid green;">
-<a href="https://flutter.dev" target="_blank">
+<a href="https://developer.android.com/studio" target="_blank">
 <img src="../../assets/android_studio_website.jpg" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Android Studio Website </p></figcaption>
 </a>
 </figure>

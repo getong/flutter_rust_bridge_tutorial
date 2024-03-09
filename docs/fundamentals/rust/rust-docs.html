@@ -30,6 +30,7 @@
 
         <!-- Custom theme stylesheets -->
         <link rel="stylesheet" href="../../theme/custom.css">
+        <link rel="stylesheet" href="../../theme/tabbed-code-blocks.css">
 
     </head>
     <body>
@@ -163,8 +164,29 @@
 <pre><code>cargo doc --all-features --document-private-items --target-dir &quot;rustdocs&quot; --open
 </code></pre>
 <p>When you run the command, rustdoc will scan all files and create a working folder <code>debug/</code> and an output folder <code>doc/</code> inside the target directory. Depending on the number of scanned crates this might take a while.</p>
-<h3 id="iota-client"><a class="header" href="#iota-client">iota-client</a></h3>
-<p>Before running the above <code>cargo doc ...</code> command change to the <code>client/</code> directory.</p>
+<h3 id="rust-docs-for-iota-sdk"><a class="header" href="#rust-docs-for-iota-sdk">Rust Docs for IOTA SDK</a></h3>
+<p>Download the library from Github:</p>
+<p><a href="https://github.com/iotaledger/iota-sdk" target="_blank">👉   IOTA SDK Library</a></p>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../assets/iota-sdk/iota-sdk-in-finder.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">IOTA SDK in Finder</p></figcaption>
+</figure>
+<p>Open VS Code and run the commands:</p>
+<pre><code>cd sdk
+cargo doc --all-features --document-private-items --target-dir &quot;rustdocs&quot; --open
+</code></pre>
+<p>It will run several minutes and create the output folder &quot;rustdocs&quot;:</p>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../assets/iota-sdk/iota-sdk-creating-rust-docs.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Creating the Rust Docs for IOTA SDK</p></figcaption>
+</figure>
+<p>Eventually, the browser will open automatically and present the root page of the documentation.</p>
+<figure style="margin:0;border: 1px solid green;">
+<img src="../../assets/iota-sdk/rust-docs.png" alt=""><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Home page of Rust docs for IOTA SDK</p></figcaption>
+</figure>
+<blockquote>
+<p>Tip: Delete the <code>target/</code> folder afterwards - it occupies 4.4 GB of space.</p>
+</blockquote>
+<h3 id="rust-docs-for-iota-client-deprecated"><a class="header" href="#rust-docs-for-iota-client-deprecated">Rust Docs for iota-client (deprecated)</a></h3>
+<p>Prior to executing the <code>cargo doc ...</code> command mentioned above, switch to the <code>client/</code> directory located at the root, rather than the <code>sdk/</code> directory.</p>
 <blockquote>
 <p><strong>Sometimes you are facing unresolved links</strong></p>
 <p>When executing the command, I encountered a handful of error messages due to unresolved links. In rustdoc, links are indicated by square brackets <code>[...]</code>. Fortunately, fixing these issues is a breeze: simply remove the square brackets i.e. the link, and the problematic areas will be swiftly resolved.</p>
@@ -232,6 +254,7 @@
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
+        <script src="../../theme/tabbed-code-blocks.js"></script>
 
 
     </div>

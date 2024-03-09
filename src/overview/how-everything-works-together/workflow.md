@@ -118,7 +118,7 @@ The term "arm64" represents the 64-bit version of the ARM architecture, while "v
 
 ## 3. Development Steps
 
-<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.006.png" alt="Start coding the frontend"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Start coding the fronend</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.006.png" alt="Start coding the frontend"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Start coding the frontend</p></figcaption></figure>
 
 Add a Flutter package that beautifies JSON outputs:
 
@@ -236,20 +236,43 @@ flutter run
 
 #### &nbsp;
 
-<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.007.png" alt="Generate the Dart Interface Code (FFI)"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Generate the Dart Interface Code (FFI)</p><p style="background-color:#f6ff76;margin:0;padding:5px;text-align:left;">📚 <a href="https://github.com/iotaledger/iota-sdk"><strong>IOTA SDK Library</a> Update</strong> 📚 The Dependency on <strong>iota.rs</strong> must be replaced by <strong>iota-sdk.rs</strong></p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.007.png" alt="Generate the Dart Interface Code (FFI)"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Generate the Dart Interface Code (FFI)</p><p style="background-color:#f6ff76;margin:0;padding:5px;text-align:left;">📚 <a href="../../iota-sdk-library/README.md"><strong>IOTA SDK Library Update</a></strong> 📚 The Dependency on <strong>iota.rs</strong> must be replaced by <strong>iota-sdk.rs</strong>. To do this, <i>iota-sdk</i> needs to be added as a dependency in Cargo.toml instead of <i>iota-client</i>.</p></figcaption></figure>
 
-The first step on the Rust side is to include the iota-client library and other necessary resources.
+The first step on the Rust side is to include the IOTA library and other necessary resources.
 
 In _Cargo.toml_ add:
 
-```
+<div class="tabbed-blocks">
+
+```rust, ignore
 [dependencies]
-iota-client = { version = "2.0.1-rc.7", default-features = false, features = [ "tls" ] }
+iota-client = {
+  version = "2.0.1-rc.7",
+  default-features = false,
+  features = [ "tls" ]
+}
 
 serde_json = { version = "1.0.89", default-features = false }
 anyhow = "1.0.66"
 tokio = { version = "1.21.2", default-features = false, features = ["macros"] }
 ```
+
+```rust, ignore
+[dependencies]
+iota-sdk = {
+  version = "1.1.4",
+  default-features = false,
+  features = [
+    "client",
+    "tls"
+] }
+
+serde_json = { version = "1.0.108", default-features = false }
+anyhow = "1.0.75"
+tokio = { version = "1.34.0", default-features = false, features = ["full"] }
+```
+
+</div>
 
 Create the file _api.rs_. **The file _api.rs_ is YOUR RUST WORKING FILE**. The Flutter-Rust-Bridge code generator will identify all public functions within the `api.rs` file and generate the corresponding Dart Interface from these methods. This means that all public functions available in the Rust code will be exposed and accessible for utilization within the Flutter app.
 
@@ -257,15 +280,17 @@ By automatically generating the Dart Interface, the Flutter-Rust-Bridge simplifi
 
 Add this content to _api.rs_:
 
-```
+<div class="tabbed-blocks">
+
+```rust, ignore
 use iota_client::Client;
 use anyhow::Result;
 use tokio::runtime::Runtime;
 
 pub fn get_node_info() -> Result<String> {
-    let rt = Runtime::new().unwrap();
-    rt.block_on(async {
-        let node_url = "https://api.testnet.shimmer.network";
+let rt = Runtime::new().unwrap();
+rt.block_on(async {
+let node_url = "https://api.testnet.shimmer.network";
 
         // Create a client with that node.
         let client = Client::builder()
@@ -278,8 +303,16 @@ pub fn get_node_info() -> Result<String> {
 
         Ok(serde_json::to_string_pretty(&info).unwrap())
     })
+
 }
+
 ```
+
+```rust, ignore
+// TODO;
+```
+
+</div>
 
 Replace the content in _lib.rs_ by:
 
@@ -291,7 +324,7 @@ mod api;
 
 #### &nbsp;
 
-<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.008.png" alt="Integrate the backend"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Integrate the backend</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.008.png" alt="Integrate the backend"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Integrate the backend</p><p style="background-color:#f6ff76;margin:0;padding:5px;text-align:left;">📚 <a href="../../iota-sdk-library/README.md"><strong>IOTA SDK Library Update</a></strong> 📚 The Dependency on <strong>iota.rs</strong> must be replaced by <strong>iota-sdk.rs</strong>.</p></figcaption></figure>
 
 This one is easy! It's one of the tasks you need to do whenever the Rust API has changed (e.g. after changing method signatures or add/removing methods). In our example, generate the Dart Interface by executing this command:
 
@@ -303,7 +336,7 @@ flutter_rust_bridge_codegen --rust-input rust/src/api.rs --dart-output ./lib/bri
 
 #### &nbsp;
 
-<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.009.png" alt="Integrate the Dart Interface into your frontend code"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Integrate the Dart Interface into your frontend code</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.009.png" alt="Integrate the Dart Interface into your frontend code"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Integrate the Dart Interface into your frontend code</p><p style="background-color:#f6ff76;margin:0;padding:5px;text-align:left;">📚 <a href="../../iota-sdk-library/README.md"><strong>IOTA SDK Library Update</a></strong> 📚 The Dependency on <strong>iota.rs</strong> must be replaced by <strong>iota-sdk.rs</strong>.</p></figcaption></figure>
 
 Next to _main.dart_, add a new file called _ffi.dart_ and add this content:
 

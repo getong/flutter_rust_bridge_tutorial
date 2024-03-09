@@ -10,5 +10,6 @@ build-dir = "docs"
 create-missing = false
 
 [output.html]
-additional-css = ["theme/custom.css"]
+additional-css = ["theme/custom.css", "theme/tabbed-code-blocks.css"]
+additional-js = ["theme/tabbed-code-blocks.js"]
 no-section-label = true
