@@ -53,7 +53,7 @@ cargo new --lib rust
 ```
 cargo install flutter_rust_bridge_codegen
 
-flutter pub add --dev ffigen && flutter pub add ffi
+flutter pub add --dev ffigen:9.0.1 && flutter pub add ffi
 
 flutter pub add flutter_rust_bridge
 
@@ -63,6 +63,8 @@ flutter pub add -d freezed
 
 flutter pub add freezed_annotation
 ```
+
+> Hint: _ffigen_ is already available with a higher version. The Flutter Rust Bridge v1.0 is still working with _ffigen_ version >=8.0.0 and <10.0.0. So I am using version v9.0.1 here.
 
 ```
 cargo install cargo-ndk
@@ -78,7 +80,7 @@ flutter_rust_bridge = "1"
 crate-type = ["staticlib", "cdylib"]
 ```
 
-In _android/app/build.gradle_, fix error:
+In _android/app/build.gradle_, fix error (only if _GradleException_ is found):
 
 ```
 Replace GradleException by FileNotFoundException
@@ -132,7 +134,7 @@ Write this content into _main.dart_:
 import 'package:flutter/material.dart';
 import 'package:flutter_json_viewer/flutter_json_viewer.dart';
 import 'dart:convert';
-//import 'ffi.dart‘;
+//import 'ffi.dart';
 
 void main() {
   runApp(const MyApp());
@@ -246,6 +248,7 @@ In _Cargo.toml_ add:
 
 ```rust, ignore
 [dependencies]
+...
 iota-client = {
   version = "2.0.1-rc.7",
   default-features = false,
@@ -259,12 +262,10 @@ tokio = { version = "1.21.2", default-features = false, features = ["macros"] }
 
 ```rust, ignore
 [dependencies]
-iota-sdk = {
-  version = "1.1.4",
-  default-features = false,
-  features = [
+...
+iota-sdk = { version = "1.1.4", default-features = false, features = [
     "client",
-    "tls"
+    "tls",
 ] }
 
 serde_json = { version = "1.0.108", default-features = false }
@@ -288,9 +289,9 @@ use anyhow::Result;
 use tokio::runtime::Runtime;
 
 pub fn get_node_info() -> Result<String> {
-let rt = Runtime::new().unwrap();
-rt.block_on(async {
-let node_url = "https://api.testnet.shimmer.network";
+    let rt = Runtime::new().unwrap();
+    rt.block_on(async {
+        let node_url = "https://api.testnet.shimmer.network";
 
         // Create a client with that node.
         let client = Client::builder()
@@ -309,7 +310,28 @@ let node_url = "https://api.testnet.shimmer.network";
 ```
 
 ```rust, ignore
-// TODO;
+use iota_sdk::client::Client;
+use anyhow::Result;
+use tokio::runtime::Runtime;
+
+pub fn get_node_info() -> Result<String> {
+    let rt = Runtime::new().unwrap();
+    rt.block_on(async {
+        let node_url = "https://api.testnet.shimmer.network";
+
+        // Create a client with that node.
+        let client = Client::builder()
+            .with_node(&node_url)?
+            .with_ignore_node_health()
+            .finish()
+            .await?;
+
+        // Get node info.
+        let info = client.get_info().await?;
+
+        Ok(serde_json::to_string_pretty(&info).unwrap())
+    })
+}
 ```
 
 </div>
@@ -368,7 +390,7 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 
 Integrating the library involves loading it into our project, enabling us to execute its methods and utilize its functionalities.
 
-Now, in _main.dart_, comment out line 3:
+Now, in _main.dart_, comment out line 4:
 
 ```
 ffi.dart  // remove the two slashs
@@ -393,6 +415,8 @@ by:
 ## 4. Build and Run Step
 
 <figure style="margin:0;border: 1px solid green;"><img src="../../assets/overview/Overview.010.png" alt="Build and Run a target"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Build and Run a target</p></figcaption></figure>
+
+### Here: We build an run the app on Android!
 
 > **Important**: Before starting the application, make sure that your Virtual Android Device is running.
 
