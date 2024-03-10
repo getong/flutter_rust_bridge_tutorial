@@ -51,18 +51,18 @@
 ---
 
 - [💡 How everything works together](overview/how-everything-works-together/README.md)
-  - [Workflow](overview/how-everything-works-together/workflow.md)
-  - [Handling code changes](overview/how-everything-works-together/handling-code-changes.md)
+  - [💡 Workflow](overview/how-everything-works-together/workflow.md)
+  - [💡 Handling code changes](overview/how-everything-works-together/handling-code-changes.md)
 - [🏭 Cross-Compiling](overview/cross-compiling.md)
 - [🌁 Flutter Rust Bridge](overview/flutter-rust-bridge/README.md)
-  - [About](overview/flutter-rust-bridge/about.md)
-  - [Language translations](overview/flutter-rust-bridge/features.md)
-  - [Alternatives?](overview/flutter-rust-bridge/alternatives.md)
+  - [🌁 About](overview/flutter-rust-bridge/about.md)
+  - [🌁 Language translations](overview/flutter-rust-bridge/features.md)
+  - [🌁 Alternatives?](overview/flutter-rust-bridge/alternatives.md)
 - [📚 IOTA libraries](overview/iota-libraries/README.md)
-  - [IOTA SDK and identity.rs](overview/iota-libraries/iota-sdk.md)
-  - [iota.rs, wallet.rs and identity.rs](overview/iota-libraries/iota-wallet-identity.md)
-    - [Library Versions](overview/iota-libraries/library-versions.md)
-  - [Deeper Insights](overview/iota-libraries/deeper-insights.md)
+  - [📚 IOTA SDK and identity.rs](overview/iota-libraries/iota-sdk.md)
+  - [📚 iota.rs, wallet.rs and identity.rs](overview/iota-libraries/iota-wallet-identity.md)
+    - [📚 Library Versions](overview/iota-libraries/library-versions.md)
+  - [📚 Deeper Insights](overview/iota-libraries/deeper-insights.md)
 
 ---
 
