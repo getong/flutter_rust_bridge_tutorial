@@ -10,7 +10,7 @@ IOTA SDK = iota.rs + wallet.rs
 
 The tutorial was written between April 2023 and February 2024. The contents come together to form a whole, namely: texts and images on this homepage, the source code on Github, and the videos on Youtube.
 
-All information therein refers to the latest Rust libraries from IOTA during the mentioned period: iota.rs (client library/wrapper for IOTA node's API), wallet.rs (including Stronghold), and identity.rs.
+All information therein refered to the latest Rust libraries from IOTA during the mentioned period: iota.rs (client library/wrapper for IOTA node's API), wallet.rs (including Stronghold), and identity.rs. Only in the chapter about the Playground App did I use the IOTA SDK.
 
 ## The IOTA SDK
 

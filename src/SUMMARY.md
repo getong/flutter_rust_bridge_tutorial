@@ -18,7 +18,7 @@
 
 ---
 
-- [❗️READ ME](iota-sdk-library/README.md)
+- [❗️READ ME❗️](iota-sdk-library/README.md)
 
 ---
 
