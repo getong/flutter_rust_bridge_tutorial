@@ -18,29 +18,28 @@ To approach IOTA's Rust libraries, there are several sources of information avai
 
 **... Examples**: Look for examples that demonstrate the usage of IOTA's Rust libraries. These resources can provide hands-on guidance and practical insights into integrating the libraries into your own projects. I will use some of them in the later sections where I build the "Playground" app.
 
-<a href="https://wiki.iota.org/shimmer/iota.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Client Library</a>
-
-<a href="https://wiki.iota.org/shimmer/wallet.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Wallet Library</a>
+<a href="https://wiki.iota.org/iota-sdk/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA SDK</a>
 
 <a href="https://wiki.iota.org/shimmer/identity.rs/introduction/" target="_blank">👉 &nbsp; Wiki - IOTA's Identity Framework Guide</a>
 
-<a href="https://wiki.iota.org/iota-sdk/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA SDK</a>
-
 **GitHub Repositories**: Visit the GitHub repositories for the IOTA Rust libraries. It serves as the central hub for code ("single source of truth"), issue tracking, and community discussions. Explore the repositories to access the source code, documentation files, and discussions related to the libraries. You can also open issues or participate in discussions to seek clarification or contribute to the project.
-
-<a href="https://github.com/iotaledger/iota.rs" target="_blank">👉 &nbsp; GitHub - iota.rs</a>
-
-<a href="https://github.com/iotaledger/wallet.rs" target="_blank">👉 &nbsp; GitHub - wallet.rs</a>
-
-<a href="https://github.com/iotaledger/identity.rs" target="_blank">👉 &nbsp; GitHub - identity.rs</a>
 
 <a href="https://github.com/iotaledger/iota-sdk" target="_blank">👉 &nbsp; GitHub - IOTA SDK</a>
 
+<a href="https://github.com/iotaledger/identity.rs" target="_blank">👉 &nbsp; GitHub - identity.rs</a>
+
 **Communication Channels**: Stay connected with the IOTA community through official communication channels like the IOTA Discord server, where you can interact with developers, ask questions, and receive support. The Discord server is often a great place to connect with fellow developers and learn from their experiences.
 
----
+## Deprecated Libraries
 
-In the following sections I will provide you with some additional starter information:
+### Wiki
 
-- [What is the structure of iota.rs, wallet.rs, and identity.rs?](iota-wallet-identity.md)
-- [Which library versions are the right ones for which purpose?](library-versions.md)
+<a href="https://wiki.iota.org/shimmer/iota.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Client Library (deprecated)</a>
+
+<a href="https://wiki.iota.org/shimmer/wallet.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Wallet Library (deprecated)</a>
+
+### Github
+
+<a href="https://github.com/iotaledger/iota.rs" target="_blank">👉 &nbsp; GitHub - iota.rs (deprecated)</a>
+
+<a href="https://github.com/iotaledger/wallet.rs" target="_blank">👉 &nbsp; GitHub - wallet.rs (deprecated)</a>

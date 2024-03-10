@@ -2,7 +2,9 @@
 
 ---
 
-Helpful resource for identifying the appropriate dependency versions for your project.
+JUST SKIP THIS CHAPTER WHEN YOU'RE USING THE _IOTA SDK_.
+
+This chapter focuses heavily on deprecated libraries like iota.rs and wallet.rs. Additionally, it addresses two different protocol versions: Chrysalis and Stardust, which were only relevant at the time of writing.
 
 ---
 
@@ -14,11 +16,19 @@ While some third-party crates like OpenSSL and RustLS may have mutually exclusiv
 
 2. Which versions can be successfully cross-compiled for the respective platform targets, including iOS, Android, and macOS?
 
-## Stardust and (outdated) Chrysalis Versions
+## Stardust and Chrysalis
+
+Stardust and Chrysalis are both IOTA _protocol_ versions.
 
 The first question (see above) can be relatively straightforward to address.
 
-To support both current networks, the version of the iota-client being used should start with major version 2, such as 2.0.1.rc-7. _As a developer, you can verify this by checking the Cargo.lock file_.
+### Current Library: IOTA SDK
+
+Just use the current version of iota-sdk. It's compatible to Stardust, the current protocol on both Shimmer Network and IOTA Mainnet.
+
+### Deprecated Libraries: iota-client.rs / wallet.rs
+
+To support both current networks, the deprecated libraries' versions used should start with major version 2, such as 2.0.1.rc-7. _As a developer, you can verify this by checking the Cargo.lock file_.
 
 > **Why?**
 >

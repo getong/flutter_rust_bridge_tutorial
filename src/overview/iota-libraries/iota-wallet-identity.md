@@ -2,11 +2,11 @@
 
 ---
 
+DEPRECATED
+
 Code's organization: How are IOTA's libraries structured?
 
 ---
-
-> In order to better analyze the code, I recommend downloading the latest version of the source code (either by downloading and extracting the zip file or using git clone) and opening it in your IDE.
 
 ## iota.rs
 
