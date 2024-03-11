@@ -1881,7 +1881,6 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <p><a href="https://github.com/iotaledger/wallet.rs" target="_blank">👉   GitHub - wallet.rs (deprecated)</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="iota-sdk-and-identityrs"><a class="header" href="#iota-sdk-and-identityrs">IOTA SDK and identity.rs</a></h1>
 <hr />
-<p>//IN WORK</p>
 <p>Good news: it's getting easier</p>
 <hr />
 <h2 id="a-big-step-in-the-right-direction"><a class="header" href="#a-big-step-in-the-right-direction">A big step in the right direction</a></h2>
@@ -1896,9 +1895,15 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <li>Creating the Rust Docs as described in the chapter <a href="overview/iota-libraries/../../fundamentals/rust/rust-docs.html">Create Rust Docs</a>.</li>
 </ol>
 </blockquote>
-<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/iota-sdk/iota-sdk-in-finder.png" alt="IOTA SDK"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">IOTA SDK</p></figcaption></figure>
 <p>Take a look inside the <code>src/</code> folder. You'll find the <code>client</code> and <code>wallet</code> directories there.</p>
-<p>//TODO: Describe Project Structure of IOTA SDK</p>
+<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/iota-sdk/iota-sdk-in-finder.png" alt="IOTA SDK"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">IOTA SDK</p></figcaption></figure>
+<hr />
+<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/iota-sdk/iota-sdk-structure.png" alt="Structure of the IOTA SDK"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Structure of the IOTA SDK</p></figcaption></figure>
+<hr />
+<p>Your task: Review the feature definitions in <code>sdk/Cargo.toml</code>. Upon inspection, you'll notice that enabling the <em>wallet</em> feature will inherently incorporate the <em>client</em> feature.</p>
+<p>Compare your insights with the source code in <code>sdk/src/lib.rs</code>:</p>
+<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/iota-sdk/iota-sdk-lib.png" alt="The modules client, wallet and pow can be switch on and off"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">The modules client, wallet and pow can be "switched on and off"</p></figcaption></figure>
+<p>The source code of the modules <em>client</em>, <em>wallet</em> and <em>pow</em> can be included or excluded from the IOTA SDK Library, depending on the definition in YOUR PROJECT's <code>Cargo.toml</code>.</p>
 <h2 id="identityrs"><a class="header" href="#identityrs">identity.rs</a></h2>
 <p><a href="https://github.com/iotaledger/identity.rs" target="_blank">👉   GitHub - identity.rs</a></p>
 <p>The main package of this workspace is located in the <code>identity_iota/</code> directory. This package will be built as a crate with the name &quot;identity_iota&quot; (use this name to search for it in https://crates.io). The other packages of this workspace are dependencies of the main package.</p>

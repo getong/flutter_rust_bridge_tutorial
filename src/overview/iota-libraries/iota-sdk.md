@@ -2,8 +2,6 @@
 
 ---
 
-//IN WORK
-
 Good news: it's getting easier
 
 ---
@@ -23,11 +21,23 @@ The IOTA SDK consolidates the two deprecated libraries iota.rs and wallet.rs. It
 > 1. Downloading the latest version of the source code (either by downloading and extracting the zip file or using git clone) and opening it in your IDE.
 > 2. Creating the Rust Docs as described in the chapter [Create Rust Docs](../../fundamentals/rust/rust-docs.md).
 
-<figure style="margin:0;border: 1px solid green;"><img src="../../assets/iota-sdk/iota-sdk-in-finder.png" alt="IOTA SDK"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">IOTA SDK</p></figcaption></figure>
-
 Take a look inside the `src/` folder. You'll find the `client` and `wallet` directories there.
 
-//TODO: Describe Project Structure of IOTA SDK
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/iota-sdk/iota-sdk-in-finder.png" alt="IOTA SDK"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">IOTA SDK</p></figcaption></figure>
+
+---
+
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/iota-sdk/iota-sdk-structure.png" alt="Structure of the IOTA SDK"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Structure of the IOTA SDK</p></figcaption></figure>
+
+---
+
+Your task: Review the feature definitions in `sdk/Cargo.toml`. Upon inspection, you'll notice that enabling the _wallet_ feature will inherently incorporate the _client_ feature.
+
+Compare your insights with the source code in `sdk/src/lib.rs`:
+
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/iota-sdk/iota-sdk-lib.png" alt="The modules client, wallet and pow can be switch on and off"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">The modules client, wallet and pow can be "switched on and off"</p></figcaption></figure>
+
+The source code of the modules _client_, _wallet_ and _pow_ can be included or excluded from the IOTA SDK Library, depending on the definition in YOUR PROJECT's `Cargo.toml`.
 
 ## identity.rs
 
