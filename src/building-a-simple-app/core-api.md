@@ -424,7 +424,7 @@ In summary, here are the steps you need to take to create an API within your Rus
 
 ### Cargo.toml
 
-Add these libraries to the existing ones.
+In Cargo.toml, add these libraries to the existing ones.
 
 <div class="tabbed-blocks">
 
