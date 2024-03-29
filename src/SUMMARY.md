@@ -90,7 +90,7 @@
 ---
 
 - [What's the result?](building-a-simple-app/whats-the-result.md)
-- [Core API and iota.rs](building-a-simple-app/core-api.md)
+- [Core API and IOTA's Rust library](building-a-simple-app/core-api.md)
 - [Init Flutter App and Setup FRB](building-a-simple-app/init-flutter-app-and-setup-frb.md)
 - [Building for Android](building-a-simple-app/building-for-android.md)
 - [Building for macOS](building-a-simple-app/building-for-macos.md)

@@ -1,4 +1,4 @@
-# Core API and iota.rs
+# Core API and IOTA's Rust library
 
 ---
 

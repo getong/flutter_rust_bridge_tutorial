@@ -49,10 +49,18 @@ The IOTA SDK provides the same Rust examples as the predecessor libraries iota.r
 To ensure the tutorial's relevance regarding the IOTA SDK, I consider the following specific measures sensible:
 
 - The original version of the tutorial remains intact.
-- Alongside the Rust code for iota.rs and wallet.rs, I provide a version for the IOTA SDK v1.1.4: An update notice for the IOTA SDK is included as a link on the respective page, leading to a separate subpage with the IOTA SDK code.
-- Only if necessary, the texts on the IOTA SDK subpages are also updated from the original page.
-- There is an update notice below an image if it contains iota.rs or wallet.rs-specific content that needs to be abstracted with the IOTA SDK.
+- Alongside the Rust code for iota.rs and wallet.rs, I provide a version for the IOTA SDK v1.1.4: A separate tab for the IOTA SDK Library is included at the respective places, revealing a separate content with the IOTA SDK code. Note the yellow tab in this example:
+<figure style="margin:0;margin-left:40px;"><img src="../assets/iota-sdk/iota-sdk-tab-for-code.png" alt="Example IOTA SDK Hint at image"></figure>
+
+- Only if necessary, the texts are updated from the original page. Example: I renamed the page "Core API and iota.rs" to "Core API and IOTA's Rust library".
+- There is an update notice below an image if it contains iota.rs or wallet.rs-specific content that needs to be abstracted with the IOTA SDK. Note the yellow caption in this example:
+<figure style="margin:0;margin-left:40px;"><img src="../assets/iota-sdk/iota-sdk-hint-at-image.png" alt="Example IOTA SDK Hint at image"></figure>
+
 - The source code on GitHub remains unchanged.
 - The videos on YouTube remain unchanged.
 
+---
+
 > **I will gradually implement these measures over the course of the coming weeks.**
+
+---
