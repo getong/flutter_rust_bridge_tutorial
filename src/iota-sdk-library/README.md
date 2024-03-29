@@ -46,7 +46,7 @@ The IOTA SDK provides the same Rust examples as the predecessor libraries iota.r
 
 ## Tutorial Update (completed March 2024)
 
-To ensure the tutorial's relevance regarding the IOTA SDK, I consider the following specific measures sensible:
+To ensure the tutorial's relevance regarding the IOTA SDK, I considered the following specific measures sensible:
 
 - The original version of the tutorial remains intact.
 - Alongside the Rust code for iota.rs and wallet.rs, I provide a version for the IOTA SDK v1.1.4: A separate tab for the IOTA SDK Library is included at the respective places, revealing a separate content with the IOTA SDK code. Note the yellow tab in this example:
@@ -58,3 +58,4 @@ To ensure the tutorial's relevance regarding the IOTA SDK, I consider the follow
 
 - The source code on GitHub remains unchanged.
 - The videos on YouTube remain unchanged.
+- The code of the MQTT chat app (which is a bonus) remains unchanged. It's a good exercise to convert this app yourself.
