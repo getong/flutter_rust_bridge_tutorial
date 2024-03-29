@@ -2,7 +2,9 @@
 
 ---
 
-Good news: it's getting easier
+Code's organization: How are IOTA's libraries structured?
+
+Good news: it's getting easier!
 
 ---
 
@@ -57,7 +59,7 @@ The main package of this workspace is located in the `identity_iota/` directory.
 
 <a href="https://docs.rs/identity_iota/latest/identity_iota/" target="_blank">👉 &nbsp; Complete latest Documentation</a>
 
-<a href="https://wiki.iota.org/identity.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Identity Framework Guide</a>
+<a href="https://wiki.iota.org/identity.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Identity Framework</a>
 
 ---
 

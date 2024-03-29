@@ -2,13 +2,13 @@
 
 ---
 
-DEPRECATED
+DEPRECATED - please refer to chapter [IOTA SDK and identity.rs](./iota-sdk.md)
 
 Code's organization: How are IOTA's libraries structured?
 
 ---
 
-## iota.rs
+## iota.rs (deprecated)
 
 <a href="https://github.com/iotaledger/iota.rs" target="_blank">👉 &nbsp; GitHub - iota.rs</a>
 
@@ -22,7 +22,7 @@ A look at `client/Cargo.toml` reveals the features of the library crate.
 
 If you're looking for another entry point into iota.rs, you can check out the chapter titled [Simple App -> Core API and iota.rs](../../building-a-simple-app/core-api.md). This chapter provides more information about the structure of the iota-client using an example.
 
-## wallet.rs
+## wallet.rs (deprecated)
 
 <a href="https://github.com/iotaledger/wallet.rs" target="_blank">👉 &nbsp; GitHub - wallet.rs</a>
 
@@ -42,7 +42,7 @@ The main package of this workspace is located in the `identity_iota/` directory.
 
 <a href="https://docs.rs/identity_iota/latest/identity_iota/" target="_blank">👉 &nbsp; Complete latest Documentation</a>
 
-<a href="https://wiki.iota.org/identity.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Identity Framework Guide</a>
+<a href="https://wiki.iota.org/identity.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Identity Framework</a>
 
 ---
 
