@@ -8,6 +8,8 @@ Good news: it's getting easier!
 
 ---
 
+> To remind you: it is not the task of this tutorial to explain the libraries in detail. The purpose of the listed modules and features will become clearer when you create a project and use them. It's your responsibility to dive deep into it.
+
 ## A big step in the right direction
 
 <a href="https://wiki.iota.org/iota-sdk/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA SDK</a>
@@ -63,9 +65,7 @@ The main package of this workspace is located in the `identity_iota/` directory.
 
 ---
 
-The main module "identity_iota" contains the IOTA DID method implementation for the IOTA ledger.
-
-It implements the W3C Decentralized Identifiers (DID)
+The main module "identity_iota" contains the IOTA DID method implementation for the IOTA ledger. It implements the W3C Decentralized Identifiers (DID)
 and Verifiable Credentials specifications.
 
 <a href="https://www.w3.org/TR/did-core/" target="_blank">👉 &nbsp; Decentralized Identifiers (DID)</a>

@@ -2,9 +2,9 @@
 
 ---
 
-JUST SKIP THIS CHAPTER WHEN YOU'RE USING THE _IOTA SDK_.
+DEPRECATED - please refer to chapter [IOTA SDK and identity.rs](./iota-sdk.md)
 
-This chapter focuses heavily on deprecated libraries like iota.rs and wallet.rs. Additionally, it addresses two different protocol versions: Chrysalis and Stardust, which were only relevant at the time of writing.
+This chapter focuses heavily on deprecated libraries like iota.rs and wallet.rs. Additionally, it addresses two different protocol versions: Chrysalis and Stardust, which were only relevant at the time of writing mid 2023. If you're new here, the information provided is outdated.
 
 ---
 

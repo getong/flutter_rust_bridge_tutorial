@@ -1884,6 +1884,9 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <p>Code's organization: How are IOTA's libraries structured?</p>
 <p>Good news: it's getting easier!</p>
 <hr />
+<blockquote>
+<p>To remind you: it is not the task of this tutorial to explain the libraries in detail. The purpose of the listed modules and features will become clearer when you create a project and use them. It's your responsibility to dive deep into it.</p>
+</blockquote>
 <h2 id="a-big-step-in-the-right-direction"><a class="header" href="#a-big-step-in-the-right-direction">A big step in the right direction</a></h2>
 <p><a href="https://wiki.iota.org/iota-sdk/welcome/" target="_blank">👉   Wiki - IOTA SDK</a></p>
 <p>The IOTA SDK consolidates the two deprecated libraries iota.rs and wallet.rs. It also addresses the issue with rocksdb, making it easier for us to use on Android and iOS.</p>
@@ -1920,8 +1923,7 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <p><a href="https://docs.rs/identity_iota/latest/identity_iota/" target="_blank">👉   Complete latest Documentation</a></p>
 <p><a href="https://wiki.iota.org/identity.rs/welcome/" target="_blank">👉   Wiki - IOTA's Identity Framework</a></p>
 <hr />
-<p>The main module &quot;identity_iota&quot; contains the IOTA DID method implementation for the IOTA ledger.</p>
-<p>It implements the W3C Decentralized Identifiers (DID)
+<p>The main module &quot;identity_iota&quot; contains the IOTA DID method implementation for the IOTA ledger. It implements the W3C Decentralized Identifiers (DID)
 and Verifiable Credentials specifications.</p>
 <p><a href="https://www.w3.org/TR/did-core/" target="_blank">👉   Decentralized Identifiers (DID)</a></p>
 <p><a href="https://www.w3.org/TR/vc-data-model/" target="_blank">👉   Verifiable Credentials</a></p>
@@ -1952,8 +1954,7 @@ and Verifiable Credentials specifications.</p>
 <p><a href="https://docs.rs/identity_iota/latest/identity_iota/" target="_blank">👉   Complete latest Documentation</a></p>
 <p><a href="https://wiki.iota.org/identity.rs/welcome/" target="_blank">👉   Wiki - IOTA's Identity Framework</a></p>
 <hr />
-<p>The main module &quot;identity_iota&quot; contains the IOTA DID method implementation for the IOTA ledger.</p>
-<p>It implements the W3C Decentralized Identifiers (DID)
+<p>The main module &quot;identity_iota&quot; contains the IOTA DID method implementation for the IOTA ledger. It implements the W3C Decentralized Identifiers (DID)
 and Verifiable Credentials specifications.</p>
 <p><a href="https://www.w3.org/TR/did-core/" target="_blank">👉   Decentralized Identifiers (DID)</a></p>
 <p><a href="https://www.w3.org/TR/vc-data-model/" target="_blank">👉   Verifiable Credentials</a></p>
@@ -1962,8 +1963,8 @@ and Verifiable Credentials specifications.</p>
 <figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/rust_projects/rust_identityrs-features.png" alt="Features of identity_iota"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Features of identity_iota</p></figcaption></figure>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="library-versions"><a class="header" href="#library-versions">Library Versions</a></h1>
 <hr />
-<p>JUST SKIP THIS CHAPTER WHEN YOU'RE USING THE <em>IOTA SDK</em>.</p>
-<p>This chapter focuses heavily on deprecated libraries like iota.rs and wallet.rs. Additionally, it addresses two different protocol versions: Chrysalis and Stardust, which were only relevant at the time of writing.</p>
+<p>DEPRECATED - please refer to chapter <a href="overview/iota-libraries/./iota-sdk.html">IOTA SDK and identity.rs</a></p>
+<p>This chapter focuses heavily on deprecated libraries like iota.rs and wallet.rs. Additionally, it addresses two different protocol versions: Chrysalis and Stardust, which were only relevant at the time of writing mid 2023. If you're new here, the information provided is outdated.</p>
 <hr />
 <p>When configuring dependencies, it's crucial to consider the compatibility between different libraries and their versions, as well as their support for specific target platforms.</p>
 <p>While some third-party crates like OpenSSL and RustLS may have mutually exclusive usage, this isn't a concern with the IOTA libraries. Instead, the key focus lies in addressing the following two questions:</p>

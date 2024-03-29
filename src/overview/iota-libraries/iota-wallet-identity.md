@@ -46,9 +46,7 @@ The main package of this workspace is located in the `identity_iota/` directory.
 
 ---
 
-The main module "identity_iota" contains the IOTA DID method implementation for the IOTA ledger.
-
-It implements the W3C Decentralized Identifiers (DID)
+The main module "identity_iota" contains the IOTA DID method implementation for the IOTA ledger. It implements the W3C Decentralized Identifiers (DID)
 and Verifiable Credentials specifications.
 
 <a href="https://www.w3.org/TR/did-core/" target="_blank">👉 &nbsp; Decentralized Identifiers (DID)</a>
