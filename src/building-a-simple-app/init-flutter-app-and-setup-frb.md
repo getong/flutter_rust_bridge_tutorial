@@ -54,6 +54,6 @@ flutter_rust_bridge = "1"
 crate-type = ["staticlib", "cdylib"]
 ```
 
-Add the Rust Code from the previous chapter:
+Add the Rust Code from the previous chapter.
 
 {{#include ./core-api.md:427:}}
