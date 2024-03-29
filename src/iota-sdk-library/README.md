@@ -44,7 +44,7 @@ The most significant difference, in my opinion, is in the Rust source code. Here
 
 The IOTA SDK provides the same Rust examples as the predecessor libraries iota.rs and wallet.rs. Since my Rust code largely uses IOTA's official examples, it's possible to compare the Rust code of the examples.
 
-## Tutorial Update
+## Tutorial Update (completed March 2024)
 
 To ensure the tutorial's relevance regarding the IOTA SDK, I consider the following specific measures sensible:
 
@@ -58,9 +58,3 @@ To ensure the tutorial's relevance regarding the IOTA SDK, I consider the follow
 
 - The source code on GitHub remains unchanged.
 - The videos on YouTube remain unchanged.
-
----
-
-> **I will gradually implement these measures over the course of the coming weeks.**
-
----
