@@ -38,8 +38,25 @@ A look at `Cargo.toml` reveals the features of the library crate.
 
 The main package of this workspace is located in the `identity_iota/` directory. This package will be built as a crate with the name "identity_iota" (use this name to search for it in https://crates.io). The other packages of this workspace are dependencies of the main package.
 
-<figure style="margin:0;border: 1px solid green;"><img src="../../assets/rust_projects/rust_identityrs-structure.jpg" alt="Project Structure of identity.rs"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Project Structure of identity.rs</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/rust_projects/rust_identityrs-structure.png" alt="Project Structure of identity.rs"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Project Structure of identity.rs</p></figcaption></figure>
+
+<a href="https://docs.rs/identity_iota/latest/identity_iota/" target="_blank">👉 &nbsp; Complete latest Documentation</a>
+
+<a href="https://wiki.iota.org/identity.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Identity Framework Guide</a>
+
+---
+
+The main module "identity_iota" contains the IOTA DID method implementation for the IOTA ledger.
+
+It implements the W3C Decentralized Identifiers (DID)
+and Verifiable Credentials specifications.
+
+<a href="https://www.w3.org/TR/did-core/" target="_blank">👉 &nbsp; Decentralized Identifiers (DID)</a>
+
+<a href="https://www.w3.org/TR/vc-data-model/" target="_blank">👉 &nbsp; Verifiable Credentials</a>
+
+---
 
 A look at `identity_iota/Cargo.toml` reveals the features of the library crate.
 
-<figure style="margin:0;border: 1px solid green;"><img src="../../assets/rust_projects/rust_identityrs-features.jpg" alt="Features of identity_iota"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Features of identity_iota</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="../../assets/rust_projects/rust_identityrs-features.png" alt="Features of identity_iota"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Features of identity_iota</p></figcaption></figure>

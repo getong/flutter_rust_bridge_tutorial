@@ -20,7 +20,7 @@ To approach IOTA's Rust libraries, there are several sources of information avai
 
 <a href="https://wiki.iota.org/iota-sdk/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA SDK</a>
 
-<a href="https://wiki.iota.org/shimmer/identity.rs/introduction/" target="_blank">👉 &nbsp; Wiki - IOTA's Identity Framework Guide</a>
+<a href="https://wiki.iota.org/identity.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Identity Framework</a>
 
 **GitHub Repositories**: Visit the GitHub repositories for the IOTA Rust libraries. It serves as the central hub for code ("single source of truth"), issue tracking, and community discussions. Explore the repositories to access the source code, documentation files, and discussions related to the libraries. You can also open issues or participate in discussions to seek clarification or contribute to the project.
 

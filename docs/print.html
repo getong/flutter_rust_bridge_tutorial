@@ -1867,7 +1867,7 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <p><strong>Official Wiki Documentation</strong>: Start by referring to the official documentation provided by IOTA. It typically includes guides, tutorials, and API references specific to the Rust libraries. The documentation will give you an overview of the available functionality and important concepts to consider. You will also find some ...</p>
 <p><strong>... Examples</strong>: Look for examples that demonstrate the usage of IOTA's Rust libraries. These resources can provide hands-on guidance and practical insights into integrating the libraries into your own projects. I will use some of them in the later sections where I build the &quot;Playground&quot; app.</p>
 <p><a href="https://wiki.iota.org/iota-sdk/welcome/" target="_blank">👉   Wiki - IOTA SDK</a></p>
-<p><a href="https://wiki.iota.org/shimmer/identity.rs/introduction/" target="_blank">👉   Wiki - IOTA's Identity Framework Guide</a></p>
+<p><a href="https://wiki.iota.org/identity.rs/welcome/" target="_blank">👉   Wiki - IOTA's Identity Framework</a></p>
 <p><strong>GitHub Repositories</strong>: Visit the GitHub repositories for the IOTA Rust libraries. It serves as the central hub for code (&quot;single source of truth&quot;), issue tracking, and community discussions. Explore the repositories to access the source code, documentation files, and discussions related to the libraries. You can also open issues or participate in discussions to seek clarification or contribute to the project.</p>
 <p><a href="https://github.com/iotaledger/iota-sdk" target="_blank">👉   GitHub - IOTA SDK</a></p>
 <p><a href="https://github.com/iotaledger/identity.rs" target="_blank">👉   GitHub - identity.rs</a></p>
@@ -1915,9 +1915,18 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <h2 id="identityrs"><a class="header" href="#identityrs">identity.rs</a></h2>
 <p><a href="https://github.com/iotaledger/identity.rs" target="_blank">👉   GitHub - identity.rs</a></p>
 <p>The main package of this workspace is located in the <code>identity_iota/</code> directory. This package will be built as a crate with the name &quot;identity_iota&quot; (use this name to search for it in https://crates.io). The other packages of this workspace are dependencies of the main package.</p>
-<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/rust_projects/rust_identityrs-structure.jpg" alt="Project Structure of identity.rs"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Project Structure of identity.rs</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/rust_projects/rust_identityrs-structure.png" alt="Project Structure of identity.rs"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Project Structure of identity.rs</p></figcaption></figure>
+<p><a href="https://docs.rs/identity_iota/latest/identity_iota/" target="_blank">👉   Complete latest Documentation</a></p>
+<p><a href="https://wiki.iota.org/identity.rs/welcome/" target="_blank">👉   Wiki - IOTA's Identity Framework Guide</a></p>
+<hr />
+<p>The main module &quot;identity_iota&quot; contains the IOTA DID method implementation for the IOTA ledger.</p>
+<p>It implements the W3C Decentralized Identifiers (DID)
+and Verifiable Credentials specifications.</p>
+<p><a href="https://www.w3.org/TR/did-core/" target="_blank">👉   Decentralized Identifiers (DID)</a></p>
+<p><a href="https://www.w3.org/TR/vc-data-model/" target="_blank">👉   Verifiable Credentials</a></p>
+<hr />
 <p>A look at <code>identity_iota/Cargo.toml</code> reveals the features of the library crate.</p>
-<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/rust_projects/rust_identityrs-features.jpg" alt="Features of identity_iota"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Features of identity_iota</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/rust_projects/rust_identityrs-features.png" alt="Features of identity_iota"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Features of identity_iota</p></figcaption></figure>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="iotars-walletrs-and-identityrs"><a class="header" href="#iotars-walletrs-and-identityrs">iota.rs, wallet.rs and identity.rs</a></h1>
 <hr />
 <p>DEPRECATED</p>
@@ -1938,9 +1947,18 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 <h2 id="identityrs-1"><a class="header" href="#identityrs-1">identity.rs</a></h2>
 <p><a href="https://github.com/iotaledger/identity.rs" target="_blank">👉   GitHub - identity.rs</a></p>
 <p>The main package of this workspace is located in the <code>identity_iota/</code> directory. This package will be built as a crate with the name &quot;identity_iota&quot; (use this name to search for it in https://crates.io). The other packages of this workspace are dependencies of the main package.</p>
-<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/rust_projects/rust_identityrs-structure.jpg" alt="Project Structure of identity.rs"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Project Structure of identity.rs</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/rust_projects/rust_identityrs-structure.png" alt="Project Structure of identity.rs"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Project Structure of identity.rs</p></figcaption></figure>
+<p><a href="https://docs.rs/identity_iota/latest/identity_iota/" target="_blank">👉   Complete latest Documentation</a></p>
+<p><a href="https://wiki.iota.org/identity.rs/welcome/" target="_blank">👉   Wiki - IOTA's Identity Framework Guide</a></p>
+<hr />
+<p>The main module &quot;identity_iota&quot; contains the IOTA DID method implementation for the IOTA ledger.</p>
+<p>It implements the W3C Decentralized Identifiers (DID)
+and Verifiable Credentials specifications.</p>
+<p><a href="https://www.w3.org/TR/did-core/" target="_blank">👉   Decentralized Identifiers (DID)</a></p>
+<p><a href="https://www.w3.org/TR/vc-data-model/" target="_blank">👉   Verifiable Credentials</a></p>
+<hr />
 <p>A look at <code>identity_iota/Cargo.toml</code> reveals the features of the library crate.</p>
-<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/rust_projects/rust_identityrs-features.jpg" alt="Features of identity_iota"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Features of identity_iota</p></figcaption></figure>
+<figure style="margin:0;border: 1px solid green;"><img src="overview/iota-libraries/../../assets/rust_projects/rust_identityrs-features.png" alt="Features of identity_iota"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Features of identity_iota</p></figcaption></figure>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="library-versions"><a class="header" href="#library-versions">Library Versions</a></h1>
 <hr />
 <p>JUST SKIP THIS CHAPTER WHEN YOU'RE USING THE <em>IOTA SDK</em>.</p>
