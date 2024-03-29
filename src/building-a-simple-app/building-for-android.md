@@ -131,9 +131,33 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
 
 Wherever you intend to utilize the library functions, import the ffi.dart file into your Dart code. The exposed API function(s) can then be invoked by utilizing the returned `api` variable.
 
+### Adjust the Dart Code
+
+In _lib/pages/editing_note_page.dart_ adjust:
+
+```dart
+...
+import '../ffi.dart';
+...
+  Future<void> handleNote(String tag, String text) async {
+    final receivedBlockId =
+        await api.publishTaggedDataBlock(tag: tag, message: text);
+
+    // add the new note
+    storeAndReturnToHomepage(tag, text, receivedBlockId);
+  }
+
+  void storeAndReturnToHomepage(tag, text, receivedBlockId) {
+    Provider.of<NoteData>(context, listen: false).addNewNote(Note(
+        id: widget.note.id, tag: tag, text: text, blockId: receivedBlockId));
+    Navigator.pop(context);
+  }
+...
+```
+
 ### Video
 
-Follow the video for the remaining steps.
+Follow the video for the described steps.
 
 <iframe 
     class="video"  

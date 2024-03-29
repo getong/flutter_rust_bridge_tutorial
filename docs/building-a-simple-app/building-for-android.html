@@ -253,8 +253,28 @@ final Rust api = RustImpl(io.Platform.isIOS || io.Platform.isMacOS
     : DynamicLibrary.open(_dylib));
 </code></pre>
 <p>Wherever you intend to utilize the library functions, import the ffi.dart file into your Dart code. The exposed API function(s) can then be invoked by utilizing the returned <code>api</code> variable.</p>
+<h3 id="adjust-the-dart-code"><a class="header" href="#adjust-the-dart-code">Adjust the Dart Code</a></h3>
+<p>In <em>lib/pages/editing_note_page.dart</em> adjust:</p>
+<pre><code class="language-dart">...
+import '../ffi.dart';
+...
+  Future&lt;void&gt; handleNote(String tag, String text) async {
+    final receivedBlockId =
+        await api.publishTaggedDataBlock(tag: tag, message: text);
+
+    // add the new note
+    storeAndReturnToHomepage(tag, text, receivedBlockId);
+  }
+
+  void storeAndReturnToHomepage(tag, text, receivedBlockId) {
+    Provider.of&lt;NoteData&gt;(context, listen: false).addNewNote(Note(
+        id: widget.note.id, tag: tag, text: text, blockId: receivedBlockId));
+    Navigator.pop(context);
+  }
+...
+</code></pre>
 <h3 id="video"><a class="header" href="#video">Video</a></h3>
-<p>Follow the video for the remaining steps.</p>
+<p>Follow the video for the described steps.</p>
 <iframe 
     class="video"  
     src="https://www.youtube.com/embed/P0pAXl5HvOc" 
