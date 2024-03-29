@@ -2,7 +2,7 @@
 
 ---
 
-Our target is to create a simple app to send a data message to the tangle, using the iota-client.
+Our target is to create a simple app to send a data message to the tangle, using the IOTA client.
 
 ---
 

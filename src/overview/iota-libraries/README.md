@@ -32,12 +32,6 @@ To approach IOTA's Rust libraries, there are several sources of information avai
 
 ## Deprecated Libraries
 
-### Wiki
-
-<a href="https://wiki.iota.org/shimmer/iota.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Client Library (deprecated)</a>
-
-<a href="https://wiki.iota.org/shimmer/wallet.rs/welcome/" target="_blank">👉 &nbsp; Wiki - IOTA's Wallet Library (deprecated)</a>
-
 ### Github
 
 <a href="https://github.com/iotaledger/iota.rs" target="_blank">👉 &nbsp; GitHub - iota.rs (deprecated)</a>
