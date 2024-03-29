@@ -166,6 +166,14 @@
 <figure style="margin:0;border: 1px solid green;"><img src="../../assets/iota-sdk/iota-sdk-in-finder.png" alt="IOTA SDK"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">IOTA SDK</p></figcaption></figure>
 <hr />
 <figure style="margin:0;border: 1px solid green;"><img src="../../assets/iota-sdk/iota-sdk-structure.png" alt="Structure of the IOTA SDK"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Structure of the IOTA SDK</p></figcaption></figure>
+<div class="table-wrapper"><table><thead><tr><th>Module</th><th>Description</th></tr></thead><tbody>
+<tr><td>client</td><td>A general purpose IOTA client for interaction with the IOTA network (Tangle). High-level functions are accessible via the Client struct.</td></tr>
+<tr><td>wallet</td><td>The IOTA Wallet Library to create and use Accounts which can be secured by Stronghold and can be persisted in a database (rocksdb). Needed to send and receive values.</td></tr>
+<tr><td>pow</td><td>Provides proof of work implementations and scoring for the IOTA protocol as a means to rate-limit the network. See <a href="https://github.com/iotaledger/tips/blob/main/tips/TIP-0012/tip-0012.md">Message PoW</a>.</td></tr>
+<tr><td>utils</td><td>Utility functions for serialization and deserialization.</td></tr>
+<tr><td>types </td><td>Common types required by nodes and clients APIs like blocks, responses and DTOs.</td></tr>
+</tbody></table>
+</div>
 <hr />
 <p>Your task: Review the feature definitions in <code>sdk/Cargo.toml</code>. Upon inspection, you'll notice that enabling the <em>wallet</em> feature will inherently incorporate the <em>client</em> feature.</p>
 <p>Compare your insights with the source code in <code>sdk/src/lib.rs</code>:</p>

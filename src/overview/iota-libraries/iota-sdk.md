@@ -29,6 +29,14 @@ Take a look inside the `src/` folder. You'll find the `client` and `wallet` dire
 
 <figure style="margin:0;border: 1px solid green;"><img src="../../assets/iota-sdk/iota-sdk-structure.png" alt="Structure of the IOTA SDK"><figcaption style="font-size: 0.8em;text-align:center;"><p style="margin: 4px 0 7px 0;">Structure of the IOTA SDK</p></figcaption></figure>
 
+| Module | Description                                                                                                                                                                                               |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| client | A general purpose IOTA client for interaction with the IOTA network (Tangle). High-level functions are accessible via the Client struct.                                                                  |
+| wallet | The IOTA Wallet Library to create and use Accounts which can be secured by Stronghold and can be persisted in a database (rocksdb). Needed to send and receive values.                                    |
+| pow    | Provides proof of work implementations and scoring for the IOTA protocol as a means to rate-limit the network. See [Message PoW](https://github.com/iotaledger/tips/blob/main/tips/TIP-0012/tip-0012.md). |
+| utils  | Utility functions for serialization and deserialization.                                                                                                                                                  |
+| types  | Common types required by nodes and clients APIs like blocks, responses and DTOs.                                                                                                                          |
+
 ---
 
 Your task: Review the feature definitions in `sdk/Cargo.toml`. Upon inspection, you'll notice that enabling the _wallet_ feature will inherently incorporate the _client_ feature.
